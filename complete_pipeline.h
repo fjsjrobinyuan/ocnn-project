@@ -1,0 +1,133 @@
+#ifndef COMPLETE_PIPELINE_H
+#define COMPLETE_PIPELINE_H
+#include "streaming_bitmap_constructor.h"
+#include "dynamic_access.h"
+#include "morton_reorder_buffer.h"
+#include "feature_buffer.h"
+#include "systolic_array.h"
+#ifndef __SYNTHESIS__
+#include <iostream>
+#endif
+void copy_bitmaps_for_convolution(
+    ap_uint<BRAM_WIDTH> *src_L3, ap_uint<BRAM_WIDTH> *dst_L3,
+    ap_uint<BRAM_WIDTH> *src_L2, ap_uint<BRAM_WIDTH> *dst_L2,
+    ap_uint<BRAM_WIDTH> *src_L1, ap_uint<BRAM_WIDTH> *dst_L1,
+    ap_uint<BRAM_WIDTH> *src_L0, ap_uint<BRAM_WIDTH> *dst_L0,
+    PrunedBitmapInfo &bitmap_info);
+void complete_octree_pipeline(
+    hls::stream<VoxelData> &sensor_data,
+    ap_uint<32> *feature_dram,
+    ap_uint<BRAM_WIDTH> *L3_bitmap,
+    ap_uint<BRAM_WIDTH> *L2_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
+    float conv_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float conv_bias[FEATURE_DIM],
+    ap_uint<1> start,
+    ap_uint<1> *done);
+void run_dataflow_pipeline(
+    hls::stream<VoxelData> &sensor_data,
+    hls::stream<VoxelData> &feature_data_stream,
+    hls::stream<ap_uint<MORTON_BITS>> &morton_addrs_stream,
+    hls::stream<RetainedBlockInfo> &retained_blocks_stream,
+    hls::stream<MemRequest> &mem_requests_stream,
+    hls::stream<ConvolutionTrigger> &conv_trigger_stream,
+    hls::stream<ConvolutionResponse> &conv_response_stream,
+    hls::stream<EarlyTriggerSignal> &early_trigger_stream,
+    hls::stream<MortonBitmapInterface> &bitmap_interface_stream,
+    hls::stream<MemResponse> &mem_response_stream,
+    FeatureBuffer *input_features,
+    ap_uint<MORTON_BITS> *morton_list,
+    FeatureBuffer *output_features,
+    float conv_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float conv_bias[FEATURE_DIM],
+    ap_uint<BRAM_WIDTH> *L3_bitmap,
+    ap_uint<BRAM_WIDTH> *L2_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
+        ap_uint<BRAM_WIDTH> *L3_bitmap_conv,              
+    ap_uint<BRAM_WIDTH> *L2_bitmap_pruned_conv,              
+    ap_uint<BRAM_WIDTH> *L1_bitmap_pruned_conv,                
+    ap_uint<BRAM_WIDTH> *L0_bitmap_pruned_conv,                 
+    PrunedBitmapInfo &bitmap_info,
+    ap_uint<32> *feature_dram,
+    ap_uint<32> &processed_voxels,
+    ap_uint<32> &features_stored,
+    ap_uint<32> &voxels_processed);
+void pipeline_bitmap_stage(
+    hls::stream<VoxelData> &voxel_in,
+    hls::stream<VoxelData> &feature_data_out,
+    hls::stream<ap_uint<MORTON_BITS>> &write_addr_out,
+    hls::stream<RetainedBlockInfo> &retained_blocks_out,
+    hls::stream<EarlyTriggerSignal> &early_trigger_out,
+    ap_uint<BRAM_WIDTH> *L3_bitmap,
+    ap_uint<BRAM_WIDTH> *L2_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
+    PrunedBitmapInfo &bitmap_info,
+    ap_uint<32> &processed_voxels);
+void pipeline_feature_stage(
+    hls::stream<VoxelData> &feature_data_in,
+    hls::stream<ap_uint<MORTON_BITS>> &morton_addrs_in,
+    hls::stream<MemRequest> &mem_requests_out,
+    FeatureBuffer *input_features,
+    ap_uint<MORTON_BITS> *morton_list,
+    ap_uint<32> &features_stored);
+void pipeline_morton_stage(
+    hls::stream<MemRequest> &mem_requests_in,
+    hls::stream<RetainedBlockInfo> &retained_blocks_in,
+    hls::stream<ConvolutionTrigger> &trigger_out,
+    hls::stream<ConvolutionResponse> &response_in,
+    hls::stream<MortonBitmapInterface> &bitmap_interface_out,
+    hls::stream<MemResponse> &mem_response_out,
+    ap_uint<32> *feature_dram,
+    ap_uint<BRAM_WIDTH> *L3_bitmap,
+    ap_uint<BRAM_WIDTH> *L2_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
+    PrunedBitmapInfo &bitmap_info);
+void pipeline_convolution_stage(
+    hls::stream<ConvolutionTrigger> &trigger_in,
+    hls::stream<ConvolutionResponse> &response_out,
+    hls::stream<EarlyTriggerSignal> &early_trigger_in,
+    hls::stream<MortonBitmapInterface> &bitmap_interface_in,
+    hls::stream<MemResponse> &mem_response_in,
+    FeatureBuffer *input_features,
+    ap_uint<MORTON_BITS> *morton_list,
+    FeatureBuffer *output_features,
+    float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float bias[FEATURE_DIM],
+    ap_uint<BRAM_WIDTH> *L3_bitmap_conv,
+    ap_uint<BRAM_WIDTH> *L2_bitmap_pruned_conv,
+    ap_uint<BRAM_WIDTH> *L1_bitmap_pruned_conv,
+    ap_uint<BRAM_WIDTH> *L0_bitmap_pruned_conv,
+    PrunedBitmapInfo &bitmap_info,
+    ap_uint<32> available_voxels,
+    ap_uint<32> &voxels_processed);
+int find_feature_index(ap_uint<MORTON_BITS> target_morton,
+                       ap_uint<MORTON_BITS> *morton_list,
+                       ap_uint<32> num_voxels);
+void write_results_to_dram(
+    FeatureBuffer *output_features,
+    ap_uint<MORTON_BITS> *morton_list,
+    ap_uint<32> num_voxels,
+    ap_uint<32> *feature_dram);
+void event_driven_systolic_array_with_triggers(
+    FeatureBuffer *input_features_bram,
+    ap_uint<MORTON_BITS> *morton_list,
+    ap_uint<32> &num_processed_voxels,
+    ap_uint<BRAM_WIDTH> *L3_bitmap_bram,
+    ap_uint<BRAM_WIDTH> *L2_bitmap_pruned_bram,
+    ap_uint<BRAM_WIDTH> *L1_bitmap_pruned_bram,
+    ap_uint<BRAM_WIDTH> *L0_bitmap_pruned_bram,
+    PrunedBitmapInfo &bitmap_info,
+    StreamingPointers &access_pointers,  
+    float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float bias[FEATURE_DIM],
+    FeatureBuffer *output_features_bram,
+    hls::stream<ConvolutionTrigger> &trigger_in,
+    hls::stream<ConvolutionResponse> &response_out,
+    hls::stream<EarlyTriggerSignal> &early_trigger_stream,
+    ap_uint<32> available_voxels,
+    ap_uint<1> &computation_active);
+#endif
