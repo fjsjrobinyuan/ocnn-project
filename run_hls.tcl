@@ -21,7 +21,7 @@ config_interface -m_axi_alignment_byte_size 64
 config_interface -m_axi_max_read_burst_length 256
 config_interface -m_axi_max_write_burst_length 256
 
-# set clock period 100MHz (10ns period)
+# set clock period 300MHz
 config_schedule -effort medium
 create_clock -period 3.33 -name default
 
