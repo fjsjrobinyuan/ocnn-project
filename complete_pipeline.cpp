@@ -11,7 +11,6 @@ static ap_uint<1> engine_initialized = 0;
  * This is the main interface between the pipeline and the convolution engine
  */
 void event_driven_systolic_array_with_triggers(
-    FeatureBuffer *input_features_bram,
     ap_uint<MORTON_BITS> *morton_list,
     ap_uint<32> &num_processed_voxels,
     ap_uint<BRAM_WIDTH> *L3_bitmap_bram,
@@ -22,12 +21,12 @@ void event_driven_systolic_array_with_triggers(
     StreamingPointers &access_pointers,
     float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
     float bias[FEATURE_DIM],
-    FeatureBuffer *output_features_bram,
     hls::stream<ConvolutionTrigger> &trigger_in,
     hls::stream<ConvolutionResponse> &response_out,
     hls::stream<EarlyTriggerSignal> &early_trigger_stream,
     ap_uint<32> available_voxels,
-    ap_uint<1> &computation_active)
+    ap_uint<1> &computation_active,
+    ap_uint<32> *feature_dram)
 {
 #pragma HLS INLINE off
     // consume any early trigger signals (these come from bitmap stage when L0 regions are ready)
@@ -73,7 +72,6 @@ void event_driven_systolic_array_with_triggers(
 #endif
         // call the actual convolution engine, processes al voxels using sparse 3D convolution
         conv_engine.process_sparse_convolution_streaming(
-            input_features_bram,
             morton_list,
             available_voxels,
             L3_bitmap_bram,
@@ -81,7 +79,7 @@ void event_driven_systolic_array_with_triggers(
             L1_bitmap_pruned_bram,
             L0_bitmap_pruned_bram,
             bitmap_info,
-            output_features_bram);
+            feature_dram);
         num_processed_voxels = available_voxels;
         systolic_state = SYS_IDLE;
         computation_active = 0;
@@ -124,44 +122,11 @@ int find_feature_index(ap_uint<MORTON_BITS> target_morton,
  * results are stored in the output region of the feature_dram buffer
  */
 void write_results_to_dram(
-    FeatureBuffer *output_features,
     ap_uint<MORTON_BITS> *morton_list,
     ap_uint<32> num_voxels,
     ap_uint<32> *feature_dram)
-{
-#pragma HLS INLINE off
-#ifndef __SYNTHESIS__
-    std::cout << "write_results_to_dram called with num_voxels = " << num_voxels << std::endl;
-#endif
-    // start writing at the output region offset in DRAM
-    ap_uint<32> dram_offset = OUTPUT_FEATURE_REGION_START;
-#ifndef __SYNTHESIS__
-    std::cout << "Starting DRAM offset = " << dram_offset << std::endl;
-#endif
-    // write each voxel's output features to DRAM
-WRITE_LOOP:
-    for (ap_uint<32> v = 0; v < num_voxels; v++)
-    {
-#pragma HLS PIPELINE II = 1
-#pragma HLS DEPENDENCE variable = feature_dram inter false
-        if (v >= MAX_VOXELS_L0)
-            break; // safety check
-    // write features in groups of 8 for better memory bandwidth utilization
-    WRITE_FEATURES:
-        for (int f = 0; f < FEATURE_DIM; f += 8)
-        {
-#pragma HLS UNROLL factor = 8
-            for (int k = 0; k < 8 && (f + k) < FEATURE_DIM; k++)
-            {
-#pragma HLS UNROLL
-                // cast float to ap_uint<32> for DRAM storage
-                feature_dram[dram_offset + f + k] =
-                    *((ap_uint<32> *)&output_features[v].features[f + k]);
-            }
-        }
-        // move to next voxel's feature location
-        dram_offset += FEATURE_DIM;
-    }
+{ // results are already in dram at OUTPUT_FEATURE_REGION_START
+    // this function is not implemented
 }
 
 /**
@@ -223,7 +188,6 @@ void pipeline_feature_stage(
     hls::stream<VoxelData> &feature_data_in,
     hls::stream<ap_uint<MORTON_BITS>> &morton_addrs_in,
     hls::stream<MemRequest> &mem_requests_out,
-    FeatureBuffer *input_features,
     ap_uint<MORTON_BITS> *morton_list,
     ap_uint<32> &features_stored)
 {
@@ -231,7 +195,6 @@ void pipeline_feature_stage(
 #pragma HLS INTERFACE axis port = feature_data_in
 #pragma HLS INTERFACE axis port = morton_addrs_in
 #pragma HLS INTERFACE axis port = mem_requests_out
-#pragma HLS INTERFACE bram port = input_features
 #pragma HLS INTERFACE bram port = morton_list
     features_stored = 0;
     ap_uint<32> request_id_counter = 0;
@@ -249,13 +212,6 @@ FEATURE_PROCESSING:
         if (features_stored < MAX_VOXELS_L0)
         {
             morton_list[features_stored] = morton_addr;
-        // copy all features values to BRAM buffer
-        STORE_FEATURE_VALUES:
-            for (int f = 0; f < FEATURE_DIM; f++)
-            {
-#pragma HLS UNROLL factor = 8
-                input_features[features_stored].features[f] = voxel.features[f];
-            }
         // generates memory write requests for each feature for DRAM backup
         GENERATE_MEM_REQUESTS:
             for (int f = 0; f < FEATURE_DIM; f++)
@@ -376,9 +332,7 @@ void pipeline_convolution_stage(
     hls::stream<EarlyTriggerSignal> &early_trigger_in,
     hls::stream<MortonBitmapInterface> &bitmap_interface_in,
     hls::stream<MemResponse> &mem_response_in,
-    FeatureBuffer *input_features,
     ap_uint<MORTON_BITS> *morton_list,
-    FeatureBuffer *output_features,
     float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
     float bias[FEATURE_DIM],
     ap_uint<BRAM_WIDTH> *L3_bitmap_conv,
@@ -387,7 +341,8 @@ void pipeline_convolution_stage(
     ap_uint<BRAM_WIDTH> *L0_bitmap_pruned_conv,
     PrunedBitmapInfo &bitmap_info,
     ap_uint<32> available_voxels,
-    ap_uint<32> &voxels_processed)
+    ap_uint<32> &voxels_processed,
+    ap_uint<32> *feature_dram)
 {
 #pragma HLS INLINE off
 #pragma HLS INTERFACE axis port = trigger_in
@@ -395,9 +350,7 @@ void pipeline_convolution_stage(
 #pragma HLS INTERFACE axis port = early_trigger_in
 #pragma HLS INTERFACE axis port = bitmap_interface_in
 #pragma HLS INTERFACE axis port = mem_response_in
-#pragma HLS INTERFACE bram port = input_features
 #pragma HLS INTERFACE bram port = morton_list
-#pragma HLS INTERFACE bram port = output_features
 #pragma HLS INTERFACE bram port = L3_bitmap_conv
 #pragma HLS INTERFACE bram port = L2_bitmap_pruned_conv
 #pragma HLS INTERFACE bram port = L1_bitmap_pruned_conv
@@ -417,24 +370,23 @@ void pipeline_convolution_stage(
     }
     // Main convolution processing - event-driven systolic array
     event_driven_systolic_array_with_triggers(
-        input_features,   // Input feature BRAM
         morton_list,      // Morton-ordered voxel list
         voxels_processed, // Output: number processed
         L3_bitmap_conv,   // Octree bitmaps for neighbor lookup
         L2_bitmap_pruned_conv,
         L1_bitmap_pruned_conv,
         L0_bitmap_pruned_conv,
-        bitmap_info,         // Bitmap size info
-        access_pointers,     // Pointers for efficient traversal
-        weights,             // Convolution weights
-        bias,                // Convolution bias
-        output_features,     // Output feature BRAM
-        trigger_in,          // Triggers from Morton stage
-        response_out,        // Responses back to Morton stage
-        early_trigger_in,    // Early triggers from bitmap stage
-        available_voxels,    // Number of voxels ready for processing
-        computation_active); // Current computation status
-                             // consume interface signals, these are just for synchronization
+        bitmap_info,        // Bitmap size info
+        access_pointers,    // Pointers for efficient traversal
+        weights,            // Convolution weights
+        bias,               // Convolution bias
+        trigger_in,         // Triggers from Morton stage
+        response_out,       // Responses back to Morton stage
+        early_trigger_in,   // Early triggers from bitmap stage
+        available_voxels,   // Number of voxels ready for processing
+        computation_active, // Current computation status
+        feature_dram);
+
     while (!bitmap_interface_in.empty())
     {
         MortonBitmapInterface interface = bitmap_interface_in.read();
@@ -500,9 +452,6 @@ void complete_octree_pipeline(
 #pragma HLS STREAM variable = early_trigger_stream depth = 64
 #pragma HLS STREAM variable = bitmap_interface_stream depth = 32
 #pragma HLS STREAM variable = mem_response_stream depth = 128
-    // static BRAM arrays for feature storage and morton lists
-    static FeatureBuffer input_features[MAX_VOXELS_L0];
-    static FeatureBuffer output_features[MAX_VOXELS_L0];
     static ap_uint<MORTON_BITS> morton_list[MAX_VOXELS_L0];
     static PrunedBitmapInfo bitmap_info;
     // seperate bitmap copies for convolution stage (to avoid read/write conflicts)
@@ -515,8 +464,6 @@ void complete_octree_pipeline(
 #pragma HLS BIND_STORAGE variable = L2_bitmap_pruned_conv type = ram_2p impl = bram
 #pragma HLS BIND_STORAGE variable = L1_bitmap_pruned_conv type = ram_2p impl = bram
 #pragma HLS BIND_STORAGE variable = L0_bitmap_pruned_conv type = ram_2p impl = bram
-#pragma HLS BIND_STORAGE variable = input_features type = ram_2p impl = bram
-#pragma HLS BIND_STORAGE variable = output_features type = ram_2p impl = bram
 #pragma HLS BIND_STORAGE variable = morton_list type = ram_2p impl = bram
     // pipeline status counters
     static ap_uint<32> processed_voxels = 0;
@@ -595,9 +542,7 @@ void complete_octree_pipeline(
                 early_trigger_stream,
                 bitmap_interface_stream,
                 mem_response_stream,
-                input_features,
                 morton_list,
-                output_features,
                 conv_weights,
                 conv_bias,
                 L3_bitmap, // bitmap stage bitmaps
@@ -636,7 +581,6 @@ void complete_octree_pipeline(
         if (all_streams_empty && processed_voxels > 0)
         {
             // write final results to DRAM and signal completion
-            write_results_to_dram(output_features, morton_list, voxels_processed, feature_dram);
             *done = 1;
             pipeline_active = 0;
             finalization_done = 1;
@@ -704,9 +648,7 @@ void run_dataflow_pipeline(
     hls::stream<EarlyTriggerSignal> &early_trigger_stream,
     hls::stream<MortonBitmapInterface> &bitmap_interface_stream,
     hls::stream<MemResponse> &mem_response_stream,
-    FeatureBuffer *input_features,
     ap_uint<MORTON_BITS> *morton_list,
-    FeatureBuffer *output_features,
     float conv_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
     float conv_bias[FEATURE_DIM],
     ap_uint<BRAM_WIDTH> *L3_bitmap,
@@ -745,7 +687,6 @@ void run_dataflow_pipeline(
         feature_data_stream, // Input: valid voxel features
         morton_addrs_stream, // Input: Morton addresses
         mem_requests_stream, // Output: memory requests
-        input_features,      // Output: BRAM feature storage
         morton_list,         // Output: Morton-ordered list
         features_stored);
 
@@ -771,9 +712,7 @@ void run_dataflow_pipeline(
         early_trigger_stream,    // Input: early trigger signals
         bitmap_interface_stream, // Input: bitmap interface signals
         mem_response_stream,     // Input: memory responses
-        input_features,          // Input: BRAM features
         morton_list,             // Input: Morton-ordered list
-        output_features,         // Output: convolution results
         conv_weights,
         conv_bias,
         L3_bitmap_conv, // Separate bitmap copies for convolution
@@ -781,6 +720,7 @@ void run_dataflow_pipeline(
         L1_bitmap_pruned_conv,
         L0_bitmap_pruned_conv,
         bitmap_info,
-        features_stored,   // Input: number of features available
-        voxels_processed); // Output: number processed
+        features_stored,  // Input: number of features available
+        voxels_processed, // Output: number processed
+        feature_dram);
 }

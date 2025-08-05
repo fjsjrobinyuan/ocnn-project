@@ -126,19 +126,12 @@ struct MortonBitmapInterface
 };
 static const ap_int<8> NEIGHBOR_OFFSETS[KERNEL_VOLUME][3] = {
 #if KERNEL_SIZE == 3
-    {-1, -1, -1}, {-1, -1, 0}, {-1, -1, 1}, 
-    {-1, 0, -1}, {-1, 0, 0}, {-1, 0, 1}, 
-    {-1, 1, -1}, {-1, 1, 0}, {-1, 1, 1}, 
-    {0, -1, -1}, {0, -1, 0}, {0, -1, 1}, 
-    {0, 0, -1}, {0, 0, 0}, {0, 0, 1}, 
-    {0, 1, -1}, {0, 1, 0}, {0, 1, 1}, 
-    {1, -1, -1}, {1, -1, 0}, {1, -1, 1}, 
-    {1, 0, -1}, {1, 0, 0}, {1, 0, 1}, 
-    {1, 1, -1}, {1, 1, 0}, {1, 1, 1}
+    {-1, -1, -1}, {-1, -1, 0}, {-1, -1, 1}, {-1, 0, -1}, {-1, 0, 0}, {-1, 0, 1}, {-1, 1, -1}, {-1, 1, 0}, {-1, 1, 1}, {0, -1, -1}, {0, -1, 0}, {0, -1, 1}, {0, 0, -1}, {0, 0, 0}, {0, 0, 1}, {0, 1, -1}, {0, 1, 0}, {0, 1, 1}, {1, -1, -1}, {1, -1, 0}, {1, -1, 1}, {1, 0, -1}, {1, 0, 0}, {1, 0, 1}, {1, 1, -1}, {1, 1, 0}, {1, 1, 1}
 #else
     {0, 0, 0}
 #endif
-};inline ap_uint<1> get_bit(ap_uint<BRAM_WIDTH> bitmap[], int bit_idx)
+};
+inline ap_uint<1> get_bit(ap_uint<BRAM_WIDTH> bitmap[], int bit_idx)
 {
 #pragma HLS INLINE
     int word_idx = bit_idx / BRAM_WIDTH;
@@ -199,7 +192,8 @@ struct MemoryLayout
     ap_uint<32> next_input_offset;
     ap_uint<32> next_output_offset;
 };
-struct StreamingPointers {
+struct StreamingPointers
+{
     ap_uint<32> current_ptr_L3;
     ap_uint<32> current_ptr_L2;
     ap_uint<32> current_ptr_L1;
@@ -208,30 +202,35 @@ struct StreamingPointers {
     ap_uint<32> current_l1_idx;
     ap_uint<1> initialized;
 };
-inline void l2_idx_to_coords(ap_uint<32> l2_idx, ap_uint<32> &x, ap_uint<32> &y, ap_uint<32> &z) {
+inline void l2_idx_to_coords(ap_uint<32> l2_idx, ap_uint<32> &x, ap_uint<32> &y, ap_uint<32> &z)
+{
 #pragma HLS INLINE
-    z = l2_idx >> 2;  
-    y = (l2_idx >> 1) & 1;  
-    x = l2_idx & 1;  
+    z = l2_idx >> 2;
+    y = (l2_idx >> 1) & 1;
+    x = l2_idx & 1;
 }
-inline void l1_local_to_coords(ap_uint<32> l1_local, ap_uint<32> &dx, ap_uint<32> &dy, ap_uint<32> &dz) {
+inline void l1_local_to_coords(ap_uint<32> l1_local, ap_uint<32> &dx, ap_uint<32> &dy, ap_uint<32> &dz)
+{
 #pragma HLS INLINE
-    dz = l1_local >> 2;  
-    dy = (l1_local >> 1) & 1;  
-    dx = l1_local & 1;  
+    dz = l1_local >> 2;
+    dy = (l1_local >> 1) & 1;
+    dx = l1_local & 1;
 }
-inline void l0_local_to_coords(ap_uint<32> l0_local, ap_uint<32> &dx, ap_uint<32> &dy, ap_uint<32> &dz) {
+inline void l0_local_to_coords(ap_uint<32> l0_local, ap_uint<32> &dx, ap_uint<32> &dy, ap_uint<32> &dz)
+{
 #pragma HLS INLINE
-    dz = l0_local >> 2;  
-    dy = (l0_local >> 1) & 1;  
-    dx = l0_local & 1;  
+    dz = l0_local >> 2;
+    dy = (l0_local >> 1) & 1;
+    dx = l0_local & 1;
 }
-struct ConvolutionTrigger {
+struct ConvolutionTrigger
+{
     ap_uint<1> start_processing;
     ap_uint<32> available_voxels;
     ap_uint<1> data_ready;
 };
-struct ConvolutionResponse {
+struct ConvolutionResponse
+{
     ap_uint<1> processing_complete;
     ap_uint<32> voxels_processed;
     ap_uint<1> ready_for_next;

@@ -4,58 +4,66 @@
 #ifndef __SYNTHESIS__
 #include <iostream>
 #endif
-void ZBufferConvolutionEngine::initialize_z_buffer (
+void ZBufferConvolutionEngine::initialize_z_buffer(
     float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
-    float bias[FEATURE_DIM]
-) {
-    #pragma HLS INLINE off
-    STORE_WEIGHTS:
-    for (int n = 0; n < KERNEL_VOLUME; n++) {
-        for (int i = 0; i < FEATURE_DIM; i++) {
-            #pragma HLS PIPELINE II=1
-            for (int j = 0; j < FEATURE_DIM; j++) {
-                #pragma HLS UNROLL factor=8
+    float bias[FEATURE_DIM])
+{
+#pragma HLS INLINE off
+STORE_WEIGHTS:
+    for (int n = 0; n < KERNEL_VOLUME; n++)
+    {
+        for (int i = 0; i < FEATURE_DIM; i++)
+        {
+#pragma HLS PIPELINE II = 1
+            for (int j = 0; j < FEATURE_DIM; j++)
+            {
+#pragma HLS UNROLL factor = 8
                 stored_weights[n][i][j] = weights[n][i][j];
             }
         }
     }
-    STORE_BIAS:
-    for (int i = 0; i < FEATURE_DIM; i++) {
-        #pragma HLS UNROLL
+STORE_BIAS:
+    for (int i = 0; i < FEATURE_DIM; i++)
+    {
+#pragma HLS UNROLL
         stored_bias[i] = bias[i];
     }
-    INIT_BUFFERS:
-    for (int b = 0; b < 3; b++) {
-        #pragma HLS UNROLL
+INIT_BUFFERS:
+    for (int b = 0; b < 3; b++)
+    {
+#pragma HLS UNROLL
         layer_buffers[b].voxel_count = 0;
         layer_buffers[b].z_layer = 0;
         layer_buffers[b].loaded = 0;
     }
 }
-void ZBufferConvolutionEngine::load_z_layer (
+void ZBufferConvolutionEngine::load_z_layer(
     ap_uint<32> target_z,
-    FeatureBuffer *input_features,
     ap_uint<MORTON_BITS> *morton_list,
     ap_uint<32> num_voxels,
-    ap_uint<32> buffer_index
-) {
-    #pragma HLS INLINE off
+    ap_uint<32> buffer_index,
+    ap_uint<32> *feature_dram)
+{
+#pragma HLS INLINE off
     ZLayerBuffer &buffer = layer_buffers[buffer_index];
     buffer.voxel_count = 0;
     buffer.z_layer = target_z;
     buffer.loaded = 0;
-    LOAD_VOXEL_SCAN:
-    for (ap_uint<32> v = 0; v < num_voxels; v++) {
-        #pragma HLS PIPELINE II=1
-        #pragma HLS UNROLL factor=1
-        #pragma HLS LOOP_TRIPCOUNT min=1 max=262144
-        if (buffer.voxel_count >= MAX_VOXELS_PER_LAYER) {
+LOAD_VOXEL_SCAN:
+    for (ap_uint<32> v = 0; v < num_voxels; v++)
+    {
+#pragma HLS PIPELINE II = 1
+#pragma HLS UNROLL factor = 1
+#pragma HLS LOOP_TRIPCOUNT min = 1 max = 262144
+        if (buffer.voxel_count >= MAX_VOXELS_PER_LAYER)
+        {
             break;
         }
         ap_uint<MORTON_BITS> morton = morton_list[v];
         ap_uint<32> x, y, z;
         morton_decode(morton, x, y, z);
-        if (z == target_z) {
+        if (z == target_z)
+        {
             ZLayerVoxel &voxel = buffer.voxels[buffer.voxel_count];
             voxel.morton_code = morton;
             voxel.x = x;
@@ -67,52 +75,63 @@ void ZBufferConvolutionEngine::load_z_layer (
     }
     buffer.loaded = 1;
 }
-bool ZBufferConvolutionEngine::find_neighbor_in_buffer (
+bool ZBufferConvolutionEngine::find_neighbor_in_buffer(
     ap_uint<32> center_x, ap_uint<32> center_y, ap_uint<32> center_z,
     int dx, int dy, int dz,
-    ap_uint<32> &neighbor_feature_index
-) {
-    #pragma HLS INLINE off
+    ap_uint<32> &neighbor_feature_index)
+{
+#pragma HLS INLINE off
     ap_uint<32> neighbor_x = center_x + dx;
     ap_uint<32> neighbor_y = center_y + dy;
     ap_uint<32> neighbor_z = center_z + dz;
-    if (neighbor_x >= DIM_L0 || neighbor_y >= DIM_L0 || neighbor_z >= DIM_L0) {
+    if (neighbor_x >= DIM_L0 || neighbor_y >= DIM_L0 || neighbor_z >= DIM_L0)
+    {
         return false;
     }
     int buffer_index;
-    if (dz == -1) buffer_index = 0;
-    else if (dz == 0) buffer_index = 1;
-    else if (dz == 1) buffer_index = 2;
-    else return false;
+    if (dz == -1)
+        buffer_index = 0;
+    else if (dz == 0)
+        buffer_index = 1;
+    else if (dz == 1)
+        buffer_index = 2;
+    else
+        return false;
     ZLayerBuffer &buffer = layer_buffers[buffer_index];
-    if (!buffer.loaded || buffer.z_layer != neighbor_z) {
+    if (!buffer.loaded || buffer.z_layer != neighbor_z)
+    {
         return false;
     }
-    NEIGHBOR_SEARCH:
-    for (ap_uint<32> i = 0; i < buffer.voxel_count; i++) {
-        #pragma HLS PIPELINE II=1
-        #pragma HLS UNROLL factor=1
-        #pragma HLS LOOP_TRIPCOUNT min=1 max=4096
+NEIGHBOR_SEARCH:
+    for (ap_uint<32> i = 0; i < buffer.voxel_count; i++)
+    {
+#pragma HLS PIPELINE II = 1
+#pragma HLS UNROLL factor = 1
+#pragma HLS LOOP_TRIPCOUNT min = 1 max = 4096
         ZLayerVoxel &voxel = buffer.voxels[i];
-        if (voxel.valid && voxel.x == neighbor_x && voxel.y == neighbor_y) {
+        if (voxel.valid && voxel.x == neighbor_x && voxel.y == neighbor_y)
+        {
             neighbor_feature_index = voxel.feature_index;
             return true;
         }
     }
-    return false; 
+    return false;
 }
-void ZBufferConvolutionEngine::slide_buffer_window () {
-    #pragma HLS INLINE Off
-    COPY_LAYER_0:
-    for (ap_uint<32> i = 0; i < layer_buffers[1].voxel_count; i++) {
-#pragma HLS PIPELINE II=1
-#pragma HLS LOOP_TRIPCOUNT min=1 max=4096
+void ZBufferConvolutionEngine::slide_buffer_window()
+{
+#pragma HLS INLINE Off
+COPY_LAYER_0:
+    for (ap_uint<32> i = 0; i < layer_buffers[1].voxel_count; i++)
+    {
+#pragma HLS PIPELINE II = 1
+#pragma HLS LOOP_TRIPCOUNT min = 1 max = 4096
         layer_buffers[0].voxels[i] = layer_buffers[1].voxels[i];
     }
-    COPY_LAYER_1:
-    for (ap_uint<32> i = 0; i < layer_buffers[2].voxel_count; i++) {
-#pragma HLS PIPELINE II=1
-#pragma HLS LOOP_TRIPCOUNT min=1 max=4096
+COPY_LAYER_1:
+    for (ap_uint<32> i = 0; i < layer_buffers[2].voxel_count; i++)
+    {
+#pragma HLS PIPELINE II = 1
+#pragma HLS LOOP_TRIPCOUNT min = 1 max = 4096
         layer_buffers[1].voxels[i] = layer_buffers[2].voxels[i];
     }
     layer_buffers[0].voxel_count = layer_buffers[1].voxel_count;
@@ -121,62 +140,76 @@ void ZBufferConvolutionEngine::slide_buffer_window () {
     layer_buffers[1].voxel_count = layer_buffers[2].voxel_count;
     layer_buffers[1].z_layer = layer_buffers[2].z_layer;
     layer_buffers[1].loaded = layer_buffers[2].loaded;
-layer_buffers[2].voxel_count = 0;
+    layer_buffers[2].voxel_count = 0;
     layer_buffers[2].loaded = 0;
     layer_buffers[2].z_layer = 0;
 }
 void ZBufferConvolutionEngine::convolve_voxel_z_buffer(
     const ZLayerVoxel &center_voxel,
-    FeatureBuffer *input_features,
-    FeatureBuffer &output_features
-) {
-    #pragma HLS INLINE off
+    ap_uint<MORTON_BITS> *morton_list,
+    ap_uint<32> num_voxels,
+    ap_uint<32> *feature_dram,
+    ap_uint<32> output_index)
+{
+#pragma HLS INLINE off
     float partial_sums[FEATURE_DIM];
-    #pragma HLS ARRAY_PARTITION variable=partial_sums cyclic factor=8
-    INIT_BIAS:
-    for (int f = 0; f < FEATURE_DIM; f++) {
-        #pragma HLS UNROLL factor=8
+#pragma HLS ARRAY_PARTITION variable = partial_sums cyclic factor = 8
+INIT_BIAS:
+    for (int f = 0; f < FEATURE_DIM; f++)
+    {
+#pragma HLS UNROLL factor = 8
         partial_sums[f] = stored_bias[f];
     }
-    NEIGHBOR_PROCESSING:
-    for (int n = 0; n < KERNEL_VOLUME; n++) {
-        #pragma HLS PIPELINE II=2
-        #pragma HLS UNROLL factor=1
-        #pragma HLS LOOP_TRIPCOUNT min=27 max=27
+NEIGHBOR_PROCESSING:
+    for (int n = 0; n < KERNEL_VOLUME; n++)
+    {
+#pragma HLS PIPELINE II = 2
+#pragma HLS UNROLL factor = 1
+#pragma HLS LOOP_TRIPCOUNT min = 27 max = 27
         int dx = NEIGHBOR_OFFSETS[n][0];
-        int dy = NEIGHBOR_OFFSETS[n][1]; 
+        int dy = NEIGHBOR_OFFSETS[n][1];
         int dz = NEIGHBOR_OFFSETS[n][2];
         ap_uint<32> neighbor_feature_index;
         bool neighbor_exists = find_neighbor_in_buffer(
             center_voxel.x, center_voxel.y, layer_buffers[1].z_layer,
             dx, dy, dz, neighbor_feature_index);
-            if (neighbor_exists) {
-                FeatureBuffer &neighbor_features = input_features[neighbor_feature_index];
-                FEATURE_MULTIPLY:
-                for (int out_f = 0; out_f < FEATURE_DIM; out_f++) {
-                    #pragma HLS PIPELINE II=1
-                    #pragma HLS UNROLL factor=4
-                    #pragma HLS LOOP_TRIPCOUNT min=32 max=32
-                    float accumulator = 0;
-                    INNER_PRODUCT:
-                    for (int in_f = 0; in_f < FEATURE_DIM; in_f++) {
-                        #pragma HLS UNROLL factor=8
-                        float weight = stored_weights[n][out_f][in_f];
-                        float input_val = neighbor_features.features[in_f];
-                        accumulator += weight * input_val;
-                    }
-                    partial_sums[out_f] += accumulator;
+        if (neighbor_exists && neighbor_feature_index < num_voxels)
+        {
+
+        FEATURE_MULTIPLY:
+            for (int out_f = 0; out_f < FEATURE_DIM; out_f++)
+            {
+#pragma HLS PIPELINE II = 1
+#pragma HLS UNROLL factor = 4
+#pragma HLS LOOP_TRIPCOUNT min = 32 max = 32
+                float accumulator = 0;
+            INNER_PRODUCT:
+                for (int in_f = 0; in_f < FEATURE_DIM; in_f++)
+                {
+#pragma HLS UNROLL factor = 8
+                    float weight = stored_weights[n][out_f][in_f];
+                    ap_uint<32> dram_addr = INPUT_FEATURE_REGION_START +
+                                            (neighbor_feature_index * FEATURE_DIM) + in_f;
+                    ap_uint<32> feature_word = feature_dram[dram_addr];
+                    float input_val = *((float *)&feature_word);
+
+                    accumulator += weight * input_val;
                 }
+                partial_sums[out_f] += accumulator;
             }
+        }
     }
-    APPLY_RELU:
-    for (int f = 0; f < FEATURE_DIM; f++) {
-        #pragma HLS UNROLL
-        output_features.features[f] = (partial_sums[f] > 0) ? partial_sums[f] :0;
+APPLY_RELU_AND_STORE:
+    for (int f = 0; f < FEATURE_DIM; f++)
+    {
+#pragma HLS UNROLL
+        float result = (partial_sums[f] > 0) ? partial_sums[f] : 0;
+        ap_uint<32> output_addr = OUTPUT_FEATURE_REGION_START +
+                                  (output_index * FEATURE_DIM) + f;
+        feature_dram[output_addr] = *((ap_uint<32> *)&result);
     }
 }
 void ZBufferConvolutionEngine::process_z_buffer_convolution(
-    FeatureBuffer *input_features,
     ap_uint<MORTON_BITS> *morton_list,
     ap_uint<32> num_voxels,
     ap_uint<BRAM_WIDTH> *L3_bitmap,
@@ -184,48 +217,50 @@ void ZBufferConvolutionEngine::process_z_buffer_convolution(
     ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
     ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
     PrunedBitmapInfo &bitmap_info,
-    FeatureBuffer *output_features)
+    ap_uint<32> *feature_dram)
 {
 #pragma HLS INLINE off
-    #ifndef __SYNTHESIS__
+#ifndef __SYNTHESIS__
     std::cout << "=== Starting Z-Buffer Streaming Convolution ===" << std::endl;
-    #endif
-    Z_LAYER_LOOP:
-    for (ap_uint<32> z = 1; z < (DIM_L0 - 1); z++) {
-        #pragma HLS PIPELINE II=4
-        #pragma HLS UNROLL factor=1
-        #pragma HLS LOOP_TRIPCOUNT min=1 max=62
-        #ifndef __SYNTHESIS__
-        std::cout << "Processing Z layer " << z << std::endl;
-        #endif
-        if (z == 1) {
-            load_z_layer(z-1, input_features, morton_list, num_voxels, 0); 
-            load_z_layer(z,   input_features, morton_list, num_voxels, 1); 
-            load_z_layer(z+1, input_features, morton_list, num_voxels, 2); 
-        } else {
+#endif
+Z_LAYER_LOOP:
+    for (ap_uint<32> z = 1; z < (DIM_L0 - 1); z++)
+    {
+#pragma HLS PIPELINE II = 4
+#pragma HLS UNROLL factor = 1
+#pragma HLS LOOP_TRIPCOUNT min = 1 max = 62
+        if (z == 1)
+        {
+            load_z_layer(z - 1, morton_list, num_voxels, 0, feature_dram);
+            load_z_layer(z, morton_list, num_voxels, 1, feature_dram);
+            load_z_layer(z + 1, morton_list, num_voxels, 2, feature_dram);
+        }
+        else
+        {
             slide_buffer_window();
-            load_z_layer(z+1, input_features, morton_list, num_voxels, 2); 
+            load_z_layer(z + 1, morton_list, num_voxels, 2, feature_dram);
         }
         ZLayerBuffer &middle_layer = layer_buffers[1];
-        PROCESS_MIDDLE_LAYER:
-        for (ap_uint<32> v = 0; v < middle_layer.voxel_count; v++) {
-#pragma HLS PIPELINE II=8
-#pragma HLS UNROLL factor=1
-#pragma HLS LOOP_TRIPCOUNT min=1 max=4096
+    PROCESS_MIDDLE_LAYER:
+        for (ap_uint<32> v = 0; v < middle_layer.voxel_count; v++)
+        {
+#pragma HLS PIPELINE II = 8
+#pragma HLS UNROLL factor = 1
+#pragma HLS LOOP_TRIPCOUNT min = 1 max = 4096
             const ZLayerVoxel &center_voxel = middle_layer.voxels[v];
-            if (!center_voxel.valid) continue;
+            if (!center_voxel.valid)
+                continue;
             ap_uint<32> output_index = center_voxel.feature_index;
-            if (output_index < num_voxels) {
-            convolve_voxel_z_buffer(center_voxel, input_features, output_features[output_index]);
+            if (output_index < num_voxels)
+            {
+                convolve_voxel_z_buffer(center_voxel, morton_list, num_voxels, feature_dram, output_index);
             }
         }
     }
-    #ifndef __SYNTHESIS__
-    std::cout << "=== Completed Z-Buffer Streaming Convolution ===" << std::endl;
-    #endif
 }
-SystolicArray::SystolicArray() {
-    #pragma HLS ARRAY_PARTITION variable = pe_array complete dim = 0
+SystolicArray::SystolicArray()
+{
+#pragma HLS ARRAY_PARTITION variable = pe_array complete dim = 0
 #pragma HLS ARRAY_PARTITION variable = row_buffer complete dim = 0
 #pragma HLS ARRAY_PARTITION variable = col_buffer complete dim = 0
 }
@@ -308,18 +343,22 @@ void ConvolutionEngine::initialize(float weights[KERNEL_VOLUME][FEATURE_DIM][FEA
 {
 #pragma HLS INLINE off
 STORE_WEIGHTS:
-for (int n = 0; n < KERNEL_VOLUME; n++) {
-    for (int i = 0; i < FEATURE_DIM; i++) {
-#pragma HLS PIPELINE II=1
-        for (int j = 0; j < FEATURE_DIM; j += 8) {
-#pragma HLS UNROLL factor=8
-            for (int k = 0; k < 8 && (j+k) < FEATURE_DIM; k++) {
+    for (int n = 0; n < KERNEL_VOLUME; n++)
+    {
+        for (int i = 0; i < FEATURE_DIM; i++)
+        {
+#pragma HLS PIPELINE II = 1
+            for (int j = 0; j < FEATURE_DIM; j += 8)
+            {
+#pragma HLS UNROLL factor = 8
+                for (int k = 0; k < 8 && (j + k) < FEATURE_DIM; k++)
+                {
 #pragma HLS UNROLL
-                stored_weights[n][i][j+k] = weights[n][i][j+k];
+                    stored_weights[n][i][j + k] = weights[n][i][j + k];
+                }
             }
         }
     }
-}
 STORE_BIAS:
     for (int i = 0; i < FEATURE_DIM; i++)
     {
@@ -337,7 +376,6 @@ INIT_ARRAYS:
     }
 }
 void ConvolutionEngine::process_sparse_convolution_streaming(
-    FeatureBuffer *input_features,
     ap_uint<MORTON_BITS> *morton_list,
     ap_uint<32> num_voxels,
     ap_uint<BRAM_WIDTH> *L3_bitmap,
@@ -345,19 +383,19 @@ void ConvolutionEngine::process_sparse_convolution_streaming(
     ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
     ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
     PrunedBitmapInfo &bitmap_info,
-    FeatureBuffer *output_features)
+    ap_uint<32> *feature_dram)
 {
 #pragma HLS INLINE off
     static ap_uint<1> z_engine_initialized = 0;
-    if (!z_engine_initialized) {
+    if (!z_engine_initialized)
+    {
         z_buffer_engine.initialize_z_buffer(stored_weights, stored_bias);
         z_engine_initialized = 1;
     }
-    z_buffer_engine.process_z_buffer_convolution (
-        input_features, morton_list, num_voxels,
+    z_buffer_engine.process_z_buffer_convolution(
+        morton_list, num_voxels,
         L3_bitmap, L2_bitmap_pruned, L1_bitmap_pruned, L0_bitmap_pruned,
-        bitmap_info, output_features
-    );
+        bitmap_info, feature_dram);
 }
 void ConvolutionEngine::convolve_voxel_streaming(
     FeatureBuffer *input_features,
@@ -377,14 +415,16 @@ void ConvolutionEngine::convolve_voxel_streaming(
     ap_uint<32> x, y, z;
     morton_decode(current_morton, x, y, z);
     float partial_sums[FEATURE_DIM];
-    #pragma HLS ARRAY_PARTITION variable = partial_sums complete
-    for (int f = 0; f < FEATURE_DIM; f++) {
-        #pragma HLS UNROLL
+#pragma HLS ARRAY_PARTITION variable = partial_sums complete
+    for (int f = 0; f < FEATURE_DIM; f++)
+    {
+#pragma HLS UNROLL
         partial_sums[f] = stored_bias[f];
     }
-    NEIGHBOR_PROCESSING:
-    for (int n = 0; n < KERNEL_VOLUME; n++) {
-        #pragma HLS UNROLL factor=9
+NEIGHBOR_PROCESSING:
+    for (int n = 0; n < KERNEL_VOLUME; n++)
+    {
+#pragma HLS UNROLL factor = 9
 #pragma HLS PIPELINE II = 1
         int dx = NEIGHBOR_OFFSETS[n][0];
         int dy = NEIGHBOR_OFFSETS[n][1];
@@ -392,27 +432,32 @@ void ConvolutionEngine::convolve_voxel_streaming(
         int nx = x + dx;
         int ny = y + dy;
         int nz = z + dz;
-        if (nx >= 0 && nx < DIM_L0 && ny >= 0 && ny < DIM_L0 && nz >= 0 && nz < DIM_L0) {
+        if (nx >= 0 && nx < DIM_L0 && ny >= 0 && ny < DIM_L0 && nz >= 0 && nz < DIM_L0)
+        {
             ap_uint<MORTON_BITS> neighbor_morton = morton3D(nx, ny, nz);
             ap_uint<32> found_idx;
             bool exists = find_neighbor_streaming(
                 neighbor_morton, L3_bitmap, L2_bitmap_pruned,
                 L1_bitmap_pruned, L0_bitmap_pruned,
                 bitmap_info, stream_ptrs, found_idx);
-            if (exists) {
+            if (exists)
+            {
                 int neighbor_feature_idx = find_feature_index(neighbor_morton, morton_list, num_voxels);
-                if (neighbor_feature_idx >= 0 && neighbor_feature_idx < num_voxels) {
-                    FEATURE_MULTIPLY:
-                    for (int out_f = 0; out_f < FEATURE_DIM; out_f++) {
-#pragma HLS PIPELINE II=2
-float accumulator = 0;
-#pragma HLS BIND_OP variable=accumulator op=add impl=dsp
-INNER_PRODUCT:
-                        for (int in_f = 0; in_f < FEATURE_DIM; in_f++) {
-#pragma HLS UNROLL factor=4
+                if (neighbor_feature_idx >= 0 && neighbor_feature_idx < num_voxels)
+                {
+                FEATURE_MULTIPLY:
+                    for (int out_f = 0; out_f < FEATURE_DIM; out_f++)
+                    {
+#pragma HLS PIPELINE II = 2
+                        float accumulator = 0;
+#pragma HLS BIND_OP variable = accumulator op = add impl = dsp
+                    INNER_PRODUCT:
+                        for (int in_f = 0; in_f < FEATURE_DIM; in_f++)
+                        {
+#pragma HLS UNROLL factor = 4
                             float weight = stored_weights[n][out_f][in_f];
-        float input_val = input_features[neighbor_feature_idx].features[in_f];
-        #pragma HLS BIND_OP variable=accumulator op=mul impl=dsp
+                            float input_val = input_features[neighbor_feature_idx].features[in_f];
+#pragma HLS BIND_OP variable = accumulator op = mul impl = dsp
                             accumulator += weight * input_val;
                         }
                         partial_sums[out_f] += accumulator;
@@ -421,8 +466,9 @@ INNER_PRODUCT:
             }
         }
     }
-    APPLY_RELU:
-    for (int f = 0; f < FEATURE_DIM; f++) {
+APPLY_RELU:
+    for (int f = 0; f < FEATURE_DIM; f++)
+    {
 #pragma HLS UNROLL
         output_features.features[f] = (partial_sums[f] > 0) ? partial_sums[f] : 0;
     }
