@@ -16,7 +16,9 @@ void copy_bitmaps_for_convolution(
     PrunedBitmapInfo &bitmap_info);
 void complete_octree_pipeline(
     hls::stream<VoxelData> &sensor_data,
-    ap_uint<32> *feature_dram,
+    ap_uint<32> *feature_dram_morton_write,
+    ap_uint<32> *feature_dram_conv_read,
+    ap_uint<32> *feature_dram_conv_write,
     ap_uint<BRAM_WIDTH> *L3_bitmap,
     ap_uint<BRAM_WIDTH> *L2_bitmap_pruned,
     ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
@@ -48,7 +50,9 @@ void run_dataflow_pipeline(
     ap_uint<BRAM_WIDTH> *L1_bitmap_pruned_conv,
     ap_uint<BRAM_WIDTH> *L0_bitmap_pruned_conv,
     PrunedBitmapInfo &bitmap_info,
-    ap_uint<32> *feature_dram,
+    ap_uint<32> *feature_dram_morton_write,
+    ap_uint<32> *feature_dram_conv_read,
+    ap_uint<32> *feature_dram_conv_write,
     ap_uint<32> &processed_voxels,
     ap_uint<32> &features_stored,
     ap_uint<32> &voxels_processed);
@@ -99,7 +103,8 @@ void pipeline_convolution_stage(
     PrunedBitmapInfo &bitmap_info,
     ap_uint<32> available_voxels,
     ap_uint<32> &voxels_processed,
-    ap_uint<32> *feature_dram);
+    ap_uint<32> *feature_dram_read,
+    ap_uint<32> *feature_dram_write);
 int find_feature_index(ap_uint<MORTON_BITS> target_morton,
                        ap_uint<MORTON_BITS> *morton_list,
                        ap_uint<32> num_voxels);
@@ -123,5 +128,6 @@ void event_driven_systolic_array_with_triggers(
     hls::stream<EarlyTriggerSignal> &early_trigger_stream,
     ap_uint<32> available_voxels,
     ap_uint<1> &computation_active,
-    ap_uint<32> *feature_dram);
+    ap_uint<32> *feature_dram_read,
+    ap_uint<32> *feature_dram_write);
 #endif

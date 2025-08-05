@@ -42,7 +42,7 @@ void ZBufferConvolutionEngine::load_z_layer(
     ap_uint<MORTON_BITS> *morton_list,
     ap_uint<32> num_voxels,
     ap_uint<32> buffer_index,
-    ap_uint<32> *feature_dram)
+    ap_uint<32> *feature_dram_read)
 {
 #pragma HLS INLINE off
     ZLayerBuffer &buffer = layer_buffers[buffer_index];
@@ -148,7 +148,8 @@ void ZBufferConvolutionEngine::convolve_voxel_z_buffer(
     const ZLayerVoxel &center_voxel,
     ap_uint<MORTON_BITS> *morton_list,
     ap_uint<32> num_voxels,
-    ap_uint<32> *feature_dram,
+    ap_uint<32> *feature_dram_read,
+    ap_uint<32> *feature_dram_write,
     ap_uint<32> output_index)
 {
 #pragma HLS INLINE off
@@ -190,7 +191,7 @@ NEIGHBOR_PROCESSING:
                     float weight = stored_weights[n][out_f][in_f];
                     ap_uint<32> dram_addr = INPUT_FEATURE_REGION_START +
                                             (neighbor_feature_index * FEATURE_DIM) + in_f;
-                    ap_uint<32> feature_word = feature_dram[dram_addr];
+                    ap_uint<32> feature_word = feature_dram_read[dram_addr];
                     float input_val = *((float *)&feature_word);
 
                     accumulator += weight * input_val;
@@ -206,7 +207,7 @@ APPLY_RELU_AND_STORE:
         float result = (partial_sums[f] > 0) ? partial_sums[f] : 0;
         ap_uint<32> output_addr = OUTPUT_FEATURE_REGION_START +
                                   (output_index * FEATURE_DIM) + f;
-        feature_dram[output_addr] = *((ap_uint<32> *)&result);
+        feature_dram_write[output_addr] = *((ap_uint<32> *)&result);
     }
 }
 void ZBufferConvolutionEngine::process_z_buffer_convolution(
@@ -217,7 +218,8 @@ void ZBufferConvolutionEngine::process_z_buffer_convolution(
     ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
     ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
     PrunedBitmapInfo &bitmap_info,
-    ap_uint<32> *feature_dram)
+    ap_uint<32> *feature_dram_read,
+    ap_uint<32> *feature_dram_write)
 {
 #pragma HLS INLINE off
 #ifndef __SYNTHESIS__
@@ -231,14 +233,14 @@ Z_LAYER_LOOP:
 #pragma HLS LOOP_TRIPCOUNT min = 1 max = 62
         if (z == 1)
         {
-            load_z_layer(z - 1, morton_list, num_voxels, 0, feature_dram);
-            load_z_layer(z, morton_list, num_voxels, 1, feature_dram);
-            load_z_layer(z + 1, morton_list, num_voxels, 2, feature_dram);
+            load_z_layer(z - 1, morton_list, num_voxels, 0, feature_dram_read);
+            load_z_layer(z, morton_list, num_voxels, 1, feature_dram_read);
+            load_z_layer(z + 1, morton_list, num_voxels, 2, feature_dram_read);
         }
         else
         {
             slide_buffer_window();
-            load_z_layer(z + 1, morton_list, num_voxels, 2, feature_dram);
+            load_z_layer(z + 1, morton_list, num_voxels, 2, feature_dram_read);
         }
         ZLayerBuffer &middle_layer = layer_buffers[1];
     PROCESS_MIDDLE_LAYER:
@@ -253,7 +255,7 @@ Z_LAYER_LOOP:
             ap_uint<32> output_index = center_voxel.feature_index;
             if (output_index < num_voxels)
             {
-                convolve_voxel_z_buffer(center_voxel, morton_list, num_voxels, feature_dram, output_index);
+                convolve_voxel_z_buffer(center_voxel, morton_list, num_voxels, feature_dram_read, feature_dram_write, output_index);
             }
         }
     }
@@ -383,7 +385,8 @@ void ConvolutionEngine::process_sparse_convolution_streaming(
     ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
     ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
     PrunedBitmapInfo &bitmap_info,
-    ap_uint<32> *feature_dram)
+    ap_uint<32> *feature_dram_read,
+    ap_uint<32> *feature_dram_write)
 {
 #pragma HLS INLINE off
     static ap_uint<1> z_engine_initialized = 0;
@@ -395,7 +398,7 @@ void ConvolutionEngine::process_sparse_convolution_streaming(
     z_buffer_engine.process_z_buffer_convolution(
         morton_list, num_voxels,
         L3_bitmap, L2_bitmap_pruned, L1_bitmap_pruned, L0_bitmap_pruned,
-        bitmap_info, feature_dram);
+        bitmap_info, feature_dram_read, feature_dram_write);
 }
 void ConvolutionEngine::convolve_voxel_streaming(
     FeatureBuffer *input_features,

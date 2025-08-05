@@ -26,7 +26,8 @@ void event_driven_systolic_array_with_triggers(
     hls::stream<EarlyTriggerSignal> &early_trigger_stream,
     ap_uint<32> available_voxels,
     ap_uint<1> &computation_active,
-    ap_uint<32> *feature_dram)
+    ap_uint<32> *feature_dram_read,
+    ap_uint<32> *feature_dram_write)
 {
 #pragma HLS INLINE off
     // consume any early trigger signals (these come from bitmap stage when L0 regions are ready)
@@ -70,7 +71,7 @@ void event_driven_systolic_array_with_triggers(
 #ifndef __SYNTHESIS__
         std::cout << "Starting streaming convolution processing..." << std::endl;
 #endif
-        // call the actual convolution engine, processes al voxels using sparse 3D convolution
+        // call the actual convolution engine, processes all voxels using sparse 3D convolution
         conv_engine.process_sparse_convolution_streaming(
             morton_list,
             available_voxels,
@@ -79,7 +80,8 @@ void event_driven_systolic_array_with_triggers(
             L1_bitmap_pruned_bram,
             L0_bitmap_pruned_bram,
             bitmap_info,
-            feature_dram);
+            feature_dram_read,
+            feature_dram_write);
         num_processed_voxels = available_voxels;
         systolic_state = SYS_IDLE;
         computation_active = 0;
@@ -282,7 +284,8 @@ void pipeline_morton_stage(
 #pragma HLS INTERFACE axis port = response_in
 #pragma HLS INTERFACE axis port = bitmap_interface_out
 #pragma HLS INTERFACE axis port = mem_response_out
-#pragma HLS INTERFACE m_axi port = feature_dram depth = 134217728 bundle = gmem0
+#pragma HLS INTERFACE m_axi port=feature_dram bundle=gmem_morton \
+    max_write_burst_length=256 num_write_outstanding=32
 #pragma HLS INTERFACE bram port = L3_bitmap
 #pragma HLS INTERFACE bram port = L2_bitmap_pruned
 #pragma HLS INTERFACE bram port = L1_bitmap_pruned
@@ -342,7 +345,8 @@ void pipeline_convolution_stage(
     PrunedBitmapInfo &bitmap_info,
     ap_uint<32> available_voxels,
     ap_uint<32> &voxels_processed,
-    ap_uint<32> *feature_dram)
+    ap_uint<32> *feature_dram_read,
+    ap_uint<32> *feature_dram_write)
 {
 #pragma HLS INLINE off
 #pragma HLS INTERFACE axis port = trigger_in
@@ -355,6 +359,10 @@ void pipeline_convolution_stage(
 #pragma HLS INTERFACE bram port = L2_bitmap_pruned_conv
 #pragma HLS INTERFACE bram port = L1_bitmap_pruned_conv
 #pragma HLS INTERFACE bram port = L0_bitmap_pruned_conv
+#pragma HLS INTERFACE m_axi port=feature_dram_read bundle=gmem_conv_read \
+    max_read_burst_length=256 num_read_outstanding=32
+    #pragma HLS INTERFACE m_axi port=feature_dram_write bundle=gmem_conv_write \
+    max_write_burst_length=256 num_write_outstanding=32
     // static state for convolution stage
     static StreamingPointers access_pointers;
     static ap_uint<1> computation_active = 0;
@@ -385,7 +393,9 @@ void pipeline_convolution_stage(
         early_trigger_in,   // Early triggers from bitmap stage
         available_voxels,   // Number of voxels ready for processing
         computation_active, // Current computation status
-        feature_dram);
+        feature_dram_read,
+        feature_dram_write
+        );
 
     while (!bitmap_interface_in.empty())
     {
@@ -417,7 +427,9 @@ static ap_uint<1> finalization_done = 0;
  */
 void complete_octree_pipeline(
     hls::stream<VoxelData> &sensor_data,
-    ap_uint<32> *feature_dram,
+    ap_uint<32> *feature_dram_morton_write,
+    ap_uint<32> *feature_dram_conv_read,
+    ap_uint<32> *feature_dram_conv_write,
     ap_uint<BRAM_WIDTH> *L3_bitmap,
     ap_uint<BRAM_WIDTH> *L2_bitmap_pruned,
     ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
@@ -428,8 +440,12 @@ void complete_octree_pipeline(
     ap_uint<1> *done)
 {
 #pragma HLS INTERFACE axis port = sensor_data
-#pragma HLS INTERFACE m_axi port = feature_dram depth = 134217728 bundle = gmem0 \
-    max_read_burst_length = 256 max_write_burst_length = 256 offset = slave
+#pragma HLS INTERFACE m_axi port = feature_dram_morton_write depth = 134217728 bundle = gmem_morton_write \
+    max_write_burst_length = 256 offset = slave
+#pragma HLS INTERFACE m_axi port = feature_dram_conv_read depth = 134217728 bundle = gmem_conv_read \
+    max_read_burst_length = 256 offset = slave  
+#pragma HLS INTERFACE m_axi port = feature_dram_conv_write depth = 134217728 bundle = gmem_conv_write \
+    max_write_burst_length = 256 offset = slave
 #pragma HLS INTERFACE bram port = L3_bitmap
 #pragma HLS INTERFACE bram port = L2_bitmap_pruned
 #pragma HLS INTERFACE bram port = L1_bitmap_pruned
@@ -554,7 +570,9 @@ void complete_octree_pipeline(
                 L1_bitmap_pruned_conv,
                 L0_bitmap_pruned_conv,
                 bitmap_info,
-                feature_dram,
+                feature_dram_morton_write,
+                feature_dram_conv_read,
+                feature_dram_conv_write,
                 processed_voxels,
                 features_stored,
                 voxels_processed);
@@ -660,7 +678,9 @@ void run_dataflow_pipeline(
     ap_uint<BRAM_WIDTH> *L1_bitmap_pruned_conv,
     ap_uint<BRAM_WIDTH> *L0_bitmap_pruned_conv,
     PrunedBitmapInfo &bitmap_info,
-    ap_uint<32> *feature_dram,
+    ap_uint<32> *feature_dram_morton_write,
+    ap_uint<32> *feature_dram_conv_read,
+    ap_uint<32> *feature_dram_conv_write,
     ap_uint<32> &processed_voxels,
     ap_uint<32> &features_stored,
     ap_uint<32> &voxels_processed)
@@ -698,7 +718,7 @@ void run_dataflow_pipeline(
         conv_response_stream,    // Input: convolution responses
         bitmap_interface_stream, // Output: bitmap interface signals
         mem_response_stream,     // Output: memory responses
-        feature_dram,            // External DRAM interface
+        feature_dram_morton_write,            // External DRAM interface
         L3_bitmap,
         L2_bitmap_pruned,
         L1_bitmap_pruned,
@@ -722,5 +742,6 @@ void run_dataflow_pipeline(
         bitmap_info,
         features_stored,  // Input: number of features available
         voxels_processed, // Output: number processed
-        feature_dram);
+        feature_dram_conv_read,
+        feature_dram_conv_write);
 }

@@ -50,7 +50,8 @@ public:
         ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
         ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
         PrunedBitmapInfo &bitmap_info,
-        ap_uint<32> *feature_dram);
+        ap_uint<32> *feature_dram_read,
+        ap_uint<32> *feature_dram_write);
 
 private:
     ZLayerBuffer layer_buffers[3];
@@ -60,7 +61,7 @@ private:
                       ap_uint<MORTON_BITS> *morton_list,
                       ap_uint<32> num_voxels,
                       ap_uint<32> buffer_index,
-                      ap_uint<32> *feature_dram);
+                      ap_uint<32> *feature_dram_read);
     bool find_neighbor_in_buffer(ap_uint<32> center_x, ap_uint<32> center_y, ap_uint<32> center_z,
                                  int dx, int dy, int dz,
                                  ap_uint<32> &neighbor_feature_index);
@@ -68,7 +69,8 @@ private:
     void convolve_voxel_z_buffer(const ZLayerVoxel &center_voxel,
                                  ap_uint<MORTON_BITS> *morton_list,
                                  ap_uint<32> num_voxels,
-                                 ap_uint<32> *feature_dram,
+                                 ap_uint<32> *feature_dram_read,
+                                 ap_uint<32> *feature_dram_write,
                                  ap_uint<32> output_index);
 };
 class SystolicArray
@@ -111,7 +113,9 @@ public:
         ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
         ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
         PrunedBitmapInfo &bitmap_info,
-        ap_uint<32> *feature_dram);
+        ap_uint<32> *feature_dram_read,
+        ap_uint<32> *feature_dram_write
+    );
 
 private:
     ZBufferConvolutionEngine z_buffer_engine;
