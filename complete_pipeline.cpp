@@ -128,9 +128,49 @@ void write_results_to_dram(
     ap_uint<32> num_voxels,
     ap_uint<32> *feature_dram)
 { // results are already in dram at OUTPUT_FEATURE_REGION_START
-    // this function is not implemented
+  // this function is not implemented
 }
+void sort_morton_list_for_optimal_access(ap_uint<MORTON_BITS> *morton_list, ap_uint<32> max_voxels)
+{
+#pragma HLS INLINE off
 
+    // This function pre-sorts the Morton list for optimal memory access patterns
+    // We'll sort by row bits first, then by the remaining address bits
+MORTON_OPTIMAL_SORT:
+    for (ap_uint<32> i = 0; i < max_voxels - 1; i++)
+    {
+#pragma HLS PIPELINE II = 2
+        for (ap_uint<32> j = 0; j < max_voxels - i - 1; j++)
+        {
+            // Skip invalid entries (morton code 0 means invalid)
+            if (morton_list[j] == 0 || morton_list[j + 1] == 0)
+            {
+                continue;
+            }
+
+            MortonAddress addr_j = extract_morton_address(morton_list[j]);
+            MortonAddress addr_j1 = extract_morton_address(morton_list[j + 1]);
+
+            bool should_swap = false;
+            if (addr_j.row_bits > addr_j1.row_bits)
+            {
+                should_swap = true;
+            }
+            else if (addr_j.row_bits == addr_j1.row_bits &&
+                     addr_j.address_bits > addr_j1.address_bits)
+            {
+                should_swap = true;
+            }
+
+            if (should_swap)
+            {
+                ap_uint<MORTON_BITS> temp = morton_list[j];
+                morton_list[j] = morton_list[j + 1];
+                morton_list[j + 1] = temp;
+            }
+        }
+    }
+}
 /**
  * pipeline stage 1: bitmap construction
  * take streaming voxel data and builds octree bitmaps + retained block info
@@ -214,17 +254,18 @@ FEATURE_PROCESSING:
         if (features_stored < MAX_VOXELS_L0)
         {
             morton_list[features_stored] = morton_addr;
-        // generates memory write requests for each feature for DRAM backup
-        GENERATE_MEM_REQUESTS:
+            // Generate Morton-optimized memory write requests for each feature
+        GENERATE_MORTON_MEM_REQUESTS:
             for (int f = 0; f < FEATURE_DIM; f++)
             {
 #pragma HLS UNROLL factor = 4
                 MemRequest write_req;
-                write_req.morton_addr = morton_addr;
+                write_req.morton_addr = morton_addr; // Add Morton address to request
                 write_req.is_write = 1;
                 write_req.request_id = request_id_counter++;
                 write_req.should_store = 1;
-                write_req.data = *((ap_uint<32> *)&voxel.features[f]); // Cast float to uint32
+                write_req.data = *((ap_uint<32> *)&voxel.features[f]);
+
                 if (!mem_requests_out.full())
                 {
                     mem_requests_out.write(write_req);
@@ -284,8 +325,8 @@ void pipeline_morton_stage(
 #pragma HLS INTERFACE axis port = response_in
 #pragma HLS INTERFACE axis port = bitmap_interface_out
 #pragma HLS INTERFACE axis port = mem_response_out
-#pragma HLS INTERFACE m_axi port=feature_dram bundle=gmem_morton \
-    max_write_burst_length=256 num_write_outstanding=32
+#pragma HLS INTERFACE m_axi port = feature_dram bundle = gmem_morton \
+    max_write_burst_length = 256 num_write_outstanding = 32
 #pragma HLS INTERFACE bram port = L3_bitmap
 #pragma HLS INTERFACE bram port = L2_bitmap_pruned
 #pragma HLS INTERFACE bram port = L1_bitmap_pruned
@@ -359,10 +400,10 @@ void pipeline_convolution_stage(
 #pragma HLS INTERFACE bram port = L2_bitmap_pruned_conv
 #pragma HLS INTERFACE bram port = L1_bitmap_pruned_conv
 #pragma HLS INTERFACE bram port = L0_bitmap_pruned_conv
-#pragma HLS INTERFACE m_axi port=feature_dram_read bundle=gmem_conv_read \
-    max_read_burst_length=256 num_read_outstanding=32
-    #pragma HLS INTERFACE m_axi port=feature_dram_write bundle=gmem_conv_write \
-    max_write_burst_length=256 num_write_outstanding=32
+#pragma HLS INTERFACE m_axi port = feature_dram_read bundle = gmem_conv_read \
+    max_read_burst_length = 256 num_read_outstanding = 32
+#pragma HLS INTERFACE m_axi port = feature_dram_write bundle = gmem_conv_write \
+    max_write_burst_length = 256 num_write_outstanding = 32
     // static state for convolution stage
     static StreamingPointers access_pointers;
     static ap_uint<1> computation_active = 0;
@@ -394,8 +435,7 @@ void pipeline_convolution_stage(
         available_voxels,   // Number of voxels ready for processing
         computation_active, // Current computation status
         feature_dram_read,
-        feature_dram_write
-        );
+        feature_dram_write);
 
     while (!bitmap_interface_in.empty())
     {
@@ -443,7 +483,7 @@ void complete_octree_pipeline(
 #pragma HLS INTERFACE m_axi port = feature_dram_morton_write depth = 134217728 bundle = gmem_morton_write \
     max_write_burst_length = 256 offset = slave
 #pragma HLS INTERFACE m_axi port = feature_dram_conv_read depth = 134217728 bundle = gmem_conv_read \
-    max_read_burst_length = 256 offset = slave  
+    max_read_burst_length = 256 offset = slave
 #pragma HLS INTERFACE m_axi port = feature_dram_conv_write depth = 134217728 bundle = gmem_conv_write \
     max_write_burst_length = 256 offset = slave
 #pragma HLS INTERFACE bram port = L3_bitmap
@@ -710,15 +750,19 @@ void run_dataflow_pipeline(
         morton_list,         // Output: Morton-ordered list
         features_stored);
 
+    if (features_stored > 0)
+    {
+        sort_morton_list_for_optimal_access(morton_list, features_stored);
+    }
     // Stage 3: Reorder memory accesses and send convolution triggers
     pipeline_morton_stage(
-        mem_requests_stream,     // Input: memory requests
-        retained_blocks_stream,  // Input: block information
-        conv_trigger_stream,     // Output: convolution triggers
-        conv_response_stream,    // Input: convolution responses
-        bitmap_interface_stream, // Output: bitmap interface signals
-        mem_response_stream,     // Output: memory responses
-        feature_dram_morton_write,            // External DRAM interface
+        mem_requests_stream,       // Input: memory requests
+        retained_blocks_stream,    // Input: block information
+        conv_trigger_stream,       // Output: convolution triggers
+        conv_response_stream,      // Input: convolution responses
+        bitmap_interface_stream,   // Output: bitmap interface signals
+        mem_response_stream,       // Output: memory responses
+        feature_dram_morton_write, // External DRAM interface
         L3_bitmap,
         L2_bitmap_pruned,
         L1_bitmap_pruned,

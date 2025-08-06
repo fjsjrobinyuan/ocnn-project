@@ -34,8 +34,8 @@ void integrated_morton_reorder_buffer_with_triggers(
     hls::stream<MortonBitmapInterface> &bitmap_interface,
     hls::stream<RetainedBlockInfo> &retained_blocks_in,
     hls::stream<MemResponse> &resp_out,
-hls::stream<ConvolutionTrigger> &trigger_out,
-    hls::stream<ConvolutionResponse> &response_in,    ap_uint<32> *feature_dram,
+    hls::stream<ConvolutionTrigger> &trigger_out,
+    hls::stream<ConvolutionResponse> &response_in, ap_uint<32> *feature_dram,
     ap_uint<BRAM_WIDTH> *L3_bitmap_bram,
     ap_uint<BRAM_WIDTH> *L2_bitmap_pruned_bram,
     ap_uint<BRAM_WIDTH> *L1_bitmap_pruned_bram,
@@ -54,4 +54,6 @@ void optimized_dram_burst_retained(
     ap_uint<32> *feature_dram,
     ap_uint<32> buffer_fill,
     hls::stream<MemResponse> &resp_out);
+void update_row_buffer_stats(ap_uint<MORTON_BITS> current_morton,
+                             ap_uint<MORTON_BITS> previous_morton);
 #endif

@@ -5,6 +5,11 @@
 #ifndef __SYNTHESIS__
 #include <iostream>
 #endif
+#define MORTON_BITS 60
+#define ROW_BITS 4    // Top 4 bits for row buffer optimization
+#define BATCH_SIZE 16 // Process 16 voxels at a time
+#define ROW_MASK ((1 << ROW_BITS) - 1)
+#define ADDRESS_BITS (MORTON_BITS - ROW_BITS)
 #ifndef BLOCK_SIZE
 #define BLOCK_SIZE 2
 #endif
@@ -57,7 +62,7 @@
 #define L3_SIZE (DIM_L3 * DIM_L3 * DIM_L3)
 #endif
 #define KERNEL_VOLUME (KERNEL_SIZE * KERNEL_SIZE * KERNEL_SIZE)
-#define MORTON_BITS 60
+
 #define FEATURE_SIZE 4
 #define BITS_PER_BRAM (BRAM_WIDTH * BRAM_DEPTH)
 #define VOXELS_PER_BLOCK (BLOCK_SIZE * BLOCK_SIZE * BLOCK_SIZE)
@@ -235,4 +240,38 @@ struct ConvolutionResponse
     ap_uint<32> voxels_processed;
     ap_uint<1> ready_for_next;
 };
+// add new sturcture for voxel batch processing
+struct VoxelBatch
+{
+    VoxelData voxels[BATCH_SIZE];
+    ap_uint<4> count;
+    ap_uint<1> ready_for_write;
+};
+struct MortonAddress
+{
+    ap_uint<ROW_BITS> row_bits;
+    ap_uint<ADDRESS_BITS> address_bits;
+    ap_uint<MORTON_BITS> full_morton;
+};
+#define ROW_BUFFER_SIZE (1 << ROW_BITS)
+#define FEATURES_PER_ROW (MAX_VOXELS_L0 / ROW_BUFFER_SIZE)
+// some utilities for morton address
+inline MortonAddress extract_morton_address(ap_uint<MORTON_BITS> morton)
+{
+#pragma HLS INLINE
+    MortonAddress addr;
+    addr.full_morton = morton;
+    addr.row_bits = morton >> (MORTON_BITS - ROW_BITS);
+    addr.address_bits = morton & ((1ULL << ADDRESS_BITS) - 1);
+    return addr;
+}
+
+inline ap_uint<32> morton_to_dram_address(ap_uint<MORTON_BITS> morton, ap_uint<32> feature_idx)
+{
+#pragma HLS INLINE
+    MortonAddress addr = extract_morton_address(morton);
+    return INPUT_FEATURE_REGION_START +
+           (addr.row_bits * FEATURES_PER_ROW * FEATURE_DIM) +
+           (addr.address_bits * FEATURE_DIM) + feature_idx;
+}
 #endif

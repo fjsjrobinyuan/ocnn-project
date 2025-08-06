@@ -3,9 +3,45 @@
 #include <iostream>
 #endif
 #define MICRO_BATCH_SIZE 16
-void output_complete_block(
-    int block_index,
+void sort_micro_batch_by_morton(VoxelData micro_batch[MICRO_BATCH_SIZE], ap_uint<5> count)
+{
+#pragma HLS INLINE off
+    // Bubble sort optimized for small batch size (16 elements)
+SORT_OUTER:
+    for (int i = 0; i < count - 1; i++)
+    {
+#pragma HLS UNROLL factor = 4
+    SORT_INNER:
+        for (int j = 0; j < count - i - 1; j++)
+        {
+#pragma HLS PIPELINE II = 1
+            // Compare Morton codes with row-bit priority
+            MortonAddress addr_j = extract_morton_address(micro_batch[j].morton_addr);
+            MortonAddress addr_j1 = extract_morton_address(micro_batch[j + 1].morton_addr);
+
+            bool should_swap = false;
+            if (addr_j.row_bits > addr_j1.row_bits)
+            {
+                should_swap = true;
+            }
+            else if (addr_j.row_bits == addr_j1.row_bits &&
+                     micro_batch[j].morton_addr > micro_batch[j + 1].morton_addr)
+            {
+                should_swap = true;
+            }
+
+            if (should_swap)
+            {
+                VoxelData temp = micro_batch[j];
+                micro_batch[j] = micro_batch[j + 1];
+                micro_batch[j + 1] = temp;
+            }
+        }
+    }
+}
+void process_sorted_micro_batch(
     VoxelData micro_batch[MICRO_BATCH_SIZE],
+    ap_uint<5> count,
     hls::stream<VoxelData> &feature_data_out,
     hls::stream<ap_uint<MORTON_BITS>> &write_addr_out,
     hls::stream<RetainedBlockInfo> &retained_blocks_out,
@@ -15,94 +51,54 @@ void output_complete_block(
     ap_uint<1> *L1_temp)
 {
 #pragma HLS INLINE off
-    VoxelData block_voxels[8];
-    ap_uint<8> block_occupancy = 0;
-    for (int bit_pos = 0; bit_pos < 8; bit_pos++)
+
+    // Process each voxel in the sorted batch
+PROCESS_SORTED_BATCH:
+    for (int i = 0; i < count; i++)
     {
-        if (block_index < MICRO_BATCH_SIZE)
+#pragma HLS PIPELINE II = 1
+        VoxelData current_voxel = micro_batch[i];
+
+        if (current_voxel.occupancy)
         {
-            block_voxels[bit_pos] = micro_batch[block_index];
-        }
-        else
-        {
-            block_voxels[bit_pos] = {0};
-        }
-        block_occupancy[bit_pos] = block_voxels[bit_pos].occupancy;
-    }
-    ap_uint<32> x0, y0, z0;
-    morton_decode(block_voxels[0].morton_addr, x0, y0, z0);
-    ap_uint<32> block_x = x0 / 2;
-    ap_uint<32> block_y = y0 / 2;
-    ap_uint<32> block_z = z0 / 2;
-    ap_uint<32> l1_idx = block_z * DIM_L1 * DIM_L1 + block_y * DIM_L1 + block_x;
-    L1_temp[l1_idx] = (block_occupancy != 0) ? 1 : 0;
-    if (block_occupancy != 0)
-    {
-#ifndef __SYNTHESIS__
-        std::cout << "Block at (" << block_x << "," << block_y << "," << block_z
-                  << ") has occupancy: " << (int)block_occupancy << std::endl;
-#endif
-        for (int i = 0; i < 8; i++)
-        {
-            set_bit(L0_bitmap_pruned, l0_write_pos + i, block_occupancy[i]);
-        }
-        l0_write_pos += 8;
-        for (int i = 0; i < 8; i++)
-        {
-            if (block_occupancy[i])
+            // Output feature data immediately (now sorted by Morton/row bits)
+            if (!feature_data_out.full() && !write_addr_out.full())
             {
-                if (!feature_data_out.full() && !write_addr_out.full())
-                {
-                    feature_data_out.write(block_voxels[i]);
-                    write_addr_out.write(block_voxels[i].morton_addr);
-                }
+                feature_data_out.write(current_voxel);
+                write_addr_out.write(current_voxel.morton_addr);
             }
-        }
-        RetainedBlockInfo retained_info;
-        retained_info.morton_code = morton3D(block_x * 2, block_y * 2, block_z * 2);
-        retained_info.dram_offset = retained_block_count * 8 * FEATURE_DIM;
-        retained_info.valid_voxels = block_occupancy;
-        if (!retained_blocks_out.full())
-        {
-            retained_blocks_out.write(retained_info);
-        }
-        retained_block_count++;
-    }
-#ifndef __SYNTHESIS__
-    std::cout << "Block " << block_index << " voxels: ";
-#endif
-    for (int i = 0; i < 8; i++)
-    {
-        if (block_occupancy[i])
-        {
-            ap_uint<32> vx, vy, vz;
-            morton_decode(block_voxels[i].morton_addr, vx, vy, vz);
-#ifndef __SYNTHESIS__
-            std::cout << "(" << vx << "," << vy << "," << vz << ") ";
-#endif
-        }
-    }
-#ifndef __SYNTHESIS__
-    std::cout << std::endl;
-#endif
-#ifndef __SYNTHESIS__
-    std::cout << "=== FPGA_ORDER_DEBUG: Block " << block_index << " voxels: ";
-#endif
-    for (int i = 0; i < 8; i++)
-    {
-        if (block_occupancy[i])
-        {
-            ap_uint<32> vx, vy, vz;
-            morton_decode(block_voxels[i].morton_addr, vx, vy, vz);
-#ifndef __SYNTHESIS__
-            std::cout << "(" << vx << "," << vy << "," << vz << ") ";
-#endif
+
+            // Update bitmaps
+            ap_uint<32> x, y, z;
+            morton_decode(current_voxel.morton_addr, x, y, z);
+
+            // Set L0 bitmap bit
+            ap_uint<32> l0_bit_idx = coord_to_idx(x, y, z, DIM_L0);
+            set_bit(L0_bitmap_pruned, l0_write_pos, 1);
+            l0_write_pos++;
+
+            // Update L1 temp bitmap
+            ap_uint<32> block_x = x / 2;
+            ap_uint<32> block_y = y / 2;
+            ap_uint<32> block_z = z / 2;
+            ap_uint<32> l1_idx = block_z * DIM_L1 * DIM_L1 + block_y * DIM_L1 + block_x;
+            L1_temp[l1_idx] = 1;
+
+            // Generate retained block info with Morton-optimized offset
+            RetainedBlockInfo retained_info;
+            retained_info.morton_code = current_voxel.morton_addr;
+            retained_info.dram_offset = calculate_voxel_base_address(current_voxel.morton_addr, retained_block_count);
+            retained_info.valid_voxels = 1; // Single voxel per entry now
+
+            if (!retained_blocks_out.full())
+            {
+                retained_blocks_out.write(retained_info);
+            }
+            retained_block_count++;
         }
     }
-#ifndef __SYNTHESIS__
-    std::cout << std::endl;
-#endif
 }
+
 void streaming_bitmap_constructor(
     hls::stream<VoxelData> &voxel_stream,
     hls::stream<VoxelData> &feature_data_out,
@@ -174,51 +170,16 @@ MICRO_BATCH_PROCESSING:
         micro_batch[micro_count] = voxel;
         micro_count++;
         voxel_count++;
+
         if (micro_count == MICRO_BATCH_SIZE)
         {
-        PROCESS_MICRO_BATCH:
-            for (int i = 0; i < MICRO_BATCH_SIZE; i++)
-            {
-#pragma HLS UNROLL factor = 4
-                VoxelData current_voxel = micro_batch[i];
-                ap_uint<32> x, y, z;
-                morton_decode(current_voxel.morton_addr, x, y, z);
-                int dx = x % 2;
-                int dy = y % 2;
-                int dz = z % 2;
-                int bit_pos = dz * 4 + dy * 2 + dx;
-                VoxelData block_voxels[8];
-                ap_uint<8> block_occupancy = 0;
-                block_voxels[bit_pos] = current_voxel;
-                block_occupancy[bit_pos] = current_voxel.occupancy;
-                if (block_occupancy != 0)
-                {
-                    for (int j = 0; j < 8; j++)
-                    {
-                        set_bit(L0_bitmap_pruned, l0_write_pos + j, block_occupancy[j]);
-                    }
-                    l0_write_pos += 8;
-                    if (!feature_data_out.full() && !write_addr_out.full())
-                    {
-                        feature_data_out.write(current_voxel);
-                        write_addr_out.write(current_voxel.morton_addr);
-                    }
-                    ap_uint<32> block_x = x / 2;
-                    ap_uint<32> block_y = y / 2;
-                    ap_uint<32> block_z = z / 2;
-                    ap_uint<32> l1_idx = block_z * DIM_L1 * DIM_L1 + block_y * DIM_L1 + block_x;
-                    L1_temp[l1_idx] = 1;
-                    RetainedBlockInfo retained_info;
-                    retained_info.morton_code = morton3D(block_x * 2, block_y * 2, block_z * 2);
-                    retained_info.dram_offset = retained_block_count * 8 * FEATURE_DIM;
-                    retained_info.valid_voxels = block_occupancy;
-                    if (!retained_blocks_out.full())
-                    {
-                        retained_blocks_out.write(retained_info);
-                    }
-                    retained_block_count++;
-                }
-            }
+            // Sort the micro batch by Morton code before processing
+            sort_micro_batch_by_morton(micro_batch, micro_count);
+
+            // Process the sorted batch
+            process_sorted_micro_batch(micro_batch, micro_count,
+                                       feature_data_out, write_addr_out, retained_blocks_out,
+                                       retained_block_count, L0_bitmap_pruned, l0_write_pos, L1_temp);
             micro_count = 0;
         }
     }
@@ -402,4 +363,11 @@ void process_l2_to_l3_pruning(
 #ifndef __SYNTHESIS__
     std::cout << "process_l2_to_l3_pruning called but not implemented in new approach" << std::endl;
 #endif
+}
+ap_uint<32> calculate_voxel_base_address(ap_uint<MORTON_BITS> morton, ap_uint<32> base_offset)
+{
+#pragma HLS INLINE
+// calculate the complete DRAM base address for a voxel's features
+    MortonAddress addr = extract_morton_address(morton);
+    return base_offset * FEATURE_DIM + (addr.row_bits * FEATURES_PER_ROW * FEATURE_DIM) + (addr.address_bits * FEATURE_DIM);
 }

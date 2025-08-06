@@ -4,6 +4,59 @@
 #ifndef __SYNTHESIS__
 #include <iostream>
 #endif
+void sort_morton_list_for_convolution_reads(ap_uint<MORTON_BITS> *morton_list, ap_uint<32> num_voxels)
+{
+#pragma HLS INLINE off
+
+MORTON_READ_SORT:
+    for (ap_uint<32> i = 0; i < num_voxels - 1; i++)
+    {
+        for (ap_uint<32> j = 0; j < num_voxels - i - 1; j++)
+        {
+#pragma HLS PIPELINE II = 1
+
+            MortonAddress addr_j = extract_morton_address(morton_list[j]);
+            MortonAddress addr_j1 = extract_morton_address(morton_list[j + 1]);
+
+            // Decode Z coordinates for secondary sort (maintain Z-buffer efficiency)
+            ap_uint<32> x_j, y_j, z_j, x_j1, y_j1, z_j1;
+            morton_decode(morton_list[j], x_j, y_j, z_j);
+            morton_decode(morton_list[j + 1], x_j1, y_j1, z_j1);
+
+            bool should_swap = false;
+            if (addr_j.row_bits > addr_j1.row_bits)
+            {
+                should_swap = true;
+            }
+            else if (addr_j.row_bits == addr_j1.row_bits && z_j > z_j1)
+            {
+                // Within same row, sort by Z for Z-buffer compatibility
+                should_swap = true;
+            }
+
+            if (should_swap)
+            {
+                ap_uint<MORTON_BITS> temp = morton_list[j];
+                morton_list[j] = morton_list[j + 1];
+                morton_list[j + 1] = temp;
+            }
+        }
+    }
+}
+
+void prefetch_voxel_features_morton(ap_uint<MORTON_BITS> morton, ap_uint<32> voxel_idx,
+                                    ap_uint<32> *feature_dram_read)
+{
+#pragma HLS INLINE
+    // Pre-calculate addresses for better memory access patterns
+    for (int f = 0; f < FEATURE_DIM && f < 8; f++)
+    {
+#pragma HLS UNROLL
+        ap_uint<32> addr = morton_to_dram_address(morton, f);
+        // Prefetch hint for memory controller
+        volatile ap_uint<32> prefetch = feature_dram_read[addr];
+    }
+}
 void ZBufferConvolutionEngine::initialize_z_buffer(
     float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
     float bias[FEATURE_DIM])
@@ -71,6 +124,9 @@ LOAD_VOXEL_SCAN:
             voxel.valid = 1;
             voxel.feature_index = v;
             buffer.voxel_count++;
+
+            // Prefetch features using Morton-optimized addressing
+            prefetch_voxel_features_morton(morton, v, feature_dram_read);
         }
     }
     buffer.loaded = 1;
@@ -189,8 +245,8 @@ NEIGHBOR_PROCESSING:
                 {
 #pragma HLS UNROLL factor = 8
                     float weight = stored_weights[n][out_f][in_f];
-                    ap_uint<32> dram_addr = INPUT_FEATURE_REGION_START +
-                                            (neighbor_feature_index * FEATURE_DIM) + in_f;
+                    ap_uint<MORTON_BITS> neighbor_morton = morton_list[neighbor_feature_index];
+                    ap_uint<32> dram_addr = morton_to_dram_address(neighbor_morton, in_f);
                     ap_uint<32> feature_word = feature_dram_read[dram_addr];
                     float input_val = *((float *)&feature_word);
 

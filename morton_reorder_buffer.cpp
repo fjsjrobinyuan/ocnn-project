@@ -59,24 +59,30 @@ void integrated_morton_reorder_buffer_with_triggers(
     static ap_uint<32> total_voxels_received = 0; // total voxels we've processed
 #pragma HLS ARRAY_PARTITION variable = response_valid complete
 
-// process memory write requests from feature stage - store them for later processing
-PROCESS_WRITE_REQUESTS:
+// Process memory write requests with Morton-based addressing
+PROCESS_MORTON_WRITE_REQUESTS:
     while (!req_in.empty())
     {
         MemRequest req = req_in.read();
 
-        // store write requests in dram
         if (req.is_write && req.should_store)
         {
-            // the request_id encodes both voxel index and feature index
-            // since feature stage generates FEATURE_DIM requests per voxel with consecutive IDs
+            // Extract row information from Morton code for optimal placement
+            MortonAddress morton_addr = extract_morton_address(req.morton_addr);
+
+            // Calculate row-optimized DRAM address
             ap_uint<32> voxel_idx = req.request_id / FEATURE_DIM;
             ap_uint<32> feature_idx = req.request_id % FEATURE_DIM;
-            ap_uint<32> write_addr = INPUT_FEATURE_REGION_START +
-                                     (voxel_idx * FEATURE_DIM) + feature_idx;
+            ap_uint<32> write_addr = morton_to_dram_address(req.morton_addr, feature_idx);
+
             feature_dram[write_addr] = req.data;
 
-            // send response back
+            // Update row buffer hit statistics
+            static ap_uint<MORTON_BITS> last_morton = 0;
+            update_row_buffer_stats(req.morton_addr, last_morton);
+            last_morton = req.morton_addr;
+
+            // Send response back
             MemResponse write_resp;
             write_resp.request_id = req.request_id;
             write_resp.data = req.data;
@@ -332,30 +338,42 @@ void optimized_dram_burst_retained(
     hls::stream<MemResponse> &resp_out)
 {
 #pragma HLS INLINE off
-    // first, sort the buffer by dram offset to group nearby accesses
-SORT_MORTON:
+    ap_uint<32> burst_data[64];
+    ap_uint<32> burst_start = 0;
+    ap_uint<32> burst_len = 0;
+    ap_uint<32> processed_entries = 0;
+// Sort by row bits first for optimal DRAM row buffer utilization
+SORT_BY_ROW_BITS:
     for (int i = 0; i < buffer_fill - 1; i++)
     {
         for (int j = 0; j < buffer_fill - i - 1; j++)
         {
 #pragma HLS PIPELINE II = 1
-            // sort by dram offset for spatial locality
-            if (buffer[j].valid && buffer[j + 1].valid &&
-                buffer[j].dram_offset > buffer[j + 1].dram_offset)
+            if (buffer[j].valid && buffer[j + 1].valid)
             {
-                MortonBufferEntry temp = buffer[j];
-                buffer[j] = buffer[j + 1];
-                buffer[j + 1] = temp;
+                MortonAddress addr_j = extract_morton_address(buffer[j].request.morton_addr);
+                MortonAddress addr_j1 = extract_morton_address(buffer[j + 1].request.morton_addr);
+
+                bool should_swap = false;
+                if (addr_j.row_bits > addr_j1.row_bits)
+                {
+                    should_swap = true;
+                }
+                else if (addr_j.row_bits == addr_j1.row_bits &&
+                         addr_j.address_bits > addr_j1.address_bits)
+                {
+                    should_swap = true;
+                }
+
+                if (should_swap)
+                {
+                    MortonBufferEntry temp = buffer[j];
+                    buffer[j] = buffer[j + 1];
+                    buffer[j + 1] = temp;
+                }
             }
         }
     }
-
-    // process in bursts for better dram bandwidth
-    ap_uint<32> burst_data[64];
-    ap_uint<32> burst_start = 0;
-    ap_uint<32> burst_len = 0;
-    ap_uint<32> processed_entries = 0;
-
 BURST_PROCESS:
     for (int i = 0; i < buffer_fill; i++)
     {
@@ -427,4 +445,24 @@ BURST_PROCESS:
             }
         }
     }
+}
+
+void update_row_buffer_stats(ap_uint<MORTON_BITS> current_morton,
+                             ap_uint<MORTON_BITS> previous_morton)
+{
+#pragma HLS INLINE
+    static ap_uint<32> total_accesses = 0;
+    static ap_uint<32> row_hits = 0;
+
+    if (total_accesses > 0)
+    {
+        MortonAddress current_addr = extract_morton_address(current_morton);
+        MortonAddress prev_addr = extract_morton_address(previous_morton);
+
+        if (current_addr.row_bits == prev_addr.row_bits)
+        {
+            row_hits++;
+        }
+    }
+    total_accesses++;
 }

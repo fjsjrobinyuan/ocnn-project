@@ -114,8 +114,7 @@ public:
         ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
         PrunedBitmapInfo &bitmap_info,
         ap_uint<32> *feature_dram_read,
-        ap_uint<32> *feature_dram_write
-    );
+        ap_uint<32> *feature_dram_write);
 
 private:
     ZBufferConvolutionEngine z_buffer_engine;
@@ -134,4 +133,7 @@ inline float hw_add(float a, float b)
 #pragma HLS INLINE
     return a + b;
 }
+void prefetch_voxel_features_morton(ap_uint<MORTON_BITS> morton, ap_uint<32> voxel_idx,
+                                    ap_uint<32> *feature_dram_read);
+void sort_morton_list_for_convolution_reads(ap_uint<MORTON_BITS> *morton_list, ap_uint<32> num_voxels);
 #endif

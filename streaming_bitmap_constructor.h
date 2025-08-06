@@ -62,4 +62,5 @@ void process_l2_to_l3_pruning(
     ap_uint<1> *L3_temp,
     ap_uint<BRAM_WIDTH> *L2_bitmap_pruned,
     ap_uint<32> &l2_write_pos);
+ap_uint<32> calculate_voxel_base_address(ap_uint<MORTON_BITS> morton, ap_uint<32> base_offset);
 #endif
