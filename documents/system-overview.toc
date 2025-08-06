@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Scenario Setting}{2}{section.1}%
+\contentsline {section}{\numberline {2}Core Concepts}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Morton Code Properties}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Hierarchical Bitmap}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Key Components and Data Flow}{3}{section.3}%
+\contentsline {section}{\numberline {4}Hierarchical Bitmap Compression}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}How to Divide the Space}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}What We Skip}{3}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Streaming Construction Algorithm}{4}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Access Pointer Mechanism}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Access Algorithm}{4}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Key Properties}{5}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Morton Reordering}{5}{section.6}%
+\contentsline {section}{\numberline {7}3-Layer Z-Buffer Neighbor Finding Algorithm}{6}{section.7}%
+\contentsline {subsection}{\numberline {7.1}The Core Problem}{6}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}The Key Insight}{6}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}How It Works}{6}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Algorithm}{7}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Complexity Improvement}{7}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Memory Arrangement and Management}{7}{section.8}%
