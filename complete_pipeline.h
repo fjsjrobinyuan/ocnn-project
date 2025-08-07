@@ -38,7 +38,7 @@ void run_dataflow_pipeline(
     hls::stream<EarlyTriggerSignal> &early_trigger_stream,
     hls::stream<MortonBitmapInterface> &bitmap_interface_stream,
     hls::stream<MemResponse> &mem_response_stream,
-    ap_uint<MORTON_BITS> *morton_list,
+    hls::stream<ap_uint<MORTON_BITS>> &morton_fifo,
     float conv_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
     float conv_bias[FEATURE_DIM],
     ap_uint<BRAM_WIDTH> *L3_bitmap,
@@ -72,7 +72,7 @@ void pipeline_feature_stage(
     hls::stream<VoxelData> &feature_data_in,
     hls::stream<ap_uint<MORTON_BITS>> &morton_addrs_in,
     hls::stream<MemRequest> &mem_requests_out,
-    ap_uint<MORTON_BITS> *morton_list,
+    hls::stream<ap_uint<MORTON_BITS>> &morton_request_out,
     ap_uint<32> &features_stored);
 void pipeline_morton_stage(
     hls::stream<MemRequest> &mem_requests_in,
@@ -93,7 +93,7 @@ void pipeline_convolution_stage(
     hls::stream<EarlyTriggerSignal> &early_trigger_in,
     hls::stream<MortonBitmapInterface> &bitmap_interface_in,
     hls::stream<MemResponse> &mem_response_in,
-    ap_uint<MORTON_BITS> *morton_list,
+    hls::stream<ap_uint<MORTON_BITS>> &morton_codes_in,
     float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
     float bias[FEATURE_DIM],
     ap_uint<BRAM_WIDTH> *L3_bitmap_conv,
@@ -130,4 +130,16 @@ void event_driven_systolic_array_with_triggers(
     ap_uint<1> &computation_active,
     ap_uint<32> *feature_dram_read,
     ap_uint<32> *feature_dram_write);
+void sort_morton_batch_16(ap_uint<MORTON_BITS> morton_batch[16],
+                          VoxelData voxel_batch[16],
+                          ap_uint<5> count = 16);
+
+void process_sorted_batch_16(
+    ap_uint<MORTON_BITS> morton_batch[16],
+    VoxelData voxel_batch[16],
+    hls::stream<MemRequest> &mem_requests_out,
+    hls::stream<ap_uint<MORTON_BITS>> &morton_codes_out,
+    ap_uint<32> &request_id_counter,
+    ap_uint<32> &features_stored,
+    ap_uint<5> count = 16);
 #endif

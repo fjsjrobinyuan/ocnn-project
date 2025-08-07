@@ -1,0 +1,97 @@
+================================================================
+== Design Size Report
+================================================================
+
+* Total Instructions per Compilation Phase
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Phase         | Step                        | Instructions | Description                                                                            |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Compile/Link  |                             |  30,144      | After all functions are compiled and linked into a single design                       |
+|               |                             |              |                                                                                        |
+| Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
+|               | (1) unroll                  | 318,599 *    | user unroll pragmas are applied                                                        |
+|               | (2) simplification          | 153,995 *    | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  |  98,102      | user inline pragmas are applied                                                        |
+|               | (4) simplification          |  98,099      | simplification of applied user inline pragmas                                          |
+|               |                             |              |                                                                                        |
+| Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
+|               | (1) array partition         | 105,350 *    | user array partition pragmas are applied                                               |
+|               | (2) simplification          | 102,777 *    | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  | 102,777 *    | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           | 102,777 *    | apply array reshape pragmas                                                            |
+|               | (5) access patterns         | 297,969 *    | array access pattern optmizations                                                      |
+|               |                             |              |                                                                                        |
+| Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
+|               | (1) loop simplification     | 116,352 *    | loop and instruction simplification                                                    |
+|               | (2) parallelization         | 116,317 *    | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         | 127,591 *    | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          | 116,567 *    | simplification of design after performance transformations                             |
+|               |                             |              |                                                                                        |
+| HW Transforms |                             |              | After hardware transfomations                                                          |
+|               | (1) lowering                | 116,800 *    | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           | 117,533 *    | high level synthesis optimizations                                                     |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+    * - Exceeded design size warning message threshold
+
+* Instructions per Function for each Compilation Phase
++------------------------------------------+--------------------------------------+-----------------+------------------+-------------------+-------------------+-------------------+
+| Function                                 | Location                             | Compile/Link    | Unroll/Inline    | Array/Struct      | Performance       | HW Transforms     |
++------------------------------------------+--------------------------------------+-----------------+------------------+-------------------+-------------------+-------------------+
+| + complete_octree_pipeline               | complete_pipeline.cpp:468            | 30,144          | 98,099           | 297,969 *         | 116,567 *         | 117,533 *         |
+|  + run_dataflow_pipeline                 | complete_pipeline.cpp:698            | 29,225          | 97,968           | 297,835           | 116,322           | 117,264           |
+|   + pipeline_bitmap_stage                | complete_pipeline.cpp:127            | 5,776           | 1,174            | 201,984           | 20,375            | 20,471            |
+|    + streaming_bitmap_constructor...     | streaming_bitmap_constructor.cpp:102 | 5,774           | 1,172            | 201,982           | 20,373            | 20,468            |
+|     + sort_micro_batch_by_morton         | streaming_bitmap_constructor.cpp:6   |   911           |   245            | 199,366           | 17,761            | 17,762            |
+|        extract_morton_address            | octree_master.h:259                  |   440 (2 calls) |                  |                   |                   |                   |
+|     + process_sorted_micro_batch         | streaming_bitmap_constructor.cpp:42  | 2,798           |   455            |    965            |    964            |  1,073            |
+|        morton_decode                     | octree_master.h:174                  |   729           |                  |                   |                   |                   |
+|        coord_to_idx                      | octree_master.h:153                  |     6           |                  |                   |                   |                   |
+|        set_bit                           | octree_master.h:146                  |    45           |                  |                   |                   |                   |
+|      + calculate_voxel_base_address...   | streaming_bitmap_constructor.cpp:367 |   850           |                  |                   |                   |                   |
+|         extract_morton_address           | octree_master.h:259                  |   220           |                  |                   |                   |                   |
+|       set_bit                            | octree_master.h:146                  |   135 (3 calls) |                  |                   |                   |                   |
+|   + pipeline_feature_stage               | complete_pipeline.cpp:177            | 2,782           | 1,537            |  1,537            |  1,523            |  2,019            |
+|    + sort_morton_batch_16                | complete_pipeline.cpp:793            | 1,842 (2 calls) |   504 (2 calls)  |    504 (2 calls)  |    498 (2 calls)  |    502 (2 calls)  |
+|       extract_morton_address             | octree_master.h:259                  |   880 (4 calls) |                  |                   |                   |                   |
+|      process_sorted_batch_16             | complete_pipeline.cpp:838            |   632 (2 calls) |   890 (2 calls)  |    890 (2 calls)  |    886 (2 calls)  |  1,342 (2 calls)  |
+|   + pipeline_morton_stage                | complete_pipeline.cpp:300            | 8,436           |   908            |  2,567            |  2,556            |  2,564            |
+|      initialize_streaming_pointer...     | dynamic_access.cpp:20                |   171           |                  |                   |                   |                   |
+|    + integrated_morton_reorder_bu...     | morton_reorder_buffer.cpp:12         | 8,158           |   894            |  2,558            |  2,547            |  2,554            |
+|       extract_morton_address             | octree_master.h:259                  |   220           |                  |                   |                   |                   |
+|     + morton_to_dram_address             | octree_master.h:269                  |   850           |                  |                   |                   |                   |
+|        extract_morton_address            | octree_master.h:259                  |   220           |                  |                   |                   |                   |
+|     + update_row_buffer_stats            | morton_reorder_buffer.cpp:450        |   640           |                  |                   |                   |                   |
+|        extract_morton_address            | octree_master.h:259                  |   440 (2 calls) |                  |                   |                   |                   |
+|       initialize_streaming_pointer...    | dynamic_access.cpp:20                |   171           |                  |                   |                   |                   |
+|       morton_decode                      | octree_master.h:174                  |   729           |                  |                   |                   |                   |
+|     + optimized_dram_burst_retaine...    | morton_reorder_buffer.cpp:334        | 3,336           |   360            |  1,288            |  1,279            |  1,254            |
+|        extract_morton_address            | octree_master.h:259                  |   440 (2 calls) |                  |                   |                   |                   |
+|   + pipeline_convolution_stage           | complete_pipeline.cpp:366            | 12,223          | 94,343           | 91,741            | 91,862            | 92,202            |
+|      initialize_streaming_pointer...     | dynamic_access.cpp:20                |   171           |                  |                   |                   |                   |
+|    + event_driven_systolic_array_...     | complete_pipeline.cpp:13             | 11,792          | 94,318           | 91,716            | 91,837            | 92,166            |
+|     + initialize                         | systolic_array.cpp:399               |   164           |   228            |    315            |    631            |    735            |
+|        load_weights                      | systolic_array.cpp:325               |    69           |    76 (4 calls)  |     76 (4 calls)  |    328 (4 calls)  |    360 (4 calls)  |
+|     + process_sparse_convolution_s...    | systolic_array.cpp:436               | 11,364          | 94,049           | 91,360            | 91,165            | 91,381            |
+|        initialize_z_buffer               | systolic_array.cpp:60                |   151           |   212            |    212            |    276            |    284            |
+|      + process_z_buffer_convolution...   | systolic_array.cpp:269               | 11,144          | 93,829           | 91,140            | 90,881            | 91,088            |
+|       + load_z_layer                     | systolic_array.cpp:93                | 7,904 (4 calls) | 1,340 (4 calls)  |  1,340 (4 calls)  |  1,552 (4 calls)  |  1,580 (4 calls)  |
+|          morton_decode                   | octree_master.h:174                  | 2,916 (4 calls) |                  |                   |                   |                   |
+|        + prefetch_voxel_features_mort... | systolic_array.cpp:47                | 3,596 (4 calls) |                  |                   |                   |                   |
+|         + morton_to_dram_address         | octree_master.h:269                  | 3,400 (4 calls) |                  |                   |                   |                   |
+|            extract_morton_address        | octree_master.h:259                  |   880 (4 calls) |                  |                   |                   |                   |
+|         slide_buffer_window              | systolic_array.cpp:176               |   355           |    74            |     74            |    102            |    107            |
+|       + convolve_voxel_z_buffer          | systolic_array.cpp:203               | 2,115           | 92,374           | 89,686            | 89,188            | 89,353            |
+|          find_neighbor_in_buffer         | systolic_array.cpp:134               |   698           | 1,593 (27 calls) |  1,431 (27 calls) |  1,917 (27 calls) |  2,079 (27 calls) |
+|        + morton_to_dram_address          | octree_master.h:269                  |   850           |                  |                   |                   |                   |
+|           extract_morton_address         | octree_master.h:259                  |   220           |                  |                   |                   |                   |
++------------------------------------------+--------------------------------------+-----------------+------------------+-------------------+-------------------+-------------------+
+    * - Exceeded design size warning message threshold
+
+* Design Size Message Settings
++---------------------------------------------+--------+------------------------------------------------------------------+
+| Message Setting                             | Value  | Description                                                      |
++---------------------------------------------+--------+------------------------------------------------------------------+
+| config_compile -design_size_maximum_warning | 100000 | Show a warning when total design instructions exceeds this value |
++---------------------------------------------+--------+------------------------------------------------------------------+
+
+

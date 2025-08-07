@@ -9,7 +9,7 @@
 \usepackage{listings}
 \usepackage{algorithm}
 \usepackage{algorithmic}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.6in]{geometry}
 
 \title{OCNN FPGA Implementation: Sparse 3D Convolution with Hierarchical Bitmap Compression}
 \author{Chenhe Yuan}
@@ -267,5 +267,12 @@ Different pipeline stages operate on different address ranges:
  at any given time
  \newline
 - Result writing uses separate DRAM range [C2, D2]
+
+\section{Dataflow}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.14]{dataflow.jpeg}
+    \label{fig:dataflow}
+\end{figure}
 
 \end{document}
