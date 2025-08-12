@@ -3,45 +3,62 @@
 #include <iostream>
 #endif
 #define MICRO_BATCH_SIZE 16
-void sort_micro_batch_by_morton(VoxelData micro_batch[MICRO_BATCH_SIZE], ap_uint<5> count)
-{
-#pragma HLS INLINE off
-    // Bubble sort optimized for small batch size (16 elements)
-SORT_OUTER:
-    for (int i = 0; i < count - 1; i++)
-    {
-#pragma HLS UNROLL factor = 4
-    SORT_INNER:
-        for (int j = 0; j < count - i - 1; j++)
-        {
-#pragma HLS PIPELINE II = 1
-            // Compare Morton codes with row-bit priority
-            MortonAddress addr_j = extract_morton_address(micro_batch[j].morton_addr);
-            MortonAddress addr_j1 = extract_morton_address(micro_batch[j + 1].morton_addr);
+/**
+ * Update:
+ * So the path from the bitmap generator to reorder buffer (for feature write to DRAM) is okay
+ * but previously, I put complete voxeldata (16 'requests') into the BRAM and attempt to sort in the BRAM
+ * However, the complete voxeldata are just too large to be bubble sorted in the BRAM because it's not fast enough
+ * So I have to extract the target addresses of these requests and sort them and 
+ * create a mapping table to map the sorted target addresses to the addresses in the BRAM
+ */
 
-            bool should_swap = false;
-            if (addr_j.row_bits > addr_j1.row_bits)
-            {
-                should_swap = true;
-            }
-            else if (addr_j.row_bits == addr_j1.row_bits &&
-                     micro_batch[j].morton_addr > micro_batch[j + 1].morton_addr)
-            {
-                should_swap = true;
-            }
+ void sort_micro_batch_by_morton (VoxelData micro_batch[MICRO_BATCH_SIZE],
+                                  ap_uint<5> count,
+                                  ap_uint<5> sorted_indices[MICRO_BATCH_SIZE]) {
 
-            if (should_swap)
-            {
-                VoxelData temp = micro_batch[j];
-                micro_batch[j] = micro_batch[j + 1];
-                micro_batch[j + 1] = temp;
+    #pragma HLS INLINE off
+
+    struct MortonIndex {
+        ap_uint<MORTON_BITS> morton;
+        ap_uint<5> index;
+    };
+
+    MortonIndex morton_pairs[MICRO_BATCH_SIZE];
+    #pragma HLS ARRAY_PARTITION variable=morton_pairs complete
+
+    // step 1 create morton index pairs
+    INIT_MORTON_PAIRS:
+    for (int i = 0; i < MICRO_BATCH_SIZE; i++) {
+        #pragma HLS UNROLL
+        morton_pairs[i].morton = micro_batch[i].morton_addr;
+        morton_pairs[i].index = i;
+    }
+
+    // step 2 bubble sort
+    BUBBLE_SORT:
+    for (int i = 0; i < MICRO_BATCH_SIZE - 1; i++) {
+        for (int j = 0; j < MICRO_BATCH_SIZE - i - 1; j++) {
+            #pragma HLS PIPELINE II=1
+            if (morton_pairs[j].morton > morton_pairs[j + 1].morton) {
+                // swap
+                MortonIndex temp = morton_pairs[j];
+                morton_pairs[j] = morton_pairs[j + 1];
+                morton_pairs[j + 1] = temp;
             }
         }
+    }
+
+    // step 3 output ordered results
+    OUTPUT_INDEX:
+    for (int i = 0; i < MICRO_BATCH_SIZE; i++) {
+        #pragma HLS UNROLL
+        sorted_indices[i] = morton_pairs[i].index;
     }
 }
 void process_sorted_micro_batch(
     VoxelData micro_batch[MICRO_BATCH_SIZE],
     ap_uint<5> count,
+    ap_uint<5> sorted_indices[MICRO_BATCH_SIZE],
     hls::stream<VoxelData> &feature_data_out,
     hls::stream<ap_uint<MORTON_BITS>> &write_addr_out,
     hls::stream<RetainedBlockInfo> &retained_blocks_out,
@@ -57,7 +74,8 @@ PROCESS_SORTED_BATCH:
     for (int i = 0; i < count; i++)
     {
 #pragma HLS PIPELINE II = 1
-        VoxelData current_voxel = micro_batch[i];
+ap_uint<5> sorted_idx = sorted_indices[i];
+        VoxelData current_voxel = micro_batch[sorted_idx];
 
         if (current_voxel.occupancy)
         {
@@ -173,11 +191,13 @@ MICRO_BATCH_PROCESSING:
 
         if (micro_count == MICRO_BATCH_SIZE)
         {
+            ap_uint<5> sorted_indices[MICRO_BATCH_SIZE];
+            #pragma HLS ARRAY_PARTITION variable = sorted_indices complete
             // Sort the micro batch by Morton code before processing
-            sort_micro_batch_by_morton(micro_batch, micro_count);
+            sort_micro_batch_by_morton(micro_batch, micro_count, sorted_indices);
 
             // Process the sorted batch
-            process_sorted_micro_batch(micro_batch, micro_count,
+            process_sorted_micro_batch(micro_batch, micro_count, sorted_indices,
                                        feature_data_out, write_addr_out, retained_blocks_out,
                                        retained_block_count, L0_bitmap_pruned, l0_write_pos, L1_temp);
             micro_count = 0;

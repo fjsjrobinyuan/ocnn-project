@@ -46,9 +46,9 @@ int main() {
     std::vector<std::pair<unsigned int, std::tuple<int, int, int>>> voxel_data;
     
     // Generate 3x3x3 neighborhood
-    for (int dx = -1; dx <= 1; dx++) {
-        for (int dy = -1; dy <= 1; dy++) {
-            for (int dz = -1; dz <= 1; dz++) {
+    for (int dx = -3; dx <= 3; dx++) {
+        for (int dy = -3; dy <= 3; dy++) {
+            for (int dz = -3; dz <= 3; dz++) {
                 int x = x_center + dx;
                 int y = y_center + dy;
                 int z = z_center + dz;
