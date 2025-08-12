@@ -1,36 +1,11 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
-****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
-  **** SW Build 5238294 on Nov  8 2024
-  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
-  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Tue Aug 12 20:09:09 2025
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-source /tools/Xilinx/Vitis/2024.2/scripts/vitis_hls/hls.tcl -notrace
-INFO: [HLS 200-10] For user 'robin' on host 'alma-linux' (Linux_x86_64 version 5.14.0-570.32.1.el9_6.x86_64) on Tue Aug 12 20:09:11 CST 2025
-INFO: [HLS 200-10] In directory '/home/robin/Desktop/ocnn-project'
-WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl
-Sourcing Tcl script 'run_hls.tcl'
-INFO: [HLS 200-1510] Running: open_project ocnn_fpga_project -reset 
-INFO: [HLS 200-10] Creating and opening project '/home/robin/Desktop/ocnn-project/ocnn_fpga_project'.
-INFO: [HLS 200-1510] Running: set_top complete_octree_pipeline 
-INFO: [HLS 200-1510] Running: add_files complete_pipeline.cpp -cflags -I. 
-INFO: [HLS 200-10] Adding design file 'complete_pipeline.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files streaming_bitmap_constructor.cpp -cflags -I. 
-INFO: [HLS 200-10] Adding design file 'streaming_bitmap_constructor.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files dynamic_access.cpp -cflags -I. 
-INFO: [HLS 200-10] Adding design file 'dynamic_access.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files morton_reorder_buffer.cpp -cflags -I. 
-INFO: [HLS 200-10] Adding design file 'morton_reorder_buffer.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files systolic_array.cpp -cflags -I. 
-INFO: [HLS 200-10] Adding design file 'systolic_array.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files -tb hls_testbench.cpp -cflags -I. 
-INFO: [HLS 200-10] Adding test bench file 'hls_testbench.cpp' to the project
-INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
-INFO: [HLS 200-10] Creating and opening solution '/home/robin/Desktop/ocnn-project/ocnn_fpga_project/solution1'.
+==============================================================
 INFO: [HLS 200-1505] Using flow_target 'vivado'
-Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1510] Running: set_part xcu250-figd2104-2L-e 
 INFO: [HLS 200-1611] Setting target device to 'xcu250-figd2104-2L-e'
 INFO: [HLS 200-1510] Running: config_compile -pipeline_loops 64 
@@ -312,7 +287,6 @@ INFO: [HLS 200-2061] Successfully converted nested loops 'STORE_WEIGHTS'(systoli
 INFO: [HLS 200-2061] Successfully converted nested loops 'STORE_WEIGHTS'(systolic_array.cpp:404:5) and 'VITIS_LOOP_406_1'(systolic_array.cpp:406:27) in function 'ConvolutionEngine::initialize' into perfectly nested loops.
 INFO: [XFORM 203-541] Flattening a loop nest 'L2_CONSTRUCTION' (streaming_bitmap_constructor.cpp:187:5) in function 'streaming_bitmap_constructor'.
 WARNING: [HLS 200-960] Cannot flatten loop 'SORT_BY_ROW_BITS' (morton_reorder_buffer.cpp:347:5) in function 'optimized_dram_burst_retained' the outer loop is not a perfect loop because either the parent loop or the sub loop has no invariant trip count.
-Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
 WARNING: [XFORM 203-561] 'FINAL_BURST' (morton_reorder_buffer.cpp:431:9) in function 'optimized_dram_burst_retained' is an infinite loop.
 INFO: [XFORM 203-541] Flattening a loop nest 'STORE_WEIGHTS' (systolic_array.cpp:66:5) in function 'ZBufferConvolutionEngine::initialize_z_buffer'.
 INFO: [XFORM 203-541] Flattening a loop nest 'STORE_WEIGHTS' (systolic_array.cpp:404:5) in function 'ConvolutionEngine::initialize'.
@@ -414,10 +388,8 @@ WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'streaming_
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'streaming_bitmap_constructor(stream&,stream&,stream&,stream&,stream&,ap_uint*,ap.31'.
 WARNING: [HLS 200-657] Generating channel conv_response_stream that flows backwards in the dataflow region.
 WARNING: [HLS 200-1450] Process pipeline_bitmap_stage has both a successor and writes an output to its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this output via a successor process.
-Resolution: For help on HLS 200-1450 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1450.html
 WARNING: [HLS 200-1449] Process pipeline_morton_stage has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
 WARNING: [HLS 200-1450] Process pipeline_morton_stage has both a successor and writes an output to its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this output via a successor process.
-Resolution: For help on HLS 200-1450 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1450.html
 WARNING: [HLS 200-1449] Process pipeline_convolution_stage has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
 INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 176.13 seconds. CPU system time: 3.45 seconds. Elapsed time: 179.64 seconds; current allocated memory: 4.843 GB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
@@ -469,10 +441,6 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'sort_micro_batch_by_morton'.
 WARNING: [HLS 200-880] The II Violation in module 'sort_micro_batch_by_morton' (function 'sort_micro_batch_by_morton'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation 0 bit ('streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_528_write_ln36', streaming_bitmap_constructor.cpp:36) of variable 'streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_697', streaming_bitmap_constructor.cpp:37 on array 'streaming_bitmap_constructor_stream_VoxelData_0_stream_VoxelData_0_stream_ap_uint_60_0_stream_EarlyTriggerSignal_0_stream_RetainedBlockInfo_0_ap_uint_512_ap_uint_512_ap_uint_512_ap_uint_512_PrunedBitmapInfo_ap_uint_32_micro_batch_features_0' and 'load' operation 32 bit ('streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_624', streaming_bitmap_constructor.cpp:37) on array 'streaming_bitmap_constructor_stream_VoxelData_0_stream_VoxelData_0_stream_ap_uint_60_0_stream_EarlyTriggerSignal_0_stream_RetainedBlockInfo_0_ap_uint_512_ap_uint_512_ap_uint_512_ap_uint_512_PrunedBitmapInfo_ap_uint_32_micro_batch_features_0'.
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
 WARNING: [HLS 200-880] The II Violation in module 'sort_micro_batch_by_morton' (function 'sort_micro_batch_by_morton'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation 0 bit ('streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_528_write_ln36', streaming_bitmap_constructor.cpp:36) of variable 'streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_697', streaming_bitmap_constructor.cpp:37 on array 'streaming_bitmap_constructor_stream_VoxelData_0_stream_VoxelData_0_stream_ap_uint_60_0_stream_EarlyTriggerSignal_0_stream_RetainedBlockInfo_0_ap_uint_512_ap_uint_512_ap_uint_512_ap_uint_512_PrunedBitmapInfo_ap_uint_32_micro_batch_features_0' and 'load' operation 32 bit ('streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_624', streaming_bitmap_constructor.cpp:37) on array 'streaming_bitmap_constructor_stream_VoxelData_0_stream_VoxelData_0_stream_ap_uint_60_0_stream_EarlyTriggerSignal_0_stream_RetainedBlockInfo_0_ap_uint_512_ap_uint_512_ap_uint_512_ap_uint_512_PrunedBitmapInfo_ap_uint_32_micro_batch_features_0'.
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
 WARNING: [HLS 200-880] The II Violation in module 'sort_micro_batch_by_morton' (function 'sort_micro_batch_by_morton'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation 0 bit ('streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_528_write_ln36', streaming_bitmap_constructor.cpp:36) of variable 'streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_697', streaming_bitmap_constructor.cpp:37 on array 'streaming_bitmap_constructor_stream_VoxelData_0_stream_VoxelData_0_stream_ap_uint_60_0_stream_EarlyTriggerSignal_0_stream_RetainedBlockInfo_0_ap_uint_512_ap_uint_512_ap_uint_512_ap_uint_512_PrunedBitmapInfo_ap_uint_32_micro_batch_features_0' and 'load' operation 32 bit ('streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_624', streaming_bitmap_constructor.cpp:37) on array 'streaming_bitmap_constructor_stream_VoxelData_0_stream_VoxelData_0_stream_ap_uint_60_0_stream_EarlyTriggerSignal_0_stream_RetainedBlockInfo_0_ap_uint_512_ap_uint_512_ap_uint_512_ap_uint_512_PrunedBitmapInfo_ap_uint_32_micro_batch_features_0'.
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
 WARNING: [HLS 200-880] The II Violation in module 'sort_micro_batch_by_morton' (function 'sort_micro_batch_by_morton'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation 0 bit ('streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_528_write_ln36', streaming_bitmap_constructor.cpp:36) of variable 'streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_697', streaming_bitmap_constructor.cpp:37 on array 'streaming_bitmap_constructor_stream_VoxelData_0_stream_VoxelData_0_stream_ap_uint_60_0_stream_EarlyTriggerSignal_0_stream_RetainedBlockInfo_0_ap_uint_512_ap_uint_512_ap_uint_512_ap_uint_512_PrunedBitmapInfo_ap_uint_32_micro_batch_features_0' and 'load' operation 32 bit ('streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_624', streaming_bitmap_constructor.cpp:37) on array 'streaming_bitmap_constructor_stream_VoxelData_0_stream_VoxelData_0_stream_ap_uint_60_0_stream_EarlyTriggerSignal_0_stream_RetainedBlockInfo_0_ap_uint_512_ap_uint_512_ap_uint_512_ap_uint_512_PrunedBitmapInfo_ap_uint_32_micro_batch_features_0'.
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
