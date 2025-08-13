@@ -274,4 +274,12 @@ inline ap_uint<32> morton_to_dram_address(ap_uint<MORTON_BITS> morton, ap_uint<3
            (addr.row_bits * FEATURES_PER_ROW * FEATURE_DIM) +
            (addr.address_bits * FEATURE_DIM) + feature_idx;
 }
+#if DIM_L0 <= 16
+    #define ENABLE_CROSS_ROW_SORTING 1
+    #define MAX_ROWS_TO_BUFFER 2
+    #define MAX_FEATURES_TO_BUFFER (DIM_L0 * MAX_ROWS_TO_BUFFER)
+#else
+    #define ENABLE_CROSS_ROW_SORTING 0
+    #define MAX_FEATURES_TO_BUFFER 0
+#endif
 #endif

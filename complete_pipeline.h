@@ -72,7 +72,7 @@ void pipeline_feature_stage(
     hls::stream<VoxelData> &feature_data_in,
     hls::stream<ap_uint<MORTON_BITS>> &morton_addrs_in,
     hls::stream<MemRequest> &mem_requests_out,
-    hls::stream<ap_uint<MORTON_BITS>> &morton_request_out,
+    hls::stream<ap_uint<MORTON_BITS>> &morton_codes_out,
     ap_uint<32> &features_stored);
 void pipeline_morton_stage(
     hls::stream<MemRequest> &mem_requests_in,
@@ -130,16 +130,19 @@ void event_driven_systolic_array_with_triggers(
     ap_uint<1> &computation_active,
     ap_uint<32> *feature_dram_read,
     ap_uint<32> *feature_dram_write);
-void sort_morton_batch_16(ap_uint<MORTON_BITS> morton_batch[16],
-                          VoxelData voxel_batch[16],
-                          ap_uint<5> count = 16);
+#if ENABLE_CROSS_ROW_SORTING
+void sort_cross_row_buffer(
+    ap_uint<MORTON_BITS> morton_buffer[MAX_FEATURES_TO_BUFFER],
+    VoxelData row_buffer[MAX_FEATURES_TO_BUFFER],
+    ap_uint<6> count);
 
-void process_sorted_batch_16(
-    ap_uint<MORTON_BITS> morton_batch[16],
-    VoxelData voxel_batch[16],
+void process_sorted_cross_row_buffer(
+    ap_uint<MORTON_BITS> morton_buffer[MAX_FEATURES_TO_BUFFER],
+    VoxelData row_buffer[MAX_FEATURES_TO_BUFFER],
+    ap_uint<6> count,
     hls::stream<MemRequest> &mem_requests_out,
     hls::stream<ap_uint<MORTON_BITS>> &morton_codes_out,
     ap_uint<32> &request_id_counter,
-    ap_uint<32> &features_stored,
-    ap_uint<5> count = 16);
+    ap_uint<32> &features_stored);
+#endif
 #endif

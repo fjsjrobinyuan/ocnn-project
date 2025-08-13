@@ -185,113 +185,90 @@ void pipeline_feature_stage(
 #pragma HLS INTERFACE axis port = feature_data_in
 #pragma HLS INTERFACE axis port = morton_addrs_in
 #pragma HLS INTERFACE axis port = mem_requests_out
-    static ap_uint<MORTON_BITS> morton_batch[16];
-    static VoxelData voxel_batch[16];
-    static ap_uint<5> batch_count = 0;
 
+#if ENABLE_CROSS_ROW_SORTING
+
+    static VoxelData row_buffer[MAX_FEATURES_TO_BUFFER];
+    static ap_uint<MORTON_BITS> morton_buffer[MAX_FEATURES_TO_BUFFER];
+    static ap_uint<6> buffer_count = 0;  // Can hold up to 32 items (2 rows)
+    static ap_uint<32> current_y = 0xFFFFFFFF;  // Track current row
+    static ap_uint<32> current_z = 0xFFFFFFFF;
+    static ap_uint<2> complete_rows = 0;        // Count complete rows
     features_stored = 0;
     ap_uint<32> request_id_counter = 0;
-#ifndef __SYNTHESIS__
-    std::cout << "Pipeline feature stage: Starting feature buffer management" << std::endl;
-#endif
     // Collect features and morton codes into batches of 16
-    while (!feature_data_in.empty() && !morton_addrs_in.empty())
-    {
+    while (!feature_data_in.empty() && !morton_addrs_in.empty() && 
+           buffer_count < MAX_FEATURES_TO_BUFFER) {
 #pragma HLS PIPELINE II = 1
 
         VoxelData voxel = feature_data_in.read();
         ap_uint<MORTON_BITS> morton_addr = morton_addrs_in.read();
 
-        // Store in local BRAM batch
-        morton_batch[batch_count] = morton_addr;
-        voxel_batch[batch_count] = voxel;
-        batch_count++;
+        row_buffer[buffer_count] = voxel;
+        morton_buffer[buffer_count] = morton_addr;
 
-        // When we have 16 items, sort and process the batch
-        if (batch_count == 16)
-        {
-            // Sort the morton codes in the BRAM
-            sort_morton_batch_16(morton_batch, voxel_batch);
+        ap_uint<32> x, y, z;
+        morton_decode(morton_addr, x, y, z);
 
-            // Process the sorted batch
-            process_sorted_batch_16(morton_batch, voxel_batch, mem_requests_out,
-                                    morton_codes_out, request_id_counter, features_stored);
-
-            // Reset for next batch
-            batch_count = 0;
+        // Detect row boundary (y or z changes)
+        if (current_y != 0xFFFFFFFF && (y != current_y || z != current_z)) {
+            complete_rows++;
+        }
+        current_y = y;
+        current_z = z;
+        
+        buffer_count++;
+        
+        // NEW: Stop when we have 2 complete rows
+        if (complete_rows >= 2) {
+            break;
         }
     }
 
-    if (batch_count > 0)
-    {
-        sort_morton_batch_16(morton_batch, voxel_batch, batch_count);
-        process_sorted_batch_16(morton_batch, voxel_batch, mem_requests_out,
-                                morton_codes_out, request_id_counter, features_stored, batch_count);
+    if (complete_rows >= 2) {
+        sort_cross_row_buffer(morton_buffer, row_buffer, buffer_count);
+        process_sorted_cross_row_buffer(morton_buffer, row_buffer, buffer_count,
+                                        mem_requests_out, morton_codes_out, 
+                                        request_id_counter, features_stored);
+        
+        // Reset for next batch
+        buffer_count = 0;
+        complete_rows = 0;
+        current_y = 0xFFFFFFFF;
+        current_z = 0xFFFFFFFF;
     }
+#else
+    features_stored = 0;
+    ap_uint<32> request_id_counter = 0;
+    
+    while (!feature_data_in.empty() && !morton_addrs_in.empty()) {
+        VoxelData voxel = feature_data_in.read();
+        ap_uint<MORTON_BITS> morton_addr = morton_addrs_in.read();
 
-#ifndef __SYNTHESIS__
-    std::cout << "Pipeline feature stage: Completed, stored " << features_stored << " features" << std::endl;
+        if (features_stored >= MAX_VOXELS_L0) {
+            break;  // Stop if buffer is full
+        }
+
+        if (!morton_codes_out.full()) {
+            morton_codes_out.write(morton_addr);
+        }
+
+        for (int f = 0; f < FEATURE_DIM; f++) {
+            MemRequest write_req;
+            write_req.morton_addr = morton_addr;
+            write_req.is_write = 1;
+            write_req.request_id = request_id_counter++;
+            write_req.should_store = 1;
+            write_req.data = *((ap_uint<32>*)&voxel.features[f]);
+            
+            if (!mem_requests_out.full()) {
+                mem_requests_out.write(write_req);
+            }
+        }
+        features_stored++;
+    }
 #endif
 }
-
-// // process incoming voxel data and store in feature buffers
-// FEATURE_PROCESSING:
-//     while (!feature_data_in.empty() && !morton_addrs_in.empty())
-//     {
-// #pragma HLS PIPELINE II = 1
-//         VoxelData voxel = feature_data_in.read();
-//         ap_uint<MORTON_BITS> morton_addr = morton_addrs_in.read();
-//         // store in local BRAM buffers if we have space
-//         if (features_stored < MAX_VOXELS_L0)
-//         {
-//             if (!morton_codes_out.full()) {
-//                 morton_codes_out.write(morton_addr);
-//             }
-//             // Generate Morton-optimized memory write requests for each feature
-//         GENERATE_MORTON_MEM_REQUESTS:
-//             for (int f = 0; f < FEATURE_DIM; f++)
-//             {
-// #pragma HLS UNROLL factor = 4
-//                 MemRequest write_req;
-//                 write_req.morton_addr = morton_addr; // Add Morton address to request
-//                 write_req.is_write = 1;
-//                 write_req.request_id = request_id_counter++;
-//                 write_req.should_store = 1;
-//                 write_req.data = *((ap_uint<32> *)&voxel.features[f]);
-
-//                 if (!mem_requests_out.full())
-//                 {
-//                     mem_requests_out.write(write_req);
-//                 }
-//                 else
-//                 {
-// #ifndef __SYNTHESIS__
-//                     std::cout << "Warning: Memory request stream full" << std::endl;
-// #endif
-//                 }
-//             }
-//             features_stored++;
-//             if (features_stored <= 5)
-//             {
-// #ifndef __SYNTHESIS__
-//                 std::cout << "Stored feature " << features_stored - 1 << " morton=0x"
-//                           << std::hex << morton_addr << std::dec << std::endl;
-// #endif
-//             }
-//         }
-//         else
-//         {
-// #ifndef __SYNTHESIS__
-//             std::cout << "Warning: Feature buffer full, dropping voxel" << std::endl;
-// #endif
-//             break;
-//         }
-//     }
-// #ifndef __SYNTHESIS__
-//     std::cout << "Pipeline feature stage: Completed, stored " << features_stored
-//               << " features, generated " << request_id_counter << " memory requests" << std::endl;
-// #endif
-// }
 /**
  * pipeline stage 3: morton reorder buffer
  * reorders memory access using morton codes for better spatial locality
@@ -790,97 +767,133 @@ void run_dataflow_pipeline(
         feature_dram_conv_write);
 }
 
-void sort_morton_batch_16(ap_uint<MORTON_BITS> morton_batch[16],
-                          VoxelData voxel_batch[16],
-                          ap_uint<5> count)
+#if ENABLE_CROSS_ROW_SORTING
+void sort_cross_row_buffer(
+     ap_uint<MORTON_BITS> morton_buffer[MAX_FEATURES_TO_BUFFER],
+    VoxelData row_buffer[MAX_FEATURES_TO_BUFFER],
+    ap_uint<6> count)
 {
-#pragma HLS INLINE off
 
-    // Simple bubble sort for 16 elements - fast enough for small batch
-SORT_OUTER:
-    for (int i = 0; i < count - 1; i++)
-    {
-        for (int j = 0; j < count - i - 1; j++)
-        {
-#pragma HLS PIPELINE II = 1
-
-            MortonAddress addr_j = extract_morton_address(morton_batch[j]);
-            MortonAddress addr_j1 = extract_morton_address(morton_batch[j + 1]);
+    SORT_OUTER_LOOP:
+    for (int i = 0; i < count - 1; i++) {
+    SORT_INNER_LOOP:
+        for (int j = 0; j < count - i - 1; j++) {
+#pragma HLS PIPELINE II=1
+            
+            // Extract Morton addresses for comparison
+            MortonAddress addr_j = extract_morton_address(morton_buffer[j]);
+            MortonAddress addr_j1 = extract_morton_address(morton_buffer[j + 1]);
 
             bool should_swap = false;
-            if (addr_j.row_bits > addr_j1.row_bits)
-            {
+            
+            // Primary sort: by row bits (for DRAM row buffer optimization)
+            if (addr_j.row_bits > addr_j1.row_bits) {
                 should_swap = true;
             }
-            else if (addr_j.row_bits == addr_j1.row_bits &&
-                     morton_batch[j] > morton_batch[j + 1])
-            {
+            // Secondary sort: within same row, sort by full Morton code
+            else if (addr_j.row_bits == addr_j1.row_bits && 
+                     morton_buffer[j] > morton_buffer[j + 1]) {
                 should_swap = true;
             }
 
-            if (should_swap)
-            {
-                // Swap both morton codes and corresponding voxel data
-                ap_uint<MORTON_BITS> temp_morton = morton_batch[j];
-                VoxelData temp_voxel = voxel_batch[j];
+            if (should_swap) {
+                // Swap Morton codes
+                ap_uint<MORTON_BITS> temp_morton = morton_buffer[j];
+                morton_buffer[j] = morton_buffer[j + 1];
+                morton_buffer[j + 1] = temp_morton;
 
-                morton_batch[j] = morton_batch[j + 1];
-                voxel_batch[j] = voxel_batch[j + 1];
-
-                morton_batch[j + 1] = temp_morton;
-                voxel_batch[j + 1] = temp_voxel;
+                // Swap corresponding voxel data
+                VoxelData temp_voxel = row_buffer[j];
+                row_buffer[j] = row_buffer[j + 1];
+                row_buffer[j + 1] = temp_voxel;
             }
         }
     }
 }
 
-// Process the sorted batch of 16
-void process_sorted_batch_16(
-    ap_uint<MORTON_BITS> morton_batch[16],
-    VoxelData voxel_batch[16],
+void process_sorted_cross_row_buffer(
+    ap_uint<MORTON_BITS> morton_buffer[MAX_FEATURES_TO_BUFFER],
+    VoxelData row_buffer[MAX_FEATURES_TO_BUFFER],
+    ap_uint<6> count,
     hls::stream<MemRequest> &mem_requests_out,
     hls::stream<ap_uint<MORTON_BITS>> &morton_codes_out,
     ap_uint<32> &request_id_counter,
-    ap_uint<32> &features_stored,
-    ap_uint<5> count)
+    ap_uint<32> &features_stored)
 {
 #pragma HLS INLINE off
+#pragma HLS ARRAY_PARTITION variable=morton_buffer complete
+#pragma HLS ARRAY_PARTITION variable=row_buffer complete
 
-    // Process each item in the sorted batch
-PROCESS_SORTED_BATCH:
-    for (int i = 0; i < count; i++)
-    {
-#pragma HLS PIPELINE II = 1
+    // Process each voxel in the sorted cross-row buffer
+PROCESS_SORTED_VOXELS:
+    for (int i = 0; i < count; i++) {
+#pragma HLS PIPELINE II=1
+#pragma HLS LOOP_TRIPCOUNT min=16 max=32
 
-        VoxelData current_voxel = voxel_batch[i];
-        ap_uint<MORTON_BITS> morton_addr = morton_batch[i];
+        VoxelData current_voxel = row_buffer[i];
+        ap_uint<MORTON_BITS> morton_addr = morton_buffer[i];
 
-        if (features_stored < MAX_VOXELS_L0)
-        {
-            // Send morton code to convolution stage
-            if (!morton_codes_out.full())
-            {
-                morton_codes_out.write(morton_addr);
-            }
-
-            // Generate memory write requests for each feature (now in sorted order)
-        GENERATE_SORTED_MEM_REQUESTS:
-            for (int f = 0; f < FEATURE_DIM; f++)
-            {
-#pragma HLS UNROLL factor = 4
-                MemRequest write_req;
-                write_req.morton_addr = morton_addr;
-                write_req.is_write = 1;
-                write_req.request_id = request_id_counter++;
-                write_req.should_store = 1;
-                write_req.data = *((ap_uint<32> *)&current_voxel.features[f]);
-
-                if (!mem_requests_out.full())
-                {
-                    mem_requests_out.write(write_req);
-                }
-            }
-            features_stored++;
+        // Bounds check
+        if (features_stored >= MAX_VOXELS_L0) {
+#ifndef __SYNTHESIS__
+            std::cout << "Warning: Feature buffer full, stopping processing" << std::endl;
+#endif
+            break;
         }
+
+        // Send Morton code to convolution stage
+        if (!morton_codes_out.full()) {
+            morton_codes_out.write(morton_addr);
+        } else {
+#ifndef __SYNTHESIS__
+            std::cout << "Warning: Morton codes output stream full" << std::endl;
+#endif
+        }
+
+        // Generate memory write requests for all features of this voxel
+        // Now in optimal Morton/row order for DRAM efficiency
+    GENERATE_FEATURE_REQUESTS:
+        for (int f = 0; f < FEATURE_DIM; f++) {
+#pragma HLS UNROLL factor=4
+            
+            MemRequest write_req;
+            write_req.morton_addr = morton_addr;
+            write_req.is_write = 1;
+            write_req.request_id = request_id_counter++;
+            write_req.should_store = 1;
+            write_req.data = *((ap_uint<32>*)&current_voxel.features[f]);
+
+            if (!mem_requests_out.full()) {
+                mem_requests_out.write(write_req);
+            } else {
+#ifndef __SYNTHESIS__
+                std::cout << "Warning: Memory request stream full at feature " 
+                          << f << " of voxel " << i << std::endl;
+#endif
+                // In case of backpressure, we might want to break or handle differently
+                break;
+            }
+        }
+
+        features_stored++;
+
+        // Debug output for first few processed items
+#ifndef __SYNTHESIS__
+        if (i < 3) {
+            ap_uint<32> x, y, z;
+            morton_decode(morton_addr, x, y, z);
+            std::cout << "Processed voxel " << i << ": ("
+                      << x << "," << y << "," << z 
+                      << ") morton=0x" << std::hex << morton_addr << std::dec
+                      << " generated " << FEATURE_DIM << " memory requests" << std::endl;
+        }
+#endif
     }
+
+#ifndef __SYNTHESIS__
+    std::cout << "Cross-row buffer processing complete: " 
+              << count << " voxels processed, " 
+              << features_stored << " total features stored" << std::endl;
+#endif
 }
+#endif  // ENABLE_CROSS_ROW_SORTING
