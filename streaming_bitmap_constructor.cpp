@@ -2,63 +2,14 @@
 #ifndef __SYNTHESIS__
 #include <iostream>
 #endif
-#define MICRO_BATCH_SIZE 16
 /**
- * Update:
- * So the path from the bitmap generator to reorder buffer (for feature write to DRAM) is okay
- * but previously, I put complete voxeldata (16 'requests') into the BRAM and attempt to sort in the BRAM
- * However, the complete voxeldata are just too large to be bubble sorted in the BRAM because it's not fast enough
- * So I have to extract the target addresses of these requests and sort them and 
- * create a mapping table to map the sorted target addresses to the addresses in the BRAM
+ * Direct voxel processing without microbatch sorting.
+ * Since data arrives in scanline order with monotonically increasing Morton codes,
+ * no sorting is needed. Cross-row sorting handles optimization for short rows.
  */
 
- void sort_micro_batch_by_morton (VoxelData micro_batch[MICRO_BATCH_SIZE],
-                                  ap_uint<5> count,
-                                  ap_uint<5> sorted_indices[MICRO_BATCH_SIZE]) {
-
-    #pragma HLS INLINE off
-
-    struct MortonIndex {
-        ap_uint<MORTON_BITS> morton;
-        ap_uint<5> index;
-    };
-
-    MortonIndex morton_pairs[MICRO_BATCH_SIZE];
-    #pragma HLS ARRAY_PARTITION variable=morton_pairs complete
-
-    // step 1 create morton index pairs
-    INIT_MORTON_PAIRS:
-    for (int i = 0; i < MICRO_BATCH_SIZE; i++) {
-        #pragma HLS UNROLL
-        morton_pairs[i].morton = micro_batch[i].morton_addr;
-        morton_pairs[i].index = i;
-    }
-
-    // step 2 bubble sort
-    BUBBLE_SORT:
-    for (int i = 0; i < MICRO_BATCH_SIZE - 1; i++) {
-        for (int j = 0; j < MICRO_BATCH_SIZE - i - 1; j++) {
-            #pragma HLS PIPELINE II=1
-            if (morton_pairs[j].morton > morton_pairs[j + 1].morton) {
-                // swap
-                MortonIndex temp = morton_pairs[j];
-                morton_pairs[j] = morton_pairs[j + 1];
-                morton_pairs[j + 1] = temp;
-            }
-        }
-    }
-
-    // step 3 output ordered results
-    OUTPUT_INDEX:
-    for (int i = 0; i < MICRO_BATCH_SIZE; i++) {
-        #pragma HLS UNROLL
-        sorted_indices[i] = morton_pairs[i].index;
-    }
-}
-void process_sorted_micro_batch(
-    VoxelData micro_batch[MICRO_BATCH_SIZE],
-    ap_uint<5> count,
-    ap_uint<5> sorted_indices[MICRO_BATCH_SIZE],
+void process_voxel(
+    VoxelData current_voxel,
     hls::stream<VoxelData> &feature_data_out,
     hls::stream<ap_uint<MORTON_BITS>> &write_addr_out,
     hls::stream<RetainedBlockInfo> &retained_blocks_out,
@@ -67,53 +18,44 @@ void process_sorted_micro_batch(
     ap_uint<32> &l0_write_pos,
     ap_uint<1> *L1_temp)
 {
-#pragma HLS INLINE off
+#pragma HLS INLINE
 
-    // Process each voxel in the sorted batch
-PROCESS_SORTED_BATCH:
-    for (int i = 0; i < count; i++)
+    if (current_voxel.occupancy)
     {
-#pragma HLS PIPELINE II = 1
-ap_uint<5> sorted_idx = sorted_indices[i];
-        VoxelData current_voxel = micro_batch[sorted_idx];
-
-        if (current_voxel.occupancy)
+        // Output feature data immediately
+        if (!feature_data_out.full() && !write_addr_out.full())
         {
-            // Output feature data immediately (now sorted by Morton/row bits)
-            if (!feature_data_out.full() && !write_addr_out.full())
-            {
-                feature_data_out.write(current_voxel);
-                write_addr_out.write(current_voxel.morton_addr);
-            }
-
-            // Update bitmaps
-            ap_uint<32> x, y, z;
-            morton_decode(current_voxel.morton_addr, x, y, z);
-
-            // Set L0 bitmap bit
-            ap_uint<32> l0_bit_idx = coord_to_idx(x, y, z, DIM_L0);
-            set_bit(L0_bitmap_pruned, l0_write_pos, 1);
-            l0_write_pos++;
-
-            // Update L1 temp bitmap
-            ap_uint<32> block_x = x / 2;
-            ap_uint<32> block_y = y / 2;
-            ap_uint<32> block_z = z / 2;
-            ap_uint<32> l1_idx = block_z * DIM_L1 * DIM_L1 + block_y * DIM_L1 + block_x;
-            L1_temp[l1_idx] = 1;
-
-            // Generate retained block info with Morton-optimized offset
-            RetainedBlockInfo retained_info;
-            retained_info.morton_code = current_voxel.morton_addr;
-            retained_info.dram_offset = calculate_voxel_base_address(current_voxel.morton_addr, retained_block_count);
-            retained_info.valid_voxels = 1; // Single voxel per entry now
-
-            if (!retained_blocks_out.full())
-            {
-                retained_blocks_out.write(retained_info);
-            }
-            retained_block_count++;
+            feature_data_out.write(current_voxel);
+            write_addr_out.write(current_voxel.morton_addr);
         }
+
+        // Update bitmaps
+        ap_uint<32> x, y, z;
+        morton_decode(current_voxel.morton_addr, x, y, z);
+
+        // Set L0 bitmap bit
+        ap_uint<32> l0_bit_idx = coord_to_idx(x, y, z, DIM_L0);
+        set_bit(L0_bitmap_pruned, l0_write_pos, 1);
+        l0_write_pos++;
+
+        // Update L1 temp bitmap
+        ap_uint<32> block_x = x / 2;
+        ap_uint<32> block_y = y / 2;
+        ap_uint<32> block_z = z / 2;
+        ap_uint<32> l1_idx = block_z * DIM_L1 * DIM_L1 + block_y * DIM_L1 + block_x;
+        L1_temp[l1_idx] = 1;
+
+        // Generate retained block info
+        RetainedBlockInfo retained_info;
+        retained_info.morton_code = current_voxel.morton_addr;
+        retained_info.dram_offset = calculate_voxel_base_address(current_voxel.morton_addr, retained_block_count);
+        retained_info.valid_voxels = 1;
+
+        if (!retained_blocks_out.full())
+        {
+            retained_blocks_out.write(retained_info);
+        }
+        retained_block_count++;
     }
 }
 
@@ -141,14 +83,11 @@ void streaming_bitmap_constructor(
 #pragma HLS INTERFACE bram port = L0_bitmap_pruned
 #pragma HLS INTERFACE s_axilite port = bitmap_info
 #pragma HLS INTERFACE s_axilite port = return
-    static VoxelData micro_batch[MICRO_BATCH_SIZE];
-    static ap_uint<5> micro_count = 0;
     static ap_uint<32> voxel_count = 0;
     static ap_uint<32> retained_block_count = 0;
     static ap_uint<32> l0_write_pos = 0;
     static ap_uint<32> l1_write_pos = 0;
     static ap_uint<32> l2_write_pos = 0;
-#pragma HLS ARRAY_PARTITION variable = micro_batch complete
     static ap_uint<1> L1_temp[DIM_L1 * DIM_L1 * DIM_L1];
     static ap_uint<1> L2_temp[DIM_L2 * DIM_L2 * DIM_L2];
     static ap_uint<1> L3_temp[1];
@@ -158,7 +97,6 @@ void streaming_bitmap_constructor(
     static ap_uint<1> initialized = 0;
     if (!initialized)
     {
-        micro_count = 0;
         voxel_count = 0;
         retained_block_count = 0;
         l0_write_pos = 0;
@@ -178,30 +116,17 @@ void streaming_bitmap_constructor(
 #ifndef __SYNTHESIS__
     std::cout << "Bitmap constructor: processing voxels, current count=" << voxel_count << std::endl;
 #endif
-MICRO_BATCH_PROCESSING:
+VOXEL_PROCESSING:
     while (voxel_count < L0_SIZE && !voxel_stream.empty())
     {
 #pragma HLS PIPELINE II = 1
-#pragma HLS DEPENDENCE variable = micro_batch inter false
         VoxelData voxel = voxel_stream.read();
         processed_input_voxels++;
-        micro_batch[micro_count] = voxel;
-        micro_count++;
         voxel_count++;
 
-        if (micro_count == MICRO_BATCH_SIZE)
-        {
-            ap_uint<5> sorted_indices[MICRO_BATCH_SIZE];
-            #pragma HLS ARRAY_PARTITION variable = sorted_indices complete
-            // Sort the micro batch by Morton code before processing
-            sort_micro_batch_by_morton(micro_batch, micro_count, sorted_indices);
-
-            // Process the sorted batch
-            process_sorted_micro_batch(micro_batch, micro_count, sorted_indices,
-                                       feature_data_out, write_addr_out, retained_blocks_out,
-                                       retained_block_count, L0_bitmap_pruned, l0_write_pos, L1_temp);
-            micro_count = 0;
-        }
+        // Process voxel directly - no batching or sorting needed
+        process_voxel(voxel, feature_data_out, write_addr_out, retained_blocks_out,
+                     retained_block_count, L0_bitmap_pruned, l0_write_pos, L1_temp);
     }
 L2_CONSTRUCTION:
     for (int l2_z = 0; l2_z < DIM_L2; l2_z++)
