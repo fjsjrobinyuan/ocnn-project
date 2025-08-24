@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'minkowski_net_14_layer_pipeline'
 ================================================================
-* Date:           Mon Aug 25 03:31:42 2025
+* Date:           Mon Aug 25 03:44:15 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        minkowski_net
@@ -492,7 +492,7 @@ The critical path consists of the following:
 
  <State 18>: 0.880ns
 The critical path consists of the following:
-	'call' operation 0 bit ('call_ln147', minkowski_net.cpp:147) to 'layer_convolution_with_persistent_accelerator' [260]  (0.880 ns)
+	'call' operation 0 bit ('call_ln147', minkowski_net.cpp:147) to 'layer_convolution_with_persistent_accelerator' [251]  (0.880 ns)
 
  <State 19>: 0.387ns
 The critical path consists of the following:
@@ -504,7 +504,7 @@ The critical path consists of the following:
 
  <State 21>: 0.880ns
 The critical path consists of the following:
-	'call' operation 0 bit ('call_ln159', minkowski_net.cpp:159) to 'layer_convolution_with_persistent_accelerator' [267]  (0.880 ns)
+	'call' operation 0 bit ('call_ln159', minkowski_net.cpp:159) to 'layer_convolution_with_persistent_accelerator' [273]  (0.880 ns)
 
  <State 22>: 3.650ns
 The critical path consists of the following:

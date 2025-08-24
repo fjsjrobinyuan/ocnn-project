@@ -410,6 +410,38 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
+define void @"arraycpy_hls.p0a262144struct.ap_uint<32>"([262144 x %"struct.ap_uint<32>"]* %dst, [262144 x %"struct.ap_uint<32>"]* readonly %src, i64 %num) local_unnamed_addr #5 {
+entry:
+  %0 = icmp eq [262144 x %"struct.ap_uint<32>"]* %src, null
+  %1 = icmp eq [262144 x %"struct.ap_uint<32>"]* %dst, null
+  %2 = or i1 %1, %0
+  br i1 %2, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  %for.loop.cond7 = icmp sgt i64 %num, 0
+  br i1 %for.loop.cond7, label %for.loop.lr.ph, label %copy.split
+
+for.loop.lr.ph:                                   ; preds = %copy
+  br label %for.loop
+
+for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
+  %for.loop.idx8 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
+  %src.addr.0.0.05 = getelementptr [262144 x %"struct.ap_uint<32>"], [262144 x %"struct.ap_uint<32>"]* %src, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
+  %dst.addr.0.0.06 = getelementptr [262144 x %"struct.ap_uint<32>"], [262144 x %"struct.ap_uint<32>"]* %dst, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
+  %3 = load i32, i32* %src.addr.0.0.05, align 4
+  store i32 %3, i32* %dst.addr.0.0.06, align 4
+  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx8, 1
+  %exitcond = icmp ne i64 %for.loop.idx.next, %num
+  br i1 %exitcond, label %for.loop, label %copy.split
+
+copy.split:                                       ; preds = %for.loop, %copy
+  br label %ret
+
+ret:                                              ; preds = %copy.split, %entry
+  ret void
+}
+
+; Function Attrs: argmemonly noinline norecurse willreturn
 define internal fastcc void @onebyonecpy_hls.p0struct.PrunedBitmapInfo(%struct.PrunedBitmapInfo* align 512 %dst, %struct.PrunedBitmapInfo* readonly %src) unnamed_addr #4 {
 entry:
   %0 = icmp eq %struct.PrunedBitmapInfo* %dst, null

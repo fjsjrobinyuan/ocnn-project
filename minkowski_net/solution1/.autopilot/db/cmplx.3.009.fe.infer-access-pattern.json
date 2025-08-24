@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 40,
-    "calls": "2 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3",
+    "calls": "2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3",
     "file": "minkowski_net.cpp",
     "fileloc": 17,
     "instructions": 169,
@@ -13,25 +13,23 @@
     "total_instructions": 37802
   },
   "1": {
-    "basicblocks": 38,
+    "basicblocks": 349,
     "calls": "",
-    "file": "streaming_bitmap_constructor.cpp",
-    "fileloc": 62,
-    "instructions": 772,
+    "file": "minkowski_net.cpp",
+    "fileloc": 204,
+    "instructions": 1291,
     "loads": {
-      "G": 27,
-      "L": 20
+      "L": 89
     },
-    "name": "streaming_bitmap_constructor",
+    "name": "layer_convolution_with_persistent_accelerator",
     "stores": {
-      "G": 17,
-      "L": 25
+      "L": 56
     },
-    "total_instructions": 1155
+    "total_instructions": 1293
   },
   "2": {
     "basicblocks": 1,
-    "calls": "1",
+    "calls": "4",
     "file": "complete_pipeline.cpp",
     "fileloc": 127,
     "instructions": 2,
@@ -48,18 +46,20 @@
     "total_instructions": 128
   },
   "4": {
-    "basicblocks": 349,
+    "basicblocks": 38,
     "calls": "",
-    "file": "minkowski_net.cpp",
-    "fileloc": 204,
-    "instructions": 1291,
+    "file": "streaming_bitmap_constructor.cpp",
+    "fileloc": 62,
+    "instructions": 772,
     "loads": {
-      "L": 89
+      "G": 27,
+      "L": 20
     },
-    "name": "layer_convolution_with_persistent_accelerator",
+    "name": "streaming_bitmap_constructor",
     "stores": {
-      "L": 56
+      "G": 17,
+      "L": 25
     },
-    "total_instructions": 1293
+    "total_instructions": 1155
   }
 }

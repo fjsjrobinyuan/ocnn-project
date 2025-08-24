@@ -6708,7 +6708,7 @@ __attribute__((sdx_kernel("minkowski_net_14_layer_pipeline", 0))) void minkowski
     PrunedBitmapInfo &bitmap_info,
     ap_uint<32> &total_processed_voxels
 ) {
-#line 47 "/home/robin/Desktop/ocnn-project/run_minkowski.tcl"
+#line 53 "/home/robin/Desktop/ocnn-project/run_minkowski.tcl"
 #pragma HLSDIRECTIVE TOP name=minkowski_net_14_layer_pipeline
 # 34 "minkowski_net.cpp"
 

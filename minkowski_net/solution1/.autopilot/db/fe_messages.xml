@@ -1155,7 +1155,7 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="./systolic_array.h:133:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="hw_add" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/robin/Desktop/ocnn-project/run_minkowski.tcl:47:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/robin/Desktop/ocnn-project/run_minkowski.tcl:53:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="minkowski_net_14_layer_pipeline" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=minkowski_net_14_layer_pipeline" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="minkowski_net.cpp:35:9" msg_body="HLS pragma dump">

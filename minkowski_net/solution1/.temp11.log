@@ -1,0 +1,24 @@
+=== 14-LAYER MINKOWSKINET TESTBENCH (CORRECTED) ===
+Generating 64³ sparse input voxels with 3 channels...
+Generated 262144 total voxels (13105 occupied, 4.99916% sparse)
+Initializing 14 layers of weights and biases...
+  Layer 1: 3 -> 16 channels, 64³ -> 64³ (Conv)
+  Layer 2: 16 -> 32 channels, 64³ -> 32³ (Conv)
+  Layer 3: 32 -> 64 channels, 32³ -> 16³ (Conv)
+  Layer 4: 64 -> 128 channels, 16³ -> 8³ (Conv)
+  Layer 5: 128 -> 256 channels, 8³ -> 4³ (Conv)
+  Layer 6: 256 -> 512 channels, 4³ -> 2³ (Conv)
+  Layer 7: 512 -> 1024 channels, 2³ -> 1³ (Conv)
+  Layer 8: 1024 -> 512 channels, 1³ -> 2³ (ConvTranspose)
+  Layer 9: 512 -> 256 channels, 2³ -> 4³ (ConvTranspose)
+  Layer 10: 256 -> 128 channels, 4³ -> 8³ (ConvTranspose)
+  Layer 11: 128 -> 64 channels, 8³ -> 16³ (ConvTranspose)
+  Layer 12: 64 -> 32 channels, 16³ -> 32³ (ConvTranspose)
+  Layer 13: 32 -> 16 channels, 32³ -> 64³ (ConvTranspose)
+  Layer 14: 16 -> 20 channels, 64³ -> 64³ (Conv)
+Allocating pruned DRAM buffers...
+Allocating persistent BRAM octree...
+
+=== RUNNING 14-LAYER MINKOWSKINET WITH PERSISTENT ACCELERATOR ===
+ERROR: A depth specification is required for interface port 'L3_bitmap' for cosimulation.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 262144
