@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'layer_convolution_with_persistent_accelerator_Outline_READ_NEIGHBOR_FEATURES'
 ================================================================
-* Date:           Mon Aug 25 03:29:03 2025
+* Date:           Mon Aug 25 03:31:38 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        minkowski_net
@@ -20,7 +20,7 @@
     +--------+---------+----------+------------+
     |  Clock |  Target | Estimated| Uncertainty|
     +--------+---------+----------+------------+
-    |ap_clk  |  6.00 ns|  4.380 ns|     1.62 ns|
+    |ap_clk  |  5.00 ns|  3.650 ns|     1.35 ns|
     +--------+---------+----------+------------+
 
 + Latency: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |   Latency (absolute)  |  Interval  | Pipeline|
     |   min   |   max   |    min    |    max    | min |  max |   Type  |
     +---------+---------+-----------+-----------+-----+------+---------+
-    |       10|     3073|  60.000 ns|  18.438 us|   10|  3073|       no|
+    |       10|     3073|  50.000 ns|  15.365 us|   10|  3073|       no|
     +---------+---------+-----------+-----------+-----+------+---------+
 
     + Detail: 
@@ -101,8 +101,8 @@ ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%gmem_write_addr = getelementptr i3
 ST_2 : Operation 18 [1/1] (0.38ns)   --->   "%store_ln273 = store i11 %add_ln273, i11 %ic" [minkowski_net.cpp:273]   --->   Operation 18 'store' 'store_ln273' <Predicate = (!icmp_ln273)> <Delay = 0.38>
 ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 19 'ret' 'ret_ln0' <Predicate = (icmp_ln273)> <Delay = 0.00>
 
-State 3 <SV = 2> <Delay = 4.38>
-ST_3 : Operation 20 [1/1] (4.38ns)   --->   "%gmem_write_addr_read = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_write_addr" [minkowski_net.cpp:276]   --->   Operation 20 'read' 'gmem_write_addr_read' <Predicate = true> <Delay = 4.38> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+State 3 <SV = 2> <Delay = 3.65>
+ST_3 : Operation 20 [1/1] (3.65ns)   --->   "%gmem_write_addr_read = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_write_addr" [minkowski_net.cpp:276]   --->   Operation 20 'read' 'gmem_write_addr_read' <Predicate = true> <Delay = 3.65> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 4 <SV = 3> <Delay = 1.20>
 ST_4 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln273 = zext i11 %ic_1" [minkowski_net.cpp:273]   --->   Operation 21 'zext' 'zext_ln273' <Predicate = true> <Delay = 0.00>
@@ -116,7 +116,7 @@ ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln273 = br void %for.inc48" [mi
 ============================================================
 + Verbose Summary: Timing violations
 ============================================================
-Target clock period: 6.000ns, clock uncertainty: 1.620ns.
+Target clock period: 5.000ns, clock uncertainty: 1.350ns.
 
  <State 1>: 0.387ns
 The critical path consists of the following:
@@ -126,12 +126,12 @@ The critical path consists of the following:
  <State 2>: 1.122ns
 The critical path consists of the following:
 	'load' operation 11 bit ('ic', minkowski_net.cpp:273) on local variable 'ic', minkowski_net.cpp:273 [13]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln273', minkowski_net.cpp:273) [14]  (0.735 ns)
+	'add' operation 11 bit ('add_ln273', minkowski_net.cpp:273) [16]  (0.735 ns)
 	'store' operation 0 bit ('store_ln273', minkowski_net.cpp:273) of variable 'add_ln273', minkowski_net.cpp:273 on local variable 'ic', minkowski_net.cpp:273 [26]  (0.387 ns)
 
- <State 3>: 4.380ns
+ <State 3>: 3.650ns
 The critical path consists of the following:
-	bus read operation ('gmem_write_addr_read', minkowski_net.cpp:276) on port 'gmem_write' (minkowski_net.cpp:276) [22]  (4.380 ns)
+	bus read operation ('gmem_write_addr_read', minkowski_net.cpp:276) on port 'gmem_write' (minkowski_net.cpp:276) [22]  (3.650 ns)
 
  <State 4>: 1.200ns
 The critical path consists of the following:

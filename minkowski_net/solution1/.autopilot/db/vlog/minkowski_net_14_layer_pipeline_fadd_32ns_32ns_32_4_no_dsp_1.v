@@ -6,7 +6,7 @@
 
 `timescale 1ns/1ps
 
-module minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1
+module minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1
 #(parameter
     ID         = 1,
     NUM_STAGE  = 3,
@@ -36,7 +36,7 @@ reg                   ce_r;
 wire [dout_WIDTH-1:0] dout_i;
 reg  [dout_WIDTH-1:0] dout_r;
 //------------------------Instantiation------------------
-minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1_ip minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1_ip_u (
+minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1_ip minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1_ip_u (
     .aclk                 ( aclk ),
     .aclken               ( aclken ),
     .s_axis_a_tvalid      ( a_tvalid ),

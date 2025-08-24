@@ -1,14 +1,14 @@
 # This script segment is generated automatically by AutoPilot
 
-set name minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_full_dsp_1
+set name minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 3 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fabric} LATENCY 3 ALLOW_PRAGMA 1
 }
 
 
-set name minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1
+set name minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_4_max_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fmul} IMPL {maxdsp} LATENCY 2 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fmul} IMPL {maxdsp} LATENCY 3 ALLOW_PRAGMA 1
 }
 
 

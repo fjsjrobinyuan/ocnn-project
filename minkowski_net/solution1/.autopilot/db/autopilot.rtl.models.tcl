@@ -14,8 +14,8 @@ set SynModuleInfo {
   {SRCNAME layer_convolution_with_persistent_accelerator_Outline_READ_NEIGHBOR_FEATURES MODELNAME layer_convolution_with_persistent_accelerator_Outline_READ_NEIGHBOR_FEATURES RTLNAME minkowski_net_14_layer_pipeline_layer_convolution_with_persistent_accelerator_Outline_READ_NEIGHBOR_FEATURES}
   {SRCNAME layer_convolution_with_persistent_accelerator MODELNAME layer_convolution_with_persistent_accelerator RTLNAME minkowski_net_14_layer_pipeline_layer_convolution_with_persistent_accelerator
     SUBMODULES {
-      {MODELNAME minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_full_dsp_1 RTLNAME minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_full_dsp_1 BINDTYPE op TYPE fadd IMPL fulldsp LATENCY 3 ALLOW_PRAGMA 1}
-      {MODELNAME minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1 RTLNAME minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1 BINDTYPE op TYPE fmul IMPL maxdsp LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1 RTLNAME minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1 BINDTYPE op TYPE fadd IMPL fabric LATENCY 3 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_4_max_dsp_1 RTLNAME minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_4_max_dsp_1 BINDTYPE op TYPE fmul IMPL maxdsp LATENCY 3 ALLOW_PRAGMA 1}
       {MODELNAME minkowski_net_14_layer_pipeline_fcmp_32ns_32ns_1_2_no_dsp_1 RTLNAME minkowski_net_14_layer_pipeline_fcmp_32ns_32ns_1_2_no_dsp_1 BINDTYPE op TYPE fcmp IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
       {MODELNAME minkowski_net_14_layer_pipeline_mul_11ns_42s_42_1_1 RTLNAME minkowski_net_14_layer_pipeline_mul_11ns_42s_42_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME minkowski_net_14_layer_pipeline_urem_60s_32ns_42_64_seq_1 RTLNAME minkowski_net_14_layer_pipeline_urem_60s_32ns_42_64_seq_1 BINDTYPE op TYPE urem IMPL auto_seq LATENCY 63 ALLOW_PRAGMA 1}

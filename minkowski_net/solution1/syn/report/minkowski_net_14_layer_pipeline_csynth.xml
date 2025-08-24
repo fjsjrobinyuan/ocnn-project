@@ -9,8 +9,8 @@
 <ProductFamily>virtexuplus</ProductFamily>
 <Part>xcu250-figd2104-2L-e</Part>
 <TopModelName>minkowski_net_14_layer_pipeline</TopModelName>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,7 +18,7 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>8.494</EstimatedClockPeriod>
+<EstimatedClockPeriod>6.330</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -33,7 +33,7 @@
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <VITIS_LOOP_96_1>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
@@ -43,24 +43,24 @@
 </InstanceList>
 </VITIS_LOOP_96_1>
 <LAYER_PROCESSING>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>14</TripCount>
 <Latency>
 <range>
-<min>65436980</min>
-<max>119033867400980</max>
+<min>65436994</min>
+<max>119033867400994</max>
 </range>
 </Latency>
 <AbsoluteTimeLatency>
 <range>
-<min>555821708</min>
-<max>1011073669703924</max>
+<min>414216172</min>
+<max>753484380648292</max>
 </range>
 </AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>4674070</min>
-<max>8502419100070</max>
+<min>4674071</min>
+<max>8502419100071</max>
 </range>
 </IterationLatency>
 <InstanceList>
@@ -92,9 +92,9 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>44</BRAM_18K>
-<DSP>50</DSP>
-<FF>49315</FF>
-<LUT>48648</LUT>
+<DSP>48</DSP>
+<FF>49338</FF>
+<LUT>48796</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

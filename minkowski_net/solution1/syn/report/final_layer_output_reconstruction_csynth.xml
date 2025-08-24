@@ -9,8 +9,8 @@
 <ProductFamily>virtexuplus</ProductFamily>
 <Part>xcu250-figd2104-2L-e</Part>
 <TopModelName>final_layer_output_reconstruction</TopModelName>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,35 +18,35 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>4.380</EstimatedClockPeriod>
+<EstimatedClockPeriod>3.650</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>10485782</Best-caseLatency>
 <Average-caseLatency>10485782</Average-caseLatency>
 <Worst-caseLatency>10485782</Worst-caseLatency>
-<Best-caseRealTimeLatency>62.915 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>62.915 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>62.915 ms</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>52.429 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>52.429 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>52.429 ms</Worst-caseRealTimeLatency>
 <Interval-min>10485782</Interval-min>
 <Interval-max>10485782</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <INIT_FULL_OUTPUT>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>5242880</TripCount>
 <Latency>5242880</Latency>
-<AbsoluteTimeLatency>31457280</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>26214400</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>2</PipelineDepth>
 <InstanceList>
 </InstanceList>
 </INIT_FULL_OUTPUT>
 <RECONSTRUCT_FULL_CUBIC_VITIS_LOOP_417_1_VITIS_LOOP_418_2>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>262144</TripCount>
 <Latency>5242894</Latency>
-<AbsoluteTimeLatency>31457364</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>26214470</AbsoluteTimeLatency>
 <PipelineII>20</PipelineII>
 <PipelineDepth>35</PipelineDepth>
 <InstanceList>
@@ -77,7 +77,7 @@
 
 <AreaEstimates>
 <Resources>
-<FF>313</FF>
+<FF>333</FF>
 <LUT>1099</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>

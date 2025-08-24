@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'minkowski_net_14_layer_pipeline'" level="0">
-<item name = "Date">Mon Aug 25 03:29:07 2025
+<item name = "Date">Mon Aug 25 03:31:44 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">minkowski_net</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">6.00 ns, 8.494 ns, 1.62 ns</column>
+<column name="ap_clk">5.00 ns, 6.330 ns, 1.35 ns</column>
 </table>
 </item>
 </section>
@@ -32,14 +32,14 @@
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="grp_pipeline_bitmap_stage_fu_462">pipeline_bitmap_stage, ?, ?, ?, ?, ?, ?, no</column>
-<column name="grp_layer_convolution_with_persistent_accelerator_fu_496">layer_convolution_with_persistent_accelerator, 4674066, 8502419100066, 39.702 ms, 7.2e+04 sec, 4674066, 8502419100066, no</column>
-<column name="grp_final_layer_output_reconstruction_fu_546">final_layer_output_reconstruction, 10485782, 10485782, 62.915 ms, 62.915 ms, 10485782, 10485782, no</column>
+<column name="grp_layer_convolution_with_persistent_accelerator_fu_496">layer_convolution_with_persistent_accelerator, 4674066, 8502419100066, 29.587 ms, 5.4e+04 sec, 4674066, 8502419100066, no</column>
+<column name="grp_final_layer_output_reconstruction_fu_543">final_layer_output_reconstruction, 10485782, 10485782, 52.429 ms, 52.429 ms, 10485782, 10485782, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- VITIS_LOOP_96_1">?, ?, 10, 3, 1, ?, yes</column>
-<column name="- LAYER_PROCESSING">65436980, 119033867400980, 4674070 ~ 8502419100070, -, -, 14, no</column>
+<column name="- LAYER_PROCESSING">65436994, 119033867400994, 4674071 ~ 8502419100071, -, -, 14, no</column>
 </table>
 </item>
 </section>
@@ -54,10 +54,10 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 215, -</column>
 <column name="FIFO">31, -, 2243, 1174, -</column>
-<column name="Instance">13, 50, 44274, 46217, 0</column>
+<column name="Instance">13, 48, 44295, 46349, 0</column>
 <column name="Memory">0, -, 40, 43, -</column>
-<column name="Multiplexer">-, -, 0, 999, -</column>
-<column name="Register">-, -, 2758, -, -</column>
+<column name="Multiplexer">-, -, 0, 1015, -</column>
+<column name="Register">-, -, 2760, -, -</column>
 <specialColumn name="Available SLR">1344, 3072, 864000, 432000, 320</specialColumn>
 <specialColumn name="Utilization SLR (%)">3, 1, 5, 11, 0</specialColumn>
 <specialColumn name="Available">5376, 12288, 3456000, 1728000, 1280</specialColumn>
@@ -69,12 +69,12 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 450, 808, 0</column>
-<column name="grp_final_layer_output_reconstruction_fu_546">final_layer_output_reconstruction, 0, 0, 313, 1099, 0</column>
+<column name="grp_final_layer_output_reconstruction_fu_543">final_layer_output_reconstruction, 0, 0, 333, 1099, 0</column>
 <column name="gmem_output_m_axi_U">gmem_output_m_axi, 1, 0, 607, 658, 0</column>
 <column name="gmem_read_m_axi_U">gmem_read_m_axi, 2, 0, 690, 717, 0</column>
 <column name="gmem_write_m_axi_U">gmem_write_m_axi, 2, 0, 699, 728, 0</column>
-<column name="grp_layer_convolution_with_persistent_accelerator_fu_496">layer_convolution_with_persistent_accelerator, 6, 50, 31201, 27911, 0</column>
-<column name="grp_pipeline_bitmap_stage_fu_462">pipeline_bitmap_stage, 2, 0, 10314, 14296, 0</column>
+<column name="grp_layer_convolution_with_persistent_accelerator_fu_496">layer_convolution_with_persistent_accelerator, 6, 48, 31141, 28025, 0</column>
+<column name="grp_pipeline_bitmap_stage_fu_462">pipeline_bitmap_stage, 2, 0, 10375, 14314, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -96,10 +96,10 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln131_fu_704_p2">+, 0, 0, 12, 4, 1</column>
-<column name="add_ln96_fu_621_p2">+, 0, 0, 71, 64, 64</column>
-<column name="pruned_voxel_count_2_fu_591_p2">+, 0, 0, 39, 32, 1</column>
-<column name="sub_ln96_fu_603_p2">-, 0, 0, 39, 32, 32</column>
+<column name="add_ln131_fu_701_p2">+, 0, 0, 12, 4, 1</column>
+<column name="add_ln96_fu_618_p2">+, 0, 0, 71, 64, 64</column>
+<column name="pruned_voxel_count_2_fu_588_p2">+, 0, 0, 39, 32, 1</column>
+<column name="sub_ln96_fu_600_p2">-, 0, 0, 39, 32, 32</column>
 <column name="ap_block_pp0_stage0_11001_grp5">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage0_11001_grp7">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage1_01001_grp1">and, 0, 0, 2, 1, 1</column>
@@ -110,16 +110,16 @@
 <column name="ap_block_state5_pp0_stage1_iter0_grp1">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state5_pp0_stage1_iter0_grp2">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state6_io_grp4">and, 0, 0, 2, 1, 1</column>
-<column name="ap_predicate_op151_read_state5">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op153_read_state5">and, 0, 0, 2, 1, 1</column>
 <column name="tmp_nbreadreq_fu_360_p3">and, 0, 0, 2, 1, 0</column>
 <column name="tmp_s_nbreadreq_fu_367_p3">and, 0, 0, 2, 1, 0</column>
-<column name="icmp_ln131_fu_698_p2">icmp, 0, 0, 12, 4, 3</column>
+<column name="icmp_ln131_fu_695_p2">icmp, 0, 0, 12, 4, 3</column>
 <column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage1_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage1_11001_grp1">or, 0, 0, 2, 1, 1</column>
-<column name="ap_block_state17_on_subcall_done">or, 0, 0, 2, 1, 1</column>
-<column name="ap_block_state19_on_subcall_done">or, 0, 0, 2, 1, 1</column>
-<column name="ap_predicate_op244_call_state17">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state18_on_subcall_done">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state21_on_subcall_done">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op232_call_state18">or, 0, 0, 2, 1, 1</column>
 <column name="ap_predicate_tran4to14_state4">or, 0, 0, 2, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
@@ -127,7 +127,7 @@
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="L2_bitmap_o">9, 2, 512, 1024</column>
-<column name="ap_NS_fsm">65, 15, 1, 15</column>
+<column name="ap_NS_fsm">81, 17, 1, 17</column>
 <column name="ap_enable_reg_pp0_iter3">9, 2, 1, 2</column>
 <column name="feature_data_stream_write">9, 2, 1, 2</column>
 <column name="gmem_output_0_AWVALID">9, 2, 1, 2</column>
@@ -206,15 +206,15 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="L0_bitmap_read_reg_755">512, 0, 512, 0</column>
-<column name="L1_bitmap_read_reg_750">512, 0, 512, 0</column>
+<column name="L0_bitmap_read_reg_752">512, 0, 512, 0</column>
+<column name="L1_bitmap_read_reg_747">512, 0, 512, 0</column>
 <column name="L2_bitmap_o_reg">512, 0, 512, 0</column>
-<column name="L3_bitmap_read_reg_745">512, 0, 512, 0</column>
-<column name="MINKOWSKI_LAYERS_input_channels_load_reg_865">11, 0, 11, 0</column>
-<column name="MINKOWSKI_LAYERS_output_channels_load_reg_870">11, 0, 11, 0</column>
-<column name="MINKOWSKI_LAYERS_output_spatial_dim_load_reg_875">7, 0, 7, 0</column>
-<column name="add_ln131_reg_841">4, 0, 4, 0</column>
-<column name="ap_CS_fsm">14, 0, 14, 0</column>
+<column name="L3_bitmap_read_reg_742">512, 0, 512, 0</column>
+<column name="MINKOWSKI_LAYERS_input_channels_load_reg_862">11, 0, 11, 0</column>
+<column name="MINKOWSKI_LAYERS_output_channels_load_reg_867">11, 0, 11, 0</column>
+<column name="MINKOWSKI_LAYERS_output_spatial_dim_load_reg_872">7, 0, 7, 0</column>
+<column name="add_ln131_reg_838">4, 0, 4, 0</column>
+<column name="ap_CS_fsm">16, 0, 16, 0</column>
 <column name="ap_block_pp0_stage0_subdone_grp5_done_reg">1, 0, 1, 0</column>
 <column name="ap_block_pp0_stage0_subdone_grp7_done_reg">1, 0, 1, 0</column>
 <column name="ap_block_pp0_stage1_subdone_grp1_done_reg">1, 0, 1, 0</column>
@@ -225,25 +225,25 @@
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
-<column name="call_ret_reg_779">160, 0, 160, 0</column>
-<column name="final_output_full_cubic_read_reg_774">64, 0, 64, 0</column>
-<column name="gmem_read_addr_reg_799">64, 0, 64, 0</column>
-<column name="grp_final_layer_output_reconstruction_fu_546_ap_start_reg">1, 0, 1, 0</column>
+<column name="call_ret_reg_776">160, 0, 160, 0</column>
+<column name="final_output_full_cubic_read_reg_771">64, 0, 64, 0</column>
+<column name="gmem_read_addr_reg_796">64, 0, 64, 0</column>
+<column name="grp_final_layer_output_reconstruction_fu_543_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_layer_convolution_with_persistent_accelerator_fu_496_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_pipeline_bitmap_stage_fu_462_ap_start_reg">1, 0, 1, 0</column>
 <column name="initial_processed_voxels_constprop">32, 0, 32, 0</column>
-<column name="layer_1_reg_834">4, 0, 4, 0</column>
+<column name="layer_1_reg_831">4, 0, 4, 0</column>
 <column name="layer_fu_292">4, 0, 4, 0</column>
-<column name="p_cast_reg_829">32, 0, 32, 0</column>
-<column name="pruned_feature_dram_read_read_reg_766">64, 0, 64, 0</column>
-<column name="pruned_feature_dram_write_read_reg_760">64, 0, 64, 0</column>
-<column name="pruned_voxel_count_1_reg_784">32, 0, 32, 0</column>
+<column name="p_cast_reg_826">32, 0, 32, 0</column>
+<column name="pruned_feature_dram_read_read_reg_763">64, 0, 64, 0</column>
+<column name="pruned_feature_dram_write_read_reg_757">64, 0, 64, 0</column>
+<column name="pruned_voxel_count_1_reg_781">32, 0, 32, 0</column>
 <column name="pruned_voxel_count_fu_280">32, 0, 32, 0</column>
-<column name="tmp_reg_791">1, 0, 1, 0</column>
-<column name="tmp_s_reg_795">1, 0, 1, 0</column>
-<column name="trunc_ln98_3_reg_817">32, 0, 32, 0</column>
-<column name="voxel_features_1_reg_812">32, 0, 32, 0</column>
-<column name="voxel_features_reg_807">32, 0, 32, 0</column>
+<column name="tmp_reg_788">1, 0, 1, 0</column>
+<column name="tmp_s_reg_792">1, 0, 1, 0</column>
+<column name="trunc_ln98_3_reg_814">32, 0, 32, 0</column>
+<column name="voxel_features_1_reg_809">32, 0, 32, 0</column>
+<column name="voxel_features_reg_804">32, 0, 32, 0</column>
 </table>
 </item>
 </section>

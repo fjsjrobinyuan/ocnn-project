@@ -9,8 +9,8 @@
 <ProductFamily>virtexuplus</ProductFamily>
 <Part>xcu250-figd2104-2L-e</Part>
 <TopModelName>layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS</TopModelName>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
 <TargetInitiationInterval>1</TargetInitiationInterval>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
@@ -26,15 +26,15 @@
 <Best-caseLatency>33</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
 <Worst-caseLatency>2049</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.198 us</Best-caseRealTimeLatency>
+<Best-caseRealTimeLatency>0.165 us</Best-caseRealTimeLatency>
 <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>12.294 us</Worst-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>10.245 us</Worst-caseRealTimeLatency>
 <Interval-min>33</Interval-min>
 <Interval-max>2049</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <INIT_OUTPUT_BIAS>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>16</min>
@@ -49,8 +49,8 @@
 </Latency>
 <AbsoluteTimeLatency>
 <range>
-<min>192</min>
-<max>12288</max>
+<min>160</min>
+<max>10240</max>
 </range>
 </AbsoluteTimeLatency>
 <IterationLatency>2</IterationLatency>

@@ -11,7 +11,7 @@ set ModuleHierarchy {[{
 			{"Name" : "L2_CONSTRUCTION_VITIS_LOOP_134_3","ID" : "6","Type" : "pipeline"},
 			{"Name" : "VITIS_LOOP_176_8","ID" : "7","Type" : "pipeline"},
 			{"Name" : "VITIS_LOOP_189_9","ID" : "8","Type" : "pipeline"},]},]},
-	{"Name" : "grp_final_layer_output_reconstruction_fu_546","ID" : "9","Type" : "sequential",
+	{"Name" : "grp_final_layer_output_reconstruction_fu_543","ID" : "9","Type" : "sequential",
 		"SubLoops" : [
 		{"Name" : "INIT_FULL_OUTPUT","ID" : "10","Type" : "pipeline"},
 		{"Name" : "RECONSTRUCT_FULL_CUBIC_VITIS_LOOP_417_1_VITIS_LOOP_418_2","ID" : "11","Type" : "pipeline"},]},],

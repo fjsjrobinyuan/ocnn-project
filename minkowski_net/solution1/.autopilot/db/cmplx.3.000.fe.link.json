@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 22,
-    "calls": "3 14 13 13 5",
+    "calls": "11 1 2 2 15",
     "file": "minkowski_net.cpp",
     "fileloc": 17,
     "instructions": 166,
@@ -17,152 +17,14 @@
   },
   "1": {
     "basicblocks": 1,
-    "calls": "",
-    "file": "octree_master.h",
-    "fileloc": 259,
-    "instructions": 36,
-    "loads": {
-      "L": 3
-    },
-    "name": "extract_morton_address",
-    "stores": {
-      "L": 3
-    },
-    "total_instructions": 220
-  },
-  "10": {
-    "basicblocks": 121,
-    "calls": "11 4 4 4",
-    "file": "streaming_bitmap_constructor.cpp",
-    "fileloc": 62,
-    "instructions": 526,
-    "loads": {
-      "G": 11,
-      "L": 19
-    },
-    "name": "streaming_bitmap_constructor",
-    "stores": {
-      "G": 17,
-      "L": 13
-    },
-    "total_instructions": 4656
-  },
-  "11": {
-    "basicblocks": 8,
-    "calls": "6 9 4 17",
-    "file": "streaming_bitmap_constructor.cpp",
-    "fileloc": 11,
-    "instructions": 202,
-    "loads": {
-      "L": 7
-    },
-    "name": "process_voxel",
-    "stores": {
-      "L": 7
-    },
-    "total_instructions": 2757
-  },
-  "12": {
-    "basicblocks": 1,
-    "calls": "16",
-    "file": "minkowski_net.pp.0.cpp",
-    "fileloc": 0,
-    "instructions": 2,
-    "name": "",
-    "total_instructions": 1461
-  },
-  "13": {
-    "basicblocks": 75,
-    "calls": "7 15",
-    "file": "minkowski_net.cpp",
-    "fileloc": 204,
-    "instructions": 391,
-    "loads": {
-      "G": 3,
-      "L": 24
-    },
-    "name": "layer_convolution_with_persistent_accelerator",
-    "stores": {
-      "L": 12
-    },
-    "total_instructions": 4969
-  },
-  "14": {
-    "basicblocks": 1,
-    "calls": "8",
+    "calls": "14",
     "file": "minkowski_net.cpp",
     "fileloc": 324,
     "instructions": 2,
     "name": "logical_bitmap_reconstruction_with_access_pointers",
     "total_instructions": 173
   },
-  "15": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "minkowski_net.cpp",
-    "fileloc": 381,
-    "instructions": 2,
-    "name": "should_use_cross_row_sorting",
-    "total_instructions": 2
-  },
-  "16": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "octree_master.h",
-    "fileloc": 132,
-    "instructions": 82,
-    "name": "__cxx_global_var_init",
-    "total_instructions": 1459
-  },
-  "17": {
-    "basicblocks": 1,
-    "calls": "1",
-    "file": "streaming_bitmap_constructor.cpp",
-    "fileloc": 312,
-    "instructions": 57,
-    "loads": {
-      "L": 1
-    },
-    "name": "calculate_voxel_base_address",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 850
-  },
-  "18": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "octree_master.h",
-    "fileloc": 158,
-    "instructions": 122,
-    "loads": {
-      "L": 5
-    },
-    "name": "part1by2",
-    "stores": {
-      "L": 5
-    },
-    "total_instructions": 918
-  },
-  "2": {
-    "basicblocks": 1,
-    "calls": "18 18 18",
-    "file": "octree_master.h",
-    "fileloc": 169,
-    "instructions": 56,
-    "name": "morton3D",
-    "total_instructions": 3112
-  },
-  "3": {
-    "basicblocks": 1,
-    "calls": "10",
-    "file": "complete_pipeline.cpp",
-    "fileloc": 127,
-    "instructions": 2,
-    "name": "pipeline_bitmap_stage",
-    "total_instructions": 4658
-  },
-  "4": {
+  "10": {
     "basicblocks": 1,
     "calls": "",
     "file": "octree_master.h",
@@ -171,22 +33,16 @@
     "name": "set_bit",
     "total_instructions": 45
   },
-  "5": {
-    "basicblocks": 34,
+  "11": {
+    "basicblocks": 1,
     "calls": "7",
-    "file": "minkowski_net.cpp",
-    "fileloc": 389,
-    "instructions": 155,
-    "loads": {
-      "L": 3
-    },
-    "name": "final_layer_output_reconstruction",
-    "stores": {
-      "L": 3
-    },
-    "total_instructions": 3867
+    "file": "complete_pipeline.cpp",
+    "fileloc": 127,
+    "instructions": 2,
+    "name": "pipeline_bitmap_stage",
+    "total_instructions": 4658
   },
-  "6": {
+  "12": {
     "basicblocks": 7,
     "calls": "",
     "file": "octree_master.h",
@@ -201,9 +57,9 @@
     },
     "total_instructions": 729
   },
-  "7": {
+  "13": {
     "basicblocks": 1,
-    "calls": "2",
+    "calls": "9",
     "file": "minkowski_net.cpp",
     "fileloc": 353,
     "instructions": 18,
@@ -213,7 +69,7 @@
     },
     "total_instructions": 3256
   },
-  "8": {
+  "14": {
     "basicblocks": 1,
     "calls": "",
     "file": "dynamic_access.cpp",
@@ -228,7 +84,46 @@
     },
     "total_instructions": 171
   },
-  "9": {
+  "15": {
+    "basicblocks": 34,
+    "calls": "13",
+    "file": "minkowski_net.cpp",
+    "fileloc": 389,
+    "instructions": 155,
+    "loads": {
+      "L": 3
+    },
+    "name": "final_layer_output_reconstruction",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 3867
+  },
+  "16": {
+    "basicblocks": 1,
+    "calls": "6",
+    "file": "minkowski_net.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 2,
+    "name": "",
+    "total_instructions": 1461
+  },
+  "17": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "octree_master.h",
+    "fileloc": 259,
+    "instructions": 36,
+    "loads": {
+      "L": 3
+    },
+    "name": "extract_morton_address",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 220
+  },
+  "18": {
     "basicblocks": 1,
     "calls": "",
     "file": "octree_master.h",
@@ -236,5 +131,110 @@
     "instructions": 6,
     "name": "coord_to_idx",
     "total_instructions": 6
+  },
+  "2": {
+    "basicblocks": 75,
+    "calls": "13 4",
+    "file": "minkowski_net.cpp",
+    "fileloc": 204,
+    "instructions": 391,
+    "loads": {
+      "G": 3,
+      "L": 24
+    },
+    "name": "layer_convolution_with_persistent_accelerator",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 4969
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "17",
+    "file": "streaming_bitmap_constructor.cpp",
+    "fileloc": 312,
+    "instructions": 57,
+    "loads": {
+      "L": 1
+    },
+    "name": "calculate_voxel_base_address",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 850
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "minkowski_net.cpp",
+    "fileloc": 381,
+    "instructions": 2,
+    "name": "should_use_cross_row_sorting",
+    "total_instructions": 2
+  },
+  "5": {
+    "basicblocks": 8,
+    "calls": "12 18 10 3",
+    "file": "streaming_bitmap_constructor.cpp",
+    "fileloc": 11,
+    "instructions": 202,
+    "loads": {
+      "L": 7
+    },
+    "name": "process_voxel",
+    "stores": {
+      "L": 7
+    },
+    "total_instructions": 2757
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "octree_master.h",
+    "fileloc": 132,
+    "instructions": 82,
+    "name": "__cxx_global_var_init",
+    "total_instructions": 1459
+  },
+  "7": {
+    "basicblocks": 121,
+    "calls": "5 10 10 10",
+    "file": "streaming_bitmap_constructor.cpp",
+    "fileloc": 62,
+    "instructions": 526,
+    "loads": {
+      "G": 11,
+      "L": 19
+    },
+    "name": "streaming_bitmap_constructor",
+    "stores": {
+      "G": 17,
+      "L": 13
+    },
+    "total_instructions": 4656
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "octree_master.h",
+    "fileloc": 158,
+    "instructions": 122,
+    "loads": {
+      "L": 5
+    },
+    "name": "part1by2",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 918
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "8 8 8",
+    "file": "octree_master.h",
+    "fileloc": 169,
+    "instructions": 56,
+    "name": "morton3D",
+    "total_instructions": 3112
   }
 }

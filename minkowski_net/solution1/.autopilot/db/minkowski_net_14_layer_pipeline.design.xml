@@ -39,10 +39,10 @@
 </InstancesList>
 </Instance>
 <Instance>
-<InstName>grp_final_layer_output_reconstruction_fu_546</InstName>
+<InstName>grp_final_layer_output_reconstruction_fu_543</InstName>
 <ModuleName>final_layer_output_reconstruction</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>546</ID>
+<ID>543</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -61,9 +61,9 @@
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
-<EstimatedClockPeriod>4.369</EstimatedClockPeriod>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
+<EstimatedClockPeriod>3.520</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>undef</Best-caseLatency>
@@ -78,10 +78,10 @@
 <SummaryOfLoopLatency>
 <VITIS_LOOP_105_1>
 <Name>VITIS_LOOP_105_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>64</TripCount>
 <Latency>64</Latency>
-<AbsoluteTimeLatency>0.384 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.320 us</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -90,10 +90,10 @@
 </VITIS_LOOP_105_1>
 <VITIS_LOOP_109_2>
 <Name>VITIS_LOOP_109_2</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>8</TripCount>
 <Latency>8</Latency>
-<AbsoluteTimeLatency>48.000 ns</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>40.000 ns</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -102,7 +102,7 @@
 </VITIS_LOOP_109_2>
 <VOXEL_PROCESSING>
 <Name>VOXEL_PROCESSING</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
@@ -114,10 +114,10 @@
 </VOXEL_PROCESSING>
 <L2_CONSTRUCTION_VITIS_LOOP_134_3>
 <Name>L2_CONSTRUCTION_VITIS_LOOP_134_3</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>4</TripCount>
 <Latency>64</Latency>
-<AbsoluteTimeLatency>0.384 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.320 us</AbsoluteTimeLatency>
 <PipelineII>16</PipelineII>
 <PipelineDepth>17</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -126,10 +126,10 @@
 </L2_CONSTRUCTION_VITIS_LOOP_134_3>
 <VITIS_LOOP_176_8>
 <Name>VITIS_LOOP_176_8</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>8</TripCount>
 <Latency>8</Latency>
-<AbsoluteTimeLatency>48.000 ns</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>40.000 ns</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>2</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -138,12 +138,12 @@
 </VITIS_LOOP_176_8>
 <VITIS_LOOP_189_9>
 <Name>VITIS_LOOP_189_9</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>8</TripCount>
 <Latency>8</Latency>
-<AbsoluteTimeLatency>48.000 ns</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>40.000 ns</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>1</PipelineDepth>
+<PipelineDepth>2</PipelineDepth>
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
@@ -198,10 +198,10 @@
 <BRAM_18K>2</BRAM_18K>
 <AVAIL_BRAM>5376</AVAIL_BRAM>
 <UTIL_BRAM>~0</UTIL_BRAM>
-<FF>7558</FF>
+<FF>7619</FF>
 <AVAIL_FF>3456000</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>14215</LUT>
+<LUT>14233</LUT>
 <AVAIL_LUT>1728000</AVAIL_LUT>
 <UTIL_LUT>~0</UTIL_LUT>
 <DSP>0</DSP>
@@ -527,9 +527,9 @@
 <Name>pipeline_bitmap_stage</Name>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
-<EstimatedClockPeriod>4.369</EstimatedClockPeriod>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
+<EstimatedClockPeriod>3.520</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>undef</Best-caseLatency>
@@ -552,10 +552,10 @@
 <BRAM_18K>2</BRAM_18K>
 <AVAIL_BRAM>5376</AVAIL_BRAM>
 <UTIL_BRAM>~0</UTIL_BRAM>
-<FF>10314</FF>
+<FF>10375</FF>
 <AVAIL_FF>3456000</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>14298</LUT>
+<LUT>14316</LUT>
 <AVAIL_LUT>1728000</AVAIL_LUT>
 <UTIL_LUT>~0</UTIL_LUT>
 <DSP>0</DSP>
@@ -884,8 +884,8 @@
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
 <TargetInitiationInterval>1</TargetInitiationInterval>
 <EstimatedClockPeriod>2.400</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
@@ -893,16 +893,16 @@
 <Best-caseLatency>33</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
 <Worst-caseLatency>2049</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.198 us</Best-caseRealTimeLatency>
+<Best-caseRealTimeLatency>0.165 us</Best-caseRealTimeLatency>
 <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>12.294 us</Worst-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>10.245 us</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>33 ~ 2049</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <INIT_OUTPUT_BIAS>
 <Name>INIT_OUTPUT_BIAS</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>16</min>
@@ -910,7 +910,7 @@
 </range>
 </TripCount>
 <Latency>32 ~ 2048</Latency>
-<AbsoluteTimeLatency>0.192 us ~ 12.288 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.160 us ~ 10.240 us</AbsoluteTimeLatency>
 <IterationLatency>2</IterationLatency>
 <PipelineDepth>2</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -1137,25 +1137,25 @@
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
 <TargetInitiationInterval>1</TargetInitiationInterval>
-<EstimatedClockPeriod>4.380</EstimatedClockPeriod>
+<EstimatedClockPeriod>3.650</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>10</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
 <Worst-caseLatency>3073</Worst-caseLatency>
-<Best-caseRealTimeLatency>60.000 ns</Best-caseRealTimeLatency>
+<Best-caseRealTimeLatency>50.000 ns</Best-caseRealTimeLatency>
 <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>18.438 us</Worst-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>15.365 us</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>10 ~ 3073</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -1163,7 +1163,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>54.000 ns ~ 18.432 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>45.000 ns ~ 15.360 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -1909,24 +1909,24 @@
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
-<EstimatedClockPeriod>8.494</EstimatedClockPeriod>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
+<EstimatedClockPeriod>6.330</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>4674066</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
 <Worst-caseLatency>8502419100066</Worst-caseLatency>
-<Best-caseRealTimeLatency>39.702 ms</Best-caseRealTimeLatency>
+<Best-caseRealTimeLatency>29.587 ms</Best-caseRealTimeLatency>
 <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>7.2e+04 sec</Worst-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>5.4e+04 sec</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>4674066 ~ 8502419100066</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <PROCESS_PRUNED_VOXELS>
 <Name>PROCESS_PRUNED_VOXELS</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>1000</min>
@@ -1934,7 +1934,7 @@
 </range>
 </TripCount>
 <Latency>4674000 ~ 8502419100000</Latency>
-<AbsoluteTimeLatency>39.701 ms ~ 7.2e+04 sec</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>29.586 ms ~ 5.4e+04 sec</AbsoluteTimeLatency>
 <IterationLatency>
 <range>
 <min>4674</min>
@@ -1949,7 +1949,7 @@
 </InstanceList>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -1957,7 +1957,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -1966,7 +1966,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -1974,7 +1974,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -1983,7 +1983,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -1991,7 +1991,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2000,7 +2000,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2008,7 +2008,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2017,7 +2017,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2025,7 +2025,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2034,7 +2034,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2042,7 +2042,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2051,7 +2051,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2059,7 +2059,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2068,7 +2068,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2076,7 +2076,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2085,7 +2085,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2093,7 +2093,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2102,7 +2102,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2110,7 +2110,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2119,7 +2119,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2127,7 +2127,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2136,7 +2136,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2144,7 +2144,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2153,7 +2153,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2161,7 +2161,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2170,7 +2170,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2178,7 +2178,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2187,7 +2187,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2195,7 +2195,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2204,7 +2204,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2212,7 +2212,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2221,7 +2221,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2229,7 +2229,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2238,7 +2238,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2246,7 +2246,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2255,7 +2255,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2263,7 +2263,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2272,7 +2272,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2280,7 +2280,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2289,7 +2289,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2297,7 +2297,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2306,7 +2306,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2314,7 +2314,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2323,7 +2323,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2331,7 +2331,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2340,7 +2340,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2348,7 +2348,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2357,7 +2357,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2365,7 +2365,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2374,7 +2374,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2382,7 +2382,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2391,7 +2391,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2399,7 +2399,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2408,7 +2408,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2416,7 +2416,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2425,7 +2425,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2433,7 +2433,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2442,7 +2442,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2450,7 +2450,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2459,7 +2459,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2467,7 +2467,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2476,7 +2476,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2484,7 +2484,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2493,7 +2493,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2501,7 +2501,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2510,7 +2510,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2518,7 +2518,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2527,7 +2527,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2535,7 +2535,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2544,7 +2544,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2552,7 +2552,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2561,7 +2561,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2569,7 +2569,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2578,7 +2578,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2586,7 +2586,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2595,7 +2595,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2603,7 +2603,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2612,7 +2612,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2620,7 +2620,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2629,7 +2629,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2637,7 +2637,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2646,7 +2646,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2654,7 +2654,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2663,7 +2663,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2671,7 +2671,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2680,7 +2680,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2688,7 +2688,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2697,7 +2697,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2705,7 +2705,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2714,7 +2714,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2722,7 +2722,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2731,7 +2731,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2739,7 +2739,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2748,7 +2748,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2756,7 +2756,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2765,7 +2765,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2773,7 +2773,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2782,7 +2782,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2790,7 +2790,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2799,7 +2799,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2807,7 +2807,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2816,7 +2816,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <READ_NEIGHBOR_FEATURES>
 <Name>READ_NEIGHBOR_FEATURES</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>3</min>
@@ -2824,7 +2824,7 @@
 </range>
 </TripCount>
 <Latency>9 ~ 3072</Latency>
-<AbsoluteTimeLatency>76.446 ns ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>56.970 ns ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2833,7 +2833,7 @@
 </READ_NEIGHBOR_FEATURES>
 <CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <Name>CONV_ACCUMULATE_VITIS_LOOP_288_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>48</min>
@@ -2841,7 +2841,7 @@
 </range>
 </TripCount>
 <Latency>150 ~ 3145734</Latency>
-<AbsoluteTimeLatency>1.274 us ~ 26.720 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.950 us ~ 19.912 ms</AbsoluteTimeLatency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>10</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2850,7 +2850,7 @@
 </CONV_ACCUMULATE_VITIS_LOOP_288_1>
 <RELU_ACTIVATION>
 <Name>RELU_ACTIVATION</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>16</min>
@@ -2858,7 +2858,7 @@
 </range>
 </TripCount>
 <Latency>48 ~ 3072</Latency>
-<AbsoluteTimeLatency>0.408 us ~ 26.094 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.304 us ~ 19.446 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>no</PipelineType>
@@ -2867,7 +2867,7 @@
 </RELU_ACTIVATION>
 <WRITE_OUTPUT_CROSS_ROW>
 <Name>WRITE_OUTPUT_CROSS_ROW</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>16</min>
@@ -2875,7 +2875,7 @@
 </range>
 </TripCount>
 <Latency>17 ~ 1025</Latency>
-<AbsoluteTimeLatency>0.144 us ~ 8.706 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.108 us ~ 6.488 us</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2884,7 +2884,7 @@
 </WRITE_OUTPUT_CROSS_ROW>
 <WRITE_OUTPUT_DIRECT>
 <Name>WRITE_OUTPUT_DIRECT</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>
 <range>
 <min>16</min>
@@ -2892,7 +2892,7 @@
 </range>
 </TripCount>
 <Latency>17 ~ 1025</Latency>
-<AbsoluteTimeLatency>0.144 us ~ 8.706 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>0.108 us ~ 6.488 us</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -3283,13 +3283,13 @@
 <BRAM_18K>6</BRAM_18K>
 <AVAIL_BRAM>5376</AVAIL_BRAM>
 <UTIL_BRAM>~0</UTIL_BRAM>
-<DSP>50</DSP>
+<DSP>48</DSP>
 <AVAIL_DSP>12288</AVAIL_DSP>
 <UTIL_DSP>~0</UTIL_DSP>
-<FF>31201</FF>
+<FF>31141</FF>
 <AVAIL_FF>3456000</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>27911</LUT>
+<LUT>28025</LUT>
 <AVAIL_LUT>1728000</AVAIL_LUT>
 <UTIL_LUT>1</UTIL_LUT>
 <URAM>0</URAM>
@@ -4573,27 +4573,27 @@
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
-<EstimatedClockPeriod>4.380</EstimatedClockPeriod>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
+<EstimatedClockPeriod>3.650</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>10485782</Best-caseLatency>
 <Average-caseLatency>10485782</Average-caseLatency>
 <Worst-caseLatency>10485782</Worst-caseLatency>
-<Best-caseRealTimeLatency>62.915 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>62.915 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>62.915 ms</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>52.429 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>52.429 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>52.429 ms</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>10485782</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <INIT_FULL_OUTPUT>
 <Name>INIT_FULL_OUTPUT</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>5242880</TripCount>
 <Latency>5242880</Latency>
-<AbsoluteTimeLatency>31.457 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>26.214 ms</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>2</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -4602,10 +4602,10 @@
 </INIT_FULL_OUTPUT>
 <RECONSTRUCT_FULL_CUBIC_VITIS_LOOP_417_1_VITIS_LOOP_418_2>
 <Name>RECONSTRUCT_FULL_CUBIC_VITIS_LOOP_417_1_VITIS_LOOP_418_2</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>262144</TripCount>
 <Latency>5242894</Latency>
-<AbsoluteTimeLatency>31.457 ms</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>26.214 ms</AbsoluteTimeLatency>
 <PipelineII>20</PipelineII>
 <PipelineDepth>35</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -4636,7 +4636,7 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<FF>313</FF>
+<FF>333</FF>
 <AVAIL_FF>3456000</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
 <LUT>1101</LUT>
@@ -5775,9 +5775,9 @@
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
-<TargetClockPeriod>6.00</TargetClockPeriod>
-<ClockUncertainty>1.62</ClockUncertainty>
-<EstimatedClockPeriod>8.494</EstimatedClockPeriod>
+<TargetClockPeriod>5.00</TargetClockPeriod>
+<ClockUncertainty>1.35</ClockUncertainty>
+<EstimatedClockPeriod>6.330</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>undef</Best-caseLatency>
@@ -5792,7 +5792,7 @@
 <SummaryOfLoopLatency>
 <VITIS_LOOP_96_1>
 <Name>VITIS_LOOP_96_1</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
@@ -5804,17 +5804,17 @@
 </VITIS_LOOP_96_1>
 <LAYER_PROCESSING>
 <Name>LAYER_PROCESSING</Name>
-<Slack>4.38</Slack>
+<Slack>3.65</Slack>
 <TripCount>14</TripCount>
-<Latency>65436980 ~ 119033867400980</Latency>
-<AbsoluteTimeLatency>0.556 sec ~ 1.0e+06 sec</AbsoluteTimeLatency>
+<Latency>65436994 ~ 119033867400994</Latency>
+<AbsoluteTimeLatency>0.414 sec ~ 7.5e+05 sec</AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>4674070</min>
-<max>8502419100070</max>
+<min>4674071</min>
+<max>8502419100071</max>
 </range>
 </IterationLatency>
-<PipelineDepth>4674070 ~ 8502419100070</PipelineDepth>
+<PipelineDepth>4674071 ~ 8502419100071</PipelineDepth>
 <PipelineType>no</PipelineType>
 <InstanceList>
 <Instance>grp_layer_convolution_with_persistent_accelerator_fu_496</Instance>
@@ -5847,13 +5847,13 @@
 <BRAM_18K>44</BRAM_18K>
 <AVAIL_BRAM>5376</AVAIL_BRAM>
 <UTIL_BRAM>~0</UTIL_BRAM>
-<DSP>50</DSP>
+<DSP>48</DSP>
 <AVAIL_DSP>12288</AVAIL_DSP>
 <UTIL_DSP>~0</UTIL_DSP>
-<FF>49315</FF>
+<FF>49338</FF>
 <AVAIL_FF>3456000</AVAIL_FF>
 <UTIL_FF>1</UTIL_FF>
-<LUT>48654</LUT>
+<LUT>48802</LUT>
 <AVAIL_LUT>1728000</AVAIL_LUT>
 <UTIL_LUT>2</UTIL_LUT>
 <URAM>0</URAM>

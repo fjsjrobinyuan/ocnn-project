@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'pipeline_bitmap_stage'" level="0">
-<item name = "Date">Mon Aug 25 03:29:06 2025
+<item name = "Date">Mon Aug 25 03:31:42 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">minkowski_net</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">6.00 ns, 4.369 ns, 1.62 ns</column>
+<column name="ap_clk">5.00 ns, 3.520 ns, 1.35 ns</column>
 </table>
 </item>
 </section>
@@ -50,7 +50,7 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, -, -, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">2, -, 7558, 14213, -</column>
+<column name="Instance">2, -, 7619, 14231, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 83, -</column>
 <column name="Register">-, -, 2756, -, -</column>
@@ -64,7 +64,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_streaming_bitmap_constructor_fu_74">streaming_bitmap_constructor, 2, 0, 7558, 14213, 0</column>
+<column name="grp_streaming_bitmap_constructor_fu_74">streaming_bitmap_constructor, 2, 0, 7619, 14231, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">

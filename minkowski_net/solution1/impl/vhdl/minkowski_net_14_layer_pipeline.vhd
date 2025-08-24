@@ -418,23 +418,25 @@ end;
 architecture behav of minkowski_net_14_layer_pipeline is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "minkowski_net_14_layer_pipeline_minkowski_net_14_layer_pipeline,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcu250-figd2104-2L-e,HLS_INPUT_CLOCK=6.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.494000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=44,HLS_SYN_DSP=0,HLS_SYN_FF=49315,HLS_SYN_LUT=48648,HLS_VERSION=2024_2}";
+    "minkowski_net_14_layer_pipeline_minkowski_net_14_layer_pipeline,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcu250-figd2104-2L-e,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.330000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=44,HLS_SYN_DSP=0,HLS_SYN_FF=49338,HLS_SYN_LUT=48796,HLS_VERSION=2024_2}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (13 downto 0) := "00000000000001";
-    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (13 downto 0) := "00000000000010";
-    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (13 downto 0) := "00000000000100";
-    constant ap_ST_fsm_pp0_stage0 : STD_LOGIC_VECTOR (13 downto 0) := "00000000001000";
-    constant ap_ST_fsm_pp0_stage1 : STD_LOGIC_VECTOR (13 downto 0) := "00000000010000";
-    constant ap_ST_fsm_pp0_stage2 : STD_LOGIC_VECTOR (13 downto 0) := "00000000100000";
-    constant ap_ST_fsm_state14 : STD_LOGIC_VECTOR (13 downto 0) := "00000001000000";
-    constant ap_ST_fsm_state15 : STD_LOGIC_VECTOR (13 downto 0) := "00000010000000";
-    constant ap_ST_fsm_state16 : STD_LOGIC_VECTOR (13 downto 0) := "00000100000000";
-    constant ap_ST_fsm_state17 : STD_LOGIC_VECTOR (13 downto 0) := "00001000000000";
-    constant ap_ST_fsm_state18 : STD_LOGIC_VECTOR (13 downto 0) := "00010000000000";
-    constant ap_ST_fsm_state19 : STD_LOGIC_VECTOR (13 downto 0) := "00100000000000";
-    constant ap_ST_fsm_state20 : STD_LOGIC_VECTOR (13 downto 0) := "01000000000000";
-    constant ap_ST_fsm_state21 : STD_LOGIC_VECTOR (13 downto 0) := "10000000000000";
+    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000001";
+    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000010";
+    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000100";
+    constant ap_ST_fsm_pp0_stage0 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000001000";
+    constant ap_ST_fsm_pp0_stage1 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000010000";
+    constant ap_ST_fsm_pp0_stage2 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000100000";
+    constant ap_ST_fsm_state14 : STD_LOGIC_VECTOR (15 downto 0) := "0000000001000000";
+    constant ap_ST_fsm_state15 : STD_LOGIC_VECTOR (15 downto 0) := "0000000010000000";
+    constant ap_ST_fsm_state16 : STD_LOGIC_VECTOR (15 downto 0) := "0000000100000000";
+    constant ap_ST_fsm_state17 : STD_LOGIC_VECTOR (15 downto 0) := "0000001000000000";
+    constant ap_ST_fsm_state18 : STD_LOGIC_VECTOR (15 downto 0) := "0000010000000000";
+    constant ap_ST_fsm_state19 : STD_LOGIC_VECTOR (15 downto 0) := "0000100000000000";
+    constant ap_ST_fsm_state20 : STD_LOGIC_VECTOR (15 downto 0) := "0001000000000000";
+    constant ap_ST_fsm_state21 : STD_LOGIC_VECTOR (15 downto 0) := "0010000000000000";
+    constant ap_ST_fsm_state22 : STD_LOGIC_VECTOR (15 downto 0) := "0100000000000000";
+    constant ap_ST_fsm_state23 : STD_LOGIC_VECTOR (15 downto 0) := "1000000000000000";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_lv32_4 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000100";
@@ -450,6 +452,7 @@ architecture behav of minkowski_net_14_layer_pipeline is
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
+    constant ap_const_lv32_9 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001001";
     constant ap_const_lv4_C : STD_LOGIC_VECTOR (3 downto 0) := "1100";
     constant ap_const_lv4_B : STD_LOGIC_VECTOR (3 downto 0) := "1011";
     constant ap_const_lv4_A : STD_LOGIC_VECTOR (3 downto 0) := "1010";
@@ -466,13 +469,14 @@ architecture behav of minkowski_net_14_layer_pipeline is
     constant ap_const_lv4_F : STD_LOGIC_VECTOR (3 downto 0) := "1111";
     constant ap_const_lv4_E : STD_LOGIC_VECTOR (3 downto 0) := "1110";
     constant ap_const_lv4_D : STD_LOGIC_VECTOR (3 downto 0) := "1101";
-    constant ap_const_lv32_9 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001001";
-    constant ap_const_lv32_B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001011";
     constant ap_const_lv32_C : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001100";
+    constant ap_const_lv32_A : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001010";
     constant ap_const_lv32_D : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001101";
+    constant ap_const_lv32_E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001110";
+    constant ap_const_lv32_F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001111";
     constant ap_const_lv64_3 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000011";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
-    constant ap_const_lv32_A : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001010";
+    constant ap_const_lv32_B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001011";
     constant ap_const_lv32_3F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111111";
     constant ap_const_lv32_20 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100000";
     constant ap_const_lv32_21 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100001";
@@ -489,7 +493,7 @@ architecture behav of minkowski_net_14_layer_pipeline is
     signal ap_start : STD_LOGIC;
     signal ap_done : STD_LOGIC;
     signal ap_idle : STD_LOGIC;
-    signal ap_CS_fsm : STD_LOGIC_VECTOR (13 downto 0) := "00000000000001";
+    signal ap_CS_fsm : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000001";
     attribute fsm_encoding : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
@@ -541,8 +545,8 @@ architecture behav of minkowski_net_14_layer_pipeline is
     signal write_addr_stream_empty_n : STD_LOGIC;
     signal write_addr_stream_read : STD_LOGIC;
     signal ap_block_pp0_stage1_grp3 : BOOLEAN;
-    signal tmp_reg_791 : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_s_reg_795 : STD_LOGIC_VECTOR (0 downto 0);
+    signal tmp_reg_788 : STD_LOGIC_VECTOR (0 downto 0);
+    signal tmp_s_reg_792 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_block_pp0_stage1_subdone_grp3_done_reg : BOOLEAN := false;
     signal ap_block_pp0_stage1_subdone_grp3 : BOOLEAN;
     signal ap_block_pp0_stage1_subdone : BOOLEAN;
@@ -565,46 +569,46 @@ architecture behav of minkowski_net_14_layer_pipeline is
     signal ap_block_pp0_stage0_grp7 : BOOLEAN;
     signal ap_block_pp0_stage0_subdone_grp7_done_reg : BOOLEAN := false;
     signal ap_block_pp0_stage0_subdone_grp7 : BOOLEAN;
-    signal L3_bitmap_read_reg_745 : STD_LOGIC_VECTOR (511 downto 0);
+    signal L3_bitmap_read_reg_742 : STD_LOGIC_VECTOR (511 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal L1_bitmap_read_reg_750 : STD_LOGIC_VECTOR (511 downto 0);
-    signal L0_bitmap_read_reg_755 : STD_LOGIC_VECTOR (511 downto 0);
-    signal pruned_feature_dram_write_read_reg_760 : STD_LOGIC_VECTOR (63 downto 0);
+    signal L1_bitmap_read_reg_747 : STD_LOGIC_VECTOR (511 downto 0);
+    signal L0_bitmap_read_reg_752 : STD_LOGIC_VECTOR (511 downto 0);
+    signal pruned_feature_dram_write_read_reg_757 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
-    signal pruned_feature_dram_read_read_reg_766 : STD_LOGIC_VECTOR (63 downto 0);
-    signal final_output_full_cubic_read_reg_774 : STD_LOGIC_VECTOR (63 downto 0);
-    signal call_ret_reg_779 : STD_LOGIC_VECTOR (159 downto 0);
-    signal pruned_voxel_count_1_reg_784 : STD_LOGIC_VECTOR (31 downto 0);
+    signal pruned_feature_dram_read_read_reg_763 : STD_LOGIC_VECTOR (63 downto 0);
+    signal final_output_full_cubic_read_reg_771 : STD_LOGIC_VECTOR (63 downto 0);
+    signal call_ret_reg_776 : STD_LOGIC_VECTOR (159 downto 0);
+    signal pruned_voxel_count_1_reg_781 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_block_pp0_stage0_11001 : BOOLEAN;
     signal tmp_nbreadreq_fu_360_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal tmp_s_nbreadreq_fu_367_p3 : STD_LOGIC_VECTOR (0 downto 0);
-    signal gmem_read_addr_reg_799 : STD_LOGIC_VECTOR (63 downto 0);
-    signal voxel_features_reg_807 : STD_LOGIC_VECTOR (31 downto 0);
-    signal ap_predicate_op151_read_state5 : BOOLEAN;
+    signal gmem_read_addr_reg_796 : STD_LOGIC_VECTOR (63 downto 0);
+    signal voxel_features_reg_804 : STD_LOGIC_VECTOR (31 downto 0);
+    signal ap_predicate_op153_read_state5 : BOOLEAN;
     signal ap_block_state5_pp0_stage1_iter0_grp1 : BOOLEAN;
     signal ap_block_pp0_stage1_11001_grp1 : BOOLEAN;
-    signal voxel_features_1_reg_812 : STD_LOGIC_VECTOR (31 downto 0);
-    signal trunc_ln98_3_reg_817 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_cast_reg_829 : STD_LOGIC_VECTOR (31 downto 0);
+    signal voxel_features_1_reg_809 : STD_LOGIC_VECTOR (31 downto 0);
+    signal trunc_ln98_3_reg_814 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_cast_reg_826 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state14 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state14 : signal is "none";
-    signal layer_1_reg_834 : STD_LOGIC_VECTOR (3 downto 0);
+    signal layer_1_reg_831 : STD_LOGIC_VECTOR (3 downto 0);
     signal ap_CS_fsm_state15 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state15 : signal is "none";
-    signal add_ln131_fu_704_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal add_ln131_reg_841 : STD_LOGIC_VECTOR (3 downto 0);
-    signal trunc_ln146_fu_717_p1 : STD_LOGIC_VECTOR (0 downto 0);
+    signal add_ln131_fu_701_p2 : STD_LOGIC_VECTOR (3 downto 0);
+    signal add_ln131_reg_838 : STD_LOGIC_VECTOR (3 downto 0);
+    signal trunc_ln146_fu_714_p1 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state16 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state16 : signal is "none";
-    signal MINKOWSKI_LAYERS_input_channels_load_reg_865 : STD_LOGIC_VECTOR (10 downto 0);
-    signal MINKOWSKI_LAYERS_output_channels_load_reg_870 : STD_LOGIC_VECTOR (10 downto 0);
-    signal MINKOWSKI_LAYERS_output_spatial_dim_load_reg_875 : STD_LOGIC_VECTOR (6 downto 0);
+    signal MINKOWSKI_LAYERS_input_channels_load_reg_862 : STD_LOGIC_VECTOR (10 downto 0);
+    signal MINKOWSKI_LAYERS_output_channels_load_reg_867 : STD_LOGIC_VECTOR (10 downto 0);
+    signal MINKOWSKI_LAYERS_output_spatial_dim_load_reg_872 : STD_LOGIC_VECTOR (6 downto 0);
     signal grp_pipeline_bitmap_stage_fu_462_ap_done : STD_LOGIC;
     signal ap_predicate_tran4to14_state4 : BOOLEAN;
     signal ap_condition_pp0_exit_iter0_state4 : STD_LOGIC;
-    signal ap_predicate_op157_write_state6 : BOOLEAN;
+    signal ap_predicate_op159_write_state6 : BOOLEAN;
     signal ap_block_state6_io_grp4 : BOOLEAN;
     signal ap_block_pp0_stage2_subdone : BOOLEAN;
     signal ap_enable_reg_pp0_iter2 : STD_LOGIC := '0';
@@ -718,74 +722,74 @@ architecture behav of minkowski_net_14_layer_pipeline is
     signal grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BID : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_write : STD_LOGIC_VECTOR (63 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_ap_start : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_ap_done : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_ap_idle : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_ap_ready : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWVALID : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WVALID : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WDATA : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WLAST : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARVALID : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_RREADY : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_BREADY : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWVALID : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WVALID : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WDATA : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WLAST : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARVALID : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_RREADY : STD_LOGIC;
-    signal grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_BREADY : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_ap_start : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_ap_done : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_ap_idle : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_ap_ready : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWVALID : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WVALID : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WLAST : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARVALID : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_RREADY : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_BREADY : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWVALID : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WVALID : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WLAST : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARVALID : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_RREADY : STD_LOGIC;
+    signal grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_BREADY : STD_LOGIC;
     signal gmem_output_0_AWVALID : STD_LOGIC;
     signal gmem_output_0_AWREADY : STD_LOGIC;
     signal gmem_output_0_WVALID : STD_LOGIC;
@@ -820,18 +824,22 @@ architecture behav of minkowski_net_14_layer_pipeline is
     signal grp_layer_convolution_with_persistent_accelerator_fu_496_ap_start_reg : STD_LOGIC := '0';
     signal ap_CS_fsm_state17 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state17 : signal is "none";
-    signal ap_CS_fsm_state19 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state19 : signal is "none";
-    signal grp_final_layer_output_reconstruction_fu_546_ap_start_reg : STD_LOGIC := '0';
     signal ap_CS_fsm_state20 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state20 : signal is "none";
+    signal ap_CS_fsm_state18 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state18 : signal is "none";
     signal ap_CS_fsm_state21 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state21 : signal is "none";
-    signal zext_ln131_fu_710_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal icmp_ln131_fu_698_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal sext_ln107_fu_636_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_final_layer_output_reconstruction_fu_543_ap_start_reg : STD_LOGIC := '0';
+    signal ap_CS_fsm_state22 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state22 : signal is "none";
+    signal ap_CS_fsm_state23 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state23 : signal is "none";
+    signal zext_ln131_fu_707_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal icmp_ln131_fu_695_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal sext_ln107_fu_633_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_block_pp0_stage0 : BOOLEAN;
-    signal ap_predicate_op156_writereq_state5 : BOOLEAN;
+    signal ap_predicate_op158_writereq_state5 : BOOLEAN;
     signal ap_block_state5_io_grp3 : BOOLEAN;
     signal ap_block_pp0_stage1_11001_grp3 : BOOLEAN;
     signal ap_block_pp0_stage0_11001_grp7 : BOOLEAN;
@@ -841,11 +849,11 @@ architecture behav of minkowski_net_14_layer_pipeline is
     signal ap_block_pp0_stage0_01001_grp5 : BOOLEAN;
     signal ap_block_pp0_stage1_01001_grp1 : BOOLEAN;
     signal pruned_voxel_count_fu_280 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
-    signal pruned_voxel_count_2_fu_591_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal pruned_voxel_count_2_fu_588_p2 : STD_LOGIC_VECTOR (31 downto 0);
     signal layer_fu_292 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
-    signal ap_CS_fsm_state18 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state18 : signal is "none";
-    signal ap_predicate_op155_read_state5 : BOOLEAN;
+    signal ap_CS_fsm_state19 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state19 : signal is "none";
+    signal ap_predicate_op157_read_state5 : BOOLEAN;
     signal ap_block_state5_pp0_stage1_iter0_grp2 : BOOLEAN;
     signal ap_block_pp0_stage1_subdone_grp2_done_reg : BOOLEAN := false;
     signal ap_block_pp0_stage1_subdone_grp2 : BOOLEAN;
@@ -853,28 +861,30 @@ architecture behav of minkowski_net_14_layer_pipeline is
     signal MINKOWSKI_LAYERS_input_channels_ce0_local : STD_LOGIC;
     signal MINKOWSKI_LAYERS_output_channels_ce0_local : STD_LOGIC;
     signal MINKOWSKI_LAYERS_output_spatial_dim_ce0_local : STD_LOGIC;
-    signal shl_ln96_fu_597_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sub_ln96_fu_603_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln_fu_609_p3 : STD_LOGIC_VECTOR (33 downto 0);
-    signal zext_ln96_fu_617_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal add_ln96_fu_621_p2 : STD_LOGIC_VECTOR (63 downto 0);
-    signal trunc_ln_fu_626_p4 : STD_LOGIC_VECTOR (61 downto 0);
-    signal ap_NS_fsm : STD_LOGIC_VECTOR (13 downto 0);
+    signal shl_ln96_fu_594_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal sub_ln96_fu_600_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal shl_ln_fu_606_p3 : STD_LOGIC_VECTOR (33 downto 0);
+    signal zext_ln96_fu_614_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal add_ln96_fu_618_p2 : STD_LOGIC_VECTOR (63 downto 0);
+    signal trunc_ln_fu_623_p4 : STD_LOGIC_VECTOR (61 downto 0);
+    signal ap_NS_fsm : STD_LOGIC_VECTOR (15 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
     signal ap_ST_fsm_state3_blk : STD_LOGIC;
     signal ap_ST_fsm_state14_blk : STD_LOGIC;
     signal ap_ST_fsm_state15_blk : STD_LOGIC;
     signal ap_ST_fsm_state16_blk : STD_LOGIC;
-    signal ap_predicate_op244_call_state17 : BOOLEAN;
-    signal ap_block_state17_on_subcall_done : BOOLEAN;
     signal ap_ST_fsm_state17_blk : STD_LOGIC;
+    signal ap_predicate_op232_call_state18 : BOOLEAN;
+    signal ap_block_state18_on_subcall_done : BOOLEAN;
     signal ap_ST_fsm_state18_blk : STD_LOGIC;
-    signal ap_predicate_op276_call_state19 : BOOLEAN;
-    signal ap_block_state19_on_subcall_done : BOOLEAN;
     signal ap_ST_fsm_state19_blk : STD_LOGIC;
     signal ap_ST_fsm_state20_blk : STD_LOGIC;
+    signal ap_predicate_op278_call_state21 : BOOLEAN;
+    signal ap_block_state21_on_subcall_done : BOOLEAN;
     signal ap_ST_fsm_state21_blk : STD_LOGIC;
+    signal ap_ST_fsm_state22_blk : STD_LOGIC;
+    signal ap_ST_fsm_state23_blk : STD_LOGIC;
     signal ap_block_pp0_stage1_11001 : BOOLEAN;
     signal ap_block_pp0_stage2_11001 : BOOLEAN;
     signal ap_idle_pp0 : STD_LOGIC;
@@ -1583,12 +1593,12 @@ begin
         write_addr_stream_din => grp_pipeline_bitmap_stage_fu_462_write_addr_stream_din,
         write_addr_stream_full_n => write_addr_stream_full_n,
         write_addr_stream_write => grp_pipeline_bitmap_stage_fu_462_write_addr_stream_write,
-        L3_bitmap_read => L3_bitmap_read_reg_745,
+        L3_bitmap_read => L3_bitmap_read_reg_742,
         L2_bitmap_i => L2_bitmap_i,
         L2_bitmap_o => grp_pipeline_bitmap_stage_fu_462_L2_bitmap_o,
         L2_bitmap_o_ap_vld => grp_pipeline_bitmap_stage_fu_462_L2_bitmap_o_ap_vld,
-        L1_bitmap_read => L1_bitmap_read_reg_750,
-        L0_bitmap_read => L0_bitmap_read_reg_755,
+        L1_bitmap_read => L1_bitmap_read_reg_747,
+        L0_bitmap_read => L0_bitmap_read_reg_752,
         initial_processed_voxels_constprop_i => initial_processed_voxels_constprop,
         initial_processed_voxels_constprop_o => grp_pipeline_bitmap_stage_fu_462_initial_processed_voxels_constprop_o,
         initial_processed_voxels_constprop_o_ap_vld => grp_pipeline_bitmap_stage_fu_462_initial_processed_voxels_constprop_o_ap_vld,
@@ -1605,9 +1615,9 @@ begin
         ap_done => grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done,
         ap_idle => grp_layer_convolution_with_persistent_accelerator_fu_496_ap_idle,
         ap_ready => grp_layer_convolution_with_persistent_accelerator_fu_496_ap_ready,
-        config_input_channels_val => MINKOWSKI_LAYERS_input_channels_load_reg_865,
-        config_output_channels_val => MINKOWSKI_LAYERS_output_channels_load_reg_870,
-        config_output_spatial_dim_val => MINKOWSKI_LAYERS_output_spatial_dim_load_reg_875,
+        config_input_channels_val => MINKOWSKI_LAYERS_input_channels_load_reg_862,
+        config_output_channels_val => MINKOWSKI_LAYERS_output_channels_load_reg_867,
+        config_output_spatial_dim_val => MINKOWSKI_LAYERS_output_spatial_dim_load_reg_872,
         layer_weights_12_Addr_A => grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Addr_A,
         layer_weights_12_EN_A => grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A,
         layer_weights_12_WEN_A => grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_WEN_A,
@@ -1618,7 +1628,7 @@ begin
         layer_biases_12_WEN_A => grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_WEN_A,
         layer_biases_12_Din_A => grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Din_A,
         layer_biases_12_Dout_A => grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A,
-        bitmap_info_0_4_0_0_0_val => p_cast_reg_829,
+        bitmap_info_0_4_0_0_0_val => p_cast_reg_826,
         m_axi_gmem_write_0_AWVALID => grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_AWVALID,
         m_axi_gmem_write_0_AWREADY => ap_const_logic_0,
         m_axi_gmem_write_0_AWADDR => grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_AWADDR,
@@ -1713,51 +1723,51 @@ begin
         m_axi_gmem_read_0_BID => grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BID,
         m_axi_gmem_read_0_BUSER => grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BUSER,
         pruned_dram_write => grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_write,
-        num_pruned_voxels => pruned_voxel_count_1_reg_784);
+        num_pruned_voxels => pruned_voxel_count_1_reg_781);
 
-    grp_final_layer_output_reconstruction_fu_546 : component minkowski_net_14_layer_pipeline_final_layer_output_reconstruction
+    grp_final_layer_output_reconstruction_fu_543 : component minkowski_net_14_layer_pipeline_final_layer_output_reconstruction
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
-        ap_start => grp_final_layer_output_reconstruction_fu_546_ap_start,
-        ap_done => grp_final_layer_output_reconstruction_fu_546_ap_done,
-        ap_idle => grp_final_layer_output_reconstruction_fu_546_ap_idle,
-        ap_ready => grp_final_layer_output_reconstruction_fu_546_ap_ready,
-        m_axi_gmem_read_0_AWVALID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWVALID,
+        ap_start => grp_final_layer_output_reconstruction_fu_543_ap_start,
+        ap_done => grp_final_layer_output_reconstruction_fu_543_ap_done,
+        ap_idle => grp_final_layer_output_reconstruction_fu_543_ap_idle,
+        ap_ready => grp_final_layer_output_reconstruction_fu_543_ap_ready,
+        m_axi_gmem_read_0_AWVALID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWVALID,
         m_axi_gmem_read_0_AWREADY => ap_const_logic_0,
-        m_axi_gmem_read_0_AWADDR => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWADDR,
-        m_axi_gmem_read_0_AWID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWID,
-        m_axi_gmem_read_0_AWLEN => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWLEN,
-        m_axi_gmem_read_0_AWSIZE => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWSIZE,
-        m_axi_gmem_read_0_AWBURST => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWBURST,
-        m_axi_gmem_read_0_AWLOCK => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWLOCK,
-        m_axi_gmem_read_0_AWCACHE => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWCACHE,
-        m_axi_gmem_read_0_AWPROT => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWPROT,
-        m_axi_gmem_read_0_AWQOS => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWQOS,
-        m_axi_gmem_read_0_AWREGION => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWREGION,
-        m_axi_gmem_read_0_AWUSER => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_AWUSER,
-        m_axi_gmem_read_0_WVALID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WVALID,
+        m_axi_gmem_read_0_AWADDR => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWADDR,
+        m_axi_gmem_read_0_AWID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWID,
+        m_axi_gmem_read_0_AWLEN => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWLEN,
+        m_axi_gmem_read_0_AWSIZE => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWSIZE,
+        m_axi_gmem_read_0_AWBURST => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWBURST,
+        m_axi_gmem_read_0_AWLOCK => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWLOCK,
+        m_axi_gmem_read_0_AWCACHE => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWCACHE,
+        m_axi_gmem_read_0_AWPROT => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWPROT,
+        m_axi_gmem_read_0_AWQOS => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWQOS,
+        m_axi_gmem_read_0_AWREGION => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWREGION,
+        m_axi_gmem_read_0_AWUSER => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_AWUSER,
+        m_axi_gmem_read_0_WVALID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WVALID,
         m_axi_gmem_read_0_WREADY => ap_const_logic_0,
-        m_axi_gmem_read_0_WDATA => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WDATA,
-        m_axi_gmem_read_0_WSTRB => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WSTRB,
-        m_axi_gmem_read_0_WLAST => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WLAST,
-        m_axi_gmem_read_0_WID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WID,
-        m_axi_gmem_read_0_WUSER => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_WUSER,
-        m_axi_gmem_read_0_ARVALID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARVALID,
+        m_axi_gmem_read_0_WDATA => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WDATA,
+        m_axi_gmem_read_0_WSTRB => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WSTRB,
+        m_axi_gmem_read_0_WLAST => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WLAST,
+        m_axi_gmem_read_0_WID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WID,
+        m_axi_gmem_read_0_WUSER => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_WUSER,
+        m_axi_gmem_read_0_ARVALID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARVALID,
         m_axi_gmem_read_0_ARREADY => gmem_read_0_ARREADY,
-        m_axi_gmem_read_0_ARADDR => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARADDR,
-        m_axi_gmem_read_0_ARID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARID,
-        m_axi_gmem_read_0_ARLEN => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARLEN,
-        m_axi_gmem_read_0_ARSIZE => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARSIZE,
-        m_axi_gmem_read_0_ARBURST => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARBURST,
-        m_axi_gmem_read_0_ARLOCK => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARLOCK,
-        m_axi_gmem_read_0_ARCACHE => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARCACHE,
-        m_axi_gmem_read_0_ARPROT => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARPROT,
-        m_axi_gmem_read_0_ARQOS => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARQOS,
-        m_axi_gmem_read_0_ARREGION => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARREGION,
-        m_axi_gmem_read_0_ARUSER => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARUSER,
+        m_axi_gmem_read_0_ARADDR => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARADDR,
+        m_axi_gmem_read_0_ARID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARID,
+        m_axi_gmem_read_0_ARLEN => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARLEN,
+        m_axi_gmem_read_0_ARSIZE => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARSIZE,
+        m_axi_gmem_read_0_ARBURST => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARBURST,
+        m_axi_gmem_read_0_ARLOCK => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARLOCK,
+        m_axi_gmem_read_0_ARCACHE => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARCACHE,
+        m_axi_gmem_read_0_ARPROT => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARPROT,
+        m_axi_gmem_read_0_ARQOS => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARQOS,
+        m_axi_gmem_read_0_ARREGION => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARREGION,
+        m_axi_gmem_read_0_ARUSER => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARUSER,
         m_axi_gmem_read_0_RVALID => gmem_read_0_RVALID,
-        m_axi_gmem_read_0_RREADY => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_RREADY,
+        m_axi_gmem_read_0_RREADY => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_RREADY,
         m_axi_gmem_read_0_RDATA => gmem_read_0_RDATA,
         m_axi_gmem_read_0_RLAST => ap_const_logic_0,
         m_axi_gmem_read_0_RID => ap_const_lv1_0,
@@ -1765,46 +1775,46 @@ begin
         m_axi_gmem_read_0_RUSER => ap_const_lv1_0,
         m_axi_gmem_read_0_RRESP => ap_const_lv2_0,
         m_axi_gmem_read_0_BVALID => ap_const_logic_0,
-        m_axi_gmem_read_0_BREADY => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_BREADY,
+        m_axi_gmem_read_0_BREADY => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_BREADY,
         m_axi_gmem_read_0_BRESP => ap_const_lv2_0,
         m_axi_gmem_read_0_BID => ap_const_lv1_0,
         m_axi_gmem_read_0_BUSER => ap_const_lv1_0,
-        pruned_dram_output => pruned_feature_dram_read_read_reg_766,
-        m_axi_gmem_output_0_AWVALID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWVALID,
+        pruned_dram_output => pruned_feature_dram_read_read_reg_763,
+        m_axi_gmem_output_0_AWVALID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWVALID,
         m_axi_gmem_output_0_AWREADY => gmem_output_0_AWREADY,
-        m_axi_gmem_output_0_AWADDR => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWADDR,
-        m_axi_gmem_output_0_AWID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWID,
-        m_axi_gmem_output_0_AWLEN => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWLEN,
-        m_axi_gmem_output_0_AWSIZE => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWSIZE,
-        m_axi_gmem_output_0_AWBURST => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWBURST,
-        m_axi_gmem_output_0_AWLOCK => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWLOCK,
-        m_axi_gmem_output_0_AWCACHE => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWCACHE,
-        m_axi_gmem_output_0_AWPROT => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWPROT,
-        m_axi_gmem_output_0_AWQOS => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWQOS,
-        m_axi_gmem_output_0_AWREGION => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWREGION,
-        m_axi_gmem_output_0_AWUSER => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWUSER,
-        m_axi_gmem_output_0_WVALID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WVALID,
+        m_axi_gmem_output_0_AWADDR => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWADDR,
+        m_axi_gmem_output_0_AWID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWID,
+        m_axi_gmem_output_0_AWLEN => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWLEN,
+        m_axi_gmem_output_0_AWSIZE => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWSIZE,
+        m_axi_gmem_output_0_AWBURST => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWBURST,
+        m_axi_gmem_output_0_AWLOCK => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWLOCK,
+        m_axi_gmem_output_0_AWCACHE => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWCACHE,
+        m_axi_gmem_output_0_AWPROT => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWPROT,
+        m_axi_gmem_output_0_AWQOS => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWQOS,
+        m_axi_gmem_output_0_AWREGION => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWREGION,
+        m_axi_gmem_output_0_AWUSER => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWUSER,
+        m_axi_gmem_output_0_WVALID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WVALID,
         m_axi_gmem_output_0_WREADY => gmem_output_0_WREADY,
-        m_axi_gmem_output_0_WDATA => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WDATA,
-        m_axi_gmem_output_0_WSTRB => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WSTRB,
-        m_axi_gmem_output_0_WLAST => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WLAST,
-        m_axi_gmem_output_0_WID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WID,
-        m_axi_gmem_output_0_WUSER => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WUSER,
-        m_axi_gmem_output_0_ARVALID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARVALID,
+        m_axi_gmem_output_0_WDATA => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WDATA,
+        m_axi_gmem_output_0_WSTRB => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WSTRB,
+        m_axi_gmem_output_0_WLAST => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WLAST,
+        m_axi_gmem_output_0_WID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WID,
+        m_axi_gmem_output_0_WUSER => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WUSER,
+        m_axi_gmem_output_0_ARVALID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARVALID,
         m_axi_gmem_output_0_ARREADY => ap_const_logic_0,
-        m_axi_gmem_output_0_ARADDR => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARADDR,
-        m_axi_gmem_output_0_ARID => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARID,
-        m_axi_gmem_output_0_ARLEN => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARLEN,
-        m_axi_gmem_output_0_ARSIZE => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARSIZE,
-        m_axi_gmem_output_0_ARBURST => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARBURST,
-        m_axi_gmem_output_0_ARLOCK => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARLOCK,
-        m_axi_gmem_output_0_ARCACHE => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARCACHE,
-        m_axi_gmem_output_0_ARPROT => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARPROT,
-        m_axi_gmem_output_0_ARQOS => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARQOS,
-        m_axi_gmem_output_0_ARREGION => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARREGION,
-        m_axi_gmem_output_0_ARUSER => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_ARUSER,
+        m_axi_gmem_output_0_ARADDR => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARADDR,
+        m_axi_gmem_output_0_ARID => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARID,
+        m_axi_gmem_output_0_ARLEN => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARLEN,
+        m_axi_gmem_output_0_ARSIZE => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARSIZE,
+        m_axi_gmem_output_0_ARBURST => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARBURST,
+        m_axi_gmem_output_0_ARLOCK => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARLOCK,
+        m_axi_gmem_output_0_ARCACHE => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARCACHE,
+        m_axi_gmem_output_0_ARPROT => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARPROT,
+        m_axi_gmem_output_0_ARQOS => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARQOS,
+        m_axi_gmem_output_0_ARREGION => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARREGION,
+        m_axi_gmem_output_0_ARUSER => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_ARUSER,
         m_axi_gmem_output_0_RVALID => ap_const_logic_0,
-        m_axi_gmem_output_0_RREADY => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_RREADY,
+        m_axi_gmem_output_0_RREADY => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_RREADY,
         m_axi_gmem_output_0_RDATA => ap_const_lv32_0,
         m_axi_gmem_output_0_RLAST => ap_const_logic_0,
         m_axi_gmem_output_0_RID => ap_const_lv1_0,
@@ -1812,12 +1822,12 @@ begin
         m_axi_gmem_output_0_RUSER => ap_const_lv1_0,
         m_axi_gmem_output_0_RRESP => ap_const_lv2_0,
         m_axi_gmem_output_0_BVALID => gmem_output_0_BVALID,
-        m_axi_gmem_output_0_BREADY => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_BREADY,
+        m_axi_gmem_output_0_BREADY => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_BREADY,
         m_axi_gmem_output_0_BRESP => ap_const_lv2_0,
         m_axi_gmem_output_0_BID => ap_const_lv1_0,
         m_axi_gmem_output_0_BUSER => ap_const_lv1_0,
-        full_cubic_output => final_output_full_cubic_read_reg_774,
-        num_pruned_voxels => pruned_voxel_count_1_reg_784);
+        full_cubic_output => final_output_full_cubic_read_reg_771,
+        num_pruned_voxels => pruned_voxel_count_1_reg_781);
 
     control_s_axi_U : component minkowski_net_14_layer_pipeline_control_s_axi
     generic map (
@@ -1849,7 +1859,7 @@ begin
         pruned_feature_dram_write => pruned_feature_dram_write,
         bitmap_info => grp_pipeline_bitmap_stage_fu_462_ap_return_0,
         bitmap_info_ap_vld => bitmap_info_ap_vld,
-        total_processed_voxels => pruned_voxel_count_1_reg_784,
+        total_processed_voxels => pruned_voxel_count_1_reg_781,
         total_processed_voxels_ap_vld => total_processed_voxels_ap_vld,
         ap_start => ap_start,
         interrupt => interrupt,
@@ -1938,12 +1948,12 @@ begin
         I_CH0_RFIFONUM => gmem_output_0_RFIFONUM,
         I_CH0_AWVALID => gmem_output_0_AWVALID,
         I_CH0_AWREADY => gmem_output_0_AWREADY,
-        I_CH0_AWADDR => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWADDR,
-        I_CH0_AWLEN => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWLEN,
+        I_CH0_AWADDR => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWADDR,
+        I_CH0_AWLEN => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWLEN,
         I_CH0_WVALID => gmem_output_0_WVALID,
         I_CH0_WREADY => gmem_output_0_WREADY,
-        I_CH0_WDATA => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WDATA,
-        I_CH0_WSTRB => grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WSTRB,
+        I_CH0_WDATA => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WDATA,
+        I_CH0_WSTRB => grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WSTRB,
         I_CH0_BVALID => gmem_output_0_BVALID,
         I_CH0_BREADY => gmem_output_0_BREADY);
 
@@ -2335,16 +2345,16 @@ begin
     end process;
 
 
-    grp_final_layer_output_reconstruction_fu_546_ap_start_reg_assign_proc : process(ap_clk)
+    grp_final_layer_output_reconstruction_fu_543_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst_n_inv = '1') then
-                grp_final_layer_output_reconstruction_fu_546_ap_start_reg <= ap_const_logic_0;
+                grp_final_layer_output_reconstruction_fu_543_ap_start_reg <= ap_const_logic_0;
             else
-                if ((ap_const_logic_1 = ap_CS_fsm_state20)) then 
-                    grp_final_layer_output_reconstruction_fu_546_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_final_layer_output_reconstruction_fu_546_ap_ready = ap_const_logic_1)) then 
-                    grp_final_layer_output_reconstruction_fu_546_ap_start_reg <= ap_const_logic_0;
+                if ((ap_const_logic_1 = ap_CS_fsm_state22)) then 
+                    grp_final_layer_output_reconstruction_fu_543_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_final_layer_output_reconstruction_fu_543_ap_ready = ap_const_logic_1)) then 
+                    grp_final_layer_output_reconstruction_fu_543_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
@@ -2357,10 +2367,9 @@ begin
             if (ap_rst_n_inv = '1') then
                 grp_layer_convolution_with_persistent_accelerator_fu_496_ap_start_reg <= ap_const_logic_0;
             else
-                if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) 
-    and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 
-    = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+                if ((((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
                     grp_layer_convolution_with_persistent_accelerator_fu_496_ap_start_reg <= ap_const_logic_1;
                 elsif ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_ready = ap_const_logic_1)) then 
                     grp_layer_convolution_with_persistent_accelerator_fu_496_ap_start_reg <= ap_const_logic_0;
@@ -2402,8 +2411,8 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state14)) then 
                 layer_fu_292 <= ap_const_lv4_0;
-            elsif ((ap_const_logic_1 = ap_CS_fsm_state18)) then 
-                layer_fu_292 <= add_ln131_reg_841;
+            elsif ((ap_const_logic_1 = ap_CS_fsm_state19)) then 
+                layer_fu_292 <= add_ln131_reg_838;
             end if; 
         end if;
     end process;
@@ -2414,7 +2423,7 @@ begin
             if (((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
                 pruned_voxel_count_fu_280 <= ap_const_lv32_0;
             elsif (((tmp_s_nbreadreq_fu_367_p3 = ap_const_lv1_1) and (tmp_nbreadreq_fu_360_p3 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_enable_reg_pp0_iter0 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
-                pruned_voxel_count_fu_280 <= pruned_voxel_count_2_fu_591_p2;
+                pruned_voxel_count_fu_280 <= pruned_voxel_count_2_fu_588_p2;
             end if; 
         end if;
     end process;
@@ -2422,9 +2431,9 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state2)) then
-                L0_bitmap_read_reg_755 <= L0_bitmap_i;
-                L1_bitmap_read_reg_750 <= L1_bitmap_i;
-                L3_bitmap_read_reg_745 <= L3_bitmap_i;
+                L0_bitmap_read_reg_752 <= L0_bitmap_i;
+                L1_bitmap_read_reg_747 <= L1_bitmap_i;
+                L3_bitmap_read_reg_742 <= L3_bitmap_i;
             end if;
         end if;
     end process;
@@ -2440,9 +2449,9 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state16)) then
-                MINKOWSKI_LAYERS_input_channels_load_reg_865 <= MINKOWSKI_LAYERS_input_channels_q0;
-                MINKOWSKI_LAYERS_output_channels_load_reg_870 <= MINKOWSKI_LAYERS_output_channels_q0;
-                MINKOWSKI_LAYERS_output_spatial_dim_load_reg_875 <= MINKOWSKI_LAYERS_output_spatial_dim_q0;
+                MINKOWSKI_LAYERS_input_channels_load_reg_862 <= MINKOWSKI_LAYERS_input_channels_q0;
+                MINKOWSKI_LAYERS_output_channels_load_reg_867 <= MINKOWSKI_LAYERS_output_channels_q0;
+                MINKOWSKI_LAYERS_output_spatial_dim_load_reg_872 <= MINKOWSKI_LAYERS_output_spatial_dim_q0;
             end if;
         end if;
     end process;
@@ -2450,8 +2459,8 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state15)) then
-                add_ln131_reg_841 <= add_ln131_fu_704_p2;
-                layer_1_reg_834 <= layer_fu_292;
+                add_ln131_reg_838 <= add_ln131_fu_701_p2;
+                layer_1_reg_831 <= layer_fu_292;
             end if;
         end if;
     end process;
@@ -2459,10 +2468,10 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state3)) then
-                call_ret_reg_779 <= grp_pipeline_bitmap_stage_fu_462_ap_return_0;
-                final_output_full_cubic_read_reg_774 <= final_output_full_cubic;
-                pruned_feature_dram_read_read_reg_766 <= pruned_feature_dram_read;
-                pruned_feature_dram_write_read_reg_760 <= pruned_feature_dram_write;
+                call_ret_reg_776 <= grp_pipeline_bitmap_stage_fu_462_ap_return_0;
+                final_output_full_cubic_read_reg_771 <= final_output_full_cubic;
+                pruned_feature_dram_read_read_reg_763 <= pruned_feature_dram_read;
+                pruned_feature_dram_write_read_reg_757 <= pruned_feature_dram_write;
             end if;
         end if;
     end process;
@@ -2470,9 +2479,9 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then
-                gmem_read_addr_reg_799 <= sext_ln107_fu_636_p1;
-                tmp_reg_791 <= tmp_nbreadreq_fu_360_p3;
-                tmp_s_reg_795 <= tmp_s_nbreadreq_fu_367_p3;
+                gmem_read_addr_reg_796 <= sext_ln107_fu_633_p1;
+                tmp_reg_788 <= tmp_nbreadreq_fu_360_p3;
+                tmp_s_reg_792 <= tmp_s_nbreadreq_fu_367_p3;
             end if;
         end if;
     end process;
@@ -2480,7 +2489,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state14)) then
-                p_cast_reg_829 <= call_ret_reg_779(159 downto 128);
+                p_cast_reg_826 <= call_ret_reg_776(159 downto 128);
             end if;
         end if;
     end process;
@@ -2488,7 +2497,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_enable_reg_pp0_iter0 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then
-                pruned_voxel_count_1_reg_784 <= pruned_voxel_count_fu_280;
+                pruned_voxel_count_1_reg_781 <= pruned_voxel_count_fu_280;
             end if;
         end if;
     end process;
@@ -2496,14 +2505,14 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1))) then
-                trunc_ln98_3_reg_817 <= feature_data_stream_dout(96 downto 65);
-                voxel_features_1_reg_812 <= feature_data_stream_dout(64 downto 33);
-                voxel_features_reg_807 <= feature_data_stream_dout(32 downto 1);
+                trunc_ln98_3_reg_814 <= feature_data_stream_dout(96 downto 65);
+                voxel_features_1_reg_809 <= feature_data_stream_dout(64 downto 33);
+                voxel_features_reg_804 <= feature_data_stream_dout(32 downto 1);
             end if;
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_enable_reg_pp0_iter0, ap_block_pp0_stage1_subdone, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone, ap_enable_reg_pp0_iter3, ap_CS_fsm_state3, ap_CS_fsm_state15, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_pipeline_bitmap_stage_fu_462_ap_done, ap_predicate_tran4to14_state4, ap_block_pp0_stage2_subdone, ap_enable_reg_pp0_iter2, grp_final_layer_output_reconstruction_fu_546_ap_done, ap_CS_fsm_state17, ap_CS_fsm_state19, ap_CS_fsm_state21, icmp_ln131_fu_698_p2, ap_block_state17_on_subcall_done, ap_block_state19_on_subcall_done)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_enable_reg_pp0_iter0, ap_block_pp0_stage1_subdone, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone, ap_enable_reg_pp0_iter3, ap_CS_fsm_state3, ap_CS_fsm_state15, trunc_ln146_fu_714_p1, ap_CS_fsm_state16, grp_pipeline_bitmap_stage_fu_462_ap_done, ap_predicate_tran4to14_state4, ap_block_pp0_stage2_subdone, ap_enable_reg_pp0_iter2, grp_final_layer_output_reconstruction_fu_543_ap_done, ap_CS_fsm_state18, ap_CS_fsm_state21, ap_CS_fsm_state23, icmp_ln131_fu_695_p2, ap_block_state18_on_subcall_done, ap_block_state21_on_subcall_done)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -2543,41 +2552,45 @@ begin
             when ap_ST_fsm_state14 => 
                 ap_NS_fsm <= ap_ST_fsm_state15;
             when ap_ST_fsm_state15 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state15) and (icmp_ln131_fu_698_p2 = ap_const_lv1_1))) then
-                    ap_NS_fsm <= ap_ST_fsm_state20;
+                if (((ap_const_logic_1 = ap_CS_fsm_state15) and (icmp_ln131_fu_695_p2 = ap_const_lv1_1))) then
+                    ap_NS_fsm <= ap_ST_fsm_state22;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state16;
                 end if;
             when ap_ST_fsm_state16 => 
-                if (((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state16))) then
-                    ap_NS_fsm <= ap_ST_fsm_state19;
+                if (((trunc_ln146_fu_714_p1 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state16))) then
+                    ap_NS_fsm <= ap_ST_fsm_state20;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state17;
                 end if;
             when ap_ST_fsm_state17 => 
-                if (((ap_const_boolean_0 = ap_block_state17_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state17))) then
-                    ap_NS_fsm <= ap_ST_fsm_state18;
-                else
-                    ap_NS_fsm <= ap_ST_fsm_state17;
-                end if;
+                ap_NS_fsm <= ap_ST_fsm_state18;
             when ap_ST_fsm_state18 => 
-                ap_NS_fsm <= ap_ST_fsm_state15;
-            when ap_ST_fsm_state19 => 
-                if (((ap_const_boolean_0 = ap_block_state19_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state19))) then
-                    ap_NS_fsm <= ap_ST_fsm_state18;
-                else
+                if (((ap_const_boolean_0 = ap_block_state18_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state18))) then
                     ap_NS_fsm <= ap_ST_fsm_state19;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state18;
                 end if;
+            when ap_ST_fsm_state19 => 
+                ap_NS_fsm <= ap_ST_fsm_state15;
             when ap_ST_fsm_state20 => 
                 ap_NS_fsm <= ap_ST_fsm_state21;
             when ap_ST_fsm_state21 => 
-                if (((grp_final_layer_output_reconstruction_fu_546_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state21))) then
-                    ap_NS_fsm <= ap_ST_fsm_state1;
+                if (((ap_const_boolean_0 = ap_block_state21_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state21))) then
+                    ap_NS_fsm <= ap_ST_fsm_state19;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state21;
                 end if;
+            when ap_ST_fsm_state22 => 
+                ap_NS_fsm <= ap_ST_fsm_state23;
+            when ap_ST_fsm_state23 => 
+                if (((grp_final_layer_output_reconstruction_fu_543_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state23))) then
+                    ap_NS_fsm <= ap_ST_fsm_state1;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state23;
+                end if;
             when others =>  
-                ap_NS_fsm <= "XXXXXXXXXXXXXX";
+                ap_NS_fsm <= "XXXXXXXXXXXXXXXX";
         end case;
     end process;
     L0_bitmap_o <= grp_pipeline_bitmap_stage_fu_462_ap_return_3;
@@ -2624,7 +2637,7 @@ begin
         end if; 
     end process;
 
-    MINKOWSKI_LAYERS_input_channels_address0 <= zext_ln131_fu_710_p1(4 - 1 downto 0);
+    MINKOWSKI_LAYERS_input_channels_address0 <= zext_ln131_fu_707_p1(4 - 1 downto 0);
 
     MINKOWSKI_LAYERS_input_channels_ce0_local_assign_proc : process(ap_CS_fsm_state15)
     begin
@@ -2635,7 +2648,7 @@ begin
         end if; 
     end process;
 
-    MINKOWSKI_LAYERS_output_channels_address0 <= zext_ln131_fu_710_p1(4 - 1 downto 0);
+    MINKOWSKI_LAYERS_output_channels_address0 <= zext_ln131_fu_707_p1(4 - 1 downto 0);
 
     MINKOWSKI_LAYERS_output_channels_ce0_local_assign_proc : process(ap_CS_fsm_state15)
     begin
@@ -2646,7 +2659,7 @@ begin
         end if; 
     end process;
 
-    MINKOWSKI_LAYERS_output_spatial_dim_address0 <= zext_ln131_fu_710_p1(4 - 1 downto 0);
+    MINKOWSKI_LAYERS_output_spatial_dim_address0 <= zext_ln131_fu_707_p1(4 - 1 downto 0);
 
     MINKOWSKI_LAYERS_output_spatial_dim_ce0_local_assign_proc : process(ap_CS_fsm_state15)
     begin
@@ -2657,8 +2670,8 @@ begin
         end if; 
     end process;
 
-    add_ln131_fu_704_p2 <= std_logic_vector(unsigned(layer_fu_292) + unsigned(ap_const_lv4_1));
-    add_ln96_fu_621_p2 <= std_logic_vector(unsigned(zext_ln96_fu_617_p1) + unsigned(pruned_feature_dram_read_read_reg_766));
+    add_ln131_fu_701_p2 <= std_logic_vector(unsigned(layer_fu_292) + unsigned(ap_const_lv4_1));
+    add_ln96_fu_618_p2 <= std_logic_vector(unsigned(zext_ln96_fu_614_p1) + unsigned(pruned_feature_dram_read_read_reg_763));
     ap_CS_fsm_pp0_stage0 <= ap_CS_fsm(3);
     ap_CS_fsm_pp0_stage1 <= ap_CS_fsm(4);
     ap_CS_fsm_pp0_stage2 <= ap_CS_fsm(5);
@@ -2672,31 +2685,24 @@ begin
     ap_CS_fsm_state2 <= ap_CS_fsm(1);
     ap_CS_fsm_state20 <= ap_CS_fsm(12);
     ap_CS_fsm_state21 <= ap_CS_fsm(13);
+    ap_CS_fsm_state22 <= ap_CS_fsm(14);
+    ap_CS_fsm_state23 <= ap_CS_fsm(15);
     ap_CS_fsm_state3 <= ap_CS_fsm(2);
     ap_ST_fsm_state14_blk <= ap_const_logic_0;
     ap_ST_fsm_state15_blk <= ap_const_logic_0;
     ap_ST_fsm_state16_blk <= ap_const_logic_0;
+    ap_ST_fsm_state17_blk <= ap_const_logic_0;
 
-    ap_ST_fsm_state17_blk_assign_proc : process(ap_block_state17_on_subcall_done)
+    ap_ST_fsm_state18_blk_assign_proc : process(ap_block_state18_on_subcall_done)
     begin
-        if ((ap_const_boolean_1 = ap_block_state17_on_subcall_done)) then 
-            ap_ST_fsm_state17_blk <= ap_const_logic_1;
+        if ((ap_const_boolean_1 = ap_block_state18_on_subcall_done)) then 
+            ap_ST_fsm_state18_blk <= ap_const_logic_1;
         else 
-            ap_ST_fsm_state17_blk <= ap_const_logic_0;
+            ap_ST_fsm_state18_blk <= ap_const_logic_0;
         end if; 
     end process;
 
-    ap_ST_fsm_state18_blk <= ap_const_logic_0;
-
-    ap_ST_fsm_state19_blk_assign_proc : process(ap_block_state19_on_subcall_done)
-    begin
-        if ((ap_const_boolean_1 = ap_block_state19_on_subcall_done)) then 
-            ap_ST_fsm_state19_blk <= ap_const_logic_1;
-        else 
-            ap_ST_fsm_state19_blk <= ap_const_logic_0;
-        end if; 
-    end process;
-
+    ap_ST_fsm_state19_blk <= ap_const_logic_0;
 
     ap_ST_fsm_state1_blk_assign_proc : process(ap_start)
     begin
@@ -2709,12 +2715,23 @@ begin
 
     ap_ST_fsm_state20_blk <= ap_const_logic_0;
 
-    ap_ST_fsm_state21_blk_assign_proc : process(grp_final_layer_output_reconstruction_fu_546_ap_done)
+    ap_ST_fsm_state21_blk_assign_proc : process(ap_block_state21_on_subcall_done)
     begin
-        if ((grp_final_layer_output_reconstruction_fu_546_ap_done = ap_const_logic_0)) then 
+        if ((ap_const_boolean_1 = ap_block_state21_on_subcall_done)) then 
             ap_ST_fsm_state21_blk <= ap_const_logic_1;
         else 
             ap_ST_fsm_state21_blk <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    ap_ST_fsm_state22_blk <= ap_const_logic_0;
+
+    ap_ST_fsm_state23_blk_assign_proc : process(grp_final_layer_output_reconstruction_fu_543_ap_done)
+    begin
+        if ((grp_final_layer_output_reconstruction_fu_543_ap_done = ap_const_logic_0)) then 
+            ap_ST_fsm_state23_blk <= ap_const_logic_1;
+        else 
+            ap_ST_fsm_state23_blk <= ap_const_logic_0;
         end if; 
     end process;
 
@@ -2846,41 +2863,41 @@ begin
     end process;
 
 
-    ap_block_state17_on_subcall_done_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done, ap_predicate_op244_call_state17)
+    ap_block_state18_on_subcall_done_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done, ap_predicate_op232_call_state18)
     begin
-                ap_block_state17_on_subcall_done <= (((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (ap_predicate_op244_call_state17 = ap_const_boolean_1)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_0)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_1)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_2)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_3)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_4)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_5)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 
-    = ap_const_lv4_6)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_7)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_8)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_9)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_A)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_B)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_C)));
+                ap_block_state18_on_subcall_done <= (((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (ap_predicate_op232_call_state18 = ap_const_boolean_1)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_0)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_1)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_2)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_3)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_4)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_5)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 
+    = ap_const_lv4_6)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_7)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_8)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_9)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_A)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_B)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_C)));
     end process;
 
 
-    ap_block_state19_on_subcall_done_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done, ap_predicate_op276_call_state19)
+    ap_block_state21_on_subcall_done_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done, ap_predicate_op278_call_state21)
     begin
-                ap_block_state19_on_subcall_done <= (((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (ap_predicate_op276_call_state19 = ap_const_boolean_1)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_0)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_1)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_2)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_3)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_4)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_5)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 
-    = ap_const_lv4_6)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_7)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_8)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_9)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_A)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_B)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_834 = ap_const_lv4_C)));
+                ap_block_state21_on_subcall_done <= (((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (ap_predicate_op278_call_state21 = ap_const_boolean_1)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_0)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_1)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_2)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_3)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_4)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_5)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 
+    = ap_const_lv4_6)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_7)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_8)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_9)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_A)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_B)) or ((grp_layer_convolution_with_persistent_accelerator_fu_496_ap_done = ap_const_logic_0) and (layer_1_reg_831 = ap_const_lv4_C)));
     end process;
 
 
-    ap_block_state5_io_grp3_assign_proc : process(gmem_read_0_AWREADY, ap_predicate_op156_writereq_state5)
+    ap_block_state5_io_grp3_assign_proc : process(gmem_read_0_AWREADY, ap_predicate_op158_writereq_state5)
     begin
-                ap_block_state5_io_grp3 <= ((gmem_read_0_AWREADY = ap_const_logic_0) and (ap_predicate_op156_writereq_state5 = ap_const_boolean_1));
+                ap_block_state5_io_grp3 <= ((gmem_read_0_AWREADY = ap_const_logic_0) and (ap_predicate_op158_writereq_state5 = ap_const_boolean_1));
     end process;
 
 
-    ap_block_state5_pp0_stage1_iter0_grp1_assign_proc : process(feature_data_stream_empty_n, ap_predicate_op151_read_state5)
+    ap_block_state5_pp0_stage1_iter0_grp1_assign_proc : process(feature_data_stream_empty_n, ap_predicate_op153_read_state5)
     begin
-                ap_block_state5_pp0_stage1_iter0_grp1 <= ((ap_predicate_op151_read_state5 = ap_const_boolean_1) and (feature_data_stream_empty_n = ap_const_logic_0));
+                ap_block_state5_pp0_stage1_iter0_grp1 <= ((ap_predicate_op153_read_state5 = ap_const_boolean_1) and (feature_data_stream_empty_n = ap_const_logic_0));
     end process;
 
 
-    ap_block_state5_pp0_stage1_iter0_grp2_assign_proc : process(write_addr_stream_empty_n, ap_predicate_op155_read_state5)
+    ap_block_state5_pp0_stage1_iter0_grp2_assign_proc : process(write_addr_stream_empty_n, ap_predicate_op157_read_state5)
     begin
-                ap_block_state5_pp0_stage1_iter0_grp2 <= ((write_addr_stream_empty_n = ap_const_logic_0) and (ap_predicate_op155_read_state5 = ap_const_boolean_1));
+                ap_block_state5_pp0_stage1_iter0_grp2 <= ((write_addr_stream_empty_n = ap_const_logic_0) and (ap_predicate_op157_read_state5 = ap_const_boolean_1));
     end process;
 
 
-    ap_block_state6_io_grp4_assign_proc : process(gmem_read_0_WREADY, ap_predicate_op157_write_state6)
+    ap_block_state6_io_grp4_assign_proc : process(gmem_read_0_WREADY, ap_predicate_op159_write_state6)
     begin
-                ap_block_state6_io_grp4 <= ((ap_predicate_op157_write_state6 = ap_const_boolean_1) and (gmem_read_0_WREADY = ap_const_logic_0));
+                ap_block_state6_io_grp4 <= ((ap_predicate_op159_write_state6 = ap_const_boolean_1) and (gmem_read_0_WREADY = ap_const_logic_0));
     end process;
 
 
@@ -2894,9 +2911,9 @@ begin
     end process;
 
 
-    ap_done_assign_proc : process(grp_final_layer_output_reconstruction_fu_546_ap_done, ap_CS_fsm_state21)
+    ap_done_assign_proc : process(grp_final_layer_output_reconstruction_fu_543_ap_done, ap_CS_fsm_state23)
     begin
-        if (((grp_final_layer_output_reconstruction_fu_546_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state21))) then 
+        if (((grp_final_layer_output_reconstruction_fu_543_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state23))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_const_logic_0;
@@ -2925,39 +2942,39 @@ begin
     end process;
 
 
-    ap_predicate_op151_read_state5_assign_proc : process(tmp_reg_791, tmp_s_reg_795)
+    ap_predicate_op153_read_state5_assign_proc : process(tmp_reg_788, tmp_s_reg_792)
     begin
-                ap_predicate_op151_read_state5 <= ((tmp_s_reg_795 = ap_const_lv1_1) and (tmp_reg_791 = ap_const_lv1_1));
+                ap_predicate_op153_read_state5 <= ((tmp_s_reg_792 = ap_const_lv1_1) and (tmp_reg_788 = ap_const_lv1_1));
     end process;
 
 
-    ap_predicate_op155_read_state5_assign_proc : process(tmp_reg_791, tmp_s_reg_795)
+    ap_predicate_op157_read_state5_assign_proc : process(tmp_reg_788, tmp_s_reg_792)
     begin
-                ap_predicate_op155_read_state5 <= ((tmp_s_reg_795 = ap_const_lv1_1) and (tmp_reg_791 = ap_const_lv1_1));
+                ap_predicate_op157_read_state5 <= ((tmp_s_reg_792 = ap_const_lv1_1) and (tmp_reg_788 = ap_const_lv1_1));
     end process;
 
 
-    ap_predicate_op156_writereq_state5_assign_proc : process(tmp_reg_791, tmp_s_reg_795)
+    ap_predicate_op158_writereq_state5_assign_proc : process(tmp_reg_788, tmp_s_reg_792)
     begin
-                ap_predicate_op156_writereq_state5 <= ((tmp_s_reg_795 = ap_const_lv1_1) and (tmp_reg_791 = ap_const_lv1_1));
+                ap_predicate_op158_writereq_state5 <= ((tmp_s_reg_792 = ap_const_lv1_1) and (tmp_reg_788 = ap_const_lv1_1));
     end process;
 
 
-    ap_predicate_op157_write_state6_assign_proc : process(tmp_reg_791, tmp_s_reg_795)
+    ap_predicate_op159_write_state6_assign_proc : process(tmp_reg_788, tmp_s_reg_792)
     begin
-                ap_predicate_op157_write_state6 <= ((tmp_s_reg_795 = ap_const_lv1_1) and (tmp_reg_791 = ap_const_lv1_1));
+                ap_predicate_op159_write_state6 <= ((tmp_s_reg_792 = ap_const_lv1_1) and (tmp_reg_788 = ap_const_lv1_1));
     end process;
 
 
-    ap_predicate_op244_call_state17_assign_proc : process(layer_1_reg_834)
+    ap_predicate_op232_call_state18_assign_proc : process(layer_1_reg_831)
     begin
-                ap_predicate_op244_call_state17 <= ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)));
+                ap_predicate_op232_call_state18 <= ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)));
     end process;
 
 
-    ap_predicate_op276_call_state19_assign_proc : process(layer_1_reg_834)
+    ap_predicate_op278_call_state21_assign_proc : process(layer_1_reg_831)
     begin
-                ap_predicate_op276_call_state19 <= ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)));
+                ap_predicate_op278_call_state21 <= ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)));
     end process;
 
 
@@ -2967,9 +2984,9 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(grp_final_layer_output_reconstruction_fu_546_ap_done, ap_CS_fsm_state21)
+    ap_ready_assign_proc : process(grp_final_layer_output_reconstruction_fu_543_ap_done, ap_CS_fsm_state23)
     begin
-        if (((grp_final_layer_output_reconstruction_fu_546_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state21))) then 
+        if (((grp_final_layer_output_reconstruction_fu_543_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state23))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
@@ -2993,9 +3010,9 @@ begin
     end process;
 
 
-    feature_data_stream_read_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_subdone_grp1_done_reg, ap_predicate_op151_read_state5, ap_block_pp0_stage1_11001_grp1)
+    feature_data_stream_read_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_subdone_grp1_done_reg, ap_predicate_op153_read_state5, ap_block_pp0_stage1_11001_grp1)
     begin
-        if (((ap_predicate_op151_read_state5 = ap_const_boolean_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1))) then 
+        if (((ap_predicate_op153_read_state5 = ap_const_boolean_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1))) then 
             feature_data_stream_read <= ap_const_logic_1;
         else 
             feature_data_stream_read <= ap_const_logic_0;
@@ -3013,44 +3030,43 @@ begin
     end process;
 
 
-    gmem_output_0_AWVALID_assign_proc : process(grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWVALID, ap_CS_fsm_state20, ap_CS_fsm_state21)
+    gmem_output_0_AWVALID_assign_proc : process(grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWVALID, ap_CS_fsm_state22, ap_CS_fsm_state23)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state21) or (ap_const_logic_1 = ap_CS_fsm_state20))) then 
-            gmem_output_0_AWVALID <= grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_AWVALID;
+        if (((ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
+            gmem_output_0_AWVALID <= grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_AWVALID;
         else 
             gmem_output_0_AWVALID <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    gmem_output_0_BREADY_assign_proc : process(grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_BREADY, ap_CS_fsm_state20, ap_CS_fsm_state21)
+    gmem_output_0_BREADY_assign_proc : process(grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_BREADY, ap_CS_fsm_state22, ap_CS_fsm_state23)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state21) or (ap_const_logic_1 = ap_CS_fsm_state20))) then 
-            gmem_output_0_BREADY <= grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_BREADY;
+        if (((ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
+            gmem_output_0_BREADY <= grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_BREADY;
         else 
             gmem_output_0_BREADY <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    gmem_output_0_WVALID_assign_proc : process(grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WVALID, ap_CS_fsm_state20, ap_CS_fsm_state21)
+    gmem_output_0_WVALID_assign_proc : process(grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WVALID, ap_CS_fsm_state22, ap_CS_fsm_state23)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state21) or (ap_const_logic_1 = ap_CS_fsm_state20))) then 
-            gmem_output_0_WVALID <= grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_output_0_WVALID;
+        if (((ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
+            gmem_output_0_WVALID <= grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_output_0_WVALID;
         else 
             gmem_output_0_WVALID <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    gmem_read_0_ARADDR_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARADDR, grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARADDR, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state21)
+    gmem_read_0_ARADDR_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARADDR, grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARADDR, ap_CS_fsm_state17, ap_CS_fsm_state18, ap_CS_fsm_state22, ap_CS_fsm_state23)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state21) or (ap_const_logic_1 = ap_CS_fsm_state20))) then 
-            gmem_read_0_ARADDR <= grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARADDR;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
+            gmem_read_0_ARADDR <= grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARADDR;
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             gmem_read_0_ARADDR <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARADDR;
         else 
             gmem_read_0_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -3058,14 +3074,13 @@ begin
     end process;
 
 
-    gmem_read_0_ARLEN_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARLEN, grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARLEN, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state21)
+    gmem_read_0_ARLEN_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARLEN, grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARLEN, ap_CS_fsm_state17, ap_CS_fsm_state18, ap_CS_fsm_state22, ap_CS_fsm_state23)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state21) or (ap_const_logic_1 = ap_CS_fsm_state20))) then 
-            gmem_read_0_ARLEN <= grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARLEN;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
+            gmem_read_0_ARLEN <= grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARLEN;
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             gmem_read_0_ARLEN <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARLEN;
         else 
             gmem_read_0_ARLEN <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -3073,14 +3088,13 @@ begin
     end process;
 
 
-    gmem_read_0_ARVALID_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARVALID, grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARVALID, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state21)
+    gmem_read_0_ARVALID_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARVALID, grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARVALID, ap_CS_fsm_state17, ap_CS_fsm_state18, ap_CS_fsm_state22, ap_CS_fsm_state23)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state21) or (ap_const_logic_1 = ap_CS_fsm_state20))) then 
-            gmem_read_0_ARVALID <= grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_ARVALID;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
+            gmem_read_0_ARVALID <= grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_ARVALID;
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             gmem_read_0_ARVALID <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARVALID;
         else 
             gmem_read_0_ARVALID <= ap_const_logic_0;
@@ -3088,14 +3102,13 @@ begin
     end process;
 
 
-    gmem_read_0_AWADDR_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_subdone_grp3_done_reg, gmem_read_addr_reg_799, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWADDR, ap_CS_fsm_state19, ap_predicate_op156_writereq_state5, ap_block_pp0_stage1_11001_grp3)
+    gmem_read_0_AWADDR_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_subdone_grp3_done_reg, gmem_read_addr_reg_796, layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWADDR, ap_CS_fsm_state20, ap_CS_fsm_state21, ap_predicate_op158_writereq_state5, ap_block_pp0_stage1_11001_grp3)
     begin
-        if (((ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp3_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp3) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1) and (ap_predicate_op156_writereq_state5 = ap_const_boolean_1))) then 
-            gmem_read_0_AWADDR <= gmem_read_addr_reg_799;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if (((ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp3_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp3) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1) and (ap_predicate_op158_writereq_state5 = ap_const_boolean_1))) then 
+            gmem_read_0_AWADDR <= gmem_read_addr_reg_796;
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             gmem_read_0_AWADDR <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWADDR;
         else 
             gmem_read_0_AWADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -3103,14 +3116,13 @@ begin
     end process;
 
 
-    gmem_read_0_AWLEN_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_subdone_grp3_done_reg, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWLEN, ap_CS_fsm_state19, ap_predicate_op156_writereq_state5, ap_block_pp0_stage1_11001_grp3)
+    gmem_read_0_AWLEN_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_subdone_grp3_done_reg, layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWLEN, ap_CS_fsm_state20, ap_CS_fsm_state21, ap_predicate_op158_writereq_state5, ap_block_pp0_stage1_11001_grp3)
     begin
-        if (((ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp3_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp3) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1) and (ap_predicate_op156_writereq_state5 = ap_const_boolean_1))) then 
+        if (((ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp3_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp3) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1) and (ap_predicate_op158_writereq_state5 = ap_const_boolean_1))) then 
             gmem_read_0_AWLEN <= ap_const_lv64_3(32 - 1 downto 0);
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             gmem_read_0_AWLEN <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWLEN;
         else 
             gmem_read_0_AWLEN <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -3118,14 +3130,13 @@ begin
     end process;
 
 
-    gmem_read_0_AWVALID_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_subdone_grp3_done_reg, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWVALID, ap_CS_fsm_state19, ap_predicate_op156_writereq_state5, ap_block_pp0_stage1_11001_grp3)
+    gmem_read_0_AWVALID_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_subdone_grp3_done_reg, layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWVALID, ap_CS_fsm_state20, ap_CS_fsm_state21, ap_predicate_op158_writereq_state5, ap_block_pp0_stage1_11001_grp3)
     begin
-        if (((ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp3_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp3) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1) and (ap_predicate_op156_writereq_state5 = ap_const_boolean_1))) then 
+        if (((ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp3_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp3) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1) and (ap_predicate_op158_writereq_state5 = ap_const_boolean_1))) then 
             gmem_read_0_AWVALID <= ap_const_logic_1;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             gmem_read_0_AWVALID <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWVALID;
         else 
             gmem_read_0_AWVALID <= ap_const_logic_0;
@@ -3133,14 +3144,13 @@ begin
     end process;
 
 
-    gmem_read_0_BREADY_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter3, ap_block_pp0_stage0_subdone_grp7_done_reg, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BREADY, ap_CS_fsm_state19, ap_block_pp0_stage0_11001_grp7)
+    gmem_read_0_BREADY_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter3, ap_block_pp0_stage0_subdone_grp7_done_reg, layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BREADY, ap_CS_fsm_state20, ap_CS_fsm_state21, ap_block_pp0_stage0_11001_grp7)
     begin
         if (((ap_enable_reg_pp0_iter3 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone_grp7_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001_grp7) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
             gmem_read_0_BREADY <= ap_const_logic_1;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             gmem_read_0_BREADY <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BREADY;
         else 
             gmem_read_0_BREADY <= ap_const_logic_0;
@@ -3150,14 +3160,13 @@ begin
     gmem_read_0_RID <= ap_const_lv1_0;
     gmem_read_0_RLAST <= ap_const_logic_0;
 
-    gmem_read_0_RREADY_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RREADY, grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_RREADY, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state21)
+    gmem_read_0_RREADY_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RREADY, grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_RREADY, ap_CS_fsm_state17, ap_CS_fsm_state18, ap_CS_fsm_state22, ap_CS_fsm_state23)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state21) or (ap_const_logic_1 = ap_CS_fsm_state20))) then 
-            gmem_read_0_RREADY <= grp_final_layer_output_reconstruction_fu_546_m_axi_gmem_read_0_RREADY;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
+            gmem_read_0_RREADY <= grp_final_layer_output_reconstruction_fu_543_m_axi_gmem_read_0_RREADY;
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             gmem_read_0_RREADY <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RREADY;
         else 
             gmem_read_0_RREADY <= ap_const_logic_0;
@@ -3167,18 +3176,17 @@ begin
     gmem_read_0_RRESP <= ap_const_lv2_0;
     gmem_read_0_RUSER <= ap_const_lv1_0;
 
-    gmem_read_0_WDATA_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_CS_fsm_pp0_stage2, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone_grp5_done_reg, ap_block_pp0_stage1_subdone_grp1_done_reg, voxel_features_reg_807, voxel_features_1_reg_812, trunc_ln98_3_reg_817, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, ap_predicate_op157_write_state6, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WDATA, ap_CS_fsm_state19, ap_block_pp0_stage2_01001_grp4, ap_block_pp0_stage0_01001_grp5, ap_block_pp0_stage1_01001_grp1)
+    gmem_read_0_WDATA_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_CS_fsm_pp0_stage2, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone_grp5_done_reg, ap_block_pp0_stage1_subdone_grp1_done_reg, voxel_features_reg_804, voxel_features_1_reg_809, trunc_ln98_3_reg_814, layer_1_reg_831, ap_predicate_op159_write_state6, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WDATA, ap_CS_fsm_state20, ap_CS_fsm_state21, ap_block_pp0_stage2_01001_grp4, ap_block_pp0_stage0_01001_grp5, ap_block_pp0_stage1_01001_grp1)
     begin
         if (((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_01001_grp1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1))) then 
-            gmem_read_0_WDATA <= trunc_ln98_3_reg_817;
+            gmem_read_0_WDATA <= trunc_ln98_3_reg_814;
         elsif (((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone_grp5_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage0_01001_grp5) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
-            gmem_read_0_WDATA <= voxel_features_1_reg_812;
-        elsif (((ap_predicate_op157_write_state6 = ap_const_boolean_1) and (ap_const_boolean_0 = ap_block_pp0_stage2_01001_grp4) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage2))) then 
-            gmem_read_0_WDATA <= voxel_features_reg_807;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+            gmem_read_0_WDATA <= voxel_features_1_reg_809;
+        elsif (((ap_predicate_op159_write_state6 = ap_const_boolean_1) and (ap_const_boolean_0 = ap_block_pp0_stage2_01001_grp4) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage2))) then 
+            gmem_read_0_WDATA <= voxel_features_reg_804;
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             gmem_read_0_WDATA <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WDATA;
         else 
             gmem_read_0_WDATA <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -3186,14 +3194,13 @@ begin
     end process;
 
 
-    gmem_read_0_WSTRB_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_CS_fsm_pp0_stage2, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone_grp5_done_reg, ap_block_pp0_stage1_subdone_grp1_done_reg, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, ap_predicate_op157_write_state6, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WSTRB, ap_CS_fsm_state19, ap_block_pp0_stage2_01001_grp4, ap_block_pp0_stage0_01001_grp5, ap_block_pp0_stage1_01001_grp1)
+    gmem_read_0_WSTRB_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_CS_fsm_pp0_stage2, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone_grp5_done_reg, ap_block_pp0_stage1_subdone_grp1_done_reg, layer_1_reg_831, ap_predicate_op159_write_state6, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WSTRB, ap_CS_fsm_state20, ap_CS_fsm_state21, ap_block_pp0_stage2_01001_grp4, ap_block_pp0_stage0_01001_grp5, ap_block_pp0_stage1_01001_grp1)
     begin
-        if ((((ap_predicate_op157_write_state6 = ap_const_boolean_1) and (ap_const_boolean_0 = ap_block_pp0_stage2_01001_grp4) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage2)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_01001_grp1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone_grp5_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage0_01001_grp5) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0)))) then 
+        if ((((ap_predicate_op159_write_state6 = ap_const_boolean_1) and (ap_const_boolean_0 = ap_block_pp0_stage2_01001_grp4) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage2)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_01001_grp1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone_grp5_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage0_01001_grp5) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0)))) then 
             gmem_read_0_WSTRB <= ap_const_lv4_F;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             gmem_read_0_WSTRB <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WSTRB;
         else 
             gmem_read_0_WSTRB <= "XXXX";
@@ -3201,14 +3208,13 @@ begin
     end process;
 
 
-    gmem_read_0_WVALID_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_CS_fsm_pp0_stage2, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone_grp5_done_reg, ap_block_pp0_stage1_subdone_grp1_done_reg, ap_block_pp0_stage1_11001_grp1, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, ap_predicate_op157_write_state6, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WVALID, ap_CS_fsm_state19, ap_block_pp0_stage2_11001_grp4, ap_block_pp0_stage0_11001_grp5)
+    gmem_read_0_WVALID_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_CS_fsm_pp0_stage2, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone_grp5_done_reg, ap_block_pp0_stage1_subdone_grp1_done_reg, ap_block_pp0_stage1_11001_grp1, layer_1_reg_831, ap_predicate_op159_write_state6, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WVALID, ap_CS_fsm_state20, ap_CS_fsm_state21, ap_block_pp0_stage2_11001_grp4, ap_block_pp0_stage0_11001_grp5)
     begin
-        if ((((ap_predicate_op157_write_state6 = ap_const_boolean_1) and (ap_const_boolean_0 = ap_block_pp0_stage2_11001_grp4) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage2)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone_grp5_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001_grp5) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0)))) then 
+        if ((((ap_predicate_op159_write_state6 = ap_const_boolean_1) and (ap_const_boolean_0 = ap_block_pp0_stage2_11001_grp4) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage2)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone_grp5_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001_grp5) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0)))) then 
             gmem_read_0_WVALID <= ap_const_logic_1;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             gmem_read_0_WVALID <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WVALID;
         else 
             gmem_read_0_WVALID <= ap_const_logic_0;
@@ -3216,9 +3222,9 @@ begin
     end process;
 
 
-    gmem_read_blk_n_AW_assign_proc : process(m_axi_gmem_read_AWREADY, ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_grp3, tmp_reg_791, tmp_s_reg_795, ap_block_pp0_stage1_subdone_grp3_done_reg)
+    gmem_read_blk_n_AW_assign_proc : process(m_axi_gmem_read_AWREADY, ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_block_pp0_stage1_grp3, tmp_reg_788, tmp_s_reg_792, ap_block_pp0_stage1_subdone_grp3_done_reg)
     begin
-        if (((tmp_s_reg_795 = ap_const_lv1_1) and (tmp_reg_791 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp3_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_grp3) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1))) then 
+        if (((tmp_s_reg_792 = ap_const_lv1_1) and (tmp_reg_788 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp3_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_grp3) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1))) then 
             gmem_read_blk_n_AW <= m_axi_gmem_read_AWREADY;
         else 
             gmem_read_blk_n_AW <= ap_const_logic_1;
@@ -3236,9 +3242,9 @@ begin
     end process;
 
 
-    gmem_read_blk_n_W_assign_proc : process(m_axi_gmem_read_WREADY, ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, tmp_reg_791, tmp_s_reg_795, ap_CS_fsm_pp0_stage2, ap_block_pp0_stage2_grp4, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_grp5, ap_block_pp0_stage0_subdone_grp5_done_reg, ap_block_pp0_stage1_grp1, ap_block_pp0_stage1_subdone_grp1_done_reg)
+    gmem_read_blk_n_W_assign_proc : process(m_axi_gmem_read_WREADY, ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, tmp_reg_788, tmp_s_reg_792, ap_CS_fsm_pp0_stage2, ap_block_pp0_stage2_grp4, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_grp5, ap_block_pp0_stage0_subdone_grp5_done_reg, ap_block_pp0_stage1_grp1, ap_block_pp0_stage1_subdone_grp1_done_reg)
     begin
-        if ((((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_grp1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone_grp5_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage0_grp5) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0)) or ((tmp_s_reg_795 = ap_const_lv1_1) and (tmp_reg_791 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp0_stage2_grp4) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage2)))) then 
+        if ((((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp1_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage1_grp1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1)) or ((ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone_grp5_done_reg) and (ap_const_boolean_0 = ap_block_pp0_stage0_grp5) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0)) or ((tmp_s_reg_792 = ap_const_lv1_1) and (tmp_reg_788 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp0_stage2_grp4) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage2)))) then 
             gmem_read_blk_n_W <= m_axi_gmem_read_WREADY;
         else 
             gmem_read_blk_n_W <= ap_const_logic_1;
@@ -3246,12 +3252,11 @@ begin
     end process;
 
 
-    gmem_write_0_ARVALID_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARVALID, ap_CS_fsm_state19)
+    gmem_write_0_ARVALID_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARVALID, ap_CS_fsm_state20, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             gmem_write_0_ARVALID <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARVALID;
         else 
             gmem_write_0_ARVALID <= ap_const_logic_0;
@@ -3259,12 +3264,11 @@ begin
     end process;
 
 
-    gmem_write_0_AWVALID_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWVALID, ap_CS_fsm_state17)
+    gmem_write_0_AWVALID_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWVALID, ap_CS_fsm_state17, ap_CS_fsm_state18)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             gmem_write_0_AWVALID <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWVALID;
         else 
             gmem_write_0_AWVALID <= ap_const_logic_0;
@@ -3273,12 +3277,11 @@ begin
 
     gmem_write_0_BID <= ap_const_lv1_0;
 
-    gmem_write_0_BREADY_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BREADY, ap_CS_fsm_state17)
+    gmem_write_0_BREADY_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BREADY, ap_CS_fsm_state17, ap_CS_fsm_state18)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             gmem_write_0_BREADY <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BREADY;
         else 
             gmem_write_0_BREADY <= ap_const_logic_0;
@@ -3288,12 +3291,11 @@ begin
     gmem_write_0_BRESP <= ap_const_lv2_0;
     gmem_write_0_BUSER <= ap_const_lv1_0;
 
-    gmem_write_0_RREADY_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RREADY, ap_CS_fsm_state19)
+    gmem_write_0_RREADY_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RREADY, ap_CS_fsm_state20, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             gmem_write_0_RREADY <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RREADY;
         else 
             gmem_write_0_RREADY <= ap_const_logic_0;
@@ -3301,50 +3303,49 @@ begin
     end process;
 
 
-    gmem_write_0_WVALID_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WVALID, ap_CS_fsm_state17)
+    gmem_write_0_WVALID_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WVALID, ap_CS_fsm_state17, ap_CS_fsm_state18)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             gmem_write_0_WVALID <= grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WVALID;
         else 
             gmem_write_0_WVALID <= ap_const_logic_0;
         end if; 
     end process;
 
-    grp_final_layer_output_reconstruction_fu_546_ap_start <= grp_final_layer_output_reconstruction_fu_546_ap_start_reg;
+    grp_final_layer_output_reconstruction_fu_543_ap_start <= grp_final_layer_output_reconstruction_fu_543_ap_start_reg;
     grp_layer_convolution_with_persistent_accelerator_fu_496_ap_start <= grp_layer_convolution_with_persistent_accelerator_fu_496_ap_start_reg;
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A_assign_proc : process(layer_biases_0_Dout_A, layer_biases_1_Dout_A, layer_biases_2_Dout_A, layer_biases_3_Dout_A, layer_biases_4_Dout_A, layer_biases_5_Dout_A, layer_biases_6_Dout_A, layer_biases_7_Dout_A, layer_biases_8_Dout_A, layer_biases_9_Dout_A, layer_biases_10_Dout_A, layer_biases_11_Dout_A, layer_biases_12_Dout_A, layer_biases_13_Dout_A, layer_1_reg_834, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A_assign_proc : process(layer_biases_0_Dout_A, layer_biases_1_Dout_A, layer_biases_2_Dout_A, layer_biases_3_Dout_A, layer_biases_4_Dout_A, layer_biases_5_Dout_A, layer_biases_6_Dout_A, layer_biases_7_Dout_A, layer_biases_8_Dout_A, layer_biases_9_Dout_A, layer_biases_10_Dout_A, layer_biases_11_Dout_A, layer_biases_12_Dout_A, layer_biases_13_Dout_A, layer_1_reg_831, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_13_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_0_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_1_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_2_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_3_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_4_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_5_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_6_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_7_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_8_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_9_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_10_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_11_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= layer_biases_12_Dout_A;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Dout_A <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -3352,35 +3353,35 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A_assign_proc : process(layer_weights_0_Dout_A, layer_weights_1_Dout_A, layer_weights_2_Dout_A, layer_weights_3_Dout_A, layer_weights_4_Dout_A, layer_weights_5_Dout_A, layer_weights_6_Dout_A, layer_weights_7_Dout_A, layer_weights_8_Dout_A, layer_weights_9_Dout_A, layer_weights_10_Dout_A, layer_weights_11_Dout_A, layer_weights_12_Dout_A, layer_weights_13_Dout_A, layer_1_reg_834, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A_assign_proc : process(layer_weights_0_Dout_A, layer_weights_1_Dout_A, layer_weights_2_Dout_A, layer_weights_3_Dout_A, layer_weights_4_Dout_A, layer_weights_5_Dout_A, layer_weights_6_Dout_A, layer_weights_7_Dout_A, layer_weights_8_Dout_A, layer_weights_9_Dout_A, layer_weights_10_Dout_A, layer_weights_11_Dout_A, layer_weights_12_Dout_A, layer_weights_13_Dout_A, layer_1_reg_831, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_13_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_0_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_1_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_2_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_3_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_4_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_5_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_6_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_7_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_8_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_9_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_10_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_11_Dout_A;
-        elsif ((((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        elsif ((((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= layer_weights_12_Dout_A;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_Dout_A <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -3388,17 +3389,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWREADY_assign_proc : process(gmem_read_0_AWREADY, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_AWREADY, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWREADY_assign_proc : process(gmem_read_0_AWREADY, layer_1_reg_831, gmem_write_0_AWREADY, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWREADY <= gmem_read_0_AWREADY;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWREADY <= gmem_write_0_AWREADY;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_AWREADY <= 'X';
@@ -3406,17 +3405,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BID_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_BID, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BID_assign_proc : process(layer_1_reg_831, gmem_write_0_BID, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BID <= ap_const_lv1_0;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BID <= gmem_write_0_BID;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BID <= "X";
@@ -3424,17 +3421,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BRESP_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_BRESP, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BRESP_assign_proc : process(layer_1_reg_831, gmem_write_0_BRESP, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BRESP <= ap_const_lv2_0;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BRESP <= gmem_write_0_BRESP;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BRESP <= "XX";
@@ -3442,17 +3437,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BUSER_assign_proc : process(layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_BUSER, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BUSER_assign_proc : process(layer_1_reg_831, gmem_write_0_BUSER, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BUSER <= ap_const_lv1_0;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BUSER <= gmem_write_0_BUSER;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BUSER <= "X";
@@ -3460,17 +3453,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BVALID_assign_proc : process(gmem_read_0_BVALID, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_BVALID, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BVALID_assign_proc : process(gmem_read_0_BVALID, layer_1_reg_831, gmem_write_0_BVALID, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BVALID <= gmem_read_0_BVALID;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BVALID <= gmem_write_0_BVALID;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_BVALID <= 'X';
@@ -3478,17 +3469,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WREADY_assign_proc : process(gmem_read_0_WREADY, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_WREADY, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WREADY_assign_proc : process(gmem_read_0_WREADY, layer_1_reg_831, gmem_write_0_WREADY, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WREADY <= gmem_read_0_WREADY;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WREADY <= gmem_write_0_WREADY;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_read_0_WREADY <= 'X';
@@ -3496,17 +3485,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARREADY_assign_proc : process(gmem_read_0_ARREADY, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_ARREADY, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARREADY_assign_proc : process(gmem_read_0_ARREADY, layer_1_reg_831, gmem_write_0_ARREADY, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARREADY <= gmem_write_0_ARREADY;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARREADY <= gmem_read_0_ARREADY;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_ARREADY <= 'X';
@@ -3514,17 +3501,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RDATA_assign_proc : process(gmem_read_0_RDATA, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_RDATA, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RDATA_assign_proc : process(gmem_read_0_RDATA, layer_1_reg_831, gmem_write_0_RDATA, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RDATA <= gmem_write_0_RDATA;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RDATA <= gmem_read_0_RDATA;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RDATA <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -3532,17 +3517,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RFIFONUM_assign_proc : process(gmem_read_0_RFIFONUM, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_RFIFONUM, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RFIFONUM_assign_proc : process(gmem_read_0_RFIFONUM, layer_1_reg_831, gmem_write_0_RFIFONUM, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RFIFONUM <= std_logic_vector(IEEE.numeric_std.resize(unsigned(gmem_write_0_RFIFONUM),13));
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RFIFONUM <= gmem_read_0_RFIFONUM;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RFIFONUM <= "XXXXXXXXXXXXX";
@@ -3550,17 +3533,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RID_assign_proc : process(gmem_read_0_RID, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RID_assign_proc : process(gmem_read_0_RID, layer_1_reg_831, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RID <= ap_const_lv1_0;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RID <= gmem_read_0_RID;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RID <= "X";
@@ -3568,17 +3549,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RLAST_assign_proc : process(gmem_read_0_RLAST, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RLAST_assign_proc : process(gmem_read_0_RLAST, layer_1_reg_831, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RLAST <= ap_const_logic_0;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RLAST <= gmem_read_0_RLAST;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RLAST <= 'X';
@@ -3586,17 +3565,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RRESP_assign_proc : process(gmem_read_0_RRESP, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RRESP_assign_proc : process(gmem_read_0_RRESP, layer_1_reg_831, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RRESP <= ap_const_lv2_0;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RRESP <= gmem_read_0_RRESP;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RRESP <= "XX";
@@ -3604,17 +3581,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RUSER_assign_proc : process(gmem_read_0_RUSER, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RUSER_assign_proc : process(gmem_read_0_RUSER, layer_1_reg_831, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RUSER <= ap_const_lv1_0;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RUSER <= gmem_read_0_RUSER;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RUSER <= "X";
@@ -3622,17 +3597,15 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RVALID_assign_proc : process(gmem_read_0_RVALID, layer_1_reg_834, trunc_ln146_fu_717_p1, ap_CS_fsm_state16, gmem_write_0_RVALID, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RVALID_assign_proc : process(gmem_read_0_RVALID, layer_1_reg_831, gmem_write_0_RVALID, ap_CS_fsm_state17, ap_CS_fsm_state20, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and 
-    (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_1) and (layer_1_reg_834 
-    = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 
-    = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state20) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_4) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) 
+    or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state20)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state20)))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RVALID <= gmem_write_0_RVALID;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state16) and ((((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_E)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_F))) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_D)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = 
-    ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state16)) 
-    or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state16)) or ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state16)) or 
-    ((trunc_ln146_fu_717_p1 = ap_const_lv1_0) and (layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_5) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) 
+    or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RVALID <= gmem_read_0_RVALID;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_m_axi_gmem_write_0_RVALID <= 'X';
@@ -3640,43 +3613,43 @@ begin
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_read_assign_proc : process(pruned_feature_dram_write_read_reg_760, pruned_feature_dram_read_read_reg_766, layer_1_reg_834, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_read_assign_proc : process(pruned_feature_dram_write_read_reg_757, pruned_feature_dram_read_read_reg_763, layer_1_reg_831, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) 
-    and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
-            grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_read <= pruned_feature_dram_write_read_reg_760;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) 
-    and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
-            grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_read <= pruned_feature_dram_read_read_reg_766;
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_A) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)))) then 
+            grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_read <= pruned_feature_dram_write_read_reg_757;
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
+            grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_read <= pruned_feature_dram_read_read_reg_763;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_read <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_write_assign_proc : process(pruned_feature_dram_write_read_reg_760, pruned_feature_dram_read_read_reg_766, layer_1_reg_834, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_write_assign_proc : process(pruned_feature_dram_write_read_reg_757, pruned_feature_dram_read_read_reg_763, layer_1_reg_831, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) 
-    and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)))) then 
-            grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_write <= pruned_feature_dram_read_read_reg_766;
-        elsif ((((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_A) 
-    and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
-            grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_write <= pruned_feature_dram_write_read_reg_760;
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_A) 
+    and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)))) then 
+            grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_write <= pruned_feature_dram_read_read_reg_763;
+        elsif ((((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_A) 
+    and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
+            grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_write <= pruned_feature_dram_write_read_reg_757;
         else 
             grp_layer_convolution_with_persistent_accelerator_fu_496_pruned_dram_write <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
     grp_pipeline_bitmap_stage_fu_462_ap_start <= grp_pipeline_bitmap_stage_fu_462_ap_start_reg;
-    icmp_ln131_fu_698_p2 <= "1" when (layer_fu_292 = ap_const_lv4_E) else "0";
+    icmp_ln131_fu_695_p2 <= "1" when (layer_fu_292 = ap_const_lv4_E) else "0";
     input_voxel_stream_read <= grp_pipeline_bitmap_stage_fu_462_input_voxel_stream_read;
     layer_biases_0_Addr_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_Addr_A;
     layer_biases_0_Clk_A <= ap_clk;
     layer_biases_0_Din_A <= ap_const_lv32_0;
 
-    layer_biases_0_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_0_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_0_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_0_EN_A <= ap_const_logic_0;
@@ -3689,9 +3662,9 @@ begin
     layer_biases_10_Clk_A <= ap_clk;
     layer_biases_10_Din_A <= ap_const_lv32_0;
 
-    layer_biases_10_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_10_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_10_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_10_EN_A <= ap_const_logic_0;
@@ -3704,9 +3677,9 @@ begin
     layer_biases_11_Clk_A <= ap_clk;
     layer_biases_11_Din_A <= ap_const_lv32_0;
 
-    layer_biases_11_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_11_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_11_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_11_EN_A <= ap_const_logic_0;
@@ -3719,9 +3692,9 @@ begin
     layer_biases_12_Clk_A <= ap_clk;
     layer_biases_12_Din_A <= ap_const_lv32_0;
 
-    layer_biases_12_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_12_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_12_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_12_EN_A <= ap_const_logic_0;
@@ -3734,9 +3707,9 @@ begin
     layer_biases_13_Clk_A <= ap_clk;
     layer_biases_13_Din_A <= ap_const_lv32_0;
 
-    layer_biases_13_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_13_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             layer_biases_13_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_13_EN_A <= ap_const_logic_0;
@@ -3749,9 +3722,9 @@ begin
     layer_biases_1_Clk_A <= ap_clk;
     layer_biases_1_Din_A <= ap_const_lv32_0;
 
-    layer_biases_1_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_1_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_1_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_1_EN_A <= ap_const_logic_0;
@@ -3764,9 +3737,9 @@ begin
     layer_biases_2_Clk_A <= ap_clk;
     layer_biases_2_Din_A <= ap_const_lv32_0;
 
-    layer_biases_2_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_2_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_2_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_2_EN_A <= ap_const_logic_0;
@@ -3779,9 +3752,9 @@ begin
     layer_biases_3_Clk_A <= ap_clk;
     layer_biases_3_Din_A <= ap_const_lv32_0;
 
-    layer_biases_3_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_3_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_3_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_3_EN_A <= ap_const_logic_0;
@@ -3794,9 +3767,9 @@ begin
     layer_biases_4_Clk_A <= ap_clk;
     layer_biases_4_Din_A <= ap_const_lv32_0;
 
-    layer_biases_4_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_4_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_4_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_4_EN_A <= ap_const_logic_0;
@@ -3809,9 +3782,9 @@ begin
     layer_biases_5_Clk_A <= ap_clk;
     layer_biases_5_Din_A <= ap_const_lv32_0;
 
-    layer_biases_5_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_5_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_5_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_5_EN_A <= ap_const_logic_0;
@@ -3824,9 +3797,9 @@ begin
     layer_biases_6_Clk_A <= ap_clk;
     layer_biases_6_Din_A <= ap_const_lv32_0;
 
-    layer_biases_6_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_6_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_6_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_6_EN_A <= ap_const_logic_0;
@@ -3839,9 +3812,9 @@ begin
     layer_biases_7_Clk_A <= ap_clk;
     layer_biases_7_Din_A <= ap_const_lv32_0;
 
-    layer_biases_7_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_7_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_7_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_7_EN_A <= ap_const_logic_0;
@@ -3854,9 +3827,9 @@ begin
     layer_biases_8_Clk_A <= ap_clk;
     layer_biases_8_Din_A <= ap_const_lv32_0;
 
-    layer_biases_8_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_8_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_8_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_8_EN_A <= ap_const_logic_0;
@@ -3869,9 +3842,9 @@ begin
     layer_biases_9_Clk_A <= ap_clk;
     layer_biases_9_Din_A <= ap_const_lv32_0;
 
-    layer_biases_9_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_biases_9_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_biases_9_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_biases_12_EN_A;
         else 
             layer_biases_9_EN_A <= ap_const_logic_0;
@@ -3884,9 +3857,9 @@ begin
     layer_weights_0_Clk_A <= ap_clk;
     layer_weights_0_Din_A <= ap_const_lv32_0;
 
-    layer_weights_0_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_0_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_0) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_0_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_0_EN_A <= ap_const_logic_0;
@@ -3899,9 +3872,9 @@ begin
     layer_weights_10_Clk_A <= ap_clk;
     layer_weights_10_Din_A <= ap_const_lv32_0;
 
-    layer_weights_10_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_10_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_A) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_10_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_10_EN_A <= ap_const_logic_0;
@@ -3914,9 +3887,9 @@ begin
     layer_weights_11_Clk_A <= ap_clk;
     layer_weights_11_Din_A <= ap_const_lv32_0;
 
-    layer_weights_11_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_11_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_B) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_11_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_11_EN_A <= ap_const_logic_0;
@@ -3929,9 +3902,9 @@ begin
     layer_weights_12_Clk_A <= ap_clk;
     layer_weights_12_Din_A <= ap_const_lv32_0;
 
-    layer_weights_12_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_12_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_C) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_12_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_12_EN_A <= ap_const_logic_0;
@@ -3944,9 +3917,9 @@ begin
     layer_weights_13_Clk_A <= ap_clk;
     layer_weights_13_Din_A <= ap_const_lv32_0;
 
-    layer_weights_13_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_13_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((ap_const_logic_1 = ap_CS_fsm_state19) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state17) and ((layer_1_reg_834 = ap_const_lv4_D) or ((layer_1_reg_834 = ap_const_lv4_E) or (layer_1_reg_834 = ap_const_lv4_F)))))) then 
+        if ((((ap_const_logic_1 = ap_CS_fsm_state21) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))) or ((ap_const_logic_1 = ap_CS_fsm_state18) and ((layer_1_reg_831 = ap_const_lv4_D) or ((layer_1_reg_831 = ap_const_lv4_E) or (layer_1_reg_831 = ap_const_lv4_F)))))) then 
             layer_weights_13_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_13_EN_A <= ap_const_logic_0;
@@ -3959,9 +3932,9 @@ begin
     layer_weights_1_Clk_A <= ap_clk;
     layer_weights_1_Din_A <= ap_const_lv32_0;
 
-    layer_weights_1_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_1_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_1) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_1_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_1_EN_A <= ap_const_logic_0;
@@ -3974,9 +3947,9 @@ begin
     layer_weights_2_Clk_A <= ap_clk;
     layer_weights_2_Din_A <= ap_const_lv32_0;
 
-    layer_weights_2_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_2_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_2) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_2_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_2_EN_A <= ap_const_logic_0;
@@ -3989,9 +3962,9 @@ begin
     layer_weights_3_Clk_A <= ap_clk;
     layer_weights_3_Din_A <= ap_const_lv32_0;
 
-    layer_weights_3_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_3_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_3) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_3_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_3_EN_A <= ap_const_logic_0;
@@ -4004,9 +3977,9 @@ begin
     layer_weights_4_Clk_A <= ap_clk;
     layer_weights_4_Din_A <= ap_const_lv32_0;
 
-    layer_weights_4_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_4_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_4) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_4_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_4_EN_A <= ap_const_logic_0;
@@ -4019,9 +3992,9 @@ begin
     layer_weights_5_Clk_A <= ap_clk;
     layer_weights_5_Din_A <= ap_const_lv32_0;
 
-    layer_weights_5_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_5_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_5) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_5_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_5_EN_A <= ap_const_logic_0;
@@ -4034,9 +4007,9 @@ begin
     layer_weights_6_Clk_A <= ap_clk;
     layer_weights_6_Din_A <= ap_const_lv32_0;
 
-    layer_weights_6_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_6_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_6) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_6_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_6_EN_A <= ap_const_logic_0;
@@ -4049,9 +4022,9 @@ begin
     layer_weights_7_Clk_A <= ap_clk;
     layer_weights_7_Din_A <= ap_const_lv32_0;
 
-    layer_weights_7_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_7_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_7) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_7_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_7_EN_A <= ap_const_logic_0;
@@ -4064,9 +4037,9 @@ begin
     layer_weights_8_Clk_A <= ap_clk;
     layer_weights_8_Din_A <= ap_const_lv32_0;
 
-    layer_weights_8_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_8_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_8) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_8_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_8_EN_A <= ap_const_logic_0;
@@ -4079,9 +4052,9 @@ begin
     layer_weights_9_Clk_A <= ap_clk;
     layer_weights_9_Din_A <= ap_const_lv32_0;
 
-    layer_weights_9_EN_A_assign_proc : process(layer_1_reg_834, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state17, ap_CS_fsm_state19)
+    layer_weights_9_EN_A_assign_proc : process(layer_1_reg_831, grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A, ap_CS_fsm_state18, ap_CS_fsm_state21)
     begin
-        if ((((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state19)) or ((layer_1_reg_834 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state17)))) then 
+        if ((((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state21)) or ((layer_1_reg_831 = ap_const_lv4_9) and (ap_const_logic_1 = ap_CS_fsm_state18)))) then 
             layer_weights_9_EN_A <= grp_layer_convolution_with_persistent_accelerator_fu_496_layer_weights_12_EN_A;
         else 
             layer_weights_9_EN_A <= ap_const_logic_0;
@@ -4090,30 +4063,30 @@ begin
 
     layer_weights_9_Rst_A <= ap_rst_n_inv;
     layer_weights_9_WEN_A <= ap_const_lv4_0;
-    pruned_voxel_count_2_fu_591_p2 <= std_logic_vector(unsigned(pruned_voxel_count_fu_280) + unsigned(ap_const_lv32_1));
-        sext_ln107_fu_636_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln_fu_626_p4),64));
+    pruned_voxel_count_2_fu_588_p2 <= std_logic_vector(unsigned(pruned_voxel_count_fu_280) + unsigned(ap_const_lv32_1));
+        sext_ln107_fu_633_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln_fu_623_p4),64));
 
-    shl_ln96_fu_597_p2 <= std_logic_vector(shift_left(unsigned(pruned_voxel_count_fu_280),to_integer(unsigned('0' & ap_const_lv32_2(31-1 downto 0)))));
-    shl_ln_fu_609_p3 <= (sub_ln96_fu_603_p2 & ap_const_lv2_0);
-    sub_ln96_fu_603_p2 <= std_logic_vector(unsigned(shl_ln96_fu_597_p2) - unsigned(pruned_voxel_count_fu_280));
+    shl_ln96_fu_594_p2 <= std_logic_vector(shift_left(unsigned(pruned_voxel_count_fu_280),to_integer(unsigned('0' & ap_const_lv32_2(31-1 downto 0)))));
+    shl_ln_fu_606_p3 <= (sub_ln96_fu_600_p2 & ap_const_lv2_0);
+    sub_ln96_fu_600_p2 <= std_logic_vector(unsigned(shl_ln96_fu_594_p2) - unsigned(pruned_voxel_count_fu_280));
     tmp_nbreadreq_fu_360_p3 <= (0=>(feature_data_stream_empty_n), others=>'-');
     tmp_s_nbreadreq_fu_367_p3 <= (0=>(write_addr_stream_empty_n), others=>'-');
 
-    total_processed_voxels_ap_vld_assign_proc : process(ap_CS_fsm_state20)
+    total_processed_voxels_ap_vld_assign_proc : process(ap_CS_fsm_state22)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state20)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state22)) then 
             total_processed_voxels_ap_vld <= ap_const_logic_1;
         else 
             total_processed_voxels_ap_vld <= ap_const_logic_0;
         end if; 
     end process;
 
-    trunc_ln146_fu_717_p1 <= layer_fu_292(1 - 1 downto 0);
-    trunc_ln_fu_626_p4 <= add_ln96_fu_621_p2(63 downto 2);
+    trunc_ln146_fu_714_p1 <= layer_fu_292(1 - 1 downto 0);
+    trunc_ln_fu_623_p4 <= add_ln96_fu_618_p2(63 downto 2);
 
-    write_addr_stream_read_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_predicate_op155_read_state5, ap_block_pp0_stage1_subdone_grp2_done_reg, ap_block_pp0_stage1_11001_grp2)
+    write_addr_stream_read_assign_proc : process(ap_CS_fsm_pp0_stage1, ap_enable_reg_pp0_iter0_reg, ap_predicate_op157_read_state5, ap_block_pp0_stage1_subdone_grp2_done_reg, ap_block_pp0_stage1_11001_grp2)
     begin
-        if (((ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp2) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp2_done_reg) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1) and (ap_predicate_op155_read_state5 = ap_const_boolean_1))) then 
+        if (((ap_const_boolean_0 = ap_block_pp0_stage1_11001_grp2) and (ap_const_boolean_0 = ap_block_pp0_stage1_subdone_grp2_done_reg) and (ap_enable_reg_pp0_iter0_reg = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage1) and (ap_predicate_op157_read_state5 = ap_const_boolean_1))) then 
             write_addr_stream_read <= ap_const_logic_1;
         else 
             write_addr_stream_read <= ap_const_logic_0;
@@ -4130,6 +4103,6 @@ begin
         end if; 
     end process;
 
-    zext_ln131_fu_710_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(layer_fu_292),64));
-    zext_ln96_fu_617_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(shl_ln_fu_609_p3),64));
+    zext_ln131_fu_707_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(layer_fu_292),64));
+    zext_ln96_fu_614_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(shl_ln_fu_606_p3),64));
 end behav;

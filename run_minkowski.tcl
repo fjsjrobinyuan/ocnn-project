@@ -23,7 +23,7 @@ open_solution "solution1" -reset
 # High-end FPGA for 14-layer network with persistent BRAM
 set_part {xcu250-figd2104-2L-e}
 # High performance clock (200MHz) 
-create_clock -period 6.0
+create_clock -period 5.0
 
 # Configure for persistent memory architecture
 config_dataflow -default_channel fifo -fifo_depth 1024

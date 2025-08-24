@@ -154,8 +154,8 @@ set RtlHierarchyInfo {[
 				"LoopDec" : {"FSMBitwidth" : "29", "FirstState" : "ap_ST_fsm_pp3_stage0", "FirstStateIter" : "ap_enable_reg_pp3_iter0", "FirstStateBlock" : "ap_block_pp3_stage0_subdone", "LastState" : "ap_ST_fsm_pp3_stage0", "LastStateIter" : "ap_enable_reg_pp3_iter1", "LastStateBlock" : "ap_block_pp3_stage0_subdone", "PreState" : ["ap_ST_fsm_state8"], "QuitState" : "ap_ST_fsm_pp3_stage0", "QuitStateIter" : "ap_enable_reg_pp3_iter1", "QuitStateBlock" : "ap_block_pp3_stage0_subdone", "PostState" : ["ap_ST_fsm_state26"]}},
 			{"Name" : "VITIS_LOOP_176_8", "PipelineType" : "pipeline",
 				"LoopDec" : {"FSMBitwidth" : "29", "FirstState" : "ap_ST_fsm_pp4_stage0", "FirstStateIter" : "ap_enable_reg_pp4_iter0", "FirstStateBlock" : "ap_block_pp4_stage0_subdone", "LastState" : "ap_ST_fsm_pp4_stage0", "LastStateIter" : "ap_enable_reg_pp4_iter1", "LastStateBlock" : "ap_block_pp4_stage0_subdone", "PreState" : ["ap_ST_fsm_state26"], "QuitState" : "ap_ST_fsm_pp4_stage0", "QuitStateIter" : "ap_enable_reg_pp4_iter1", "QuitStateBlock" : "ap_block_pp4_stage0_subdone", "PostState" : ["ap_ST_fsm_state29"]}},
-			{"Name" : "VITIS_LOOP_189_9", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "29", "FirstState" : "ap_ST_fsm_state30", "LastState" : ["ap_ST_fsm_state30"], "QuitState" : ["ap_ST_fsm_state30"], "PreState" : ["ap_ST_fsm_state29"], "PostState" : ["ap_ST_fsm_state31"], "OneDepthLoop" : "1", "OneStateBlock": "ap_ST_fsm_state30_blk"}}]},
+			{"Name" : "VITIS_LOOP_189_9", "PipelineType" : "pipeline",
+				"LoopDec" : {"FSMBitwidth" : "29", "FirstState" : "ap_ST_fsm_pp5_stage0", "FirstStateIter" : "ap_enable_reg_pp5_iter0", "FirstStateBlock" : "ap_block_pp5_stage0_subdone", "LastState" : "ap_ST_fsm_pp5_stage0", "LastStateIter" : "ap_enable_reg_pp5_iter1", "LastStateBlock" : "ap_block_pp5_stage0_subdone", "PreState" : ["ap_ST_fsm_state29"], "QuitState" : "ap_ST_fsm_pp5_stage0", "QuitStateIter" : "ap_enable_reg_pp5_iter1", "QuitStateBlock" : "ap_block_pp5_stage0_subdone", "PostState" : ["ap_ST_fsm_state32"]}}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.L1_temp_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.L2_temp_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.bitset_512ns_512ns_32s_1s_512_1_1_U1", "Parent" : "0"},
@@ -211,6 +211,7 @@ set PipelineEnableSignalInfo {[
 	{"Pipeline" : "2", "EnableSignal" : "ap_enable_pp2"}
 	{"Pipeline" : "3", "EnableSignal" : "ap_enable_pp3"}
 	{"Pipeline" : "4", "EnableSignal" : "ap_enable_pp4"}
+	{"Pipeline" : "5", "EnableSignal" : "ap_enable_pp5"}
 ]}
 
 set Spec2ImplPortList { 

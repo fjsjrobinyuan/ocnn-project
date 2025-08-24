@@ -6,7 +6,7 @@
 Library ieee;
 use ieee.std_logic_1164.all;
 
-entity minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1 is
+entity minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1 is
     generic (
         ID         : integer := 1;
         NUM_STAGE  : integer := 3;
@@ -24,9 +24,9 @@ entity minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1 is
     );
 end entity;
 
-architecture arch of minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1 is
+architecture arch of minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1 is
     --------------------- Component ---------------------
-    component minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1_ip is
+    component minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1_ip is
         port (
             aclk                 : in  std_logic;
             aclken               : in  std_logic;
@@ -54,7 +54,7 @@ architecture arch of minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp
     signal dout_r    : std_logic_vector(dout_WIDTH-1 downto 0);
 begin
     --------------------- Instantiation -----------------
-    minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1_ip_u : component minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1_ip
+    minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1_ip_u : component minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_no_dsp_1_ip
     port map (
         aclk                 => aclk,
         aclken               => aclken,

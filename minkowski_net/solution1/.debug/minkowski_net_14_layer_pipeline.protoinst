@@ -13,7 +13,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_final_layer_output_reconstruction_fu_546/grp_final_layer_output_reconstruction_fu_546_activity": {
+				"grp_final_layer_output_reconstruction_fu_543/grp_final_layer_output_reconstruction_fu_543_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},

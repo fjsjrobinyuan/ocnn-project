@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 15,
-    "calls": "3 4 4 2",
+    "calls": "3 2 2 1",
     "file": "minkowski_net.cpp",
     "fileloc": 17,
     "instructions": 202,
@@ -16,6 +16,45 @@
     "total_instructions": 4564
   },
   "1": {
+    "basicblocks": 16,
+    "calls": "",
+    "file": "minkowski_net.cpp",
+    "fileloc": 389,
+    "instructions": 203,
+    "loads": {
+      "L": 20
+    },
+    "name": "final_layer_output_reconstruction",
+    "stores": {
+      "L": 21
+    },
+    "total_instructions": 203
+  },
+  "2": {
+    "basicblocks": 353,
+    "calls": "",
+    "file": "minkowski_net.cpp",
+    "fileloc": 204,
+    "instructions": 1548,
+    "loads": {
+      "L": 124
+    },
+    "name": "layer_convolution_with_persistent_accelerator",
+    "stores": {
+      "L": 58
+    },
+    "total_instructions": 1548
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "4",
+    "file": "complete_pipeline.cpp",
+    "fileloc": 127,
+    "instructions": 2,
+    "name": "pipeline_bitmap_stage",
+    "total_instructions": 1063
+  },
+  "4": {
     "basicblocks": 119,
     "calls": "",
     "file": "streaming_bitmap_constructor.cpp",
@@ -31,44 +70,5 @@
       "L": 25
     },
     "total_instructions": 1061
-  },
-  "2": {
-    "basicblocks": 16,
-    "calls": "",
-    "file": "minkowski_net.cpp",
-    "fileloc": 389,
-    "instructions": 203,
-    "loads": {
-      "L": 20
-    },
-    "name": "final_layer_output_reconstruction",
-    "stores": {
-      "L": 21
-    },
-    "total_instructions": 203
-  },
-  "3": {
-    "basicblocks": 1,
-    "calls": "1",
-    "file": "complete_pipeline.cpp",
-    "fileloc": 127,
-    "instructions": 2,
-    "name": "pipeline_bitmap_stage",
-    "total_instructions": 1063
-  },
-  "4": {
-    "basicblocks": 353,
-    "calls": "",
-    "file": "minkowski_net.cpp",
-    "fileloc": 204,
-    "instructions": 1548,
-    "loads": {
-      "L": 124
-    },
-    "name": "layer_convolution_with_persistent_accelerator",
-    "stores": {
-      "L": 58
-    },
-    "total_instructions": 1548
   }
 }

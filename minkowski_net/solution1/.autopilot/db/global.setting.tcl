@@ -1,6 +1,6 @@
 
 set TopModule "minkowski_net_14_layer_pipeline"
-set ClockPeriod 6
+set ClockPeriod 5
 set ClockList ap_clk
 set AxiliteClockList {}
 set HasVivadoClockPeriod 0

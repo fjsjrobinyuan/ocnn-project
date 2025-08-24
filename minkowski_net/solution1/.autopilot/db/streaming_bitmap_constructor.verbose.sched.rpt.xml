@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'streaming_bitmap_constructor'" level="0">
-<item name = "Date">Mon Aug 25 03:29:02 2025
+<item name = "Date">Mon Aug 25 03:31:38 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">minkowski_net</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">6.00 ns, 4.369 ns, 1.62 ns</column>
+<column name="ap_clk">5.00 ns, 3.520 ns, 1.35 ns</column>
 </table>
 </item>
 </section>
@@ -40,7 +40,7 @@
 <column name="- VOXEL_PROCESSING">?, ?, 2, 1, 1, ?, yes</column>
 <column name="- L2_CONSTRUCTION_VITIS_LOOP_134_3">64, 64, 17, 16, 1, 4, yes</column>
 <column name="- VITIS_LOOP_176_8">8, 8, 2, 1, 1, 8, yes</column>
-<column name="- VITIS_LOOP_189_9">8, 8, 1, 1, 1, 8, yes</column>
+<column name="- VITIS_LOOP_189_9">8, 8, 2, 1, 1, 8, yes</column>
 </table>
 </item>
 </section>

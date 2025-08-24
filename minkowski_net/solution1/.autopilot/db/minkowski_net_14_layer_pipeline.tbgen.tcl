@@ -889,106 +889,106 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "gmem_output", "Type" : "MAXI", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "88", "SubInstance" : "grp_final_layer_output_reconstruction_fu_546", "Port" : "gmem_output", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
+					{"ID" : "88", "SubInstance" : "grp_final_layer_output_reconstruction_fu_543", "Port" : "gmem_output", "Inst_start_state" : "22", "Inst_end_state" : "23"}]},
 			{"Name" : "gmem_read", "Type" : "MAXI", "Direction" : "IO",
 				"BlockSignal" : [
 					{"Name" : "gmem_read_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "gmem_read_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "gmem_read_blk_n_B", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "gmem_read", "Inst_start_state" : "16", "Inst_end_state" : "19"},
-					{"ID" : "88", "SubInstance" : "grp_final_layer_output_reconstruction_fu_546", "Port" : "gmem_read", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "gmem_read", "Inst_start_state" : "20", "Inst_end_state" : "21"},
+					{"ID" : "88", "SubInstance" : "grp_final_layer_output_reconstruction_fu_543", "Port" : "gmem_read", "Inst_start_state" : "22", "Inst_end_state" : "23"}]},
 			{"Name" : "gmem_write", "Type" : "MAXI", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "gmem_write", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "gmem_write", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "input_voxel_stream", "Type" : "Fifo", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "4", "SubInstance" : "grp_pipeline_bitmap_stage_fu_462", "Port" : "input_voxel_stream", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "final_output_full_cubic", "Type" : "None", "Direction" : "I"},
 			{"Name" : "layer_weights_0", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_1", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_2", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_3", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_4", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_5", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_6", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_7", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_8", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_9", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_10", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_11", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_12", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_weights_13", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_weights_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_0", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_1", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_2", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_3", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_4", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_5", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_6", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_7", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_8", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_9", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_10", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_11", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_12", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "layer_biases_13", "Type" : "Bram", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "16", "Inst_end_state" : "19"}]},
+					{"ID" : "28", "SubInstance" : "grp_layer_convolution_with_persistent_accelerator_fu_496", "Port" : "layer_biases_12", "Inst_start_state" : "20", "Inst_end_state" : "21"}]},
 			{"Name" : "pruned_feature_dram_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "pruned_feature_dram_write", "Type" : "None", "Direction" : "I"},
 			{"Name" : "L3_bitmap", "Type" : "OVld", "Direction" : "IO"},
@@ -1031,9 +1031,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "MINKOWSKI_LAYERS_output_spatial_dim", "Type" : "Memory", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_96_1", "PipelineType" : "pipeline",
-				"LoopDec" : {"FSMBitwidth" : "14", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter3", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "PreState" : ["ap_ST_fsm_state3"], "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter3", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "PostState" : ["ap_ST_fsm_state14"]}},
+				"LoopDec" : {"FSMBitwidth" : "16", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter3", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "PreState" : ["ap_ST_fsm_state3"], "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter3", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "PostState" : ["ap_ST_fsm_state14"]}},
 			{"Name" : "LAYER_PROCESSING", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "14", "FirstState" : "ap_ST_fsm_state15", "LastState" : ["ap_ST_fsm_state18"], "QuitState" : ["ap_ST_fsm_state15"], "PreState" : ["ap_ST_fsm_state14"], "PostState" : ["ap_ST_fsm_state20"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
+				"LoopDec" : {"FSMBitwidth" : "16", "FirstState" : "ap_ST_fsm_state15", "LastState" : ["ap_ST_fsm_state19"], "QuitState" : ["ap_ST_fsm_state15"], "PreState" : ["ap_ST_fsm_state14"], "PostState" : ["ap_ST_fsm_state22"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.MINKOWSKI_LAYERS_input_channels_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.MINKOWSKI_LAYERS_output_channels_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.MINKOWSKI_LAYERS_output_spatial_dim_U", "Parent" : "0"},
@@ -1143,8 +1143,8 @@ set RtlHierarchyInfo {[
 				"LoopDec" : {"FSMBitwidth" : "29", "FirstState" : "ap_ST_fsm_pp3_stage0", "FirstStateIter" : "ap_enable_reg_pp3_iter0", "FirstStateBlock" : "ap_block_pp3_stage0_subdone", "LastState" : "ap_ST_fsm_pp3_stage0", "LastStateIter" : "ap_enable_reg_pp3_iter1", "LastStateBlock" : "ap_block_pp3_stage0_subdone", "PreState" : ["ap_ST_fsm_state8"], "QuitState" : "ap_ST_fsm_pp3_stage0", "QuitStateIter" : "ap_enable_reg_pp3_iter1", "QuitStateBlock" : "ap_block_pp3_stage0_subdone", "PostState" : ["ap_ST_fsm_state26"]}},
 			{"Name" : "VITIS_LOOP_176_8", "PipelineType" : "pipeline",
 				"LoopDec" : {"FSMBitwidth" : "29", "FirstState" : "ap_ST_fsm_pp4_stage0", "FirstStateIter" : "ap_enable_reg_pp4_iter0", "FirstStateBlock" : "ap_block_pp4_stage0_subdone", "LastState" : "ap_ST_fsm_pp4_stage0", "LastStateIter" : "ap_enable_reg_pp4_iter1", "LastStateBlock" : "ap_block_pp4_stage0_subdone", "PreState" : ["ap_ST_fsm_state26"], "QuitState" : "ap_ST_fsm_pp4_stage0", "QuitStateIter" : "ap_enable_reg_pp4_iter1", "QuitStateBlock" : "ap_block_pp4_stage0_subdone", "PostState" : ["ap_ST_fsm_state29"]}},
-			{"Name" : "VITIS_LOOP_189_9", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "29", "FirstState" : "ap_ST_fsm_state30", "LastState" : ["ap_ST_fsm_state30"], "QuitState" : ["ap_ST_fsm_state30"], "PreState" : ["ap_ST_fsm_state29"], "PostState" : ["ap_ST_fsm_state31"], "OneDepthLoop" : "1", "OneStateBlock": "ap_ST_fsm_state30_blk"}}]},
+			{"Name" : "VITIS_LOOP_189_9", "PipelineType" : "pipeline",
+				"LoopDec" : {"FSMBitwidth" : "29", "FirstState" : "ap_ST_fsm_pp5_stage0", "FirstStateIter" : "ap_enable_reg_pp5_iter0", "FirstStateBlock" : "ap_block_pp5_stage0_subdone", "LastState" : "ap_ST_fsm_pp5_stage0", "LastStateIter" : "ap_enable_reg_pp5_iter1", "LastStateBlock" : "ap_block_pp5_stage0_subdone", "PreState" : ["ap_ST_fsm_state29"], "QuitState" : "ap_ST_fsm_pp5_stage0", "QuitStateIter" : "ap_enable_reg_pp5_iter1", "QuitStateBlock" : "ap_block_pp5_stage0_subdone", "PostState" : ["ap_ST_fsm_state32"]}}]},
 	{"ID" : "6", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_pipeline_bitmap_stage_fu_462.grp_streaming_bitmap_constructor_fu_74.L1_temp_U", "Parent" : "5"},
 	{"ID" : "7", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_pipeline_bitmap_stage_fu_462.grp_streaming_bitmap_constructor_fu_74.L2_temp_U", "Parent" : "5"},
 	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_pipeline_bitmap_stage_fu_462.grp_streaming_bitmap_constructor_fu_74.bitset_512ns_512ns_32s_1s_512_1_1_U1", "Parent" : "5"},
@@ -1366,8 +1366,8 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "READ_NEIGHBOR_FEATURES", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "4", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state4"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "33", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.fadd_32ns_32ns_32_4_full_dsp_1_U50", "Parent" : "28"},
-	{"ID" : "34", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.fmul_32ns_32ns_32_3_max_dsp_1_U51", "Parent" : "28"},
+	{"ID" : "33", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.fadd_32ns_32ns_32_4_no_dsp_1_U50", "Parent" : "28"},
+	{"ID" : "34", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.fmul_32ns_32ns_32_4_max_dsp_1_U51", "Parent" : "28"},
 	{"ID" : "35", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.fcmp_32ns_32ns_1_2_no_dsp_1_U52", "Parent" : "28"},
 	{"ID" : "36", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.mul_11ns_42s_42_1_1_U53", "Parent" : "28"},
 	{"ID" : "37", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.mul_11ns_42s_42_1_1_U54", "Parent" : "28"},
@@ -1421,7 +1421,7 @@ set RtlHierarchyInfo {[
 	{"ID" : "85", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.mul_11ns_12s_12_1_1_U102", "Parent" : "28"},
 	{"ID" : "86", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.mul_11ns_13s_13_1_1_U103", "Parent" : "28"},
 	{"ID" : "87", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_layer_convolution_with_persistent_accelerator_fu_496.mul_11ns_11ns_22_1_1_U104", "Parent" : "28"},
-	{"ID" : "88", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_final_layer_output_reconstruction_fu_546", "Parent" : "0",
+	{"ID" : "88", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_final_layer_output_reconstruction_fu_543", "Parent" : "0",
 		"CDFG" : "final_layer_output_reconstruction",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
