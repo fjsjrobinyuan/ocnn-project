@@ -1,0 +1,198 @@
+In file included from streaming_bitmap_constructor.cpp:1:
+In file included from ./streaming_bitmap_constructor.h:3:
+In file included from ./octree_bitmap.h:5:
+./octree_master.h:141:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=get_bit_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:148:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=set_bit_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:155:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=coord_to_idx_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:160:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=part1by2_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:171:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=morton3D_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:177:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=morton_decode_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:183:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=morton_decode_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+./octree_master.h:212:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=l2_idx_to_coords_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:219:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=l1_local_to_coords_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:226:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=l0_local_to_coords_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:261:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=extract_morton_address_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:271:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=morton_to_dram_address_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+In file included from streaming_bitmap_constructor.cpp:1:
+In file included from ./streaming_bitmap_constructor.h:3:
+./octree_bitmap.h:26:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=linear_to_3d_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_bitmap.h:33:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=coord_3d_to_linear_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_bitmap.h:39:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=get_child_block_indices_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_bitmap.h:47:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=get_child_block_indices_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+streaming_bitmap_constructor.cpp:21:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=process_voxel_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+streaming_bitmap_constructor.cpp:75:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=axis port = voxel_stream_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port = voxel_stream
+        ^
+streaming_bitmap_constructor.cpp:76:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=axis port = feature_data_out_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port = feature_data_out
+        ^
+streaming_bitmap_constructor.cpp:77:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=axis port = write_addr_out_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port = write_addr_out
+        ^
+streaming_bitmap_constructor.cpp:78:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=axis port = early_trigger_out_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port = early_trigger_out
+        ^
+streaming_bitmap_constructor.cpp:79:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=axis port = retained_blocks_out_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port = retained_blocks_out
+        ^
+streaming_bitmap_constructor.cpp:80:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=bram port = L3_bitmap_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE bram port = L3_bitmap
+        ^
+streaming_bitmap_constructor.cpp:81:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=bram port = L2_bitmap_pruned_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE bram port = L2_bitmap_pruned
+        ^
+streaming_bitmap_constructor.cpp:82:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=bram port = L1_bitmap_pruned_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE bram port = L1_bitmap_pruned
+        ^
+streaming_bitmap_constructor.cpp:83:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=bram port = L0_bitmap_pruned_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE bram port = L0_bitmap_pruned
+        ^
+streaming_bitmap_constructor.cpp:84:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=s_axilite port = bitmap_info_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port = bitmap_info
+        ^
+streaming_bitmap_constructor.cpp:85:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=s_axilite port = return_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port = return
+        ^
+streaming_bitmap_constructor.cpp:94:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=variable = L1_temp type = ram_1p impl = bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS BIND_STORAGE variable = L1_temp type = ram_1p impl = bram
+        ^
+streaming_bitmap_constructor.cpp:95:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=variable = L2_temp type = ram_1p impl = bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS BIND_STORAGE variable = L2_temp type = ram_1p impl = bram
+        ^
+streaming_bitmap_constructor.cpp:96:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=variable = L3_temp type = ram_1p impl = bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS BIND_STORAGE variable = L3_temp type = ram_1p impl = bram
+        ^
+streaming_bitmap_constructor.cpp:122:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II = 1
+        ^
+streaming_bitmap_constructor.cpp:136:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II = 1
+        ^
+streaming_bitmap_constructor.cpp:139:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+streaming_bitmap_constructor.cpp:149:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=streaming_bitmap_constructor_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+streaming_bitmap_constructor.cpp:267:17: warning: unused parameter 'z_pair_idx' [-Wunused-parameter]
+    ap_uint<32> z_pair_idx,
+                ^
+streaming_bitmap_constructor.cpp:268:16: warning: unused parameter 'z_plane_buffer' [-Wunused-parameter]
+    VoxelData *z_plane_buffer,
+               ^
+streaming_bitmap_constructor.cpp:269:38: warning: unused parameter 'early_trigger_out' [-Wunused-parameter]
+    hls::stream<EarlyTriggerSignal> &early_trigger_out,
+                                     ^
+streaming_bitmap_constructor.cpp:270:37: warning: unused parameter 'retained_blocks_out' [-Wunused-parameter]
+    hls::stream<RetainedBlockInfo> &retained_blocks_out,
+                                    ^
+streaming_bitmap_constructor.cpp:271:18: warning: unused parameter 'retained_block_count' [-Wunused-parameter]
+    ap_uint<32> &retained_block_count,
+                 ^
+streaming_bitmap_constructor.cpp:272:19: warning: unused parameter 'L3_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L3_bitmap,
+                  ^
+streaming_bitmap_constructor.cpp:273:19: warning: unused parameter 'L2_bitmap_pruned' [-Wunused-parameter]
+    ap_uint<512> *L2_bitmap_pruned,
+                  ^
+streaming_bitmap_constructor.cpp:274:19: warning: unused parameter 'L1_bitmap_pruned' [-Wunused-parameter]
+    ap_uint<512> *L1_bitmap_pruned,
+                  ^
+streaming_bitmap_constructor.cpp:275:19: warning: unused parameter 'L0_bitmap_pruned' [-Wunused-parameter]
+    ap_uint<512> *L0_bitmap_pruned,
+                  ^
+streaming_bitmap_constructor.cpp:276:17: warning: unused parameter 'L1_temp' [-Wunused-parameter]
+    ap_uint<1> *L1_temp,
+                ^
+streaming_bitmap_constructor.cpp:277:17: warning: unused parameter 'L2_temp' [-Wunused-parameter]
+    ap_uint<1> *L2_temp,
+                ^
+streaming_bitmap_constructor.cpp:278:17: warning: unused parameter 'L3_temp' [-Wunused-parameter]
+    ap_uint<1> *L3_temp,
+                ^
+streaming_bitmap_constructor.cpp:279:18: warning: unused parameter 'l3_write_pos' [-Wunused-parameter]
+    ap_uint<32> &l3_write_pos,
+                 ^
+streaming_bitmap_constructor.cpp:280:18: warning: unused parameter 'l2_write_pos' [-Wunused-parameter]
+    ap_uint<32> &l2_write_pos,
+                 ^
+streaming_bitmap_constructor.cpp:281:18: warning: unused parameter 'l1_write_pos' [-Wunused-parameter]
+    ap_uint<32> &l1_write_pos,
+                 ^
+streaming_bitmap_constructor.cpp:282:18: warning: unused parameter 'l0_write_pos' [-Wunused-parameter]
+    ap_uint<32> &l0_write_pos,
+                 ^
+streaming_bitmap_constructor.cpp:283:29: warning: unused parameter 'feature_data_out' [-Wunused-parameter]
+    hls::stream<VoxelData> &feature_data_out,
+                            ^
+streaming_bitmap_constructor.cpp:284:31: warning: unused parameter 'write_addr_out' [-Wunused-parameter]
+    hls::stream<ap_uint<60>> &write_addr_out)
+                              ^
+streaming_bitmap_constructor.cpp:291:17: warning: unused parameter 'z_pair_idx' [-Wunused-parameter]
+    ap_uint<32> z_pair_idx,
+                ^
+streaming_bitmap_constructor.cpp:292:17: warning: unused parameter 'L1_temp' [-Wunused-parameter]
+    ap_uint<1> *L1_temp,
+                ^
+streaming_bitmap_constructor.cpp:293:17: warning: unused parameter 'L2_temp' [-Wunused-parameter]
+    ap_uint<1> *L2_temp,
+                ^
+streaming_bitmap_constructor.cpp:294:19: warning: unused parameter 'L1_bitmap_pruned' [-Wunused-parameter]
+    ap_uint<512> *L1_bitmap_pruned,
+                  ^
+streaming_bitmap_constructor.cpp:295:18: warning: unused parameter 'l1_write_pos' [-Wunused-parameter]
+    ap_uint<32> &l1_write_pos)
+                 ^
+streaming_bitmap_constructor.cpp:302:17: warning: unused parameter 'l3_block_idx' [-Wunused-parameter]
+    ap_uint<32> l3_block_idx,
+                ^
+streaming_bitmap_constructor.cpp:303:17: warning: unused parameter 'L2_temp' [-Wunused-parameter]
+    ap_uint<1> *L2_temp,
+                ^
+streaming_bitmap_constructor.cpp:304:17: warning: unused parameter 'L3_temp' [-Wunused-parameter]
+    ap_uint<1> *L3_temp,
+                ^
+streaming_bitmap_constructor.cpp:305:19: warning: unused parameter 'L2_bitmap_pruned' [-Wunused-parameter]
+    ap_uint<512> *L2_bitmap_pruned,
+                  ^
+streaming_bitmap_constructor.cpp:306:18: warning: unused parameter 'l2_write_pos' [-Wunused-parameter]
+    ap_uint<32> &l2_write_pos)
+                 ^
+streaming_bitmap_constructor.cpp:314:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=calculate_voxel_base_address_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+64 warnings generated.

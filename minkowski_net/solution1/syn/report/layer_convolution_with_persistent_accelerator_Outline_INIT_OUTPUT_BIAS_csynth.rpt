@@ -1,0 +1,145 @@
+
+
+================================================================
+== Vitis HLS Report for 'layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS'
+================================================================
+* Date:           Mon Aug 25 03:29:06 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        minkowski_net
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  6.00 ns|  2.400 ns|     1.62 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+-----------+-----+------+---------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval  | Pipeline|
+    |   min   |   max   |    min   |    max    | min |  max |   Type  |
+    +---------+---------+----------+-----------+-----+------+---------+
+    |       33|     2049|  0.198 us|  12.294 us|   33|  2049|       no|
+    +---------+---------+----------+-----------+-----+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+-----------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  |    Trip   |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  |   Count   | Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+-----------+----------+
+        |- INIT_OUTPUT_BIAS  |       32|     2048|         2|          -|          -|  16 ~ 1024|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+-----------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|       36|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        -|        -|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|       29|     -|
+|Register             |        -|      -|       25|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|       25|       65|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln245_fu_86_p2   |         +|   0|  0|  18|          11|           1|
+    |icmp_ln245_fu_81_p2  |      icmp|   0|  0|  18|          11|          11|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  36|          22|          12|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |  20|          4|    1|          4|
+    |oc_fu_36   |   9|          2|   11|         22|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |  29|          6|   12|         26|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------+----+----+-----+-----------+
+    |        Name        | FF | LUT| Bits| Const Bits|
+    +--------------------+----+----+-----+-----------+
+    |ap_CS_fsm           |   3|   0|    3|          0|
+    |oc_fu_36            |  11|   0|   11|          0|
+    |zext_ln245_reg_117  |  11|   0|   64|         53|
+    +--------------------+----+----+-----+-----------+
+    |Total               |  25|   0|   78|         53|
+    +--------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+------------------------------------------------------------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |                              Source Object                             |    C Type    |
++----------------------------+-----+-----+------------+------------------------------------------------------------------------+--------------+
+|ap_clk                      |   in|    1|  ap_ctrl_hs|  layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS|  return value|
+|ap_rst                      |   in|    1|  ap_ctrl_hs|  layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS|  return value|
+|ap_start                    |   in|    1|  ap_ctrl_hs|  layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS|  return value|
+|ap_done                     |  out|    1|  ap_ctrl_hs|  layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS|  return value|
+|ap_idle                     |  out|    1|  ap_ctrl_hs|  layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS|  return value|
+|ap_ready                    |  out|    1|  ap_ctrl_hs|  layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS|  return value|
+|config_output_channels_val  |   in|   11|     ap_none|                                              config_output_channels_val|        scalar|
+|layer_biases_12_Addr_A      |  out|   32|        bram|                                                         layer_biases_12|         array|
+|layer_biases_12_EN_A        |  out|    1|        bram|                                                         layer_biases_12|         array|
+|layer_biases_12_WEN_A       |  out|    4|        bram|                                                         layer_biases_12|         array|
+|layer_biases_12_Din_A       |  out|   32|        bram|                                                         layer_biases_12|         array|
+|layer_biases_12_Dout_A      |   in|   32|        bram|                                                         layer_biases_12|         array|
+|output_features_address0    |  out|   10|   ap_memory|                                                         output_features|         array|
+|output_features_ce0         |  out|    1|   ap_memory|                                                         output_features|         array|
+|output_features_we0         |  out|    1|   ap_memory|                                                         output_features|         array|
+|output_features_d0          |  out|   32|   ap_memory|                                                         output_features|         array|
++----------------------------+-----+-----+------------+------------------------------------------------------------------------+--------------+
+

@@ -1,0 +1,101 @@
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:2265:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:2265:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:2279:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:2279:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:2293:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:2293:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:3927:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1248_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:3927:7: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:5942:5: warning: Added loop label VITIS_LOOP_181_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 20; i++)
+    ^~~
+    VITIS_LOOP_181_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:5942:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6057:5: warning: Added loop label VITIS_LOOP_41_1:   [xilinx-label-all-loops]
+    for (int dz = 0; dz < 2; dz++)
+    ^~~
+    VITIS_LOOP_41_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6057:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6059:9: warning: Added loop label VITIS_LOOP_43_2:   [xilinx-label-all-loops]
+        for (int dy = 0; dy < 2; dy++)
+        ^~~
+        VITIS_LOOP_43_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6059:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6061:13: warning: Added loop label VITIS_LOOP_45_3:   [xilinx-label-all-loops]
+            for (int dx = 0; dx < 2; dx++)
+            ^~~
+            VITIS_LOOP_45_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6061:13: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6598:9: warning: Added loop label VITIS_LOOP_27_1:   [xilinx-label-all-loops]
+        for (ap_uint<32> j = 0; j < num_voxels - i - 1; j++)
+        ^~~
+        VITIS_LOOP_27_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6598:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6636:2: warning: Added loop label VITIS_LOOP_65_1:   [xilinx-label-all-loops]
+ for (int f = 0; f < 32 && f < 8; f++)
+ ^~~
+ VITIS_LOOP_65_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6636:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6652:9: warning: Added loop label VITIS_LOOP_81_1:   [xilinx-label-all-loops]
+        for (int i = 0; i < 32; i++)
+        ^~~
+        VITIS_LOOP_81_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6652:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6655:2: warning: Added loop label VITIS_LOOP_84_2:   [xilinx-label-all-loops]
+ for (int j = 0; j < 32; j++)
+ ^~~
+ VITIS_LOOP_84_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6655:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6944:2: warning: Added loop label VITIS_LOOP_373_1:   [xilinx-label-all-loops]
+ for (int j = 0; j < 32; j++)
+ ^~~
+ VITIS_LOOP_373_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6944:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6960:9: warning: Added loop label VITIS_LOOP_389_2:   [xilinx-label-all-loops]
+        for (int i = 0; i < 32; i++)
+        ^~~
+        VITIS_LOOP_389_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6960:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6976:2: warning: Added loop label VITIS_LOOP_405_1:   [xilinx-label-all-loops]
+ for (int j = 0; j < 32; j++)
+ ^~~
+ VITIS_LOOP_405_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6976:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6990:9: warning: Added loop label VITIS_LOOP_419_1:   [xilinx-label-all-loops]
+        for (int i = 0; i < 32; i++)
+        ^~~
+        VITIS_LOOP_419_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6990:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6993:2: warning: Added loop label VITIS_LOOP_422_2:   [xilinx-label-all-loops]
+ for (int j = 0; j < 32; j += 8)
+ ^~~
+ VITIS_LOOP_422_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6993:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6996:2: warning: Added loop label VITIS_LOOP_425_3:   [xilinx-label-all-loops]
+ for (int k = 0; k < 8 && (j + k) < 32; k++)
+ ^~~
+ VITIS_LOOP_425_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:6996:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:7062:2: warning: Added loop label VITIS_LOOP_491_1:   [xilinx-label-all-loops]
+ for (int f = 0; f < 32; f++)
+ ^~~
+ VITIS_LOOP_491_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:7062:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:7096:9: error: Invalid Directive: for current device, add + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable = accumulator op = add impl = dsp
+        ^
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/systolic_array.pp.0.cpp:7103:9: error: Invalid Directive: for current device, mul + dsp is invalid combination for bind_op [clang-diagnostic-error]
+#pragma HLS BIND_OP variable = accumulator op = mul impl = dsp
+        ^

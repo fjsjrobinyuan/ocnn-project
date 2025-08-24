@@ -1,0 +1,8 @@
+---
+MainSourceFile:  /home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-11] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region'
+    FileOffset:      '778:9'
+    FilePath:        complete_pipeline.cpp
+...

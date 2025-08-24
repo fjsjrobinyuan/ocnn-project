@@ -1,0 +1,109 @@
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:2262:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:2262:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:2276:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:2276:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:2290:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:2290:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:3924:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1248_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:3924:7: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:5939:5: warning: Added loop label VITIS_LOOP_181_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 20; i++)
+    ^~~
+    VITIS_LOOP_181_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:5939:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6054:5: warning: Added loop label VITIS_LOOP_41_1:   [xilinx-label-all-loops]
+    for (int dz = 0; dz < 2; dz++)
+    ^~~
+    VITIS_LOOP_41_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6054:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6056:9: warning: Added loop label VITIS_LOOP_43_2:   [xilinx-label-all-loops]
+        for (int dy = 0; dy < 2; dy++)
+        ^~~
+        VITIS_LOOP_43_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6056:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6058:13: warning: Added loop label VITIS_LOOP_45_3:   [xilinx-label-all-loops]
+            for (int dx = 0; dx < 2; dx++)
+            ^~~
+            VITIS_LOOP_45_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6058:13: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6217:52: error: Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable = L1_temp type = ram_1p impl = bram
+                                                   ^
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6218:52: error: Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable = L2_temp type = ram_1p impl = bram
+                                                   ^
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6219:52: error: Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable = L3_temp type = ram_1p impl = bram
+                                                   ^
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6228:9: warning: Added loop label VITIS_LOOP_105_1:   [xilinx-label-all-loops]
+        for (int i = 0; i < (8 / 2) * (8 / 2) * (8 / 2); i++)
+        ^~~
+        VITIS_LOOP_105_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6228:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6232:9: warning: Added loop label VITIS_LOOP_109_2:   [xilinx-label-all-loops]
+        for (int i = 0; i < ((8 / 2) / 2) * ((8 / 2) / 2) * ((8 / 2) / 2); i++)
+        ^~~
+        VITIS_LOOP_109_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6232:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6257:9: warning: Added loop label VITIS_LOOP_134_3:   [xilinx-label-all-loops]
+        for (int l2_y = 0; l2_y < ((8 / 2) / 2); l2_y++)
+        ^~~
+        VITIS_LOOP_134_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6257:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6260:2: warning: Added loop label VITIS_LOOP_137_4:   [xilinx-label-all-loops]
+ for (int l2_x = 0; l2_x < ((8 / 2) / 2); l2_x++)
+ ^~~
+ VITIS_LOOP_137_4: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6260:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6268:21: warning: Added loop label VITIS_LOOP_145_5:   [xilinx-label-all-loops]
+                    for (int dy = 0; dy < 2; dy++)
+                    ^~~
+                    VITIS_LOOP_145_5: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6268:21: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6270:25: warning: Added loop label VITIS_LOOP_147_6:   [xilinx-label-all-loops]
+                        for (int dx = 0; dx < 2; dx++)
+                        ^~~
+                        VITIS_LOOP_147_6: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6270:25: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6288:21: warning: Added loop label VITIS_LOOP_165_7:   [xilinx-label-all-loops]
+                    for (int i = 0; i < 8; i++)
+                    ^~~
+                    VITIS_LOOP_165_7: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6288:21: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6299:5: warning: Added loop label VITIS_LOOP_176_8:   [xilinx-label-all-loops]
+    for (int i = 0; i < 8; i++)
+    ^~~
+    VITIS_LOOP_176_8: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6299:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6312:9: warning: Added loop label VITIS_LOOP_189_9:   [xilinx-label-all-loops]
+        for (int i = 0; i < 8; i++)
+        ^~~
+        VITIS_LOOP_189_9: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6312:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6343:5: warning: Added loop label VITIS_LOOP_232_10:   [xilinx-label-all-loops]
+    for (int i = 0; i < 8; i++)
+    ^~~
+    VITIS_LOOP_232_10: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6343:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6355:5: warning: Added loop label VITIS_LOOP_244_11:   [xilinx-label-all-loops]
+    for (int i = 0; i < 16; i++)
+    ^~~
+    VITIS_LOOP_244_11: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6355:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6367:5: warning: Added loop label VITIS_LOOP_256_12:   [xilinx-label-all-loops]
+    for (int i = 0; i < 16; i++)
+    ^~~
+    VITIS_LOOP_256_12: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/streaming_bitmap_constructor.pp.0.cpp:6367:5: note: FIX-IT applied suggested code changes

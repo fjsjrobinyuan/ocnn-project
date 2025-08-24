@@ -1,0 +1,152 @@
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:2265:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:2265:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:2279:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:2279:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:2293:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:2293:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:3927:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1248_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:3927:7: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:5942:5: warning: Added loop label VITIS_LOOP_181_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 20; i++)
+    ^~~
+    VITIS_LOOP_181_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:5942:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6057:5: warning: Added loop label VITIS_LOOP_41_1:   [xilinx-label-all-loops]
+    for (int dz = 0; dz < 2; dz++)
+    ^~~
+    VITIS_LOOP_41_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6057:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6059:9: warning: Added loop label VITIS_LOOP_43_2:   [xilinx-label-all-loops]
+        for (int dy = 0; dy < 2; dy++)
+        ^~~
+        VITIS_LOOP_43_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6059:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6061:13: warning: Added loop label VITIS_LOOP_45_3:   [xilinx-label-all-loops]
+            for (int dx = 0; dx < 2; dx++)
+            ^~~
+            VITIS_LOOP_45_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6061:13: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6605:2: warning: Added loop label VITIS_LOOP_34_1:   [xilinx-label-all-loops]
+ while (!early_trigger_stream.empty())
+ ^~~~~
+ VITIS_LOOP_34_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6605:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6682:2: warning: Added loop label VITIS_LOOP_111_1:   [xilinx-label-all-loops]
+ for (ap_uint<32> i = 0; i < num_voxels; i++)
+ ^~~
+ VITIS_LOOP_111_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6682:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6771:5: warning: Added loop label VITIS_LOOP_200_1:   [xilinx-label-all-loops]
+    while (!feature_data_in.empty() && !morton_addrs_in.empty() &&
+    ^~~~~
+    VITIS_LOOP_200_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6771:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6933:5: warning: Added loop label VITIS_LOOP_392_1:   [xilinx-label-all-loops]
+    while (!morton_codes_in.empty() && local_morton_count < (8 * 8 * 8))
+    ^~~~~
+    VITIS_LOOP_392_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6933:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6958:5: warning: Added loop label VITIS_LOOP_417_2:   [xilinx-label-all-loops]
+    while (!bitmap_interface_in.empty())
+    ^~~~~
+    VITIS_LOOP_417_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6958:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6966:5: warning: Added loop label VITIS_LOOP_425_3:   [xilinx-label-all-loops]
+    while (!mem_response_in.empty())
+    ^~~~~
+    VITIS_LOOP_425_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:6966:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7038:59: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable = L3_bitmap_conv type = ram_2p impl = bram
+                                                          ^
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7039:66: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable = L2_bitmap_pruned_conv type = ram_2p impl = bram
+                                                                 ^
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7040:66: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable = L1_bitmap_pruned_conv type = ram_2p impl = bram
+                                                                 ^
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7041:66: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable = L0_bitmap_pruned_conv type = ram_2p impl = bram
+                                                                 ^
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7321:2: warning: Added loop label VITIS_LOOP_780_1:   [xilinx-label-all-loops]
+ for (ap_uint<32> i = 0; i < num_features; i++) {
+ ^~~
+ VITIS_LOOP_780_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7321:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7325:9: warning: Added loop label VITIS_LOOP_784_2:   [xilinx-label-all-loops]
+        for (int f = 0; f < 32; f++) {
+        ^~~
+        VITIS_LOOP_784_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7325:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7332:9: warning: Added loop label VITIS_LOOP_791_3:   [xilinx-label-all-loops]
+        for (int out_f = 0; out_f < 32; out_f++) {
+        ^~~
+        VITIS_LOOP_791_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7332:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7335:13: warning: Added loop label VITIS_LOOP_794_4:   [xilinx-label-all-loops]
+            for (int in_f = 0; in_f < 32; in_f++) {
+            ^~~
+            VITIS_LOOP_794_4: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7335:13: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7341:9: warning: Added loop label VITIS_LOOP_800_5:   [xilinx-label-all-loops]
+        for (int f = 0; f < 32; f++) {
+        ^~~
+        VITIS_LOOP_800_5: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7341:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7356:5: warning: Added loop label VITIS_LOOP_815_1:   [xilinx-label-all-loops]
+    while (!voxel_stream.empty()) {
+    ^~~~~
+    VITIS_LOOP_815_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7356:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7360:9: warning: Added loop label VITIS_LOOP_819_2:   [xilinx-label-all-loops]
+        for (int f = 0; f < 32; f++) {
+        ^~~
+        VITIS_LOOP_819_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7360:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7458:5: warning: Added loop label VITIS_LOOP_917_1:   [xilinx-label-all-loops]
+    for (ap_uint<32> feat = 0; feat < safe_num_features; feat++) {
+    ^~~
+    VITIS_LOOP_917_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7458:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7460:2: warning: Added loop label VITIS_LOOP_919_2:   [xilinx-label-all-loops]
+ for (int f = 0; f < 32; f++) {
+ ^~~
+ VITIS_LOOP_919_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7460:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7480:2: warning: Added loop label VITIS_LOOP_939_1:   [xilinx-label-all-loops]
+ for (ap_uint<32> feat = 0; feat < num_features; feat++) {
+ ^~~
+ VITIS_LOOP_939_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7480:2: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7485:9: warning: Added loop label VITIS_LOOP_944_2:   [xilinx-label-all-loops]
+        for (int f = 0; f < 32; f++) {
+        ^~~
+        VITIS_LOOP_944_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7485:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7493:9: warning: Added loop label VITIS_LOOP_952_3:   [xilinx-label-all-loops]
+        for (int out_f = 0; out_f < 32; out_f++) {
+        ^~~
+        VITIS_LOOP_952_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7493:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7496:13: warning: Added loop label VITIS_LOOP_955_4:   [xilinx-label-all-loops]
+            for (int in_f = 0; in_f < 32; in_f++) {
+            ^~~
+            VITIS_LOOP_955_4: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7496:13: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7504:9: warning: Added loop label VITIS_LOOP_963_5:   [xilinx-label-all-loops]
+        for (int f = 0; f < 32; f++) {
+        ^~~
+        VITIS_LOOP_963_5: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/complete_pipeline.pp.0.cpp:7504:9: note: FIX-IT applied suggested code changes

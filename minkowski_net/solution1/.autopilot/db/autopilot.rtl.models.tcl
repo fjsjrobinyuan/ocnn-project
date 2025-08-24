@@ -1,0 +1,48 @@
+set SynModuleInfo {
+  {SRCNAME streaming_bitmap_constructor MODELNAME streaming_bitmap_constructor RTLNAME minkowski_net_14_layer_pipeline_streaming_bitmap_constructor
+    SUBMODULES {
+      {MODELNAME minkowski_net_14_layer_pipeline_bitset_512ns_512ns_32s_1s_512_1_1 RTLNAME minkowski_net_14_layer_pipeline_bitset_512ns_512ns_32s_1s_512_1_1 BINDTYPE op TYPE bitset IMPL auto}
+      {MODELNAME minkowski_net_14_layer_pipeline_bitset_512ns_512ns_32s_1ns_512_1_1 RTLNAME minkowski_net_14_layer_pipeline_bitset_512ns_512ns_32s_1ns_512_1_1 BINDTYPE op TYPE bitset IMPL auto}
+      {MODELNAME minkowski_net_14_layer_pipeline_bitset_8ns_8ns_32ns_1ns_8_1_1 RTLNAME minkowski_net_14_layer_pipeline_bitset_8ns_8ns_32ns_1ns_8_1_1 BINDTYPE op TYPE bitset IMPL auto}
+      {MODELNAME minkowski_net_14_layer_pipeline_bitselect_1ns_8ns_32ns_1_1_1 RTLNAME minkowski_net_14_layer_pipeline_bitselect_1ns_8ns_32ns_1_1_1 BINDTYPE op TYPE bitselect IMPL auto}
+      {MODELNAME minkowski_net_14_layer_pipeline_streaming_bitmap_constructor_L1_temp_RAM_1P_BRAM_1R1W RTLNAME minkowski_net_14_layer_pipeline_streaming_bitmap_constructor_L1_temp_RAM_1P_BRAM_1R1W BINDTYPE storage TYPE ram_1p IMPL bram LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_streaming_bitmap_constructor_L2_temp_RAM_1P_BRAM_1R1W RTLNAME minkowski_net_14_layer_pipeline_streaming_bitmap_constructor_L2_temp_RAM_1P_BRAM_1R1W BINDTYPE storage TYPE ram_1p IMPL bram LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME pipeline_bitmap_stage MODELNAME pipeline_bitmap_stage RTLNAME minkowski_net_14_layer_pipeline_pipeline_bitmap_stage}
+  {SRCNAME layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS MODELNAME layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS RTLNAME minkowski_net_14_layer_pipeline_layer_convolution_with_persistent_accelerator_Outline_INIT_OUTPUT_BIAS}
+  {SRCNAME layer_convolution_with_persistent_accelerator_Outline_READ_NEIGHBOR_FEATURES MODELNAME layer_convolution_with_persistent_accelerator_Outline_READ_NEIGHBOR_FEATURES RTLNAME minkowski_net_14_layer_pipeline_layer_convolution_with_persistent_accelerator_Outline_READ_NEIGHBOR_FEATURES}
+  {SRCNAME layer_convolution_with_persistent_accelerator MODELNAME layer_convolution_with_persistent_accelerator RTLNAME minkowski_net_14_layer_pipeline_layer_convolution_with_persistent_accelerator
+    SUBMODULES {
+      {MODELNAME minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_full_dsp_1 RTLNAME minkowski_net_14_layer_pipeline_fadd_32ns_32ns_32_4_full_dsp_1 BINDTYPE op TYPE fadd IMPL fulldsp LATENCY 3 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1 RTLNAME minkowski_net_14_layer_pipeline_fmul_32ns_32ns_32_3_max_dsp_1 BINDTYPE op TYPE fmul IMPL maxdsp LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_fcmp_32ns_32ns_1_2_no_dsp_1 RTLNAME minkowski_net_14_layer_pipeline_fcmp_32ns_32ns_1_2_no_dsp_1 BINDTYPE op TYPE fcmp IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_mul_11ns_42s_42_1_1 RTLNAME minkowski_net_14_layer_pipeline_mul_11ns_42s_42_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_urem_60s_32ns_42_64_seq_1 RTLNAME minkowski_net_14_layer_pipeline_urem_60s_32ns_42_64_seq_1 BINDTYPE op TYPE urem IMPL auto_seq LATENCY 63 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_urem_59s_32ns_42_63_seq_1 RTLNAME minkowski_net_14_layer_pipeline_urem_59s_32ns_42_63_seq_1 BINDTYPE op TYPE urem IMPL auto_seq LATENCY 62 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_urem_58s_32ns_42_62_seq_1 RTLNAME minkowski_net_14_layer_pipeline_urem_58s_32ns_42_62_seq_1 BINDTYPE op TYPE urem IMPL auto_seq LATENCY 61 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_urem_4ns_32ns_13_8_seq_1 RTLNAME minkowski_net_14_layer_pipeline_urem_4ns_32ns_13_8_seq_1 BINDTYPE op TYPE urem IMPL auto_seq LATENCY 7 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_urem_3ns_32ns_12_7_seq_1 RTLNAME minkowski_net_14_layer_pipeline_urem_3ns_32ns_12_7_seq_1 BINDTYPE op TYPE urem IMPL auto_seq LATENCY 6 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_urem_1ns_32ns_1_5_seq_1 RTLNAME minkowski_net_14_layer_pipeline_urem_1ns_32ns_1_5_seq_1 BINDTYPE op TYPE urem IMPL auto_seq LATENCY 4 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_mul_11ns_13s_13_1_1 RTLNAME minkowski_net_14_layer_pipeline_mul_11ns_13s_13_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_mul_11ns_12s_12_1_1 RTLNAME minkowski_net_14_layer_pipeline_mul_11ns_12s_12_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_mul_11ns_11ns_22_1_1 RTLNAME minkowski_net_14_layer_pipeline_mul_11ns_11ns_22_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_layer_convolution_with_persistent_accelerator_output_features_RAM_AUTO_1R1W RTLNAME minkowski_net_14_layer_pipeline_layer_convolution_with_persistent_accelerator_output_features_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_layer_convolution_with_persistent_accelerator_neighbor_features_RAM_AUTO_1R1W RTLNAME minkowski_net_14_layer_pipeline_layer_convolution_with_persistent_accelerator_neighbor_features_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME final_layer_output_reconstruction MODELNAME final_layer_output_reconstruction RTLNAME minkowski_net_14_layer_pipeline_final_layer_output_reconstruction}
+  {SRCNAME minkowski_net_14_layer_pipeline MODELNAME minkowski_net_14_layer_pipeline RTLNAME minkowski_net_14_layer_pipeline IS_TOP 1
+    SUBMODULES {
+      {MODELNAME minkowski_net_14_layer_pipeline_MINKOWSKI_LAYERS_input_channels_ROM_AUTO_1R RTLNAME minkowski_net_14_layer_pipeline_MINKOWSKI_LAYERS_input_channels_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_MINKOWSKI_LAYERS_output_channels_ROM_AUTO_1R RTLNAME minkowski_net_14_layer_pipeline_MINKOWSKI_LAYERS_output_channels_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_MINKOWSKI_LAYERS_output_spatial_dim_ROM_AUTO_1R RTLNAME minkowski_net_14_layer_pipeline_MINKOWSKI_LAYERS_output_spatial_dim_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME minkowski_net_14_layer_pipeline_fifo_w1085_d1024_A RTLNAME minkowski_net_14_layer_pipeline_fifo_w1085_d1024_A BINDTYPE storage TYPE fifo IMPL memory ALLOW_PRAGMA 1 INSTNAME feature_data_stream_U}
+      {MODELNAME minkowski_net_14_layer_pipeline_fifo_w60_d1024_A RTLNAME minkowski_net_14_layer_pipeline_fifo_w60_d1024_A BINDTYPE storage TYPE fifo IMPL memory ALLOW_PRAGMA 1 INSTNAME write_addr_stream_U}
+      {MODELNAME minkowski_net_14_layer_pipeline_gmem_output_m_axi RTLNAME minkowski_net_14_layer_pipeline_gmem_output_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
+      {MODELNAME minkowski_net_14_layer_pipeline_gmem_read_m_axi RTLNAME minkowski_net_14_layer_pipeline_gmem_read_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
+      {MODELNAME minkowski_net_14_layer_pipeline_gmem_write_m_axi RTLNAME minkowski_net_14_layer_pipeline_gmem_write_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
+      {MODELNAME minkowski_net_14_layer_pipeline_control_s_axi RTLNAME minkowski_net_14_layer_pipeline_control_s_axi BINDTYPE interface TYPE interface_s_axilite}
+    }
+  }
+}

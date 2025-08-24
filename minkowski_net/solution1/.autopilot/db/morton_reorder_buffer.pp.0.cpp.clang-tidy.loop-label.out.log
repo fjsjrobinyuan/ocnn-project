@@ -1,0 +1,93 @@
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:2262:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:2262:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:2276:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:2276:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:2290:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:2290:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:3924:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1248_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:3924:7: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:5939:5: warning: Added loop label VITIS_LOOP_181_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 20; i++)
+    ^~~
+    VITIS_LOOP_181_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:5939:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6062:5: warning: Added loop label VITIS_LOOP_41_1:   [xilinx-label-all-loops]
+    for (int dz = 0; dz < 2; dz++)
+    ^~~
+    VITIS_LOOP_41_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6062:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6064:9: warning: Added loop label VITIS_LOOP_43_2:   [xilinx-label-all-loops]
+        for (int dy = 0; dy < 2; dy++)
+        ^~~
+        VITIS_LOOP_43_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6064:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6066:13: warning: Added loop label VITIS_LOOP_45_3:   [xilinx-label-all-loops]
+            for (int dx = 0; dx < 2; dx++)
+            ^~~
+            VITIS_LOOP_45_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6066:13: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6247:58: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable = mapping_table type = ram_2p impl = bram
+                                                         ^
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6307:5: warning: Added loop label VITIS_LOOP_114_1:   [xilinx-label-all-loops]
+    while (more_data_available)
+    ^~~~~
+    VITIS_LOOP_114_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6307:5: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6310:9: warning: Added loop label VITIS_LOOP_117_2:   [xilinx-label-all-loops]
+        while (!retained_blocks_in.empty() && buffer_fill < 64)
+        ^~~~~
+        VITIS_LOOP_117_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6310:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6373:13: warning: Added loop label VITIS_LOOP_180_3:   [xilinx-label-all-loops]
+            for (int i = 0; i < 8; i++)
+            ^~~
+            VITIS_LOOP_180_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6373:13: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6418:13: warning: Added loop label VITIS_LOOP_225_4:   [xilinx-label-all-loops]
+            for (int i = 0; i < buffer_fill; i++)
+            ^~~
+            VITIS_LOOP_225_4: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6418:13: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6428:9: warning: Added loop label VITIS_LOOP_235_5:   [xilinx-label-all-loops]
+        while (!response_in.empty())
+        ^~~~~
+        VITIS_LOOP_235_5: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6428:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6542:9: warning: Added loop label VITIS_LOOP_349_1:   [xilinx-label-all-loops]
+        for (int j = 0; j < buffer_fill - i - 1; j++)
+        ^~~
+        VITIS_LOOP_349_1: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6542:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6597:17: warning: Added loop label VITIS_LOOP_404_2:   [xilinx-label-all-loops]
+                for (int j = 0; j < burst_size; j++)
+                ^~~
+                VITIS_LOOP_404_2: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6597:17: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6607:17: warning: Added loop label VITIS_LOOP_414_3:   [xilinx-label-all-loops]
+                for (int k = processed_entries; k < processed_entries + burst_len; k++)
+                ^~~
+                VITIS_LOOP_414_3: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6607:17: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6632:9: warning: Added loop label VITIS_LOOP_439_4:   [xilinx-label-all-loops]
+        for (int j = 0; j < final_burst_size; j++)
+        ^~~
+        VITIS_LOOP_439_4: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6632:9: note: FIX-IT applied suggested code changes
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6641:9: warning: Added loop label VITIS_LOOP_448_5:   [xilinx-label-all-loops]
+        for (int k = processed_entries; k < processed_entries + burst_len; k++)
+        ^~~
+        VITIS_LOOP_448_5: 
+/home/robin/Desktop/ocnn-project/minkowski_net/solution1/.autopilot/db/morton_reorder_buffer.pp.0.cpp:6641:9: note: FIX-IT applied suggested code changes

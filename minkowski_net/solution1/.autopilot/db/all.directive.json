@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "minkowski_net_14_layer_pipeline",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "minkowski_net_14_layer_pipeline"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/robin/Desktop/ocnn-project/run_minkowski.tcl",
+    "sourceLine": 47,
+    "success": true
+  }
+]

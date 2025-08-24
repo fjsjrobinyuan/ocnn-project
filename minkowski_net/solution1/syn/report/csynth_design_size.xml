@@ -1,0 +1,79 @@
+<design_size title="Design Size Report">
+    <item name="Total Instructions per Compilation Phase">
+        <table>
+            <keys size="4">Phase, Step, Instructions, Description</keys>
+            <column name="Compile/Link">, 19125, After all functions are compiled and linked into a single design</column>
+            <column name="">, , </column>
+            <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
+            <column name="">(1) unroll,  4564, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  3739, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,  3669, user inline pragmas are applied</column>
+            <column name="">(4) simplification,  3501, simplification of applied user inline pragmas</column>
+            <column name="">, , </column>
+            <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(1) array partition, 34262, user array partition pragmas are applied</column>
+            <column name="">(2) simplification, 34150, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate , 34235, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape, 34833, apply array reshape pragmas</column>
+            <column name="">(5) access patterns, 37802, array access pattern optmizations</column>
+            <column name="">, , </column>
+            <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification, 37700, loop and instruction simplification</column>
+            <column name="">(2) parallelization, 36884, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition, 36072, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification, 35991, simplification of design after performance transformations</column>
+            <column name="">, , </column>
+            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering, 40607, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations, 41718, high level synthesis optimizations</column>
+        </table>
+    </item>
+    <item name="Instructions per Function for each Compilation Phase">
+        <hiertable>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
+            <rows>
+                <row id="0" col0="minkowski_net_14_layer_pipeline" col1="minkowski_net.cpp:17" col2="19125" col3="3501" col4="37802" col5="35991" col6="41718">
+                    <row id="11" col0="pipeline_bitmap_stage" col1="complete_pipeline.cpp:127" col2="4658" col3="770" col4="1157" col5="1154" col6="">
+                        <row id="2" col0="streaming_bitmap_constructor" col1="streaming_bitmap_constructor.cpp:62" col2="4656" col3="768" col4="1155" col5="1152" col6="">
+                            <row id="3" col0="process_voxel" col1="streaming_bitmap_constructor.cpp:11" col2="2757" col3="" col4="" col5="" col6="">
+                                <row id="14" col0="morton_decode" col1="octree_master.h:174" col2="729" col3="" col4="" col5="" col6=""/>
+                                <row id="17" col0="coord_to_idx" col1="octree_master.h:153" col2="6" col3="" col4="" col5="" col6=""/>
+                                <row id="12" col0="set_bit" col1="octree_master.h:146" col2="45" col3="" col4="" col5="" col6=""/>
+                                <row id="8" col0="calculate_voxel_base_address" col1="streaming_bitmap_constructor.cpp:312" col2="850" col3="" col4="" col5="" col6="">
+                                    <row id="1" col0="extract_morton_address" col1="octree_master.h:259" col2="220" col3="" col4="" col5="" col6=""/>
+                                </row>
+                            </row>
+                            <row id="12" col0="set_bit" col1="octree_master.h:146" col2="135" col2_disp="  135 (3 calls)" col3="" col4="" col5="" col6=""/>
+                        </row>
+                    </row>
+                    <row id="5" col0="logical_bitmap_reconstruction_with_access_pointers" col1="minkowski_net.cpp:324" col2="173" col3="" col4="" col5="" col6="">
+                        <row id="16" col0="initialize_streaming_pointers" col1="dynamic_access.cpp:20" col2="171" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="4" col0="layer_convolution_with_persistent_accelerator" col1="minkowski_net.cpp:204" col2="9938" col2_disp="9,938 (2 calls)" col3="2472" col3_disp="2,472 (2 calls)" col4="36204" col4_disp="36,204 (28 calls)" col5="34440" col5_disp="34,440 (28 calls)" col6="40068" col6_disp="40,068 (28 calls)">
+                        <row id="15" col0="access_pointer_lookup" col1="minkowski_net.cpp:353" col2="6512" col2_disp="6,512 (2 calls)" col3="" col4="" col5="" col6="">
+                            <row id="10" col0="morton3D" col1="octree_master.h:169" col2="6224" col2_disp="6,224 (2 calls)" col3="" col4="" col5="" col6="">
+                                <row id="9" col0="part1by2" col1="octree_master.h:158" col2="5508" col2_disp="5,508 (6 calls)" col3="" col4="" col5="" col6=""/>
+                            </row>
+                        </row>
+                        <row id="6" col0="should_use_cross_row_sorting" col1="minkowski_net.cpp:381" col2="4" col2_disp="    4 (2 calls)" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="13" col0="final_layer_output_reconstruction" col1="minkowski_net.cpp:389" col2="3867" col3="175" col4="128" col5="86" col6="107">
+                        <row id="15" col0="access_pointer_lookup" col1="minkowski_net.cpp:353" col2="3256" col3="" col4="" col5="" col6="">
+                            <row id="10" col0="morton3D" col1="octree_master.h:169" col2="3112" col3="" col4="" col5="" col6="">
+                                <row id="9" col0="part1by2" col1="octree_master.h:158" col2="2754" col2_disp="2,754 (3 calls)" col3="" col4="" col5="" col6=""/>
+                            </row>
+                        </row>
+                    </row>
+                </row>
+            </rows>
+            <notes/>
+        </hiertable>
+    </item>
+    <item name="Design Size Message Settings">
+        <table>
+            <keys size="3">Message Setting, Value, Description</keys>
+            <column name="config_compile -design_size_maximum_warning">100000, Show a warning when total design instructions exceeds this value</column>
+        </table>
+    </item>
+</design_size>
+
