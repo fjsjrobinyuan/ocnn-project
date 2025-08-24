@@ -4,6 +4,19 @@
 #ifndef __SYNTHESIS__
 #include <iostream>
 #endif
+
+// Define the static member
+const ap_int<8> ConvolutionEngine::NEIGHBOR_OFFSETS[KERNEL_VOLUME][3] = {
+#if KERNEL_SIZE == 3
+    {-1, -1, -1}, {-1, -1, 0}, {-1, -1, 1}, {-1, 0, -1}, {-1, 0, 0}, {-1, 0, 1}, 
+    {-1, 1, -1}, {-1, 1, 0}, {-1, 1, 1}, {0, -1, -1}, {0, -1, 0}, {0, -1, 1}, 
+    {0, 0, -1}, {0, 0, 0}, {0, 0, 1}, {0, 1, -1}, {0, 1, 0}, {0, 1, 1}, 
+    {1, -1, -1}, {1, -1, 0}, {1, -1, 1}, {1, 0, -1}, {1, 0, 0}, {1, 0, 1}, 
+    {1, 1, -1}, {1, 1, 0}, {1, 1, 1}
+#else
+    {0, 0, 0}
+#endif
+};
 void sort_morton_list_for_convolution_reads(ap_uint<MORTON_BITS> *morton_list, ap_uint<32> num_voxels)
 {
 #pragma HLS INLINE off

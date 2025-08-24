@@ -1,3 +1,4 @@
+#define HLS_TESTBENCH
 #include "complete_pipeline.h"
 #include <hls_stream.h> 
 int main() {
@@ -15,9 +16,17 @@ int main() {
             }
         }
     }
-static ap_uint<32> feature_dram_morton_write[1048576];  // Morton stage writes input features here
+// Multi-layer weights
+    static float layer1_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM];
+    static float layer2_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM];
+    static float layer3_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM];
+    static float layer1_bias[FEATURE_DIM];
+    static float layer2_bias[FEATURE_DIM]; 
+    static float layer3_bias[FEATURE_DIM];
+    
+    static ap_uint<32> feature_dram_morton_write[1048576];  // Morton stage writes input features here
     static ap_uint<32> feature_dram_conv_read[1048576];     // Convolution reads from same data (shared memory)
-    static ap_uint<32> feature_dram_conv_write[1048576];    // Convolution writes output features here    static ap_uint<BRAM_WIDTH> L3_bitmap[L3_WORDS];
+    static ap_uint<32> feature_dram_conv_write[1048576];    // Convolution writes output features here
     // Create bitmap arrays
     static ap_uint<BRAM_WIDTH> L3_bitmap[L3_WORDS];
     static ap_uint<BRAM_WIDTH> L2_bitmap_pruned[1024];
@@ -38,42 +47,86 @@ static ap_uint<32> feature_dram_morton_write[1048576];  // Morton stage writes i
         L0_bitmap_pruned[i] = 0;
     }
 
-    // Create convolution weights (identity kernel at center for testing)
-    static float conv_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM];
-    static float conv_bias[FEATURE_DIM];
-    
-    // Initialize weights - identity at center (kernel position 13 for 3x3x3 = 27 total)
-    for (int n = 0; n < KERNEL_VOLUME; n++) {
+    // Initialize multi-layer weights (random values for testing)
+    for (int k = 0; k < KERNEL_VOLUME; k++) {
         for (int i = 0; i < FEATURE_DIM; i++) {
             for (int j = 0; j < FEATURE_DIM; j++) {
-                conv_weights[n][i][j] = (n == 13 && i == j) ? 1.0f : 0.0f;
+                // Layer 1: identity kernel at center
+                layer1_weights[k][i][j] = (k == 13 && i == j) ? 1.0f : 0.0f;
+                // Layer 2: small random weights
+                layer2_weights[k][i][j] = (float)(rand() % 100 - 50) / 500.0f;
+                // Layer 3: small random weights  
+                layer3_weights[k][i][j] = (float)(rand() % 100 - 50) / 500.0f;
             }
         }
     }
     
-    // Initialize bias to zero
+    // Initialize bias to zero for all layers
     for (int i = 0; i < FEATURE_DIM; i++) {
-        conv_bias[i] = 0.0f;
+        layer1_bias[i] = 0.0f;
+        layer2_bias[i] = 0.1f;  // Small positive bias
+        layer3_bias[i] = 0.1f;  // Small positive bias
     }
 
     // Done signal
     ap_uint<1> done = 0;
 
-    // Call the main pipeline with 3 separate DRAM interfaces
-    complete_octree_pipeline(
+    // Create output stream for multi-layer pipeline
+    hls::stream<ap_uint<32>> final_output_stream;
+    ap_uint<32> processed_voxels = 0;
+    
+    // Initialize bitmap info
+    PrunedBitmapInfo bitmap_info;
+#if NUM_LEVELS >= 4
+    bitmap_info.L3_size = 0;
+#endif
+#if NUM_LEVELS >= 3
+    bitmap_info.L2_size = 0;
+#endif
+#if NUM_LEVELS >= 2
+    bitmap_info.L1_size = 0;
+#endif
+    bitmap_info.L0_size = 0;
+    bitmap_info.total_size = 0;
+    
+    // Create additional DRAM arrays for multi-layer processing  
+    static ap_uint<32> feature_dram_layer2[1048576];
+    static ap_uint<32> feature_dram_layer3[1048576];
+    
+    // Initialize additional DRAM arrays
+    for (int i = 0; i < 1048576; i++) {
+        feature_dram_layer2[i] = 0;
+        feature_dram_layer3[i] = 0;
+    }
+
+    // Call the multi-layer streaming pipeline
+    multi_layer_streaming_pipeline(
         sensor_data,                    // Input voxel stream
-        feature_dram_morton_write,      // Morton stage writes input features here
-        feature_dram_conv_read,         // Convolution reads input features from here  
-        feature_dram_conv_write,        // Convolution writes output features here
+        final_output_stream,            // Final output stream
+        layer1_weights, layer1_bias,    // Layer 1 weights/bias
+        layer2_weights, layer2_bias,    // Layer 2 weights/bias  
+        layer3_weights, layer3_bias,    // Layer 3 weights/bias
+        feature_dram_morton_write,      // Layer 1 DRAM (reuse existing)
+        feature_dram_layer2,            // Layer 2 DRAM
+        feature_dram_layer3,            // Layer 3 DRAM
         L3_bitmap,                      // Octree bitmaps
         L2_bitmap_pruned,
         L1_bitmap_pruned,
         L0_bitmap_pruned,
-        conv_weights,                   // Convolution weights
-        conv_bias,                      // Convolution bias
-        1,                              // Start signal
-        &done                           // Done signal
+        bitmap_info,                    // Bitmap info
+        processed_voxels               // Output: processed voxel count
     );
+    
+    // Read and print final outputs
+    int output_count = 0;
+    while (!final_output_stream.empty() && output_count < 10) {
+        ap_uint<32> output_data = final_output_stream.read();
+        float output_val = *((float*)&output_data);
+        printf("Output[%d]: %f\n", output_count, output_val);
+        output_count++;
+    }
+    
+    printf("Multi-layer pipeline completed. Processed %d voxels.\n", (int)processed_voxels);
 
     return 0;
 }

@@ -31,7 +31,7 @@ void integrated_morton_reorder_buffer_with_triggers(
 #pragma HLS INTERFACE axis port = resp_out
 #pragma HLS INTERFACE axis port = trigger_out
 #pragma HLS INTERFACE axis port = response_in
-#pragma HLS INTERFACE m_axi port = feature_dram depth = 134217728 bundle = gmem0 \
+#pragma HLS INTERFACE m_axi port = feature_dram depth = 134217728 bundle = gmem_morton \
     max_read_burst_length = 256 max_write_burst_length = 256 num_read_outstanding = 32 num_write_outstanding = 32 latency = 32 offset = slave
 #pragma HLS INTERFACE bram port = L3_bitmap_bram
 #pragma HLS INTERFACE bram port = L2_bitmap_pruned_bram
@@ -383,8 +383,9 @@ BURST_PROCESS:
 
         ap_uint<32> dram_addr = INPUT_FEATURE_REGION_START + buffer[i].dram_offset;
 
-        // check if this address can be added to current burst
-        if (burst_len == 0 || (dram_addr == burst_start + burst_len * 8 * FEATURE_DIM && burst_len < 64))
+        // check if this address can be added to current burst (limit to safe burst size)
+        const ap_uint<32> MAX_SAFE_BURST = 8; // 64 / 8 = 8 blocks max
+        if (burst_len == 0 || (dram_addr == burst_start + burst_len * 8 * FEATURE_DIM && burst_len < MAX_SAFE_BURST))
         {
             // start new burst or extend current burst
             if (burst_len == 0)
@@ -396,12 +397,17 @@ BURST_PROCESS:
             // current address doesn't fit in burst, so execute the current burst first
             if (burst_len > 0)
             {
-            // read burst_len words starting at burst_start
+            // read burst_len words starting at burst_start (with bounds check)
             BURST_READ:
-                for (int j = 0; j < burst_len * 8 * FEATURE_DIM; j++)
+                ap_uint<32> burst_size = burst_len * 8 * FEATURE_DIM;
+                if (burst_size > 64) burst_size = 64; // clamp to array size
+                for (int j = 0; j < burst_size; j++)
                 {
 #pragma HLS UNROLL factor = 16
-                    burst_data[j] = feature_dram[burst_start + j];
+                    ap_uint<32> read_addr = burst_start + j;
+                    if (read_addr < 1048576) { // bounds check for DRAM
+                        burst_data[j] = feature_dram[read_addr];
+                    }
                 }
 
                 // send responses for all entries in this burst
@@ -428,10 +434,15 @@ BURST_PROCESS:
     if (burst_len > 0)
     {
     FINAL_BURST:
-        for (int j = 0; j < burst_len * 8 * FEATURE_DIM; j++)
+        ap_uint<32> final_burst_size = burst_len * 8 * FEATURE_DIM;
+        if (final_burst_size > 64) final_burst_size = 64; // clamp to array size
+        for (int j = 0; j < final_burst_size; j++)
         {
 #pragma HLS UNROLL factor = 16
-            burst_data[j] = feature_dram[burst_start + j];
+            ap_uint<32> read_addr = burst_start + j;
+            if (read_addr < 1048576) { // bounds check for DRAM
+                burst_data[j] = feature_dram[read_addr];
+            }
         }
 
         for (int k = processed_entries; k < processed_entries + burst_len; k++)

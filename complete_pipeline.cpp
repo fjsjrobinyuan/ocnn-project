@@ -767,6 +767,206 @@ void run_dataflow_pipeline(
         feature_dram_conv_write);
 }
 
+void streaming_conv_layer(
+    hls::stream<ap_uint<32>> &input_feature_stream,
+    hls::stream<ap_uint<32>> &output_feature_stream,
+    float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float bias[FEATURE_DIM],
+    ap_uint<32> num_features
+) {
+#pragma HLS INLINE off
+#pragma HLS DATAFLOW
+
+    for (ap_uint<32> i = 0; i < num_features; i++) {
+#pragma HLS PIPELINE II=1
+        
+        float input_features[FEATURE_DIM];
+        for (int f = 0; f < FEATURE_DIM; f++) {
+#pragma HLS UNROLL
+            ap_uint<32> data = input_feature_stream.read();
+            input_features[f] = *((float*)&data);
+        }
+        
+        float output_features[FEATURE_DIM];
+        for (int out_f = 0; out_f < FEATURE_DIM; out_f++) {
+#pragma HLS UNROLL
+            output_features[out_f] = bias[out_f];
+            for (int in_f = 0; in_f < FEATURE_DIM; in_f++) {
+                output_features[out_f] += input_features[in_f] * weights[0][in_f][out_f];
+            }
+            if (output_features[out_f] < 0) output_features[out_f] = 0;
+        }
+        
+        for (int f = 0; f < FEATURE_DIM; f++) {
+#pragma HLS UNROLL
+            output_feature_stream.write(*((ap_uint<32>*)&output_features[f]));
+        }
+    }
+}
+
+void convert_voxel_to_feature_stream(
+    hls::stream<VoxelData> &voxel_stream,
+    hls::stream<ap_uint<32>> &feature_stream,
+    ap_uint<32> &num_features
+) {
+#pragma HLS INLINE off
+    
+    num_features = 0;
+    while (!voxel_stream.empty()) {
+#pragma HLS PIPELINE II=1
+        VoxelData voxel = voxel_stream.read();
+        
+        for (int f = 0; f < FEATURE_DIM; f++) {
+#pragma HLS UNROLL
+            feature_stream.write(*((ap_uint<32>*)&voxel.features[f]));
+        }
+        num_features++;
+    }
+}
+
+void multi_layer_streaming_pipeline(
+    hls::stream<VoxelData> &sensor_data,
+    hls::stream<ap_uint<32>> &final_output_stream,
+    float layer1_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float layer1_bias[FEATURE_DIM],
+    float layer2_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM], 
+    float layer2_bias[FEATURE_DIM],
+    float layer3_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float layer3_bias[FEATURE_DIM],
+    ap_uint<32> *feature_dram_input,
+    ap_uint<32> *feature_dram_temp,
+    ap_uint<32> *feature_dram_output,
+    ap_uint<BRAM_WIDTH> *L3_bitmap,
+    ap_uint<BRAM_WIDTH> *L2_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
+    PrunedBitmapInfo &bitmap_info,
+    ap_uint<32> &processed_voxels
+) {
+#pragma HLS INTERFACE m_axi port=feature_dram_input bundle=gmem_input
+#pragma HLS INTERFACE m_axi port=feature_dram_temp bundle=gmem1  
+#pragma HLS INTERFACE m_axi port=feature_dram_output bundle=gmem2
+
+    // On-chip streaming buffers between layers
+    hls::stream<ap_uint<32>> layer1_to_layer2("layer1_to_layer2");
+    hls::stream<ap_uint<32>> layer2_to_layer3("layer2_to_layer3");
+    
+#pragma HLS STREAM variable=layer1_to_layer2 depth=1024
+#pragma HLS STREAM variable=layer2_to_layer3 depth=1024
+
+    ap_uint<1> layer1_done = 0;
+    
+    // Initialize processed_voxels to a safe default
+    processed_voxels = 0;
+    
+    // Layer 1: Your existing octree convolution (outputs to DRAM first)
+    complete_octree_pipeline(
+        sensor_data,
+        feature_dram_temp,        // Layer 1 temp storage (different from read buffer)
+        feature_dram_input,       // Layer 1 reads from input buffer  
+        feature_dram_output,      // Layer 1 final output
+        L3_bitmap, L2_bitmap_pruned, L1_bitmap_pruned, L0_bitmap_pruned,
+        layer1_weights, layer1_bias,
+        1, &layer1_done
+    );
+    
+    // Only proceed if we actually processed some voxels
+    if (processed_voxels > 0) {
+        // Convert Layer 1 DRAM output to streaming format for Layer 2
+        dram_to_stream_converter(
+            feature_dram_output,      // Read Layer 1 results from DRAM
+            layer1_to_layer2,         // Stream to Layer 2
+            processed_voxels
+        );
+    }
+    
+    // Layer 2: Dense convolution (stream to stream) - only if we have data
+    if (processed_voxels > 0) {
+        streaming_dense_conv_layer(
+            layer1_to_layer2,         // Stream from Layer 1
+            layer2_to_layer3,         // Stream to Layer 3
+            layer2_weights, 
+            layer2_bias,
+            processed_voxels          // Number of features to process
+        );
+        
+        // Layer 3: Dense convolution (stream to final output)
+        streaming_dense_conv_layer(
+            layer2_to_layer3,         // Stream from Layer 2  
+            final_output_stream,      // Final output stream
+            layer3_weights,
+            layer3_bias,
+            processed_voxels          // Number of features to process
+        );
+    }
+}
+
+void dram_to_stream_converter(
+    ap_uint<32> *input_dram,
+    hls::stream<ap_uint<32>> &output_stream,
+    ap_uint<32> num_features
+) {
+#pragma HLS INLINE off
+    
+    // Add bounds check to prevent segfault
+    const ap_uint<32> MAX_DRAM_SIZE = 1048576;
+    ap_uint<32> max_allowed = MAX_DRAM_SIZE / FEATURE_DIM;
+    ap_uint<32> safe_num_features = (num_features > max_allowed) ? max_allowed : num_features;
+    
+    // Read features from DRAM and stream them out
+    for (ap_uint<32> feat = 0; feat < safe_num_features; feat++) {
+#pragma HLS PIPELINE II=1
+        for (int f = 0; f < FEATURE_DIM; f++) {
+#pragma HLS UNROLL
+            ap_uint<32> addr = feat * FEATURE_DIM + f;
+            if (addr < MAX_DRAM_SIZE) {
+                output_stream.write(input_dram[addr]);
+            }
+        }
+    }
+}
+
+void streaming_dense_conv_layer(
+    hls::stream<ap_uint<32>> &input_stream,
+    hls::stream<ap_uint<32>> &output_stream,
+    float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float bias[FEATURE_DIM],
+    ap_uint<32> num_features
+) {
+#pragma HLS INLINE off
+    
+    // Process exact number of features
+    for (ap_uint<32> feat = 0; feat < num_features; feat++) {
+#pragma HLS PIPELINE II=1
+        
+        // Read input features from stream
+        float input_features[FEATURE_DIM];
+        for (int f = 0; f < FEATURE_DIM; f++) {
+#pragma HLS UNROLL
+            ap_uint<32> data = input_stream.read();
+            input_features[f] = *((float*)&data);
+        }
+        
+        // Apply dense convolution (use first kernel position for simplicity)
+        float output_features[FEATURE_DIM];
+        for (int out_f = 0; out_f < FEATURE_DIM; out_f++) {
+#pragma HLS UNROLL
+            output_features[out_f] = bias[out_f];
+            for (int in_f = 0; in_f < FEATURE_DIM; in_f++) {
+                output_features[out_f] += input_features[in_f] * weights[0][in_f][out_f];
+            }
+            // ReLU activation
+            if (output_features[out_f] < 0) output_features[out_f] = 0;
+        }
+        
+        // Write output features to stream
+        for (int f = 0; f < FEATURE_DIM; f++) {
+#pragma HLS UNROLL
+            output_stream.write(*((ap_uint<32>*)&output_features[f]));
+        }
+    }
+}
+
 #if ENABLE_CROSS_ROW_SORTING
 void sort_cross_row_buffer(
      ap_uint<MORTON_BITS> morton_buffer[MAX_FEATURES_TO_BUFFER],

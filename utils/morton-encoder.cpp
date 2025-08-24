@@ -37,6 +37,7 @@ struct RowConfig {
     }
 };
 
+#ifndef HLS_TESTBENCH
 int main() {
     int x_center, y_center, z_center;
     std::cout << "Enter center voxel coordinates (x, y, z): ";
@@ -173,3 +174,4 @@ int main() {
     
     return 0;
 }
+#endif

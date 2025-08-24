@@ -144,5 +144,54 @@ void process_sorted_cross_row_buffer(
     hls::stream<ap_uint<MORTON_BITS>> &morton_codes_out,
     ap_uint<32> &request_id_counter,
     ap_uint<32> &features_stored);
+// Multi-layer streaming functions
+void streaming_conv_layer(
+    hls::stream<ap_uint<32>> &input_feature_stream,
+    hls::stream<ap_uint<32>> &output_feature_stream,
+    float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float bias[FEATURE_DIM],
+    ap_uint<32> num_features
+);
+
+void multi_layer_streaming_pipeline(
+    hls::stream<VoxelData> &sensor_data,
+    hls::stream<ap_uint<32>> &final_output_stream,
+    float layer1_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float layer1_bias[FEATURE_DIM],
+    float layer2_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM], 
+    float layer2_bias[FEATURE_DIM],
+    float layer3_weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float layer3_bias[FEATURE_DIM],
+    ap_uint<32> *feature_dram_input,
+    ap_uint<32> *feature_dram_temp,
+    ap_uint<32> *feature_dram_output,
+    ap_uint<BRAM_WIDTH> *L3_bitmap,
+    ap_uint<BRAM_WIDTH> *L2_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L1_bitmap_pruned,
+    ap_uint<BRAM_WIDTH> *L0_bitmap_pruned,
+    PrunedBitmapInfo &bitmap_info,
+    ap_uint<32> &processed_voxels
+);
+
+void convert_voxel_to_feature_stream(
+    hls::stream<VoxelData> &voxel_stream,
+    hls::stream<ap_uint<32>> &feature_stream,
+    ap_uint<32> &num_features
+);
+
+void dram_to_stream_converter(
+    ap_uint<32> *input_dram,
+    hls::stream<ap_uint<32>> &output_stream,
+    ap_uint<32> num_features
+);
+
+void streaming_dense_conv_layer(
+    hls::stream<ap_uint<32>> &input_stream,
+    hls::stream<ap_uint<32>> &output_stream,
+    float weights[KERNEL_VOLUME][FEATURE_DIM][FEATURE_DIM],
+    float bias[FEATURE_DIM],
+    ap_uint<32> num_features
+);
+
 #endif
 #endif
