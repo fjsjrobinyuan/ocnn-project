@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'layer_convolution_with_persistent_accelerator'" level="0">
-<item name = "Date">Mon Aug 25 03:44:15 2025
+<item name = "Date">Mon Aug 25 03:55:35 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">minkowski_net</item>

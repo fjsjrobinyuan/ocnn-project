@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'layer_convolution_with_persistent_accelerator_Outline_READ_NEIGHBOR_FEATURES'
 ================================================================
-* Date:           Mon Aug 25 03:44:11 2025
+* Date:           Mon Aug 25 03:55:22 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        minkowski_net
@@ -126,7 +126,7 @@ The critical path consists of the following:
  <State 2>: 1.122ns
 The critical path consists of the following:
 	'load' operation 11 bit ('ic', minkowski_net.cpp:273) on local variable 'ic', minkowski_net.cpp:273 [13]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln273', minkowski_net.cpp:273) [14]  (0.735 ns)
+	'add' operation 11 bit ('add_ln273', minkowski_net.cpp:273) [16]  (0.735 ns)
 	'store' operation 0 bit ('store_ln273', minkowski_net.cpp:273) of variable 'add_ln273', minkowski_net.cpp:273 on local variable 'ic', minkowski_net.cpp:273 [26]  (0.387 ns)
 
  <State 3>: 3.650ns

@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 41,
-    "calls": "3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4",
+    "calls": "2 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3",
     "file": "minkowski_net.cpp",
     "fileloc": 17,
     "instructions": 385,
@@ -35,6 +35,24 @@
     "total_instructions": 1155
   },
   "2": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "minkowski_net.cpp",
+    "fileloc": 0,
+    "instructions": 3,
+    "name": "_Z31minkowski_net_14_layer_pipelineRN3hls6streamI9VoxelDataLi0EEEP7ap_uintILi32EEPA27_A1024_A1024_fPS7_S6_S6_PS4_ILi512EESD_SD_SD_R16PrunedBitmapInfoRS5__",
+    "total_instructions": 1158
+  },
+  "3": {
+    "basicblocks": 15,
+    "calls": "",
+    "file": "minkowski_net.cpp",
+    "fileloc": 389,
+    "instructions": 107,
+    "name": "final_layer_output_reconstruction",
+    "total_instructions": 107
+  },
+  "4": {
     "basicblocks": 321,
     "calls": "",
     "file": "minkowski_net.cpp",
@@ -48,23 +66,5 @@
       "L": 56
     },
     "total_instructions": 1431
-  },
-  "3": {
-    "basicblocks": 1,
-    "calls": "1",
-    "file": "minkowski_net.cpp",
-    "fileloc": 0,
-    "instructions": 3,
-    "name": "_Z31minkowski_net_14_layer_pipelineRN3hls6streamI9VoxelDataLi0EEEP7ap_uintILi32EEPA27_A1024_A1024_fPS7_S6_S6_PS4_ILi512EESD_SD_SD_R16PrunedBitmapInfoRS5__",
-    "total_instructions": 1158
-  },
-  "4": {
-    "basicblocks": 15,
-    "calls": "",
-    "file": "minkowski_net.cpp",
-    "fileloc": 389,
-    "instructions": 107,
-    "name": "final_layer_output_reconstruction",
-    "total_instructions": 107
   }
 }
