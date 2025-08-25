@@ -39,8 +39,8 @@ void minkowski_net_14_layer_pipeline(
 #pragma HLS INTERFACE bram port=L2_bitmap
 #pragma HLS INTERFACE bram port=L1_bitmap
 #pragma HLS INTERFACE bram port=L0_bitmap
-#pragma HLS INTERFACE bram port=layer_weights
-#pragma HLS INTERFACE bram port=layer_biases
+#pragma HLS INTERFACE bram port=layer_weights storage_type=ram_2p
+#pragma HLS INTERFACE bram port=layer_biases storage_type=ram_2p
 #pragma HLS INTERFACE s_axilite port=bitmap_info
 #pragma HLS INTERFACE s_axilite port=total_processed_voxels
 #pragma HLS INTERFACE s_axilite port=return
@@ -49,9 +49,9 @@ void minkowski_net_14_layer_pipeline(
 #pragma HLS ARRAY_PARTITION variable=layer_weights dim=1 complete
 #pragma HLS ARRAY_PARTITION variable=layer_biases dim=1 complete
 
-// Resource binding for BRAM usage
-#pragma HLS BIND_STORAGE variable=layer_weights type=ram_2p impl=bram
-#pragma HLS BIND_STORAGE variable=layer_biases type=ram_2p impl=bram
+// Resource binding for BRAM usage moved to INTERFACE pragmas above
+// #pragma HLS BIND_STORAGE variable=layer_weights type=ram_2p impl=bram  // Moved to INTERFACE
+// #pragma HLS BIND_STORAGE variable=layer_biases type=ram_2p impl=bram   // Moved to INTERFACE
 
 #ifndef __SYNTHESIS__
     std::cout << "=== 14-LAYER MINKOWSKINET WITH PERSISTENT ACCELERATOR ===" << std::endl;
@@ -102,7 +102,8 @@ void minkowski_net_14_layer_pipeline(
         for (int c = 0; c < 3; c++) {
 #pragma HLS UNROLL factor=2
             ap_uint<32> dram_addr = pruned_voxel_count * 3 + c;  // Pruned format: [voxel0_ch0, voxel0_ch1, voxel0_ch2, voxel1_ch0, ...]
-            pruned_feature_dram_read[dram_addr] = *((ap_uint<32>*)&voxel.features[c]);
+            ap_uint<32> temp_val = *((ap_uint<32>*)&voxel.features[c]);
+            pruned_feature_dram_read[dram_addr] = temp_val;
         }
         pruned_voxel_count++;
     }
@@ -221,35 +222,47 @@ void layer_convolution_with_persistent_accelerator(
 ) {
 #pragma HLS INLINE off
 
+    // Array partitioning for parallel weight access
+#pragma HLS ARRAY_PARTITION variable=weights dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=weights dim=2 cyclic factor=16
+#pragma HLS ARRAY_PARTITION variable=weights dim=3 cyclic factor=8
+#pragma HLS ARRAY_PARTITION variable=bias dim=1 cyclic factor=8
+
     // Static 3-Z buffer for caching access pointer results (Level 1 of 2-level hierarchy)
     static float z_buffer[3][MAX_VOXELS_L0][MAX_FEATURE_CHANNELS];
 #pragma HLS BIND_STORAGE variable=z_buffer type=ram_2p impl=uram
+#pragma HLS ARRAY_PARTITION variable=z_buffer dim=3 cyclic factor=16
 
     // Process each pruned voxel using access pointer mechanism
     PROCESS_PRUNED_VOXELS: for (ap_uint<32> v = 0; v < num_pruned_voxels; v++) {
 #pragma HLS PIPELINE II=1
 #pragma HLS LOOP_TRIPCOUNT min=1000 max=100000
         
-        // Read input features for this voxel (multiple channels processed sequentially)
+        // Read input features for this voxel (multiple channels processed in parallel)
         float input_features[MAX_FEATURE_CHANNELS];
+// Remove array partition to avoid conflicts
+// #pragma HLS ARRAY_PARTITION variable=input_features dim=1 cyclic factor=16
         READ_INPUT_CHANNELS: for (int c = 0; c < config.input_channels; c++) {
-#pragma HLS PIPELINE II=1
+#pragma HLS UNROLL factor=16
             ap_uint<32> dram_addr = v * config.input_channels + c;
-            input_features[c] = *((float*)&pruned_dram_read[dram_addr]);
+            ap_uint<32> temp_read = pruned_dram_read[dram_addr];
+            input_features[c] = *((float*)&temp_read);
         }
         
         // CONVOLUTION COMPUTATION using your 3-Z buffer + access pointers
         float output_features[MAX_FEATURE_CHANNELS];
+// Remove array partition to avoid full array load/store conflict
+// #pragma HLS ARRAY_PARTITION variable=output_features dim=1 cyclic factor=8
         
         // Initialize output with bias
         INIT_OUTPUT_BIAS: for (int oc = 0; oc < config.output_channels; oc++) {
-#pragma HLS UNROLL factor=4
+#pragma HLS UNROLL factor=8
             output_features[oc] = bias[oc];
         }
         
         // 3D convolution using access pointers for neighbor lookup
         KERNEL_CONV: for (int k = 0; k < KERNEL_VOLUME; k++) {
-#pragma HLS PIPELINE II=1
+#pragma HLS UNROLL
             
             // Get neighbor offset from kernel position
             ap_int<8> dx = NEIGHBOR_OFFSETS[k][0];
@@ -268,25 +281,30 @@ void layer_convolution_with_persistent_accelerator(
             );
             
             float neighbor_features[MAX_FEATURE_CHANNELS];
+// Remove array partition to avoid conflicts  
+// #pragma HLS ARRAY_PARTITION variable=neighbor_features dim=1 cyclic factor=16
             if (neighbor_exists) {
                 // Read neighbor features from 3-Z buffer (Level 1) or DRAM (Level 2)
                 READ_NEIGHBOR_FEATURES: for (int ic = 0; ic < config.input_channels; ic++) {
-#pragma HLS UNROLL factor=2
+#pragma HLS UNROLL factor=16
                     // Check 3-Z buffer first, then fall back to DRAM
-                    neighbor_features[ic] = *((float*)&pruned_dram_read[neighbor_dram_addr * config.input_channels + ic]);
+                    ap_uint<32> temp_addr = neighbor_dram_addr * config.input_channels + ic;
+                    ap_uint<32> temp_read = pruned_dram_read[temp_addr];
+                    neighbor_features[ic] = *((float*)&temp_read);
                 }
             } else {
                 // Neighbor doesn't exist (pruned zero)
                 ZERO_NEIGHBOR: for (int ic = 0; ic < config.input_channels; ic++) {
-#pragma HLS UNROLL
+#pragma HLS UNROLL factor=16
                     neighbor_features[ic] = 0.0f;
                 }
             }
             
             // Accumulate convolution result
             CONV_ACCUMULATE: for (int oc = 0; oc < config.output_channels; oc++) {
+#pragma HLS UNROLL factor=8
                 for (int ic = 0; ic < config.input_channels; ic++) {
-#pragma HLS PIPELINE II=1
+#pragma HLS UNROLL factor=16
                     output_features[oc] += neighbor_features[ic] * weights[k][ic][oc];
                 }
             }
@@ -304,14 +322,16 @@ void layer_convolution_with_persistent_accelerator(
             WRITE_OUTPUT_CROSS_ROW: for (int c = 0; c < config.output_channels; c++) {
 #pragma HLS PIPELINE II=1
                 ap_uint<32> sorted_dram_addr = v * config.output_channels + c;  // Would implement actual cross-row sorting
-                pruned_dram_write[sorted_dram_addr] = *((ap_uint<32>*)&output_features[c]);
+                ap_uint<32> temp_val = *((ap_uint<32>*)&output_features[c]);
+                pruned_dram_write[sorted_dram_addr] = temp_val;
             }
         } else {
-            // Direct write for large dimensions
+            // Direct write for large dimensions  
             WRITE_OUTPUT_DIRECT: for (int c = 0; c < config.output_channels; c++) {
 #pragma HLS PIPELINE II=1
                 ap_uint<32> dram_addr = v * config.output_channels + c;
-                pruned_dram_write[dram_addr] = *((ap_uint<32>*)&output_features[c]);
+                ap_uint<32> temp_val = *((ap_uint<32>*)&output_features[c]);
+                pruned_dram_write[dram_addr] = temp_val;
             }
         }
     }
