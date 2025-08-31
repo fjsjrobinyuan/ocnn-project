@@ -88,14 +88,17 @@ void streaming_bitmap_constructor(
     static ap_uint<32> l0_write_pos = 0;
     static ap_uint<32> l1_write_pos = 0;
     static ap_uint<32> l2_write_pos = 0;
-    static ap_uint<1> L1_temp[DIM_L1 * DIM_L1 * DIM_L1];
-    static ap_uint<1> L2_temp[DIM_L2 * DIM_L2 * DIM_L2];
-    static ap_uint<1> L3_temp[1];
-#pragma HLS BIND_STORAGE variable = L1_temp type = ram_1p impl = bram
-#pragma HLS ARRAY_PARTITION variable = L1_temp dim=0 cyclic factor=8
-#pragma HLS BIND_STORAGE variable = L2_temp type = ram_1p impl = bram
-#pragma HLS ARRAY_PARTITION variable = L2_temp dim=0 cyclic factor=4
-#pragma HLS BIND_STORAGE variable = L3_temp type = ram_1p impl = bram
+    
+    // YOUR INTENDED DESIGN: 2-Z-Layer Streaming Buffers (not massive arrays!)
+    static ap_uint<1> l0_block_buffer[2][DIM_L0][DIM_L0];  // 2 z-layers for 2×2×2 blocks
+    static ap_uint<1> l1_block_buffer[2][DIM_L1][DIM_L1];  // 2 z-layers for L1 construction  
+    static ap_uint<1> l2_temp_buffer[DIM_L2][DIM_L2];      // Single layer for L2
+    static ap_uint<32> current_z_layer = 0;                // Current processing z-layer
+    
+#pragma HLS BIND_STORAGE variable=l0_block_buffer type=ram_1p impl=bram
+#pragma HLS BIND_STORAGE variable=l1_block_buffer type=ram_1p impl=bram
+#pragma HLS ARRAY_PARTITION variable=l0_block_buffer dim=1 complete  // Partition z-dimension
+#pragma HLS ARRAY_PARTITION variable=l1_block_buffer dim=1 complete  // Partition z-dimension
     static ap_uint<1> initialized = 0;
     if (!initialized)
     {
@@ -104,15 +107,26 @@ void streaming_bitmap_constructor(
         l0_write_pos = 0;
         l1_write_pos = 0;
         l2_write_pos = 0;
-        for (int i = 0; i < DIM_L1 * DIM_L1 * DIM_L1; i++)
-        {
-            L1_temp[i] = 0;
+        // Initialize 2-z-layer streaming buffers  
+        for (int z = 0; z < 2; z++) {
+            for (int y = 0; y < DIM_L0; y++) {
+                for (int x = 0; x < DIM_L0; x++) {
+                    l0_block_buffer[z][y][x] = 0;
+                }
+            }
         }
-        for (int i = 0; i < DIM_L2 * DIM_L2 * DIM_L2; i++)
-        {
-            L2_temp[i] = 0;
+        for (int z = 0; z < 2; z++) {
+            for (int y = 0; y < DIM_L1; y++) {
+                for (int x = 0; x < DIM_L1; x++) {
+                    l1_block_buffer[z][y][x] = 0;
+                }
+            }
         }
-        L3_temp[0] = 0;
+        for (int y = 0; y < DIM_L2; y++) {
+            for (int x = 0; x < DIM_L2; x++) {
+                l2_temp_buffer[y][x] = 0;
+            }
+        }
         initialized = 1;
     }
 #ifndef __SYNTHESIS__
@@ -126,73 +140,144 @@ VOXEL_PROCESSING:
         processed_input_voxels++;
         voxel_count++;
 
-        // Process voxel directly - no batching or sorting needed
-        process_voxel(voxel, feature_data_out, write_addr_out, retained_blocks_out,
-                     retained_block_count, L0_bitmap_pruned, l0_write_pos, L1_temp);
+        // YOUR INTENDED DESIGN: Stream voxels into 2-z-layer buffer
+        ap_uint<32> x = voxel.morton_addr & 0x3F;  // Extract X coordinate
+        ap_uint<32> y = (voxel.morton_addr >> 6) & 0x3F;  // Extract Y coordinate  
+        ap_uint<32> z = (voxel.morton_addr >> 12) & 0x3F; // Extract Z coordinate
+        
+        // Store voxel occupancy in 2-z-layer buffer
+        ap_uint<32> buffer_z = z % 2;  // Use alternating z-layers
+        l0_block_buffer[buffer_z][y][x] = voxel.occupancy;
+        
+        // Process voxel for DRAM storage (features and addresses)
+        if (voxel.occupancy) {
+            feature_data_out.write(voxel);
+            write_addr_out.write(voxel.morton_addr);
+            
+            RetainedBlockInfo block_info;
+            block_info.morton_code = voxel.morton_addr;
+            block_info.block_index = retained_block_count;
+            retained_blocks_out.write(block_info);
+            retained_block_count++;
+        }
     }
-L2_CONSTRUCTION:
-    for (int l2_z = 0; l2_z < DIM_L2; l2_z++)
+// YOUR INTENDED HIERARCHICAL STREAMING CONSTRUCTION  
+L0_TO_L1_PRUNING:
+    for (int l1_y = 0; l1_y < DIM_L1; l1_y++)
     {
-        for (int l2_y = 0; l2_y < DIM_L2; l2_y++)
+#pragma HLS PIPELINE II=2  // Relaxed for timing closure - your concept is more important!
+        for (int l1_x = 0; l1_x < DIM_L1; l1_x++)
         {
-#pragma HLS PIPELINE II = 1
-            for (int l2_x = 0; l2_x < DIM_L2; l2_x++)
+            // Process 2×2×2 block from your 2-z-layer buffer (not complex 3D indexing!)
+            bool l1_has_data = false;
+            ap_uint<8> l0_group = 0;
+            
+            // Check 2×2×2 voxel block from streaming buffer
+            for (int dz = 0; dz < 2; dz++)
             {
-#pragma HLS UNROLL
-                bool l2_has_data = false;
-                ap_uint<8> l1_group = 0;
-            L1_BLOCK_PROCESSING:
-                for (int dz = 0; dz < 2; dz++)
+                for (int dy = 0; dy < 2; dy++)  
                 {
-                    for (int dy = 0; dy < 2; dy++)
+                    for (int dx = 0; dx < 2; dx++)
                     {
-                        for (int dx = 0; dx < 2; dx++)
-                        {
 #pragma HLS UNROLL
-                            int l1_x = l2_x * 2 + dx;
-                            int l1_y = l2_y * 2 + dy;
-                            int l1_z = l2_z * 2 + dz;
-                            int l1_idx = l1_z * DIM_L1 * DIM_L1 + l1_y * DIM_L1 + l1_x;
-                            int bit_pos = dz * 4 + dy * 2 + dx;
-                            l1_group[bit_pos] = L1_temp[l1_idx];
-                            if (L1_temp[l1_idx])
-                                l2_has_data = true;
-                        }
+                        ap_uint<32> l0_x = l1_x * 2 + dx;
+                        ap_uint<32> l0_y = l1_y * 2 + dy;
+                        
+                        // YOUR DESIGN: Simple 2-z-layer buffer access (not complex indexing!)
+                        ap_uint<1> voxel_bit = (l0_x < DIM_L0 && l0_y < DIM_L0) ? 
+                                              l0_block_buffer[dz][l0_y][l0_x] : (ap_uint<1>)0;
+                        
+                        ap_uint<32> bit_pos = dz * 4 + dy * 2 + dx;
+                        l0_group[bit_pos] = voxel_bit;
+                        if (voxel_bit) l1_has_data = true;
                     }
                 }
-                int l2_idx = l2_z * DIM_L2 * DIM_L2 + l2_y * DIM_L2 + l2_x;
-                L2_temp[l2_idx] = l2_has_data ? 1 : 0;
-                if (l2_has_data)
+            }
+            
+            // YOUR PRUNING CONCEPT: Store L1 bit in buffer for next level
+            l1_block_buffer[0][l1_y][l1_x] = l1_has_data ? 1 : 0;
+            
+            // PRUNED STORAGE: Only store L0 block if L1 bit = 1
+            if (l1_has_data)
+            {
+                for (int i = 0; i < 8; i++)
                 {
-                    for (int i = 0; i < 8; i++)
-                    {
-                        set_bit(L1_bitmap_pruned, l1_write_pos + i, l1_group[i]);
-                    }
-                    l1_write_pos += 8;
+                    set_bit(L0_bitmap_pruned, l0_write_pos + i, l0_group[i]);
                 }
+                l0_write_pos += 8;
             }
         }
     }
-    bool l3_has_data = false;
-    ap_uint<8> l2_group = 0;
-    for (int i = 0; i < 8; i++)
+    
+L1_TO_L2_PRUNING:  
+    for (int l2_y = 0; l2_y < DIM_L2; l2_y++)
     {
-        if (i < DIM_L2 * DIM_L2 * DIM_L2)
+#pragma HLS PIPELINE II=2  // Relaxed timing for your correct design
+        for (int l2_x = 0; l2_x < DIM_L2; l2_x++)
         {
-            l2_group[i] = L2_temp[i];
-            if (L2_temp[i])
-                l3_has_data = true;
+            // Process 2×2 L1 group from buffer (your design!)
+            bool l2_has_data = false;
+            ap_uint<4> l1_group = 0;
+            
+            for (int dy = 0; dy < 2; dy++)
+            {
+                for (int dx = 0; dx < 2; dx++)
+                {
+#pragma HLS UNROLL
+                    ap_uint<32> l1_x = l2_x * 2 + dx;
+                    ap_uint<32> l1_y_coord = l2_y * 2 + dy;
+                    
+                    // YOUR DESIGN: Simple buffer access (not complex indexing!)
+                    ap_uint<1> l1_bit = (l1_x < DIM_L1 && l1_y_coord < DIM_L1) ? 
+                                       l1_block_buffer[0][l1_y_coord][l1_x] : (ap_uint<1>)0;
+                    
+                    ap_uint<32> bit_pos = dy * 2 + dx;
+                    l1_group[bit_pos] = l1_bit;
+                    if (l1_bit) l2_has_data = true;
+                }
+            }
+            
+            // YOUR PRUNING: Store L2 bit and conditionally store L1 group
+            l2_temp_buffer[l2_y][l2_x] = l2_has_data ? 1 : 0;
+            
+            if (l2_has_data)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    set_bit(L1_bitmap_pruned, l1_write_pos + i, l1_group[i]);
+                }
+                l1_write_pos += 4;
+            }
         }
     }
-    L3_temp[0] = l3_has_data ? 1 : 0;
-    set_bit(L3_bitmap, 0, L3_temp[0]);
+// L2_TO_L3_CONSTRUCTION - YOUR ROOT LEVEL (stored completely)
+    bool l3_has_data = false;
+    ap_uint<64> l2_complete_level = 0;  // Store complete L2 level
+    ap_uint<32> l2_bit_pos = 0;
+    
+    for (int l2_y = 0; l2_y < DIM_L2; l2_y++)
+    {
+        for (int l2_x = 0; l2_x < DIM_L2; l2_x++)
+        {
+            ap_uint<1> l2_bit = l2_temp_buffer[l2_y][l2_x];
+            l2_complete_level[l2_bit_pos] = l2_bit;
+            if (l2_bit) l3_has_data = true;
+            l2_bit_pos++;
+        }
+    }
+    
+    // YOUR DESIGN: L3 (root) stored completely, L2 stored conditionally
+    set_bit(L3_bitmap, 0, l3_has_data ? 1 : 0);
+    
     if (l3_has_data)
     {
-        for (int i = 0; i < 8; i++)
+        // Store complete L2 level in pruned bitmap (your root storage concept)
+        for (int i = 0; i < DIM_L2 * DIM_L2; i++)
         {
-            set_bit(L2_bitmap_pruned, l2_write_pos + i, l2_group[i]);
+            ap_uint<1> bit_val = (l2_complete_level >> i) & 1;
+            set_bit(L2_bitmap_pruned, l2_write_pos + i, bit_val);
         }
-        l2_write_pos += 8;
+        l2_write_pos += DIM_L2 * DIM_L2;
     }
     bitmap_info.L3_size = 1;
     bitmap_info.L2_size = l2_write_pos;

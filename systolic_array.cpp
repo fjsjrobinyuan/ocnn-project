@@ -266,10 +266,10 @@ void FullZLayerMultiplicationArray::compute_single_voxel_parallel(
     float output_features[FEATURE_DIM])
 {
 #pragma HLS INLINE off
-// CONTROLLED partitioning - avoid complete partitioning explosion
-#pragma HLS ARRAY_PARTITION variable=mult_units cyclic factor=4 dim=1
-#pragma HLS ARRAY_PARTITION variable=input_features complete
-#pragma HLS ARRAY_PARTITION variable=output_features complete
+// MINIMAL partitioning to reduce routing congestion - focus on timing closure
+#pragma HLS ARRAY_PARTITION variable=mult_units cyclic factor=2 dim=1  // Reduce partitioning factor
+#pragma HLS ARRAY_PARTITION variable=input_features cyclic factor=4    // Don't partition completely
+#pragma HLS ARRAY_PARTITION variable=output_features cyclic factor=4   // Don't partition completely
 
     // Bounds check for 64×64 spatial coverage
     if (voxel_x >= DIM_L0 || voxel_y >= DIM_L0) return;
@@ -287,17 +287,21 @@ INIT_BIAS:
 PER_CHANNEL_CONVOLUTION:
     for (int out_f = 0; out_f < FEATURE_DIM; out_f++)
     {
-#pragma HLS PIPELINE II=2  // Use pipelining instead of unrolling
-        for (int in_f = 0; in_f < FEATURE_DIM; in_f++)  // This will be limited by layer's actual input channels
+        // Use local accumulator to break dependency chain
+        float local_sum = 0.0f;
+        for (int in_f = 0; in_f < FEATURE_DIM; in_f++)  
         {
-            for (int z = 0; z < 3; z++)  // 3 z-layers in sliding window
+#pragma HLS PIPELINE II=1  // Faster pipeline
+            for (int z = 0; z < 3; z++)  
             {
+#pragma HLS UNROLL  // Unroll only 3 iterations
                 float mult_result = input_features[in_f] * weights[out_f][in_f];  
 #pragma HLS RESOURCE variable=mult_result core=DSP48 impl=dsp
                 mult_units[in_f][voxel_x][voxel_y][z] = mult_result;
-                accumulator[voxel_x][voxel_y][out_f] += mult_result;
+                local_sum += mult_result;  // Local accumulation - no array dependency!
             }
         }
+        accumulator[voxel_x][voxel_y][out_f] = local_sum;  // Single write
     }
     
     // Apply ReLU and output

@@ -18,6 +18,7 @@ struct RetainedBlockInfo
     ap_uint<MORTON_BITS> morton_code;
     ap_uint<32> dram_offset;
     ap_uint<8> valid_voxels;
+    ap_uint<32> block_index;
 };
 void streaming_bitmap_constructor(
     hls::stream<VoxelData> &voxel_stream,
