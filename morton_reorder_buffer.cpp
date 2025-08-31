@@ -403,7 +403,7 @@ BURST_PROCESS:
                 if (burst_size > 64) burst_size = 64; // clamp to array size
                 for (int j = 0; j < burst_size; j++)
                 {
-#pragma HLS UNROLL factor = 16
+#pragma HLS UNROLL factor = 4
                     ap_uint<32> read_addr = burst_start + j;
                     if (read_addr < 1048576) { // bounds check for DRAM
                         burst_data[j] = feature_dram[read_addr];
@@ -438,7 +438,7 @@ BURST_PROCESS:
         if (final_burst_size > 64) final_burst_size = 64; // clamp to array size
         for (int j = 0; j < final_burst_size; j++)
         {
-#pragma HLS UNROLL factor = 16
+#pragma HLS UNROLL factor = 4
             ap_uint<32> read_addr = burst_start + j;
             if (read_addr < 1048576) { // bounds check for DRAM
                 burst_data[j] = feature_dram[read_addr];

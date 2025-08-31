@@ -92,7 +92,9 @@ void streaming_bitmap_constructor(
     static ap_uint<1> L2_temp[DIM_L2 * DIM_L2 * DIM_L2];
     static ap_uint<1> L3_temp[1];
 #pragma HLS BIND_STORAGE variable = L1_temp type = ram_1p impl = bram
+#pragma HLS ARRAY_PARTITION variable = L1_temp dim=0 cyclic factor=8
 #pragma HLS BIND_STORAGE variable = L2_temp type = ram_1p impl = bram
+#pragma HLS ARRAY_PARTITION variable = L2_temp dim=0 cyclic factor=4
 #pragma HLS BIND_STORAGE variable = L3_temp type = ram_1p impl = bram
     static ap_uint<1> initialized = 0;
     if (!initialized)

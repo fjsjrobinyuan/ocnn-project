@@ -47,11 +47,34 @@ int main() {
     std::cout << "Generated " << (64*64*64) << " total voxels (" << occupied_voxel_count << " occupied, " 
               << (100.0f * occupied_voxel_count / (64*64*64)) << "% sparse)" << std::endl;
 
-    // Initialize 8-layer weights and biases
-    std::cout << "Initializing 8 layers of weights and biases..." << std::endl;
+    // Initialize separate weight arrays per layer
+    std::cout << "Initializing 8 layers of weights and biases with separate arrays..." << std::endl;
     
-    static float layer_weights[8][KERNEL_VOLUME][OCNN6_MAX_FEATURE_CHANNELS][OCNN6_MAX_FEATURE_CHANNELS];
-    static float layer_biases[8][OCNN6_MAX_FEATURE_CHANNELS];
+    // Allocate separate weight arrays (flattened)
+    static float *conv1_weights = new float[27 * 3 * 16];
+    static float *conv2_weights = new float[27 * 16 * 32];
+    static float *conv3_weights = new float[27 * 32 * 64];
+    static float *conv4_weights = new float[27 * 64 * 128];
+    static float *conv5_weights = new float[27 * 128 * 256];
+    static float *conv6_weights = new float[27 * 256 * 512];
+    static float *fc1_weights = new float[512 * 128];
+    static float *fc2_weights = new float[128 * 40];
+    
+    // Allocate separate bias arrays
+    static float *conv1_bias = new float[16];
+    static float *conv2_bias = new float[32];
+    static float *conv3_bias = new float[64];
+    static float *conv4_bias = new float[128];
+    static float *conv5_bias = new float[256];
+    static float *conv6_bias = new float[512];
+    static float *fc1_bias = new float[128];
+    static float *fc2_bias = new float[40];
+    
+    // Create arrays of pointers for easier indexing
+    float *layer_weights[8] = {conv1_weights, conv2_weights, conv3_weights, conv4_weights,
+                               conv5_weights, conv6_weights, fc1_weights, fc2_weights};
+    float *layer_biases[8] = {conv1_bias, conv2_bias, conv3_bias, conv4_bias,
+                              conv5_bias, conv6_bias, fc1_bias, fc2_bias};
     
     for (int layer = 0; layer < 8; layer++) {
         const OCNN6LayerConfig &config = OCNN6_LAYERS[layer];
@@ -61,30 +84,24 @@ int main() {
                   << config.input_spatial_dim << "³ -> " << config.output_spatial_dim << "³"
                   << " (" << (config.is_fully_connected ? "FC" : "Conv3d") << ")" << std::endl;
         
-        // Initialize weights with proper scaling
+        // Initialize weights with proper scaling in flattened format
         if (config.is_fully_connected) {
-            // FC weights only use first kernel position
+            // FC weights: [input_channels * output_channels]
             for (int i = 0; i < config.input_channels; i++) {
                 for (int j = 0; j < config.output_channels; j++) {
                     float scale = sqrt(2.0f / config.input_channels);
-                    layer_weights[layer][0][i][j] = dis(gen) * scale;
-                }
-            }
-            // Zero other kernel positions for FC layers
-            for (int k = 1; k < KERNEL_VOLUME; k++) {
-                for (int i = 0; i < config.input_channels; i++) {
-                    for (int j = 0; j < config.output_channels; j++) {
-                        layer_weights[layer][k][i][j] = 0.0f;
-                    }
+                    int weight_idx = i * config.output_channels + j;
+                    layer_weights[layer][weight_idx] = dis(gen) * scale;
                 }
             }
         } else {
-            // Conv3d weights use all kernel positions
+            // Conv3d weights: [kernel_volume * input_channels * output_channels]
             for (int k = 0; k < KERNEL_VOLUME; k++) {
                 for (int i = 0; i < config.input_channels; i++) {
                     for (int j = 0; j < config.output_channels; j++) {
                         float scale = sqrt(2.0f / (config.input_channels * KERNEL_VOLUME));
-                        layer_weights[layer][k][i][j] = dis(gen) * scale;
+                        int weight_idx = k * config.input_channels * config.output_channels + i * config.output_channels + j;
+                        layer_weights[layer][weight_idx] = dis(gen) * scale;
                     }
                 }
             }
@@ -140,12 +157,19 @@ int main() {
     
     ap_uint<32> total_processed_voxels = 0;
     
-    // Call the corrected 8-layer OCNN6 pipeline
+    // Call the corrected 8-layer OCNN6 pipeline with separate weight arrays
     ocnn6_net_8_layer_pipeline(
         input_voxel_stream,
         final_output_full_cubic,         // Full cubic output with zeros restored
-        layer_weights,
-        layer_biases,
+        
+        // Separate weight arrays per layer
+        conv1_weights, conv2_weights, conv3_weights, conv4_weights,
+        conv5_weights, conv6_weights, fc1_weights, fc2_weights,
+        
+        // Separate bias arrays per layer
+        conv1_bias, conv2_bias, conv3_bias, conv4_bias,
+        conv5_bias, conv6_bias, fc1_bias, fc2_bias,
+        
         pruned_feature_dram_read,        // Persistent pruned DRAM
         pruned_feature_dram_write,
         L3_bitmap, L2_bitmap, L1_bitmap, L0_bitmap,  // Persistent BRAM octree
@@ -245,6 +269,26 @@ int main() {
     delete[] pruned_feature_dram_read;
     delete[] pruned_feature_dram_write;
     delete[] final_output_full_cubic;
+    
+    // Cleanup weight arrays
+    delete[] conv1_weights;
+    delete[] conv2_weights;
+    delete[] conv3_weights;
+    delete[] conv4_weights;
+    delete[] conv5_weights;
+    delete[] conv6_weights;
+    delete[] fc1_weights;
+    delete[] fc2_weights;
+    
+    // Cleanup bias arrays
+    delete[] conv1_bias;
+    delete[] conv2_bias;
+    delete[] conv3_bias;
+    delete[] conv4_bias;
+    delete[] conv5_bias;
+    delete[] conv6_bias;
+    delete[] fc1_bias;
+    delete[] fc2_bias;
     
     std::cout << "\n=== TESTBENCH COMPLETED SUCCESSFULLY ===" << std::endl;
     std::cout << "Your key innovations are now properly utilized for OCNN6!" << std::endl;
