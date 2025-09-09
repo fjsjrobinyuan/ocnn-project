@@ -1,0 +1,183 @@
+
+
+================================================================
+== Vitis HLS Report for 'pipeline_bitmap_stage'
+================================================================
+* Date:           Sat Sep  6 21:19:59 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        ocnn6_net
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  7.995 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------+------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                         |                              |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                 Instance                |            Module            |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +-----------------------------------------+------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_streaming_bitmap_constructor_fu_106  |streaming_bitmap_constructor  |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+        +-----------------------------------------+------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|        2|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        3|      -|    14422|    27884|     0|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|       83|     -|
+|Register             |        -|      -|     4261|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        3|      0|    18683|    27969|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |       ~0|      0|        2|        6|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |       ~0|      0|       ~0|        1|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------+------------------------------+---------+----+-------+-------+-----+
+    |                 Instance                |            Module            | BRAM_18K| DSP|   FF  |  LUT  | URAM|
+    +-----------------------------------------+------------------------------+---------+----+-------+-------+-----+
+    |grp_streaming_bitmap_constructor_fu_106  |streaming_bitmap_constructor  |        3|   0|  14422|  27884|    0|
+    +-----------------------------------------+------------------------------+---------+----+-------+-------+-----+
+    |Total                                    |                              |        3|   0|  14422|  27884|    0|
+    +-----------------------------------------+------------------------------+---------+----+-------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------+----+-----------+-----+-----------+
+    |        Name        | LUT| Input Size| Bits| Total Bits|
+    +--------------------+----+-----------+-----+-----------+
+    |L0_bitmap_o         |   9|          2|  512|       1024|
+    |L1_bitmap_o         |   9|          2|  512|       1024|
+    |L2_bitmap_o         |   9|          2|  512|       1024|
+    |L2_bitmap_o_ap_vld  |   9|          2|    1|          2|
+    |L3_bitmap_o         |   9|          2|  512|       1024|
+    |ap_NS_fsm           |  20|          4|    1|          4|
+    |ap_done             |   9|          2|    1|          2|
+    |bitmap_info         |   9|          2|  160|        320|
+    +--------------------+----+-----------+-----+-----------+
+    |Total               |  83|         18| 2211|       4424|
+    +--------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------+-----+----+-----+-----------+
+    |                         Name                         |  FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------+-----+----+-----+-----------+
+    |L0_bitmap_o_preg                                      |  512|   0|  512|          0|
+    |L0_bitmap_read_reg_180                                |  512|   0|  512|          0|
+    |L1_bitmap_o_preg                                      |  512|   0|  512|          0|
+    |L1_bitmap_read_reg_175                                |  512|   0|  512|          0|
+    |L2_bitmap_o_reg                                       |  512|   0|  512|          0|
+    |L2_bitmap_read_reg_165                                |  512|   0|  512|          0|
+    |L3_bitmap_o_preg                                      |  512|   0|  512|          0|
+    |L3_bitmap_read_reg_170                                |  512|   0|  512|          0|
+    |ap_CS_fsm                                             |    3|   0|    3|          0|
+    |ap_done_reg                                           |    1|   0|    1|          0|
+    |bitmap_info_preg                                      |  160|   0|  160|          0|
+    |grp_streaming_bitmap_constructor_fu_106_ap_start_reg  |    1|   0|    1|          0|
+    +------------------------------------------------------+-----+----+-----+-----------+
+    |Total                                                 | 4261|   0| 4261|          0|
+    +------------------------------------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------------+-----+------+------------+-----------------------+--------------+
+|              RTL Ports             | Dir | Bits |  Protocol  |     Source Object     |    C Type    |
++------------------------------------+-----+------+------------+-----------------------+--------------+
+|ap_clk                              |   in|     1|  ap_ctrl_hs|  pipeline_bitmap_stage|  return value|
+|ap_rst                              |   in|     1|  ap_ctrl_hs|  pipeline_bitmap_stage|  return value|
+|ap_start                            |   in|     1|  ap_ctrl_hs|  pipeline_bitmap_stage|  return value|
+|ap_done                             |  out|     1|  ap_ctrl_hs|  pipeline_bitmap_stage|  return value|
+|ap_continue                         |   in|     1|  ap_ctrl_hs|  pipeline_bitmap_stage|  return value|
+|ap_idle                             |  out|     1|  ap_ctrl_hs|  pipeline_bitmap_stage|  return value|
+|ap_ready                            |  out|     1|  ap_ctrl_hs|  pipeline_bitmap_stage|  return value|
+|input_voxel_stream_dout             |   in|  1085|     ap_fifo|     input_voxel_stream|       pointer|
+|input_voxel_stream_empty_n          |   in|     1|     ap_fifo|     input_voxel_stream|       pointer|
+|input_voxel_stream_read             |  out|     1|     ap_fifo|     input_voxel_stream|       pointer|
+|feature_data_stream_din             |  out|  1085|     ap_fifo|    feature_data_stream|       pointer|
+|feature_data_stream_full_n          |   in|     1|     ap_fifo|    feature_data_stream|       pointer|
+|feature_data_stream_write           |  out|     1|     ap_fifo|    feature_data_stream|       pointer|
+|feature_data_stream_num_data_valid  |   in|    11|     ap_fifo|    feature_data_stream|       pointer|
+|feature_data_stream_fifo_cap        |   in|    11|     ap_fifo|    feature_data_stream|       pointer|
+|write_addr_stream_din               |  out|    60|     ap_fifo|      write_addr_stream|       pointer|
+|write_addr_stream_full_n            |   in|     1|     ap_fifo|      write_addr_stream|       pointer|
+|write_addr_stream_write             |  out|     1|     ap_fifo|      write_addr_stream|       pointer|
+|write_addr_stream_num_data_valid    |   in|    11|     ap_fifo|      write_addr_stream|       pointer|
+|write_addr_stream_fifo_cap          |   in|    11|     ap_fifo|      write_addr_stream|       pointer|
+|L3_bitmap_i                         |   in|   512|     ap_ovld|              L3_bitmap|       pointer|
+|L3_bitmap_o                         |  out|   512|     ap_ovld|              L3_bitmap|       pointer|
+|L3_bitmap_o_ap_vld                  |  out|     1|     ap_ovld|              L3_bitmap|       pointer|
+|L2_bitmap_i                         |   in|   512|     ap_ovld|              L2_bitmap|       pointer|
+|L2_bitmap_o                         |  out|   512|     ap_ovld|              L2_bitmap|       pointer|
+|L2_bitmap_o_ap_vld                  |  out|     1|     ap_ovld|              L2_bitmap|       pointer|
+|L1_bitmap_i                         |   in|   512|     ap_ovld|              L1_bitmap|       pointer|
+|L1_bitmap_o                         |  out|   512|     ap_ovld|              L1_bitmap|       pointer|
+|L1_bitmap_o_ap_vld                  |  out|     1|     ap_ovld|              L1_bitmap|       pointer|
+|L0_bitmap_i                         |   in|   512|     ap_ovld|              L0_bitmap|       pointer|
+|L0_bitmap_o                         |  out|   512|     ap_ovld|              L0_bitmap|       pointer|
+|L0_bitmap_o_ap_vld                  |  out|     1|     ap_ovld|              L0_bitmap|       pointer|
+|bitmap_info                         |  out|   160|      ap_vld|            bitmap_info|       pointer|
+|bitmap_info_ap_vld                  |  out|     1|      ap_vld|            bitmap_info|       pointer|
++------------------------------------+-----+------+------------+-----------------------+--------------+
+

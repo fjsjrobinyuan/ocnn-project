@@ -1,0 +1,700 @@
+{
+    "1": {
+        "name": "ocnn6_assembly_line_8_layers",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "326",
+        "instructions": "88",
+        "total_instructions": "1537960",
+        "calls": "49 37 17 21 33 11 34 8",
+        "basicblocks": "1",
+        "loads": {
+            "L": "8"
+        },
+        "stores": {
+            "G": "8"
+        }
+    },
+    "2": {
+        "name": "streaming_bitmap_constructor",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "154",
+        "instructions": "974",
+        "total_instructions": "974",
+        "calls": "",
+        "basicblocks": "61",
+        "loads": {
+            "G": "53",
+            "L": "28"
+        },
+        "stores": {
+            "G": "26",
+            "L": "51"
+        },
+        "loops": {
+            "L": "8"
+        }
+    },
+    "3": {
+        "name": "initialize_z_buffer.10",
+        "file": "systolic_array.cpp",
+        "fileloc": "319",
+        "instructions": "92",
+        "total_instructions": "4292",
+        "calls": "47 47 47",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "initialize_z_buffer",
+        "file": "systolic_array.cpp",
+        "fileloc": "319",
+        "instructions": "92",
+        "total_instructions": "4292",
+        "calls": "47 47 47",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "5": {
+        "name": "Block_entry_proc.25",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "222",
+        "instructions": "105",
+        "total_instructions": "1538065",
+        "calls": "1",
+        "basicblocks": "7",
+        "loads": {
+            "L": "2"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "2"
+        }
+    },
+    "6": {
+        "name": "initialize_z_buffer.12",
+        "file": "systolic_array.cpp",
+        "fileloc": "319",
+        "instructions": "92",
+        "total_instructions": "4292",
+        "calls": "47 47 47",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "7": {
+        "name": "initialize_z_buffer.14",
+        "file": "systolic_array.cpp",
+        "fileloc": "319",
+        "instructions": "92",
+        "total_instructions": "4292",
+        "calls": "47 47 47",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "8": {
+        "name": "ocnn6_streaming_layer_pipeline.7",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "88",
+        "total_instructions": "192234",
+        "calls": "18 39",
+        "basicblocks": "1"
+    },
+    "9": {
+        "name": "compute_single_voxel_parallel.13",
+        "file": "systolic_array.cpp",
+        "fileloc": "262",
+        "instructions": "6878",
+        "total_instructions": "6878",
+        "calls": "",
+        "basicblocks": "84",
+        "loads": {
+            "G": "24"
+        },
+        "stores": {
+            "G": "125"
+        }
+    },
+    "10": {
+        "name": "initialize_z_buffer.18",
+        "file": "systolic_array.cpp",
+        "fileloc": "319",
+        "instructions": "92",
+        "total_instructions": "4292",
+        "calls": "47 47 47",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "11": {
+        "name": "ocnn6_streaming_layer_pipeline.5",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "88",
+        "total_instructions": "192234",
+        "calls": "23 28",
+        "basicblocks": "1"
+    },
+    "12": {
+        "name": "ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights4_rd_engine_initialized_f",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "2068",
+        "total_instructions": "192066",
+        "calls": "6 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9",
+        "basicblocks": "6",
+        "loads": {
+            "G": "1",
+            "L": "32"
+        },
+        "stores": {
+            "L": "32"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "13": {
+        "name": "ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights7_rd_engine_initialized_f",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "2068",
+        "total_instructions": "192066",
+        "calls": "6 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9",
+        "basicblocks": "6",
+        "loads": {
+            "G": "1",
+            "L": "32"
+        },
+        "stores": {
+            "L": "32"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "14": {
+        "name": "ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights1_rd_engine_initialized_f",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "2068",
+        "total_instructions": "192066",
+        "calls": "4 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41",
+        "basicblocks": "6",
+        "loads": {
+            "G": "1",
+            "L": "32"
+        },
+        "stores": {
+            "L": "32"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "15": {
+        "name": "_Z26ocnn6_net_8_layer_pipelineRN3hls6streamI9VoxelDataLi0EEEP7ap_uintILi32EEPfS7_S7_S7_S7_S7_S7_S7_S7_S7_S7_S7_S7_S7_S7_S7_S6_S6_PS4_ILi512EES9_S9_S9_R16PrunedBitmapInfoRS5__",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "4",
+        "total_instructions": "4",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "16": {
+        "name": "Block_entry_proc.24",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "174",
+        "instructions": "12",
+        "total_instructions": "12",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "17": {
+        "name": "ocnn6_streaming_layer_pipeline.2",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "88",
+        "total_instructions": "192234",
+        "calls": "19 29",
+        "basicblocks": "1"
+    },
+    "18": {
+        "name": "_Z30ocnn6_streaming_layer_pipelineRN3hls6streamI9VoxelDataLi0EEES3_PfS4_P7ap_uintILi512EES7_S7_S7_R16PrunedBitmapInfoPS5_ILi32EESB_.clone.clone.clone.clone.clone.clone.clone.1_",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "80",
+        "total_instructions": "80",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "19": {
+        "name": "_Z30ocnn6_streaming_layer_pipelineRN3hls6streamI9VoxelDataLi0EEES3_PfS4_P7ap_uintILi512EES7_S7_S7_R16PrunedBitmapInfoPS5_ILi32EESB_.clone.clone.1_",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "80",
+        "total_instructions": "80",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "20": {
+        "name": "compute_single_voxel_parallel.9",
+        "file": "systolic_array.cpp",
+        "fileloc": "262",
+        "instructions": "6878",
+        "total_instructions": "6878",
+        "calls": "",
+        "basicblocks": "84",
+        "loads": {
+            "G": "24"
+        },
+        "stores": {
+            "G": "125"
+        }
+    },
+    "21": {
+        "name": "ocnn6_streaming_layer_pipeline.3",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "88",
+        "total_instructions": "192234",
+        "calls": "38 12",
+        "basicblocks": "1"
+    },
+    "22": {
+        "name": "_Z30ocnn6_streaming_layer_pipelineRN3hls6streamI9VoxelDataLi0EEES3_PfS4_P7ap_uintILi512EES7_S7_S7_R16PrunedBitmapInfoPS5_ILi32EESB_.clone.1_",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "80",
+        "total_instructions": "80",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "23": {
+        "name": "_Z30ocnn6_streaming_layer_pipelineRN3hls6streamI9VoxelDataLi0EEES3_PfS4_P7ap_uintILi512EES7_S7_S7_R16PrunedBitmapInfoPS5_ILi32EESB_.clone.clone.clone.clone.clone.1_",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "80",
+        "total_instructions": "80",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "24": {
+        "name": "pipeline_bitmap_stage",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "109",
+        "instructions": "17",
+        "total_instructions": "991",
+        "calls": "2",
+        "basicblocks": "1"
+    },
+    "25": {
+        "name": "_Z30ocnn6_streaming_layer_pipelineRN3hls6streamI9VoxelDataLi0EEES3_PfS4_P7ap_uintILi512EES7_S7_S7_R16PrunedBitmapInfoPS5_ILi32EESB_.clone.clone.clone.clone.clone.clone.1_",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "80",
+        "total_instructions": "80",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "26": {
+        "name": "compute_single_voxel_parallel.11",
+        "file": "systolic_array.cpp",
+        "fileloc": "262",
+        "instructions": "6878",
+        "total_instructions": "6878",
+        "calls": "",
+        "basicblocks": "84",
+        "loads": {
+            "G": "24"
+        },
+        "stores": {
+            "G": "125"
+        }
+    },
+    "27": {
+        "name": "initialize_z_buffer.16",
+        "file": "systolic_array.cpp",
+        "fileloc": "319",
+        "instructions": "92",
+        "total_instructions": "4292",
+        "calls": "47 47 47",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "28": {
+        "name": "ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights6_rd_engine_initialized_f",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "2068",
+        "total_instructions": "192066",
+        "calls": "27 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30",
+        "basicblocks": "6",
+        "loads": {
+            "G": "1",
+            "L": "32"
+        },
+        "stores": {
+            "L": "32"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "29": {
+        "name": "ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights3_rd_engine_initialized_f",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "2068",
+        "total_instructions": "192066",
+        "calls": "3 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26",
+        "basicblocks": "6",
+        "loads": {
+            "G": "1",
+            "L": "32"
+        },
+        "stores": {
+            "L": "32"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "30": {
+        "name": "compute_single_voxel_parallel.17",
+        "file": "systolic_array.cpp",
+        "fileloc": "262",
+        "instructions": "6878",
+        "total_instructions": "6878",
+        "calls": "",
+        "basicblocks": "84",
+        "loads": {
+            "G": "24"
+        },
+        "stores": {
+            "G": "125"
+        }
+    },
+    "31": {
+        "name": "ocnn6_final_layer_output_reconstruction_streaming",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "584",
+        "instructions": "116",
+        "total_instructions": "116",
+        "calls": "",
+        "basicblocks": "8",
+        "loads": {
+            "L": "2"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "2"
+        }
+    },
+    "32": {
+        "name": "compute_single_voxel_parallel.19",
+        "file": "systolic_array.cpp",
+        "fileloc": "262",
+        "instructions": "6878",
+        "total_instructions": "6878",
+        "calls": "",
+        "basicblocks": "84",
+        "loads": {
+            "G": "24"
+        },
+        "stores": {
+            "G": "125"
+        }
+    },
+    "33": {
+        "name": "ocnn6_streaming_layer_pipeline.4",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "88",
+        "total_instructions": "192234",
+        "calls": "45 36",
+        "basicblocks": "1"
+    },
+    "34": {
+        "name": "ocnn6_streaming_layer_pipeline.6",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "88",
+        "total_instructions": "192234",
+        "calls": "25 13",
+        "basicblocks": "1"
+    },
+    "35": {
+        "name": "initialize_z_buffer.8",
+        "file": "systolic_array.cpp",
+        "fileloc": "319",
+        "instructions": "92",
+        "total_instructions": "4292",
+        "calls": "47 47 47",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "36": {
+        "name": "ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights5_rd_engine_initialized_f",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "2068",
+        "total_instructions": "192066",
+        "calls": "7 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42",
+        "basicblocks": "6",
+        "loads": {
+            "G": "1",
+            "L": "32"
+        },
+        "stores": {
+            "L": "32"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "37": {
+        "name": "ocnn6_streaming_layer_pipeline.1",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "88",
+        "total_instructions": "192234",
+        "calls": "22 43",
+        "basicblocks": "1"
+    },
+    "38": {
+        "name": "_Z30ocnn6_streaming_layer_pipelineRN3hls6streamI9VoxelDataLi0EEES3_PfS4_P7ap_uintILi512EES7_S7_S7_R16PrunedBitmapInfoPS5_ILi32EESB_.clone.clone.clone.1_",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "80",
+        "total_instructions": "80",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "0": {
+        "name": "ocnn6_net_8_layer_pipeline",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "18",
+        "instructions": "159",
+        "total_instructions": "1539418",
+        "calls": "46 15 24 44 16 40 5 31",
+        "basicblocks": "1"
+    },
+    "39": {
+        "name": "ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights8_rd_engine_initialized_f",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "2068",
+        "total_instructions": "192066",
+        "calls": "10 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32",
+        "basicblocks": "6",
+        "loads": {
+            "G": "1",
+            "L": "32"
+        },
+        "stores": {
+            "L": "32"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "40": {
+        "name": "Loop_VITIS_LOOP_209_5_proc",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "209",
+        "instructions": "24",
+        "total_instructions": "24",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "41": {
+        "name": "compute_single_voxel_parallel",
+        "file": "systolic_array.cpp",
+        "fileloc": "262",
+        "instructions": "6878",
+        "total_instructions": "6878",
+        "calls": "",
+        "basicblocks": "84",
+        "loads": {
+            "G": "24"
+        },
+        "stores": {
+            "G": "125"
+        }
+    },
+    "42": {
+        "name": "compute_single_voxel_parallel.15",
+        "file": "systolic_array.cpp",
+        "fileloc": "262",
+        "instructions": "6878",
+        "total_instructions": "6878",
+        "calls": "",
+        "basicblocks": "84",
+        "loads": {
+            "G": "24"
+        },
+        "stores": {
+            "G": "125"
+        }
+    },
+    "43": {
+        "name": "ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights2_rd_engine_initialized_f",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "2068",
+        "total_instructions": "192066",
+        "calls": "35 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20",
+        "basicblocks": "6",
+        "loads": {
+            "G": "1",
+            "L": "32"
+        },
+        "stores": {
+            "L": "32"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "44": {
+        "name": "Loop_VITIS_LOOP_131_1_proc",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "130",
+        "instructions": "40",
+        "total_instructions": "40",
+        "calls": "",
+        "basicblocks": "5",
+        "loads": {
+            "L": "2"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "45": {
+        "name": "_Z30ocnn6_streaming_layer_pipelineRN3hls6streamI9VoxelDataLi0EEES3_PfS4_P7ap_uintILi512EES7_S7_S7_R16PrunedBitmapInfoPS5_ILi32EESB_.clone.clone.clone.clone.1_",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "80",
+        "total_instructions": "80",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "46": {
+        "name": "entry_proc",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "7",
+        "total_instructions": "7",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "47": {
+        "name": "reset",
+        "file": "systolic_array.cpp",
+        "fileloc": "245",
+        "instructions": "1400",
+        "total_instructions": "1400",
+        "calls": "",
+        "basicblocks": "13",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "G": "320",
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "48": {
+        "name": "_Z30ocnn6_streaming_layer_pipelineRN3hls6streamI9VoxelDataLi0EEES3_PfS4_P7ap_uintILi512EES7_S7_S7_R16PrunedBitmapInfoPS5_ILi32EESB_.1_",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "0",
+        "instructions": "80",
+        "total_instructions": "80",
+        "calls": "",
+        "basicblocks": "1"
+    },
+    "49": {
+        "name": "ocnn6_streaming_layer_pipeline",
+        "file": "ocnn6_net.cpp",
+        "fileloc": "436",
+        "instructions": "88",
+        "total_instructions": "192234",
+        "calls": "48 14",
+        "basicblocks": "1"
+    }
+}

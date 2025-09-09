@@ -1,0 +1,136 @@
+
+
+================================================================
+== Vitis HLS Report for 'pipeline_bitmap_stage'
+================================================================
+* Date:           Sat Sep  6 20:58:30 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        ocnn6_net
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  7.995 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%L2_bitmap_read = read i512 @_ssdm_op_Read.ap_auto.i512P0A, i512 %L2_bitmap" [ocnn6_net.cpp:109]   --->   Operation 4 'read' 'L2_bitmap_read' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%L3_bitmap_read = read i512 @_ssdm_op_Read.ap_auto.i512P0A, i512 %L3_bitmap" [ocnn6_net.cpp:109]   --->   Operation 5 'read' 'L3_bitmap_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%L1_bitmap_read = read i512 @_ssdm_op_Read.ap_auto.i512P0A, i512 %L1_bitmap" [ocnn6_net.cpp:109]   --->   Operation 6 'read' 'L1_bitmap_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%L0_bitmap_read = read i512 @_ssdm_op_Read.ap_auto.i512P0A, i512 %L0_bitmap" [ocnn6_net.cpp:109]   --->   Operation 7 'read' 'L0_bitmap_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [2/2] (0.00ns)   --->   "%call_ret = call i1696 @streaming_bitmap_constructor, i1085 %input_voxel_stream, i1085 %feature_data_stream, i60 %write_addr_stream, i512 %L3_bitmap_read, i512 %L2_bitmap, i512 %L2_bitmap_read, i512 %L1_bitmap_read, i512 %L0_bitmap_read, i1 %initialized, i32 %l2_write_pos, i10 %voxel_count, i32 %retained_block_count, i32 %l0_write_pos, i32 %l1_write_pos, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_2, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_1, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap, i1 %l2_temp_buffer" [ocnn6_net.cpp:109]   --->   Operation 8 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 3 <SV = 2> <Delay = 1.61>
+ST_3 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i60 %write_addr_stream, void @empty_29, i32 0, i32 0, void @empty_57, i32 0, i32 0, void @empty_57, void @empty_57, void @empty_57, i32 0, i32 0, i32 0, i32 0, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1085 %feature_data_stream, void @empty_29, i32 0, i32 0, void @empty_57, i32 0, i32 0, void @empty_57, void @empty_57, void @empty_57, i32 0, i32 0, i32 0, i32 0, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1085 %input_voxel_stream, void @empty_29, i32 0, i32 0, void @empty_57, i32 0, i32 0, void @empty_57, void @empty_57, void @empty_57, i32 0, i32 0, i32 0, i32 0, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 12 [1/2] (1.61ns)   --->   "%call_ret = call i1696 @streaming_bitmap_constructor, i1085 %input_voxel_stream, i1085 %feature_data_stream, i60 %write_addr_stream, i512 %L3_bitmap_read, i512 %L2_bitmap, i512 %L2_bitmap_read, i512 %L1_bitmap_read, i512 %L0_bitmap_read, i1 %initialized, i32 %l2_write_pos, i10 %voxel_count, i32 %retained_block_count, i32 %l0_write_pos, i32 %l1_write_pos, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_2, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_1, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap, i1 %l2_temp_buffer" [ocnn6_net.cpp:109]   --->   Operation 12 'call' 'call_ret' <Predicate = true> <Delay = 1.61> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "%newret = extractvalue i1696 %call_ret" [ocnn6_net.cpp:109]   --->   Operation 13 'extractvalue' 'newret' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 14 [1/1] (0.00ns)   --->   "%newret1 = extractvalue i1696 %call_ret" [ocnn6_net.cpp:109]   --->   Operation 14 'extractvalue' 'newret1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%newret3 = extractvalue i1696 %call_ret" [ocnn6_net.cpp:109]   --->   Operation 15 'extractvalue' 'newret3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%newret5 = extractvalue i1696 %call_ret" [ocnn6_net.cpp:109]   --->   Operation 16 'extractvalue' 'newret5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%write_ln109 = write void @_ssdm_op_Write.ap_auto.i512P0A, i512 %L3_bitmap, i512 %newret" [ocnn6_net.cpp:109]   --->   Operation 17 'write' 'write_ln109' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%write_ln109 = write void @_ssdm_op_Write.ap_auto.i512P0A, i512 %L1_bitmap, i512 %newret1" [ocnn6_net.cpp:109]   --->   Operation 18 'write' 'write_ln109' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%write_ln109 = write void @_ssdm_op_Write.ap_auto.i512P0A, i512 %L0_bitmap, i512 %newret3" [ocnn6_net.cpp:109]   --->   Operation 19 'write' 'write_ln109' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%write_ln109 = write void @_ssdm_op_Write.ap_auto.i160P0A, i160 %bitmap_info, i160 %newret5" [ocnn6_net.cpp:109]   --->   Operation 20 'write' 'write_ln109' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 21 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.330ns, clock uncertainty: 0.899ns.
+
+ <State 1>: 0.000ns
+The critical path consists of the following:
+
+ <State 2>: 0.000ns
+The critical path consists of the following:
+
+ <State 3>: 1.611ns
+The critical path consists of the following:
+	'call' operation 1696 bit ('call_ret', ocnn6_net.cpp:109) to 'streaming_bitmap_constructor' [26]  (1.611 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

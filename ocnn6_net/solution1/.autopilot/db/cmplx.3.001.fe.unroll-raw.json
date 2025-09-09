@@ -1,0 +1,130 @@
+{
+  "0": {
+    "basicblocks": 35,
+    "calls": "7 5 8",
+    "file": "ocnn6_net.cpp",
+    "fileloc": 18,
+    "instructions": 643,
+    "loads": {
+      "L": 71,
+      "T": 6
+    },
+    "name": "ocnn6_net_8_layer_pipeline",
+    "stores": {
+      "L": 101,
+      "T": 4
+    },
+    "total_instructions": 3613406
+  },
+  "1": {
+    "basicblocks": 741,
+    "calls": "3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4",
+    "file": "ocnn6_net.cpp",
+    "fileloc": 416,
+    "instructions": 18523,
+    "loads": {
+      "G": 109,
+      "L": 3584
+    },
+    "name": "ocnn6_streaming_layer_pipeline",
+    "stores": {
+      "G": 1,
+      "L": 3584
+    },
+    "total_instructions": 451370
+  },
+  "2": {
+    "basicblocks": 372,
+    "calls": "",
+    "file": "streaming_bitmap_constructor.cpp",
+    "fileloc": 62,
+    "instructions": 1310,
+    "loads": {
+      "G": 69,
+      "L": 43
+    },
+    "name": "streaming_bitmap_constructor",
+    "stores": {
+      "G": 26,
+      "L": 48
+    },
+    "total_instructions": 1310
+  },
+  "3": {
+    "basicblocks": 77,
+    "calls": "6 6 6",
+    "file": "systolic_array.cpp",
+    "fileloc": 318,
+    "instructions": 1042,
+    "loads": {
+      "L": 64
+    },
+    "name": "initialize_z_buffer",
+    "stores": {
+      "G": 679
+    },
+    "total_instructions": 2683
+  },
+  "4": {
+    "basicblocks": 1166,
+    "calls": "",
+    "file": "systolic_array.cpp",
+    "fileloc": 261,
+    "instructions": 15932,
+    "loads": {
+      "G": 64,
+      "L": 2080
+    },
+    "name": "compute_single_voxel_parallel",
+    "stores": {
+      "G": 3137,
+      "L": 32
+    },
+    "total_instructions": 15932
+  },
+  "5": {
+    "basicblocks": 3,
+    "calls": "1 1 1 1 1 1 1 1",
+    "file": "ocnn6_net.cpp",
+    "fileloc": 321,
+    "instructions": 28,
+    "name": "ocnn6_assembly_line_8_layers",
+    "total_instructions": 3610988
+  },
+  "6": {
+    "basicblocks": 14,
+    "calls": "",
+    "file": "systolic_array.cpp",
+    "fileloc": 236,
+    "instructions": 547,
+    "name": "reset",
+    "stores": {
+      "L": 264
+    },
+    "total_instructions": 547
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "2",
+    "file": "complete_pipeline.cpp",
+    "fileloc": 127,
+    "instructions": 2,
+    "name": "pipeline_bitmap_stage",
+    "total_instructions": 1312
+  },
+  "8": {
+    "basicblocks": 13,
+    "calls": "",
+    "file": "ocnn6_net.cpp",
+    "fileloc": 582,
+    "instructions": 463,
+    "loads": {
+      "L": 40
+    },
+    "name": "ocnn6_final_layer_output_reconstruction_streaming",
+    "stores": {
+      "L": 73
+    },
+    "total_instructions": 463
+  }
+}

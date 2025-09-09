@@ -1,0 +1,312 @@
+<stg><name>pipeline_bitmap_stage</name>
+
+
+<trans_list>
+
+<trans id="22" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="23" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="512" op_0_bw="512" op_1_bw="512">
+<![CDATA[
+newFuncRoot:3 %L2_bitmap_read = read i512 @_ssdm_op_Read.ap_auto.i512P0A, i512 %L2_bitmap
+
+]]></Node>
+<StgValue><ssdm name="L2_bitmap_read"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="5" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="512" op_0_bw="512" op_1_bw="512">
+<![CDATA[
+newFuncRoot:4 %L3_bitmap_read = read i512 @_ssdm_op_Read.ap_auto.i512P0A, i512 %L3_bitmap
+
+]]></Node>
+<StgValue><ssdm name="L3_bitmap_read"/></StgValue>
+</operation>
+
+<operation id="6" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="512" op_0_bw="512" op_1_bw="512">
+<![CDATA[
+newFuncRoot:5 %L1_bitmap_read = read i512 @_ssdm_op_Read.ap_auto.i512P0A, i512 %L1_bitmap
+
+]]></Node>
+<StgValue><ssdm name="L1_bitmap_read"/></StgValue>
+</operation>
+
+<operation id="7" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="512" op_0_bw="512" op_1_bw="512">
+<![CDATA[
+newFuncRoot:6 %L0_bitmap_read = read i512 @_ssdm_op_Read.ap_auto.i512P0A, i512 %L0_bitmap
+
+]]></Node>
+<StgValue><ssdm name="L0_bitmap_read"/></StgValue>
+</operation>
+
+<operation id="8" st_id="2" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="1696" op_0_bw="1696" op_1_bw="1085" op_2_bw="1085" op_3_bw="60" op_4_bw="512" op_5_bw="512" op_6_bw="512" op_7_bw="512" op_8_bw="512" op_9_bw="1" op_10_bw="32" op_11_bw="10" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="1" op_16_bw="1" op_17_bw="1" op_18_bw="1" op_19_bw="0">
+<![CDATA[
+newFuncRoot:7 %call_ret = call i1696 @streaming_bitmap_constructor, i1085 %input_voxel_stream, i1085 %feature_data_stream, i60 %write_addr_stream, i512 %L3_bitmap_read, i512 %L2_bitmap, i512 %L2_bitmap_read, i512 %L1_bitmap_read, i512 %L0_bitmap_read, i1 %initialized, i32 %l2_write_pos, i10 %voxel_count, i32 %retained_block_count, i32 %l0_write_pos, i32 %l1_write_pos, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_2, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_1, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap, i1 %l2_temp_buffer
+
+]]></Node>
+<StgValue><ssdm name="call_ret"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="9" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="19" bw="0" op_0_bw="0" op_1_bw="60" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<![CDATA[
+newFuncRoot:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i60 %write_addr_stream, void @empty_29, i32 0, i32 0, void @empty_57, i32 0, i32 0, void @empty_57, void @empty_57, void @empty_57, i32 0, i32 0, i32 0, i32 0, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="10" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="0" op_0_bw="0" op_1_bw="1085" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<![CDATA[
+newFuncRoot:1 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1085 %feature_data_stream, void @empty_29, i32 0, i32 0, void @empty_57, i32 0, i32 0, void @empty_57, void @empty_57, void @empty_57, i32 0, i32 0, i32 0, i32 0, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="11" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="0" op_0_bw="0" op_1_bw="1085" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<![CDATA[
+newFuncRoot:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1085 %input_voxel_stream, void @empty_29, i32 0, i32 0, void @empty_57, i32 0, i32 0, void @empty_57, void @empty_57, void @empty_57, i32 0, i32 0, i32 0, i32 0, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="12" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="1696" op_0_bw="1696" op_1_bw="1085" op_2_bw="1085" op_3_bw="60" op_4_bw="512" op_5_bw="512" op_6_bw="512" op_7_bw="512" op_8_bw="512" op_9_bw="1" op_10_bw="32" op_11_bw="10" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="1" op_16_bw="1" op_17_bw="1" op_18_bw="1" op_19_bw="0">
+<![CDATA[
+newFuncRoot:7 %call_ret = call i1696 @streaming_bitmap_constructor, i1085 %input_voxel_stream, i1085 %feature_data_stream, i60 %write_addr_stream, i512 %L3_bitmap_read, i512 %L2_bitmap, i512 %L2_bitmap_read, i512 %L1_bitmap_read, i512 %L0_bitmap_read, i1 %initialized, i32 %l2_write_pos, i10 %voxel_count, i32 %retained_block_count, i32 %l0_write_pos, i32 %l1_write_pos, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_2, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap_1, i1 %streaming_bitmap_constructor_stream_stream_stream_stream_stream_ap_uint_ap, i1 %l2_temp_buffer
+
+]]></Node>
+<StgValue><ssdm name="call_ret"/></StgValue>
+</operation>
+
+<operation id="13" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="512" op_0_bw="1696">
+<![CDATA[
+newFuncRoot:8 %newret = extractvalue i1696 %call_ret
+
+]]></Node>
+<StgValue><ssdm name="newret"/></StgValue>
+</operation>
+
+<operation id="14" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="512" op_0_bw="1696">
+<![CDATA[
+newFuncRoot:9 %newret1 = extractvalue i1696 %call_ret
+
+]]></Node>
+<StgValue><ssdm name="newret1"/></StgValue>
+</operation>
+
+<operation id="15" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="29" bw="512" op_0_bw="1696">
+<![CDATA[
+newFuncRoot:10 %newret3 = extractvalue i1696 %call_ret
+
+]]></Node>
+<StgValue><ssdm name="newret3"/></StgValue>
+</operation>
+
+<operation id="16" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="30" bw="160" op_0_bw="1696">
+<![CDATA[
+newFuncRoot:11 %newret5 = extractvalue i1696 %call_ret
+
+]]></Node>
+<StgValue><ssdm name="newret5"/></StgValue>
+</operation>
+
+<operation id="17" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="512" op_3_bw="0">
+<![CDATA[
+newFuncRoot:12 %write_ln109 = write void @_ssdm_op_Write.ap_auto.i512P0A, i512 %L3_bitmap, i512 %newret
+
+]]></Node>
+<StgValue><ssdm name="write_ln109"/></StgValue>
+</operation>
+
+<operation id="18" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="32" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="512" op_3_bw="0">
+<![CDATA[
+newFuncRoot:13 %write_ln109 = write void @_ssdm_op_Write.ap_auto.i512P0A, i512 %L1_bitmap, i512 %newret1
+
+]]></Node>
+<StgValue><ssdm name="write_ln109"/></StgValue>
+</operation>
+
+<operation id="19" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="33" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="512" op_3_bw="0">
+<![CDATA[
+newFuncRoot:14 %write_ln109 = write void @_ssdm_op_Write.ap_auto.i512P0A, i512 %L0_bitmap, i512 %newret3
+
+]]></Node>
+<StgValue><ssdm name="write_ln109"/></StgValue>
+</operation>
+
+<operation id="20" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="34" bw="0" op_0_bw="0" op_1_bw="160" op_2_bw="160">
+<![CDATA[
+newFuncRoot:15 %write_ln109 = write void @_ssdm_op_Write.ap_auto.i160P0A, i160 %bitmap_info, i160 %newret5
+
+]]></Node>
+<StgValue><ssdm name="write_ln109"/></StgValue>
+</operation>
+
+<operation id="21" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="35" bw="0">
+<![CDATA[
+newFuncRoot:16 %ret_ln0 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln0"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

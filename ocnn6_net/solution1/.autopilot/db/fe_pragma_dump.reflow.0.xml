@@ -1,0 +1,353 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<512, false>::operator=(unsigned long long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>::operator=(unsigned long long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<512, false>::ap_bit_ref(ap_int_base<512, false>*, int)" off="0" region="0" recursive="0"/>
+<pragma file="streaming_bitmap_constructor.cpp" line="215" pragmaType="pipeline" parentfunction="streaming_bitmap_constructor" off="0" ii="2" rewind="0" style=""/>
+<pragma file="streaming_bitmap_constructor.cpp" line="226" pragmaType="unroll" parentfunction="streaming_bitmap_constructor" factor="-1" skip_exit_check="0"/>
+<pragma file="streaming_bitmap_constructor.cpp" line="168" pragmaType="pipeline" parentfunction="streaming_bitmap_constructor" off="0" ii="2" rewind="0" style=""/>
+<pragma file="streaming_bitmap_constructor.cpp" line="182" pragmaType="unroll" parentfunction="streaming_bitmap_constructor" factor="-1" skip_exit_check="0"/>
+<pragma file="streaming_bitmap_constructor.cpp" line="138" pragmaType="pipeline" parentfunction="streaming_bitmap_constructor" off="0" ii="1" rewind="0" style=""/>
+<pragma file="streaming_bitmap_constructor.cpp" line="98" pragmaType="bind_storage" parentfunction="streaming_bitmap_constructor" op="666" impl="18" latency="-1" variable="_ZZ28streaming_bitmap_constructorRN3hls6streamI9VoxelDataLi0EEES3_RNS0_I7ap_uintILi60EELi0EEERNS0_I18EarlyTriggerSignalLi0EEERNS0_I17RetainedBlockInfoLi0EEEPS4_ILi512EESF_SF_SF_R16PrunedBitmapInfoRS4_ILi32EEE15l0_block_buffer"/>
+<pragma file="streaming_bitmap_constructor.cpp" line="99" pragmaType="bind_storage" parentfunction="streaming_bitmap_constructor" op="666" impl="18" latency="-1" variable="_ZZ28streaming_bitmap_constructorRN3hls6streamI9VoxelDataLi0EEES3_RNS0_I7ap_uintILi60EELi0EEERNS0_I18EarlyTriggerSignalLi0EEERNS0_I17RetainedBlockInfoLi0EEEPS4_ILi512EESF_SF_SF_R16PrunedBitmapInfoRS4_ILi32EEE15l1_block_buffer"/>
+<pragma file="streaming_bitmap_constructor.cpp" line="100" pragmaType="array_partition" parentfunction="streaming_bitmap_constructor" dim="1" factor="0" mode="complete" dynamic="0" variable="_ZZ28streaming_bitmap_constructorRN3hls6streamI9VoxelDataLi0EEES3_RNS0_I7ap_uintILi60EELi0EEERNS0_I18EarlyTriggerSignalLi0EEERNS0_I17RetainedBlockInfoLi0EEEPS4_ILi512EESF_SF_SF_R16PrunedBitmapInfoRS4_ILi32EEE15l0_block_buffer"/>
+<pragma file="streaming_bitmap_constructor.cpp" line="101" pragmaType="array_partition" parentfunction="streaming_bitmap_constructor" dim="1" factor="0" mode="complete" dynamic="0" variable="_ZZ28streaming_bitmap_constructorRN3hls6streamI9VoxelDataLi0EEES3_RNS0_I7ap_uintILi60EELi0EEERNS0_I18EarlyTriggerSignalLi0EEERNS0_I17RetainedBlockInfoLi0EEEPS4_ILi512EESF_SF_SF_R16PrunedBitmapInfoRS4_ILi32EEE15l1_block_buffer"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<32>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::operator unsigned long long() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<64, false> ap_int_base<64, false>::operator[]<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<32, false>::operator>=<32, true>(ap_int_base<32, true> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="ssdm_int<32, true>::ssdm_int(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<36, true>(ap_int_base<36, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<60, false>::ap_int_base(unsigned long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<60, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="523" pragmaType="inline" parentfunction="_ZN8ssdm_intILi60ELb0EEC2EDq60_j" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="full" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<60>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="full" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<32>::ap_uint<36>(ap_int<36> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool operator>=<32, false>(ap_int_base<32, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<60>::ap_uint(unsigned long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::RType<($_0)32, true>::plus operator+<32, false>(int, ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::RType<32, false>::plus operator+<34, true, 32, false>(ap_int_base<34, true> const&, ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<35, true>::RType<32, false>::plus operator+<35, true, 32, false>(ap_int_base<35, true> const&, ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::RType<64, false>::arg1 operator>><64, false>(ap_int_base<64, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::RType<($_0)32, true>::logic operator&<64, false>(ap_int_base<64, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<1>::ap_uint<65>(ap_int<65> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<64, false>& ap_bit_ref<64, false>::operator=<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<4, false>::operator[](int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<1>::ap_uint<4, false>(ap_bit_ref<4, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<4, false>& ap_bit_ref<4, false>::operator=<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<4>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<4, false> ap_int_base<4, false>::operator[]<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::operator[](int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<1>::ap_uint<8, false>(ap_bit_ref<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="./octree_master.h" line="148" pragmaType="inline" parentfunction="set_bit" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false> ap_int_base<8, false>::operator[]<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>& operator+=<32, false>(ap_int_base<32, false>&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::RType<($_0)32, true>::plus operator+<32, false>(ap_int_base<32, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::operator long long() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<60, false>::RType<60, false>::arg1 operator>><60, false>(ap_int_base<60, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::operator unsigned long long() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>& ap_bit_ref<8, false>::operator=<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<60, false>::RType<($_0)32, true>::logic operator&<60, false>(ap_int_base<60, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<32>::ap_uint<61>(ap_int<61> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool operator<<32, false>(ap_int_base<32, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="empty" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<1>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::RType<($_0)32, true>::mod operator%<32, false>(ap_int_base<32, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::operator!() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::operator++(int)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="ssdm_int<8, true>::ssdm_int(signed char)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<8>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<8>::ap_int(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::ap_int_base<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<34>::ap_int<34, true>(ap_int_base<34, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base<4, false>(ap_bit_ref<4, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<4, false>::operator bool() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="to_int" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<64, false>::ap_bit_ref(ap_int_base<64, false>*, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<4, false>::operator=(unsigned long long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::RType<32, true>::logic operator&<64, false, 32, true>(ap_int_base<64, false> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<65, true>::ap_int_base<64, false>(ap_int_base<64, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<65, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi34ELb1EEC2EDq34_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base<65, true>(ap_int_base<65, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<64, false>::operator=(unsigned long long)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="523" pragmaType="inline" parentfunction="_ZN8ssdm_intILi1ELb0EEC2EDq1_j" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<35>::ap_int<35, true>(ap_int_base<35, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi35ELb1EEC2EDq35_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, true>::RType<32, false>::plus operator+<32, true, 32, false>(ap_int_base<32, true> const&, ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<35, true>::ap_int_base<34, true>(ap_int_base<34, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<35, true>::ap_int_base<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<35, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<36, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<36>::ap_int<36, true>(ap_int_base<36, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi36ELb1EEC2EDq36_i" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="523" pragmaType="inline" parentfunction="ssdm_int<32, false>::ssdm_int(unsigned int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<36, true>::ap_int_base<35, true>(ap_int_base<35, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<36, true>::ap_int_base<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>& ap_int_base<32, false>::operator+=<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="523" pragmaType="inline" parentfunction="_ZN8ssdm_intILi4ELb0EEC2EDq4_j" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<512, false>& ap_bit_ref<512, false>::operator=<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<512, false>::operator[](int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<4, false>::ap_bit_ref(ap_int_base<4, false>*, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<4, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<64>::ap_uint<64, false>(ap_int_base<64, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="523" pragmaType="inline" parentfunction="ssdm_int<64, false>::ssdm_int(unsigned long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<65, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<65>::ap_int<65, true>(ap_int_base<65, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi65ELb1EEC2EDq65_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base<8, false>(ap_bit_ref<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>::operator bool() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>::ap_bit_ref(ap_int_base<8, false>*, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::RType<32, true>::plus operator+<32, false, 32, true>(ap_int_base<32, false> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="523" pragmaType="inline" parentfunction="ssdm_int<8, false>::ssdm_int(unsigned char)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::RType<32, true>::mod operator%<32, false, 32, true>(ap_int_base<32, false> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<32>::ap_uint<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<60>::ap_uint<60, false>(ap_int_base<60, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<61, true>(ap_int_base<61, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>& ap_int_base<32, false>::operator+=<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<60, false>::RType<32, true>::logic operator&<60, false, 32, true>(ap_int_base<60, false> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<61, true>::ap_int_base<60, false>(ap_int_base<60, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<61, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<61, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<61>::ap_int<61, true>(ap_int_base<61, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi61ELb1EEC2EDq61_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<32, false>::operator<<32, true>(ap_int_base<32, true> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="dynamic_access.cpp" line="22" pragmaType="inline" parentfunction="initialize_streaming_pointers" off="0" region="0" recursive="0"/>
+<pragma file="systolic_array.cpp" line="77" pragmaType="inline" parentfunction="reset" off="0" region="0" recursive="0"/>
+<pragma file="systolic_array.cpp" line="81" pragmaType="unroll" parentfunction="reset" factor="2" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="85" pragmaType="unroll" parentfunction="reset" factor="4" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="199" pragmaType="inline" parentfunction="find_neighbor_direct" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<32>::ap_uint<34>(ap_int<34> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<32, false>::operator!=<32, false>(ap_int_base<32, false> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<34, true>(ap_int_base<34, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<VoxelData, 0>::stream(char const*)" off="0" region="0" recursive="0"/>
+<pragma file="systolic_array.cpp" line="238" pragmaType="inline" parentfunction="reset" off="1" region="0" recursive="0"/>
+<pragma file="systolic_array.cpp" line="247" pragmaType="pipeline" parentfunction="reset" off="0" ii="1" rewind="0" style=""/>
+<pragma file="systolic_array.cpp" line="250" pragmaType="pipeline" parentfunction="reset" off="0" ii="1" rewind="0" style=""/>
+<pragma file="systolic_array.cpp" line="254" pragmaType="unroll" parentfunction="reset" factor="2" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="240" pragmaType="array_partition" parentfunction="reset" dim="1" factor="4" mode="cyclic" dynamic="0" variable="mult_units"/>
+<pragma file="systolic_array.cpp" line="241" pragmaType="array_partition" parentfunction="reset" dim="3" factor="8" mode="cyclic" dynamic="0" variable="accumulator"/>
+<pragma file="systolic_array.cpp" line="242" pragmaType="array_partition" parentfunction="reset" dim="1" factor="8" mode="cyclic" dynamic="0" variable="active"/>
+<pragma file="systolic_array.cpp" line="268" pragmaType="inline" parentfunction="compute_single_voxel_parallel" off="1" region="0" recursive="0"/>
+<pragma file="systolic_array.cpp" line="311" pragmaType="unroll" parentfunction="compute_single_voxel_parallel" factor="2" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="294" pragmaType="pipeline" parentfunction="compute_single_voxel_parallel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="systolic_array.cpp" line="297" pragmaType="unroll" parentfunction="compute_single_voxel_parallel" factor="-1" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="281" pragmaType="unroll" parentfunction="compute_single_voxel_parallel" factor="2" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="270" pragmaType="array_partition" parentfunction="compute_single_voxel_parallel" dim="1" factor="2" mode="cyclic" dynamic="0" variable="mult_units"/>
+<pragma file="systolic_array.cpp" line="271" pragmaType="array_partition" parentfunction="compute_single_voxel_parallel" dim="1" factor="4" mode="cyclic" dynamic="0" variable="input_features"/>
+<pragma file="systolic_array.cpp" line="272" pragmaType="array_partition" parentfunction="compute_single_voxel_parallel" dim="1" factor="4" mode="cyclic" dynamic="0" variable="output_features"/>
+<pragma file="systolic_array.cpp" line="322" pragmaType="inline" parentfunction="initialize_z_buffer" off="1" region="0" recursive="0"/>
+<pragma file="systolic_array.cpp" line="371" pragmaType="unroll" parentfunction="initialize_z_buffer" factor="-1" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="378" pragmaType="unroll" parentfunction="initialize_z_buffer" factor="8" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="380" pragmaType="unroll" parentfunction="initialize_z_buffer" factor="8" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="363" pragmaType="unroll" parentfunction="initialize_z_buffer" factor="-1" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="355" pragmaType="unroll" parentfunction="initialize_z_buffer" factor="-1" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="345" pragmaType="unroll" parentfunction="initialize_z_buffer" factor="-1" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="339" pragmaType="unroll" parentfunction="initialize_z_buffer" factor="-1" skip_exit_check="0"/>
+<pragma file="systolic_array.cpp" line="328" pragmaType="pipeline" parentfunction="initialize_z_buffer" off="0" ii="1" rewind="0" style=""/>
+<pragma file="systolic_array.cpp" line="331" pragmaType="unroll" parentfunction="initialize_z_buffer" factor="8" skip_exit_check="0"/>
+<pragma file="complete_pipeline.cpp" line="140" pragmaType="inline" parentfunction="pipeline_bitmap_stage" off="1" region="0" recursive="0"/>
+<pragma file="ocnn6_net.cpp" line="214" pragmaType="dataflow" parentfunction="ocnn6_net_8_layer_pipeline" disable_start_propagation="0"/>
+<pragma file="ocnn6_net.cpp" line="228" pragmaType="pipeline" parentfunction="ocnn6_net_8_layer_pipeline" off="0" ii="1" rewind="0" style=""/>
+<pragma file="ocnn6_net.cpp" line="175" pragmaType="pipeline" parentfunction="ocnn6_net_8_layer_pipeline" off="0" ii="1" rewind="0" style=""/>
+<pragma file="ocnn6_net.cpp" line="180" pragmaType="unroll" parentfunction="ocnn6_net_8_layer_pipeline" factor="2" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="187" pragmaType="unroll" parentfunction="ocnn6_net_8_layer_pipeline" factor="2" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="132" pragmaType="pipeline" parentfunction="ocnn6_net_8_layer_pipeline" off="0" ii="1" rewind="0" style=""/>
+<pragma file="ocnn6_net.cpp" line="138" pragmaType="unroll" parentfunction="ocnn6_net_8_layer_pipeline" factor="2" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="54" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="pruned_feature_dram_read" bundle="gmem_read" offset="" name="" depth="262144" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="55" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="pruned_feature_dram_write" bundle="gmem_write" offset="" name="" depth="262144" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="256" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="56" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="final_output_full_cubic" bundle="gmem_output" offset="" name="" depth="10485760" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="256" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="59" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="ap_memory" port="L3_bitmap" storage_type="-1" impl="-1" latency="-1" name="" depth="-1"/>
+<pragma file="ocnn6_net.cpp" line="60" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="ap_memory" port="L2_bitmap" storage_type="-1" impl="-1" latency="-1" name="" depth="-1"/>
+<pragma file="ocnn6_net.cpp" line="61" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="ap_memory" port="L1_bitmap" storage_type="-1" impl="-1" latency="-1" name="" depth="-1"/>
+<pragma file="ocnn6_net.cpp" line="62" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="ap_memory" port="L0_bitmap" storage_type="-1" impl="-1" latency="-1" name="" depth="-1"/>
+<pragma file="ocnn6_net.cpp" line="65" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv1_weights" bundle="gmem_weights1" offset="" name="" depth="1296" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="66" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv2_weights" bundle="gmem_weights2" offset="" name="" depth="13824" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="67" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv3_weights" bundle="gmem_weights3" offset="" name="" depth="55296" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="68" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv4_weights" bundle="gmem_weights4" offset="" name="" depth="221184" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="69" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv5_weights" bundle="gmem_weights5" offset="" name="" depth="884736" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="70" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv6_weights" bundle="gmem_weights6" offset="" name="" depth="3538944" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="71" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="fc1_weights" bundle="gmem_weights7" offset="" name="" depth="65536" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="72" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="fc2_weights" bundle="gmem_weights8" offset="" name="" depth="5120" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="75" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv1_bias" bundle="gmem_bias1" offset="" name="" depth="16" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="16" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="76" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv2_bias" bundle="gmem_bias2" offset="" name="" depth="32" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="32" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="77" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv3_bias" bundle="gmem_bias3" offset="" name="" depth="64" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="64" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="78" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv4_bias" bundle="gmem_bias4" offset="" name="" depth="128" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="128" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="79" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv5_bias" bundle="gmem_bias5" offset="" name="" depth="256" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="80" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="conv6_bias" bundle="gmem_bias6" offset="" name="" depth="512" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="256" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="81" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="fc1_bias" bundle="gmem_bias7" offset="" name="" depth="128" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="128" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="82" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="m_axi" port="fc2_bias" bundle="gmem_bias8" offset="" name="" depth="40" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="32" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="ocnn6_net.cpp" line="85" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="s_axilite" port="bitmap_info" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="ocnn6_net.cpp" line="86" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="s_axilite" port="total_processed_voxels" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="ocnn6_net.cpp" line="87" pragmaType="interface" parentfunction="ocnn6_net_8_layer_pipeline" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="ocnn6_net.cpp" line="106" pragmaType="stream" parentfunction="ocnn6_net_8_layer_pipeline" depth="1024" type="fifo" variable="feature_data_stream"/>
+<pragma file="ocnn6_net.cpp" line="107" pragmaType="stream" parentfunction="ocnn6_net_8_layer_pipeline" depth="1024" type="fifo" variable="write_addr_stream"/>
+<pragma file="ocnn6_net.cpp" line="108" pragmaType="stream" parentfunction="ocnn6_net_8_layer_pipeline" depth="256" type="fifo" variable="retained_blocks_stream"/>
+<pragma file="ocnn6_net.cpp" line="109" pragmaType="stream" parentfunction="ocnn6_net_8_layer_pipeline" depth="64" type="fifo" variable="early_trigger_stream"/>
+<pragma file="ocnn6_net.cpp" line="170" pragmaType="stream" parentfunction="ocnn6_net_8_layer_pipeline" depth="1024" type="fifo" variable="layer_streams"/>
+<pragma file="ocnn6_net.cpp" line="218" pragmaType="stream" parentfunction="ocnn6_net_8_layer_pipeline" depth="1024" type="fifo" variable="layer_pipeline_streams"/>
+<pragma file="ocnn6_net.cpp" line="222" pragmaType="stream" parentfunction="ocnn6_net_8_layer_pipeline" depth="1024" type="fifo" variable="initial_stream"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<ap_uint<60>, 0>::stream(char const*)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<RetainedBlockInfo, 0>::stream(char const*)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<EarlyTriggerSignal, 0>::stream(char const*)" off="0" region="0" recursive="0"/>
+<pragma file="ocnn6_net.cpp" line="0" pragmaType="inline" parentfunction="ocnn6_logical_bitmap_reconstruction_with_access_pointers" off="1" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="empty" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::RType<($_0)32, true>::mult operator*<32, false>(ap_int_base<32, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, true>::RType<($_0)32, true>::plus operator+<64, true>(ap_int_base<64, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<32>::ap_uint<65>(ap_int<65> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<VoxelData, 0>::stream()" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<32, false>::operator<<32, false>(ap_int_base<32, false> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<60>::ap_uint<32>(ap_uint<32> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, true>::RType<32, false>::plus operator+<64, true, 32, false>(ap_int_base<64, true> const&, ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<65, true>::RType<($_0)32, true>::mult operator*<65, true>(ap_int_base<65, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<97, true>::RType<32, false>::plus operator+<97, true, 32, false>(ap_int_base<97, true> const&, ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<98, true>::RType<($_0)32, true>::mult operator*<98, true>(ap_int_base<98, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<130, true>::RType<($_0)32, true>::plus operator+<130, true>(ap_int_base<130, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<32>::ap_uint<131>(ap_int<131> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<131, true>(ap_int_base<131, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="ocnn6_net.cpp" line="0" pragmaType="inline" parentfunction="ocnn6_streaming_layer_pipeline" off="1" region="0" recursive="0"/>
+<pragma file="ocnn6_net.cpp" line="0" pragmaType="dataflow" parentfunction="ocnn6_streaming_layer_pipeline" disable_start_propagation="0"/>
+<pragma file="ocnn6_net.cpp" line="447" pragmaType="pipeline" parentfunction="ocnn6_streaming_layer_pipeline" off="0" ii="1" rewind="0" style=""/>
+<pragma file="ocnn6_net.cpp" line="461" pragmaType="unroll" parentfunction="ocnn6_streaming_layer_pipeline" factor="8" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="469" pragmaType="unroll" parentfunction="ocnn6_streaming_layer_pipeline" factor="8" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="478" pragmaType="unroll" parentfunction="ocnn6_streaming_layer_pipeline" factor="1" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="477" pragmaType="pipeline" parentfunction="ocnn6_streaming_layer_pipeline" off="0" ii="1" rewind="0" style=""/>
+<pragma file="ocnn6_net.cpp" line="532" pragmaType="unroll" parentfunction="ocnn6_streaming_layer_pipeline" factor="8" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="505" pragmaType="unroll" parentfunction="ocnn6_streaming_layer_pipeline" factor="8" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="497" pragmaType="unroll" parentfunction="ocnn6_streaming_layer_pipeline" factor="8" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="525" pragmaType="unroll" parentfunction="ocnn6_streaming_layer_pipeline" factor="8" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="459" pragmaType="array_partition" parentfunction="ocnn6_streaming_layer_pipeline" dim="1" factor="0" mode="complete" dynamic="0" variable="input_features"/>
+<pragma file="ocnn6_net.cpp" line="467" pragmaType="array_partition" parentfunction="ocnn6_streaming_layer_pipeline" dim="1" factor="0" mode="complete" dynamic="0" variable="output_features"/>
+<pragma file="ocnn6_net.cpp" line="492" pragmaType="array_partition" parentfunction="ocnn6_streaming_layer_pipeline" dim="1" factor="0" mode="complete" dynamic="0" variable="neighbor_features"/>
+<pragma file="ocnn6_net.cpp" line="512" pragmaType="array_partition" parentfunction="ocnn6_streaming_layer_pipeline" dim="1" factor="0" mode="complete" dynamic="0" variable="neighbor_contribution"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<130, true>::RType<32, true>::plus operator+<130, true, 32, true>(ap_int_base<130, true> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<131, true>::ap_int_base<130, true>(ap_int_base<130, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<131, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<131, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<131>::ap_int<131, true>(ap_int_base<131, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi131ELb1EEC2EDq131_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<98, true>::RType<32, true>::mult operator*<98, true, 32, true>(ap_int_base<98, true> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<130, true>::ap_int_base<98, true>(ap_int_base<98, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<130, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<130, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<130>::ap_int<130, true>(ap_int_base<130, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi130ELb1EEC2EDq130_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<98, true>::ap_int_base<97, true>(ap_int_base<97, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<98, true>::ap_int_base<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<98, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<98>::ap_int<98, true>(ap_int_base<98, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi98ELb1EEC2EDq98_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<65, true>::RType<32, true>::mult operator*<65, true, 32, true>(ap_int_base<65, true> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<97, true>::ap_int_base<65, true>(ap_int_base<65, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<97, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<97, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<97>::ap_int<97, true>(ap_int_base<97, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi97ELb1EEC2EDq97_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<65, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<65, true>::ap_int_base<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="./octree_master.h" line="177" pragmaType="inline" parentfunction="morton_decode" off="0" region="0" recursive="0"/>
+<pragma file="./octree_master.h" line="183" pragmaType="unroll" parentfunction="morton_decode" factor="-1" skip_exit_check="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, true>::operator long long() const" off="0" region="0" recursive="0"/>
+<pragma file="./octree_master.h" line="271" pragmaType="inline" parentfunction="morton_to_dram_address" off="0" region="0" recursive="0"/>
+<pragma file="./octree_master.h" line="261" pragmaType="inline" parentfunction="extract_morton_address" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<4, false>::RType<($_0)32, true>::mult operator*<4, false>(ap_int_base<4, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<36, true>::RType<($_0)32, true>::mult operator*<36, true>(ap_int_base<36, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<68, true>::RType<($_0)32, true>::plus operator+<68, true>(int, ap_int_base<68, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<56, false>::RType<($_0)32, true>::mult operator*<56, false>(ap_int_base<56, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<69, true>::RType<88, true>::plus operator+<69, true, 88, true>(ap_int_base<69, true> const&, ap_int_base<88, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<89, true>::RType<32, false>::plus operator+<89, true, 32, false>(ap_int_base<89, true> const&, ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<32>::ap_uint<90>(ap_int<90> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<90, true>(ap_int_base<90, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<90, true>::ap_int_base<89, true>(ap_int_base<89, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<90, true>::ap_int_base<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<90, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<90>::ap_int<90, true>(ap_int_base<90, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi90ELb1EEC2EDq90_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<89, true>::ap_int_base<69, true>(ap_int_base<69, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<89, true>::ap_int_base<88, true>(ap_int_base<88, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<89, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<89>::ap_int<89, true>(ap_int_base<89, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi89ELb1EEC2EDq89_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<56, false>::RType<32, true>::mult operator*<56, false, 32, true>(ap_int_base<56, false> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<88, true>::ap_int_base<56, false>(ap_int_base<56, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<88, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<88, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<88>::ap_int<88, true>(ap_int_base<88, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi88ELb1EEC2EDq88_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, true>::RType<68, true>::plus operator+<32, true, 68, true>(ap_int_base<32, true> const&, ap_int_base<68, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<69, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<69, true>::ap_int_base<68, true>(ap_int_base<68, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<69, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<69>::ap_int<69, true>(ap_int_base<69, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi69ELb1EEC2EDq69_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<36, true>::RType<32, true>::mult operator*<36, true, 32, true>(ap_int_base<36, true> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<68, true>::ap_int_base<36, true>(ap_int_base<36, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<68, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<68, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<68>::ap_int<68, true>(ap_int_base<68, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi68ELb1EEC2EDq68_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<4, false>::RType<32, true>::mult operator*<4, false, 32, true>(ap_int_base<4, false> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<36, true>::ap_int_base<4, false>(ap_int_base<4, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<36, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<4>::ap_uint<60>(ap_uint<60> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<60, false>::RType<($_0)64, false>::logic operator&<60, false>(ap_int_base<60, false> const&, unsigned long long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<56>::ap_uint<64>(ap_uint<64> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<56, false>::ap_int_base<64, false>(ap_int_base<64, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="523" pragmaType="inline" parentfunction="_ZN8ssdm_intILi56ELb0EEC2EDq56_j" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::ap_int_base(unsigned long long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<60, false>::RType<64, false>::logic operator&<60, false, 64, false>(ap_int_base<60, false> const&, ap_int_base<64, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, false>::ap_int_base<60, false>(ap_int_base<60, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<4, false>::ap_int_base<60, false>(ap_int_base<60, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>& ap_int_base<32, false>::operator|=<61, true>(ap_int_base<61, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<61, true>::RType<61, true>::arg1 operator<<<61, true>(ap_int_base<61, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<60, false>::ap_int_base<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<65, true>(ap_int_base<65, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, true>::RType<32, true>::plus operator+<64, true, 32, true>(ap_int_base<64, true> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::RType<32, true>::mult operator*<32, false, 32, true>(ap_int_base<32, false> const&, ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, true>::ap_int_base<32, false>(ap_int_base<32, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<64, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<64>::ap_int<64, true>(ap_int_base<64, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="ssdm_int<64, true>::ssdm_int(long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="ocnn6_net.cpp" line="0" pragmaType="inline" parentfunction="ocnn6_final_layer_output_reconstruction_streaming" off="1" region="0" recursive="0"/>
+<pragma file="ocnn6_net.cpp" line="610" pragmaType="pipeline" parentfunction="ocnn6_final_layer_output_reconstruction_streaming" off="0" ii="1" rewind="0" style=""/>
+<pragma file="ocnn6_net.cpp" line="625" pragmaType="unroll" parentfunction="ocnn6_final_layer_output_reconstruction_streaming" factor="4" skip_exit_check="0"/>
+<pragma file="ocnn6_net.cpp" line="601" pragmaType="pipeline" parentfunction="ocnn6_final_layer_output_reconstruction_streaming" off="0" ii="1" rewind="0" style=""/>
+<pragma file="ocnn6_net.cpp" line="0" pragmaType="inline" parentfunction="ocnn6_assembly_line_8_layers" off="1" region="0" recursive="0"/>
+<pragma file="ocnn6_net.cpp" line="353" pragmaType="stream" parentfunction="ocnn6_assembly_line_8_layers" depth="1024" type="fifo" variable="layer_streams"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+</pragmas>

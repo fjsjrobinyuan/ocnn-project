@@ -1,0 +1,257 @@
+{
+  "0": {
+    "basicblocks": 65,
+    "calls": "3 14 5 7",
+    "file": "ocnn6_net.cpp",
+    "fileloc": 18,
+    "instructions": 449,
+    "loads": {
+      "L": 11,
+      "T": 2
+    },
+    "name": "ocnn6_net_8_layer_pipeline",
+    "stores": {
+      "L": 13,
+      "T": 2
+    },
+    "total_instructions": 33263
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "dynamic_access.cpp",
+    "fileloc": 20,
+    "instructions": 64,
+    "loads": {
+      "L": 7
+    },
+    "name": "initialize_streaming_pointers",
+    "stores": {
+      "L": 7
+    },
+    "total_instructions": 171
+  },
+  "10": {
+    "basicblocks": 201,
+    "calls": "8 8 8 8",
+    "file": "streaming_bitmap_constructor.cpp",
+    "fileloc": 62,
+    "instructions": 893,
+    "loads": {
+      "G": 15,
+      "L": 21
+    },
+    "name": "streaming_bitmap_constructor",
+    "stores": {
+      "G": 19,
+      "L": 17
+    },
+    "total_instructions": 3597
+  },
+  "11": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "octree_master.h",
+    "fileloc": 174,
+    "instructions": 111,
+    "loads": {
+      "L": 3
+    },
+    "name": "morton_decode",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 729
+  },
+  "12": {
+    "basicblocks": 19,
+    "calls": "",
+    "file": "systolic_array.cpp",
+    "fileloc": 236,
+    "instructions": 55,
+    "loads": {
+      "L": 1
+    },
+    "name": "reset",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 72
+  },
+  "13": {
+    "basicblocks": 1,
+    "calls": "9",
+    "file": "octree_master.h",
+    "fileloc": 269,
+    "instructions": 57,
+    "loads": {
+      "L": 1
+    },
+    "name": "morton_to_dram_address",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 850
+  },
+  "14": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "ocnn6_net.cpp",
+    "fileloc": 295,
+    "instructions": 2,
+    "name": "ocnn6_logical_bitmap_reconstruction_with_access_pointers",
+    "total_instructions": 173
+  },
+  "15": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "systolic_array.cpp",
+    "fileloc": 9,
+    "instructions": 82,
+    "name": "__cxx_global_var_init.1",
+    "total_instructions": 1459
+  },
+  "16": {
+    "basicblocks": 23,
+    "calls": "",
+    "file": "systolic_array.cpp",
+    "fileloc": 193,
+    "instructions": 122,
+    "loads": {
+      "L": 3
+    },
+    "name": "find_neighbor_direct",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 628
+  },
+  "17": {
+    "basicblocks": 1,
+    "calls": "15",
+    "file": "systolic_array.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 2,
+    "name": "",
+    "total_instructions": 1461
+  },
+  "18": {
+    "basicblocks": 52,
+    "calls": "6 11 16 13 4",
+    "file": "ocnn6_net.cpp",
+    "fileloc": 416,
+    "instructions": 257,
+    "loads": {
+      "G": 1,
+      "L": 16
+    },
+    "name": "ocnn6_streaming_layer_pipeline",
+    "stores": {
+      "G": 1,
+      "L": 16
+    },
+    "total_instructions": 3314
+  },
+  "2": {
+    "basicblocks": 13,
+    "calls": "",
+    "file": "systolic_array.cpp",
+    "fileloc": 75,
+    "instructions": 36,
+    "loads": {
+      "L": 1
+    },
+    "name": "reset",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 53
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "10",
+    "file": "complete_pipeline.cpp",
+    "fileloc": 127,
+    "instructions": 2,
+    "name": "pipeline_bitmap_stage",
+    "total_instructions": 3599
+  },
+  "4": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "systolic_array.cpp",
+    "fileloc": 261,
+    "instructions": 148,
+    "loads": {
+      "L": 6
+    },
+    "name": "compute_single_voxel_parallel",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 275
+  },
+  "5": {
+    "basicblocks": 4,
+    "calls": "18 18 18 18 18 18 18 18",
+    "file": "ocnn6_net.cpp",
+    "fileloc": 321,
+    "instructions": 38,
+    "name": "ocnn6_assembly_line_8_layers",
+    "total_instructions": 26551
+  },
+  "6": {
+    "basicblocks": 61,
+    "calls": "12 2",
+    "file": "systolic_array.cpp",
+    "fileloc": 318,
+    "instructions": 241,
+    "loads": {
+      "L": 11
+    },
+    "name": "initialize_z_buffer",
+    "stores": {
+      "L": 11
+    },
+    "total_instructions": 509
+  },
+  "7": {
+    "basicblocks": 22,
+    "calls": "",
+    "file": "ocnn6_net.cpp",
+    "fileloc": 582,
+    "instructions": 186,
+    "loads": {
+      "L": 2
+    },
+    "name": "ocnn6_final_layer_output_reconstruction_streaming",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 1338
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "octree_master.h",
+    "fileloc": 146,
+    "instructions": 10,
+    "name": "set_bit",
+    "total_instructions": 45
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "octree_master.h",
+    "fileloc": 259,
+    "instructions": 36,
+    "loads": {
+      "L": 3
+    },
+    "name": "extract_morton_address",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 220
+  }
+}

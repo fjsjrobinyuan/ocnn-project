@@ -1,0 +1,67 @@
+================================================================
+== Design Size Report
+================================================================
+
+* Total Instructions per Compilation Phase
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Phase         | Step                        | Instructions | Description                                                                            |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Compile/Link  |                             |    33,263    | After all functions are compiled and linked into a single design                       |
+|               |                             |              |                                                                                        |
+| Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
+|               | (1) unroll                  | 3,613,406 *  | user unroll pragmas are applied                                                        |
+|               | (2) simplification          | 1,589,496 *  | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  | 1,561,554 *  | user inline pragmas are applied                                                        |
+|               | (4) simplification          | 1,561,554 *  | simplification of applied user inline pragmas                                          |
+|               |                             |              |                                                                                        |
+| Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
+|               | (1) array partition         | 1,738,932 *  | user array partition pragmas are applied                                               |
+|               | (2) simplification          | 1,567,904 *  | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  | 1,574,866 *  | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           | 1,585,082 *  | apply array reshape pragmas                                                            |
+|               | (5) access patterns         | 1,338,583 *  | array access pattern optmizations                                                      |
+|               |                             |              |                                                                                        |
+| Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
+|               | (1) loop simplification     | 1,296,587 *  | loop and instruction simplification                                                    |
+|               | (2) parallelization         | 1,296,581 *  | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         | 1,377,643 *  | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          | 1,326,183 *  | simplification of design after performance transformations                             |
+|               |                             |              |                                                                                        |
+| HW Transforms |                             |              | After hardware transfomations                                                          |
+|               | (1) lowering                | 1,554,957 *  | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           | 1,541,330 *  | high level synthesis optimizations                                                     |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+    * - Exceeded design size warning message threshold
+
+* Instructions per Function for each Compilation Phase
++--------------------------------------+-------------------------------------+------------------+-----------------------+-----------------------+-----------------------+---------------+
+| Function                             | Location                            | Compile/Link     | Unroll/Inline         | Array/Struct          | Performance           | HW Transforms |
++--------------------------------------+-------------------------------------+------------------+-----------------------+-----------------------+-----------------------+---------------+
+| + ocnn6_net_8_layer_pipeline         | ocnn6_net.cpp:18                    | 33,263           | 1,561,554 *           | 1,338,583 *           | 1,326,183 *           | 1,541,330 *   |
+|  + pipeline_bitmap_stage             | complete_pipeline.cpp:127           | 3,599            |     791               |   1,241               |   1,236               |               |
+|   + streaming_bitmap_constructor...  | streaming_bitmap_constructor.cpp:62 | 3,597            |     789               |   1,239               |   1,234               |               |
+|      set_bit                         | octree_master.h:146                 |   180 (4 calls)  |                       |                       |                       |               |
+|  + ocnn6_logical_bitmap_reconst...   | ocnn6_net.cpp:295                   |   173            |                       |                       |                       |               |
+|     initialize_streaming_pointer...  | dynamic_access.cpp:20               |   171            |                       |                       |                       |               |
+|  + ocnn6_assembly_line_8_layers...   | ocnn6_net.cpp:321                   | 26,551           | 1,560,291             | 1,336,212             | 1,323,728             |               |
+|   + ocnn6_streaming_layer_pipeli...  | ocnn6_net.cpp:416                   | 26,512 (8 calls) | 1,560,272 (8 calls)   | 1,336,176 (8 calls)   | 1,323,696 (8 calls)   |               |
+|    + initialize_z_buffer             | systolic_array.cpp:318              | 4,072 (8 calls)  |  20,400 (8 calls)     |  23,800 (8 calls)     |  24,696 (8 calls)     |               |
+|       reset                          | systolic_array.cpp:236              |   576 (8 calls)  |  12,816 (24 calls)    |  16,152 (24 calls)    |  16,536 (24 calls)    |               |
+|       reset                          | systolic_array.cpp:75               |   424 (8 calls)  |                       |                       |                       |               |
+|      morton_decode                   | octree_master.h:174                 | 5,832 (8 calls)  |                       |                       |                       |               |
+|      find_neighbor_direct            | systolic_array.cpp:193              | 5,024 (8 calls)  |                       |                       |                       |               |
+|    + morton_to_dram_address          | octree_master.h:269                 | 6,800 (8 calls)  |                       |                       |                       |               |
+|       extract_morton_address         | octree_master.h:259                 | 1,760 (8 calls)  |                       |                       |                       |               |
+|      compute_single_voxel_paralle... | systolic_array.cpp:261              | 2,200 (8 calls)  | 1,450,440 (216 calls) | 1,215,216 (216 calls) | 1,234,224 (216 calls) |               |
+|    ocnn6_final_layer_output_rec...   | ocnn6_net.cpp:582                   | 1,338            |     223               |     277               |     277               |     288       |
++--------------------------------------+-------------------------------------+------------------+-----------------------+-----------------------+-----------------------+---------------+
+    * - Exceeded design size warning message threshold
+
+* Design Size Message Settings
++---------------------------------------------+--------+------------------------------------------------------------------+
+| Message Setting                             | Value  | Description                                                      |
++---------------------------------------------+--------+------------------------------------------------------------------+
+| config_compile -design_size_maximum_warning | 100000 | Show a warning when total design instructions exceeds this value |
++---------------------------------------------+--------+------------------------------------------------------------------+
+
+

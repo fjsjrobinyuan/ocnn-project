@@ -1,0 +1,48 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights6_rd_engine_initialized_f'" level="0">
+<item name = "Date">Sat Sep  6 21:16:50 2025
+</item>
+<item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
+<item name = "Project">ocnn6_net</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcu250-figd2104-2L-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">3.33 ns, 3.247 ns, 0.90 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_initialize_z_buffer_16_fu_765">initialize_z_buffer_16, 27798, 27798, 92.567 us, 92.567 us, 27798, 27798, no</column>
+<column name="grp_compute_single_voxel_parallel_17_fu_969">compute_single_voxel_parallel_17, 1, 1679, 3.330 ns, 5.591 us, 1, 1679, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- STREAMING_VOXEL_PROCESSING">?, ?, 259 ~ 45565, -, -, ?, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

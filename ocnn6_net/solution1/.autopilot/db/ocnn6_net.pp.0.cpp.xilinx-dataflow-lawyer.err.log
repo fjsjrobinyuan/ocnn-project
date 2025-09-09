@@ -1,0 +1,11 @@
+Static scalars and arrays declared inside a dataflow region will be treated like local variables
+Either use an argument of the function or declare the variable inside the dataflow loop body
+Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region
+Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region
+Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region
+There are a total of 4 such instances of non-canonical statements in the dataflow region
+Static scalars and arrays declared inside a dataflow region will be treated like local variables
+Static scalars and arrays declared inside a dataflow region will be treated like local variables
+Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region
+Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region
+10 warnings generated.

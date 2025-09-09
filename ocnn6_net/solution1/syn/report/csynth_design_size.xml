@@ -1,0 +1,73 @@
+<design_size title="Design Size Report">
+    <item name="Total Instructions per Compilation Phase">
+        <table>
+            <keys size="4">Phase, Step, Instructions, Description</keys>
+            <column name="Compile/Link">,    33263, After all functions are compiled and linked into a single design</column>
+            <column name="">, , </column>
+            <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
+            <column name="">(1) unroll, 3613406 *, user unroll pragmas are applied</column>
+            <column name="">(2) simplification, 1589496 *, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline, 1561554 *, user inline pragmas are applied</column>
+            <column name="">(4) simplification, 1561554 *, simplification of applied user inline pragmas</column>
+            <column name="">, , </column>
+            <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(1) array partition, 1738932 *, user array partition pragmas are applied</column>
+            <column name="">(2) simplification, 1567904 *, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate , 1574866 *, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape, 1585082 *, apply array reshape pragmas</column>
+            <column name="">(5) access patterns, 1338583 *, array access pattern optmizations</column>
+            <column name="">, , </column>
+            <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification, 1296587 *, loop and instruction simplification</column>
+            <column name="">(2) parallelization, 1296581 *, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition, 1377643 *, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification, 1326183 *, simplification of design after performance transformations</column>
+            <column name="">, , </column>
+            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering, 1554957 *, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations, 1541330 *, high level synthesis optimizations</column>
+        </table>
+    </item>
+    <item name="Instructions per Function for each Compilation Phase">
+        <hiertable>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
+            <rows>
+                <row id="0" col0="ocnn6_net_8_layer_pipeline" col1="ocnn6_net.cpp:18" col2="33263" col3="1561554" col3_note="*" col4="1338583" col4_note="*" col5="1326183" col5_note="*" col6="1541330" col6_note="*">
+                    <row id="11" col0="pipeline_bitmap_stage" col1="complete_pipeline.cpp:127" col2="3599" col3="791" col4="1241" col5="1236" col6="">
+                        <row id="2" col0="streaming_bitmap_constructor" col1="streaming_bitmap_constructor.cpp:62" col2="3597" col3="789" col4="1239" col5="1234" col6="">
+                            <row id="16" col0="set_bit" col1="octree_master.h:146" col2="180" col2_disp="  180 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        </row>
+                    </row>
+                    <row id="6" col0="ocnn6_logical_bitmap_reconstruction_with_access_pointers" col1="ocnn6_net.cpp:295" col2="173" col3="" col4="" col5="" col6="">
+                        <row id="1" col0="initialize_streaming_pointers" col1="dynamic_access.cpp:20" col2="171" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="13" col0="ocnn6_assembly_line_8_layers" col1="ocnn6_net.cpp:321" col2="26551" col3="1560291" col4="1336212" col5="1323728" col6="">
+                        <row id="9" col0="ocnn6_streaming_layer_pipeline" col1="ocnn6_net.cpp:416" col2="26512" col2_disp="26,512 (8 calls)" col3="1560272" col3_disp="1,560,272 (8 calls)" col4="1336176" col4_disp="1,336,176 (8 calls)" col5="1323696" col5_disp="1,323,696 (8 calls)" col6="">
+                            <row id="14" col0="initialize_z_buffer" col1="systolic_array.cpp:318" col2="4072" col2_disp="4,072 (8 calls)" col3="20400" col3_disp=" 20,400 (8 calls)" col4="23800" col4_disp=" 23,800 (8 calls)" col5="24696" col5_disp=" 24,696 (8 calls)" col6="">
+                                <row id="4" col0="reset" col1="systolic_array.cpp:236" col2="576" col2_disp="  576 (8 calls)" col3="12816" col3_disp=" 12,816 (24 calls)" col4="16152" col4_disp=" 16,152 (24 calls)" col5="16536" col5_disp=" 16,536 (24 calls)" col6=""/>
+                                <row id="10" col0="reset" col1="systolic_array.cpp:75" col2="424" col2_disp="  424 (8 calls)" col3="" col4="" col5="" col6=""/>
+                            </row>
+                            <row id="3" col0="morton_decode" col1="octree_master.h:174" col2="5832" col2_disp="5,832 (8 calls)" col3="" col4="" col5="" col6=""/>
+                            <row id="8" col0="find_neighbor_direct" col1="systolic_array.cpp:193" col2="5024" col2_disp="5,024 (8 calls)" col3="" col4="" col5="" col6=""/>
+                            <row id="5" col0="morton_to_dram_address" col1="octree_master.h:269" col2="6800" col2_disp="6,800 (8 calls)" col3="" col4="" col5="" col6="">
+                                <row id="17" col0="extract_morton_address" col1="octree_master.h:259" col2="1760" col2_disp="1,760 (8 calls)" col3="" col4="" col5="" col6=""/>
+                            </row>
+                            <row id="12" col0="compute_single_voxel_parallel" col1="systolic_array.cpp:261" col2="2200" col2_disp="2,200 (8 calls)" col3="1450440" col3_disp="1,450,440 (216 calls)" col4="1215216" col4_disp="1,215,216 (216 calls)" col5="1234224" col5_disp="1,234,224 (216 calls)" col6=""/>
+                        </row>
+                    </row>
+                    <row id="15" col0="ocnn6_final_layer_output_reconstruction_streaming" col1="ocnn6_net.cpp:582" col2="1338" col3="223" col4="277" col5="277" col6="288"/>
+                </row>
+            </rows>
+            <notes>
+                <note name="*" desc="Exceeded design size warning message threshold"/>
+            </notes>
+        </hiertable>
+    </item>
+    <item name="Design Size Message Settings">
+        <table>
+            <keys size="3">Message Setting, Value, Description</keys>
+            <column name="config_compile -design_size_maximum_warning">100000, Show a warning when total design instructions exceeds this value</column>
+        </table>
+    </item>
+</design_size>
+

@@ -1,0 +1,2419 @@
+<stg><name>initialize_z_buffer.8</name>
+
+
+<trans_list>
+
+<trans id="191" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="192" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="193" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="194" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="195" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="196" from="6" to="7">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="197" from="7" to="8">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="198" from="8" to="9">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="306" from="9" to="42">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="307" from="9" to="10">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="274" from="10" to="11">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="275" from="11" to="12">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="276" from="12" to="13">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="277" from="13" to="14">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="278" from="14" to="15">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="279" from="15" to="16">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="280" from="16" to="17">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="281" from="17" to="18">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="282" from="18" to="19">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="283" from="19" to="20">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="284" from="20" to="21">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="285" from="21" to="22">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="286" from="22" to="23">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="287" from="23" to="24">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="288" from="24" to="25">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="289" from="25" to="26">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="290" from="26" to="27">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="291" from="27" to="28">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="292" from="28" to="29">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="293" from="29" to="30">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="294" from="30" to="31">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="295" from="31" to="32">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="296" from="32" to="33">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="297" from="33" to="34">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="298" from="34" to="35">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="299" from="35" to="36">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="300" from="36" to="37">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="301" from="37" to="38">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="302" from="38" to="39">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="303" from="39" to="40">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="304" from="40" to="41">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="305" from="41" to="9">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="234" from="42" to="43">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="235" from="43" to="44">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="236" from="44" to="45">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="237" from="45" to="46">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="238" from="46" to="47">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="239" from="47" to="48">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="240" from="48" to="49">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="241" from="49" to="50">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="242" from="50" to="51">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="243" from="51" to="52">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="244" from="52" to="53">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="245" from="53" to="54">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="246" from="54" to="55">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="247" from="55" to="56">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="248" from="56" to="57">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="249" from="57" to="58">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="250" from="58" to="59">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="251" from="59" to="60">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="252" from="60" to="61">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="253" from="61" to="62">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="254" from="62" to="63">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="255" from="63" to="64">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="256" from="64" to="65">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="257" from="65" to="66">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="258" from="66" to="67">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="259" from="67" to="68">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="260" from="68" to="69">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="261" from="69" to="70">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="262" from="70" to="71">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="263" from="71" to="72">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="264" from="72" to="73">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="265" from="73" to="74">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="266" from="74" to="75">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="267" from="75" to="76">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="268" from="76" to="77">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="269" from="77" to="78">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="270" from="78" to="79">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="271" from="79" to="80">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="272" from="80" to="81">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="82" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="101" bw="10" op_0_bw="32">
+<![CDATA[
+entry:0 %indvar_flatten = alloca i32 1
+
+]]></Node>
+<StgValue><ssdm name="indvar_flatten"/></StgValue>
+</operation>
+
+<operation id="83" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="105" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+entry:4 %weights_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %weights
+
+]]></Node>
+<StgValue><ssdm name="weights_read"/></StgValue>
+</operation>
+
+<operation id="84" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="106" bw="62" op_0_bw="62" op_1_bw="64" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+entry:5 %trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %weights_read, i32 2, i32 63
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln"/></StgValue>
+</operation>
+
+<operation id="85" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="107" bw="64" op_0_bw="62">
+<![CDATA[
+entry:6 %sext_ln324 = sext i62 %trunc_ln
+
+]]></Node>
+<StgValue><ssdm name="sext_ln324"/></StgValue>
+</operation>
+
+<operation id="86" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="108" bw="32" op_0_bw="32" op_1_bw="64">
+<![CDATA[
+entry:7 %gmem_weights2_addr = getelementptr i32 %gmem_weights2, i64 %sext_ln324
+
+]]></Node>
+<StgValue><ssdm name="gmem_weights2_addr"/></StgValue>
+</operation>
+
+<operation id="87" st_id="1" stage="8" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+entry:8 %empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_weights2_addr, i64 27648
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+
+<operation id="88" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="110" bw="0" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+entry:9 %store_ln0 = store i10 0, i10 %indvar_flatten
+
+]]></Node>
+<StgValue><ssdm name="store_ln0"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="89" st_id="2" stage="7" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+entry:8 %empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_weights2_addr, i64 27648
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="90" st_id="3" stage="6" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+entry:8 %empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_weights2_addr, i64 27648
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="91" st_id="4" stage="5" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+entry:8 %empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_weights2_addr, i64 27648
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="92" st_id="5" stage="4" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+entry:8 %empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_weights2_addr, i64 27648
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="93" st_id="6" stage="3" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+entry:8 %empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_weights2_addr, i64 27648
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="94" st_id="7" stage="2" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+entry:8 %empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_weights2_addr, i64 27648
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="95" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="102" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<![CDATA[
+entry:1 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_bias2, void @empty_9, i32 0, i32 0, void @empty_57, i32 0, i32 32, void @empty_5, void @empty, void @empty_57, i32 16, i32 16, i32 32, i32 16, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="96" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="103" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<![CDATA[
+entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_weights2, void @empty_9, i32 0, i32 0, void @empty_57, i32 0, i32 13824, void @empty_36, void @empty, void @empty_57, i32 16, i32 16, i32 256, i32 16, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="97" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="104" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+entry:3 %bias_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %bias
+
+]]></Node>
+<StgValue><ssdm name="bias_read"/></StgValue>
+</operation>
+
+<operation id="98" st_id="8" stage="1" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+entry:8 %empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_weights2_addr, i64 27648
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+
+<operation id="99" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="111" bw="0" op_0_bw="0">
+<![CDATA[
+entry:10 %br_ln324 = br void %VITIS_LOOP_329_2.i
+
+]]></Node>
+<StgValue><ssdm name="br_ln324"/></StgValue>
+</operation>
+</state>
+
+<state id="9" st_id="9">
+
+<operation id="100" st_id="9" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="113" bw="10" op_0_bw="10" op_1_bw="0">
+<![CDATA[
+VITIS_LOOP_329_2.i:0 %indvar_flatten_load = load i10 %indvar_flatten
+
+]]></Node>
+<StgValue><ssdm name="indvar_flatten_load"/></StgValue>
+</operation>
+
+<operation id="101" st_id="9" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="114" bw="1" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+VITIS_LOOP_329_2.i:1 %icmp_ln324 = icmp_eq  i10 %indvar_flatten_load, i10 864
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln324"/></StgValue>
+</operation>
+
+<operation id="102" st_id="9" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="115" bw="10" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+VITIS_LOOP_329_2.i:2 %add_ln324 = add i10 %indvar_flatten_load, i10 1
+
+]]></Node>
+<StgValue><ssdm name="add_ln324"/></StgValue>
+</operation>
+
+<operation id="103" st_id="9" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="116" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+VITIS_LOOP_329_2.i:3 %br_ln324 = br i1 %icmp_ln324, void %for.inc23.i, void %initialize_z_buffer.8.exit
+
+]]></Node>
+<StgValue><ssdm name="br_ln324"/></StgValue>
+</operation>
+
+<operation id="104" st_id="9" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="153" bw="0" op_0_bw="10" op_1_bw="10" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:35 %store_ln324 = store i10 %add_ln324, i10 %indvar_flatten
+
+]]></Node>
+<StgValue><ssdm name="store_ln324"/></StgValue>
+</operation>
+</state>
+
+<state id="10" st_id="10">
+
+<operation id="105" st_id="10" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="121" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+for.inc23.i:3 %empty_307 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_307"/></StgValue>
+</operation>
+</state>
+
+<state id="11" st_id="11">
+
+<operation id="106" st_id="11" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="122" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:4 %empty_308 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_308"/></StgValue>
+</operation>
+</state>
+
+<state id="12" st_id="12">
+
+<operation id="107" st_id="12" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="123" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:5 %empty_309 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_309"/></StgValue>
+</operation>
+</state>
+
+<state id="13" st_id="13">
+
+<operation id="108" st_id="13" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="124" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:6 %empty_310 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_310"/></StgValue>
+</operation>
+</state>
+
+<state id="14" st_id="14">
+
+<operation id="109" st_id="14" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="125" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:7 %empty_311 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_311"/></StgValue>
+</operation>
+</state>
+
+<state id="15" st_id="15">
+
+<operation id="110" st_id="15" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="126" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:8 %empty_312 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_312"/></StgValue>
+</operation>
+</state>
+
+<state id="16" st_id="16">
+
+<operation id="111" st_id="16" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="127" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:9 %empty_313 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_313"/></StgValue>
+</operation>
+</state>
+
+<state id="17" st_id="17">
+
+<operation id="112" st_id="17" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="128" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:10 %empty_314 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_314"/></StgValue>
+</operation>
+</state>
+
+<state id="18" st_id="18">
+
+<operation id="113" st_id="18" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="129" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:11 %empty_315 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_315"/></StgValue>
+</operation>
+</state>
+
+<state id="19" st_id="19">
+
+<operation id="114" st_id="19" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="130" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:12 %empty_316 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_316"/></StgValue>
+</operation>
+</state>
+
+<state id="20" st_id="20">
+
+<operation id="115" st_id="20" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="131" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:13 %empty_317 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_317"/></StgValue>
+</operation>
+</state>
+
+<state id="21" st_id="21">
+
+<operation id="116" st_id="21" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="132" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:14 %empty_318 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_318"/></StgValue>
+</operation>
+</state>
+
+<state id="22" st_id="22">
+
+<operation id="117" st_id="22" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="133" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:15 %empty_319 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_319"/></StgValue>
+</operation>
+</state>
+
+<state id="23" st_id="23">
+
+<operation id="118" st_id="23" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="134" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:16 %empty_320 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_320"/></StgValue>
+</operation>
+</state>
+
+<state id="24" st_id="24">
+
+<operation id="119" st_id="24" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="135" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:17 %empty_321 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_321"/></StgValue>
+</operation>
+</state>
+
+<state id="25" st_id="25">
+
+<operation id="120" st_id="25" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="136" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:18 %empty_322 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_322"/></StgValue>
+</operation>
+</state>
+
+<state id="26" st_id="26">
+
+<operation id="121" st_id="26" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="137" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:19 %empty_323 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_323"/></StgValue>
+</operation>
+</state>
+
+<state id="27" st_id="27">
+
+<operation id="122" st_id="27" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="138" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:20 %empty_324 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_324"/></StgValue>
+</operation>
+</state>
+
+<state id="28" st_id="28">
+
+<operation id="123" st_id="28" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="139" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:21 %empty_325 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_325"/></StgValue>
+</operation>
+</state>
+
+<state id="29" st_id="29">
+
+<operation id="124" st_id="29" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="140" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:22 %empty_326 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_326"/></StgValue>
+</operation>
+</state>
+
+<state id="30" st_id="30">
+
+<operation id="125" st_id="30" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="141" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:23 %empty_327 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_327"/></StgValue>
+</operation>
+</state>
+
+<state id="31" st_id="31">
+
+<operation id="126" st_id="31" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="142" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:24 %empty_328 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_328"/></StgValue>
+</operation>
+</state>
+
+<state id="32" st_id="32">
+
+<operation id="127" st_id="32" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="143" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:25 %empty_329 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_329"/></StgValue>
+</operation>
+</state>
+
+<state id="33" st_id="33">
+
+<operation id="128" st_id="33" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="144" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:26 %empty_330 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_330"/></StgValue>
+</operation>
+</state>
+
+<state id="34" st_id="34">
+
+<operation id="129" st_id="34" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="145" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:27 %empty_331 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_331"/></StgValue>
+</operation>
+</state>
+
+<state id="35" st_id="35">
+
+<operation id="130" st_id="35" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="146" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:28 %empty_332 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_332"/></StgValue>
+</operation>
+</state>
+
+<state id="36" st_id="36">
+
+<operation id="131" st_id="36" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="147" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:29 %empty_333 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_333"/></StgValue>
+</operation>
+</state>
+
+<state id="37" st_id="37">
+
+<operation id="132" st_id="37" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="148" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:30 %empty_334 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_334"/></StgValue>
+</operation>
+</state>
+
+<state id="38" st_id="38">
+
+<operation id="133" st_id="38" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="149" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:31 %empty_335 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_335"/></StgValue>
+</operation>
+</state>
+
+<state id="39" st_id="39">
+
+<operation id="134" st_id="39" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="150" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:32 %empty_336 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_336"/></StgValue>
+</operation>
+</state>
+
+<state id="40" st_id="40">
+
+<operation id="135" st_id="40" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln324" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="151" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:33 %empty_337 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_337"/></StgValue>
+</operation>
+</state>
+
+<state id="41" st_id="41">
+
+<operation id="136" st_id="41" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="118" bw="0" op_0_bw="0" op_1_bw="0">
+<![CDATA[
+for.inc23.i:0 %specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @STORE_WEIGHTS_VITIS_LOOP_326_1_str
+
+]]></Node>
+<StgValue><ssdm name="specloopname_ln0"/></StgValue>
+</operation>
+
+<operation id="137" st_id="41" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="119" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="64" op_3_bw="64">
+<![CDATA[
+for.inc23.i:1 %speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 864, i64 864, i64 864
+
+]]></Node>
+<StgValue><ssdm name="speclooptripcount_ln0"/></StgValue>
+</operation>
+
+<operation id="138" st_id="41" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="120" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
+<![CDATA[
+for.inc23.i:2 %specpipeline_ln328 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_57
+
+]]></Node>
+<StgValue><ssdm name="specpipeline_ln328"/></StgValue>
+</operation>
+
+<operation id="139" st_id="41" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="152" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc23.i:34 %empty_338 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_weights2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_338"/></StgValue>
+</operation>
+
+<operation id="140" st_id="41" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="154" bw="0" op_0_bw="0">
+<![CDATA[
+for.inc23.i:36 %br_ln326 = br void %VITIS_LOOP_329_2.i
+
+]]></Node>
+<StgValue><ssdm name="br_ln326"/></StgValue>
+</operation>
+</state>
+
+<state id="42" st_id="42">
+
+<operation id="141" st_id="42" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="156" bw="62" op_0_bw="62" op_1_bw="64" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+initialize_z_buffer.8.exit:0 %trunc_ln2 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %bias_read, i32 2, i32 63
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln2"/></StgValue>
+</operation>
+
+<operation id="142" st_id="42" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="157" bw="64" op_0_bw="62">
+<![CDATA[
+initialize_z_buffer.8.exit:1 %sext_ln340 = sext i62 %trunc_ln2
+
+]]></Node>
+<StgValue><ssdm name="sext_ln340"/></StgValue>
+</operation>
+
+<operation id="143" st_id="42" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="158" bw="32" op_0_bw="32" op_1_bw="64">
+<![CDATA[
+initialize_z_buffer.8.exit:2 %gmem_bias2_addr = getelementptr i32 %gmem_bias2, i64 %sext_ln340
+
+]]></Node>
+<StgValue><ssdm name="gmem_bias2_addr"/></StgValue>
+</operation>
+
+<operation id="144" st_id="42" stage="8" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+initialize_z_buffer.8.exit:3 %empty_339 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_bias2_addr, i64 32
+
+]]></Node>
+<StgValue><ssdm name="empty_339"/></StgValue>
+</operation>
+</state>
+
+<state id="43" st_id="43">
+
+<operation id="145" st_id="43" stage="7" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+initialize_z_buffer.8.exit:3 %empty_339 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_bias2_addr, i64 32
+
+]]></Node>
+<StgValue><ssdm name="empty_339"/></StgValue>
+</operation>
+</state>
+
+<state id="44" st_id="44">
+
+<operation id="146" st_id="44" stage="6" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+initialize_z_buffer.8.exit:3 %empty_339 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_bias2_addr, i64 32
+
+]]></Node>
+<StgValue><ssdm name="empty_339"/></StgValue>
+</operation>
+</state>
+
+<state id="45" st_id="45">
+
+<operation id="147" st_id="45" stage="5" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+initialize_z_buffer.8.exit:3 %empty_339 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_bias2_addr, i64 32
+
+]]></Node>
+<StgValue><ssdm name="empty_339"/></StgValue>
+</operation>
+</state>
+
+<state id="46" st_id="46">
+
+<operation id="148" st_id="46" stage="4" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+initialize_z_buffer.8.exit:3 %empty_339 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_bias2_addr, i64 32
+
+]]></Node>
+<StgValue><ssdm name="empty_339"/></StgValue>
+</operation>
+</state>
+
+<state id="47" st_id="47">
+
+<operation id="149" st_id="47" stage="3" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+initialize_z_buffer.8.exit:3 %empty_339 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_bias2_addr, i64 32
+
+]]></Node>
+<StgValue><ssdm name="empty_339"/></StgValue>
+</operation>
+</state>
+
+<state id="48" st_id="48">
+
+<operation id="150" st_id="48" stage="2" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+initialize_z_buffer.8.exit:3 %empty_339 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_bias2_addr, i64 32
+
+]]></Node>
+<StgValue><ssdm name="empty_339"/></StgValue>
+</operation>
+</state>
+
+<state id="49" st_id="49">
+
+<operation id="151" st_id="49" stage="1" lat="8">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="64">
+<![CDATA[
+initialize_z_buffer.8.exit:3 %empty_339 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_bias2_addr, i64 32
+
+]]></Node>
+<StgValue><ssdm name="empty_339"/></StgValue>
+</operation>
+</state>
+
+<state id="50" st_id="50">
+
+<operation id="152" st_id="50" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="160" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:4 %empty_340 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_340"/></StgValue>
+</operation>
+</state>
+
+<state id="51" st_id="51">
+
+<operation id="153" st_id="51" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="161" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:5 %empty_341 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_341"/></StgValue>
+</operation>
+</state>
+
+<state id="52" st_id="52">
+
+<operation id="154" st_id="52" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="162" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:6 %empty_342 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_342"/></StgValue>
+</operation>
+</state>
+
+<state id="53" st_id="53">
+
+<operation id="155" st_id="53" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="163" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:7 %empty_343 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_343"/></StgValue>
+</operation>
+</state>
+
+<state id="54" st_id="54">
+
+<operation id="156" st_id="54" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="164" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:8 %empty_344 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_344"/></StgValue>
+</operation>
+</state>
+
+<state id="55" st_id="55">
+
+<operation id="157" st_id="55" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="165" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:9 %empty_345 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_345"/></StgValue>
+</operation>
+</state>
+
+<state id="56" st_id="56">
+
+<operation id="158" st_id="56" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="166" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:10 %empty_346 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_346"/></StgValue>
+</operation>
+</state>
+
+<state id="57" st_id="57">
+
+<operation id="159" st_id="57" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="167" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:11 %empty_347 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_347"/></StgValue>
+</operation>
+</state>
+
+<state id="58" st_id="58">
+
+<operation id="160" st_id="58" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="168" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:12 %empty_348 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_348"/></StgValue>
+</operation>
+</state>
+
+<state id="59" st_id="59">
+
+<operation id="161" st_id="59" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="169" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:13 %empty_349 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_349"/></StgValue>
+</operation>
+</state>
+
+<state id="60" st_id="60">
+
+<operation id="162" st_id="60" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="170" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:14 %empty_350 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_350"/></StgValue>
+</operation>
+</state>
+
+<state id="61" st_id="61">
+
+<operation id="163" st_id="61" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="171" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:15 %empty_351 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_351"/></StgValue>
+</operation>
+</state>
+
+<state id="62" st_id="62">
+
+<operation id="164" st_id="62" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="172" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:16 %empty_352 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_352"/></StgValue>
+</operation>
+</state>
+
+<state id="63" st_id="63">
+
+<operation id="165" st_id="63" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="173" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:17 %empty_353 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_353"/></StgValue>
+</operation>
+</state>
+
+<state id="64" st_id="64">
+
+<operation id="166" st_id="64" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="174" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:18 %empty_354 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_354"/></StgValue>
+</operation>
+</state>
+
+<state id="65" st_id="65">
+
+<operation id="167" st_id="65" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="175" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:19 %empty_355 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_355"/></StgValue>
+</operation>
+</state>
+
+<state id="66" st_id="66">
+
+<operation id="168" st_id="66" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="176" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:20 %empty_356 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_356"/></StgValue>
+</operation>
+</state>
+
+<state id="67" st_id="67">
+
+<operation id="169" st_id="67" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="177" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:21 %empty_357 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_357"/></StgValue>
+</operation>
+</state>
+
+<state id="68" st_id="68">
+
+<operation id="170" st_id="68" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="178" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:22 %empty_358 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_358"/></StgValue>
+</operation>
+</state>
+
+<state id="69" st_id="69">
+
+<operation id="171" st_id="69" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="179" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:23 %empty_359 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_359"/></StgValue>
+</operation>
+</state>
+
+<state id="70" st_id="70">
+
+<operation id="172" st_id="70" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="180" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:24 %empty_360 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_360"/></StgValue>
+</operation>
+</state>
+
+<state id="71" st_id="71">
+
+<operation id="173" st_id="71" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="181" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:25 %empty_361 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_361"/></StgValue>
+</operation>
+</state>
+
+<state id="72" st_id="72">
+
+<operation id="174" st_id="72" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="182" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:26 %empty_362 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_362"/></StgValue>
+</operation>
+</state>
+
+<state id="73" st_id="73">
+
+<operation id="175" st_id="73" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="183" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:27 %empty_363 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_363"/></StgValue>
+</operation>
+</state>
+
+<state id="74" st_id="74">
+
+<operation id="176" st_id="74" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="184" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:28 %empty_364 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_364"/></StgValue>
+</operation>
+</state>
+
+<state id="75" st_id="75">
+
+<operation id="177" st_id="75" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="185" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:29 %empty_365 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_365"/></StgValue>
+</operation>
+</state>
+
+<state id="76" st_id="76">
+
+<operation id="178" st_id="76" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="186" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:30 %empty_366 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_366"/></StgValue>
+</operation>
+
+<operation id="179" st_id="76" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="192" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="2" op_3_bw="2" op_4_bw="32" op_5_bw="2" op_6_bw="2" op_7_bw="2" op_8_bw="2" op_9_bw="32" op_10_bw="2" op_11_bw="2" op_12_bw="2" op_13_bw="2" op_14_bw="32" op_15_bw="2" op_16_bw="2" op_17_bw="2" op_18_bw="2" op_19_bw="32" op_20_bw="2" op_21_bw="2" op_22_bw="2" op_23_bw="2" op_24_bw="32" op_25_bw="2" op_26_bw="2" op_27_bw="2" op_28_bw="2" op_29_bw="32" op_30_bw="2" op_31_bw="2" op_32_bw="2" op_33_bw="2" op_34_bw="32" op_35_bw="2" op_36_bw="2" op_37_bw="2" op_38_bw="2" op_39_bw="32" op_40_bw="2" op_41_bw="1" op_42_bw="2" op_43_bw="1" op_44_bw="2" op_45_bw="1" op_46_bw="2" op_47_bw="1" op_48_bw="2" op_49_bw="1" op_50_bw="2" op_51_bw="1" op_52_bw="2" op_53_bw="1" op_54_bw="2" op_55_bw="1" op_56_bw="2" op_57_bw="1" op_58_bw="2" op_59_bw="1" op_60_bw="2" op_61_bw="1" op_62_bw="2" op_63_bw="1" op_64_bw="2" op_65_bw="1" op_66_bw="2" op_67_bw="1" op_68_bw="2" op_69_bw="1" op_70_bw="2" op_71_bw="1" op_72_bw="2" op_73_bw="1" op_74_bw="2" op_75_bw="1" op_76_bw="2" op_77_bw="1" op_78_bw="2" op_79_bw="1" op_80_bw="2" op_81_bw="1" op_82_bw="2" op_83_bw="1" op_84_bw="2" op_85_bw="1" op_86_bw="2" op_87_bw="1" op_88_bw="2" op_89_bw="1" op_90_bw="2" op_91_bw="1" op_92_bw="2" op_93_bw="1" op_94_bw="2" op_95_bw="1" op_96_bw="2" op_97_bw="1" op_98_bw="2" op_99_bw="1" op_100_bw="2" op_101_bw="1" op_102_bw="2" op_103_bw="1" op_104_bw="2" op_105_bw="1" op_106_bw="2" op_107_bw="1" op_108_bw="2" op_109_bw="1" op_110_bw="2" op_111_bw="1" op_112_bw="2" op_113_bw="1" op_114_bw="2" op_115_bw="1" op_116_bw="2" op_117_bw="1" op_118_bw="2" op_119_bw="1" op_120_bw="2" op_121_bw="1" op_122_bw="2" op_123_bw="1" op_124_bw="2" op_125_bw="1" op_126_bw="2" op_127_bw="1" op_128_bw="2" op_129_bw="1" op_130_bw="2" op_131_bw="1" op_132_bw="2" op_133_bw="1" op_134_bw="2" op_135_bw="1" op_136_bw="2" op_137_bw="1" op_138_bw="2" op_139_bw="1" op_140_bw="2" op_141_bw="1" op_142_bw="2" op_143_bw="1" op_144_bw="2" op_145_bw="1" op_146_bw="2" op_147_bw="1" op_148_bw="2" op_149_bw="1" op_150_bw="2" op_151_bw="1" op_152_bw="2" op_153_bw="1" op_154_bw="2" op_155_bw="1" op_156_bw="2" op_157_bw="1" op_158_bw="2" op_159_bw="1" op_160_bw="2" op_161_bw="1" op_162_bw="2" op_163_bw="1" op_164_bw="2" op_165_bw="1" op_166_bw="2" op_167_bw="1" op_168_bw="2" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="32" op_173_bw="32" op_174_bw="32" op_175_bw="32" op_176_bw="32" op_177_bw="32" op_178_bw="32" op_179_bw="32" op_180_bw="32" op_181_bw="32" op_182_bw="32" op_183_bw="32" op_184_bw="32" op_185_bw="32" op_186_bw="32" op_187_bw="32" op_188_bw="32" op_189_bw="32" op_190_bw="32" op_191_bw="32" op_192_bw="32">
+<![CDATA[
+initialize_z_buffer.8.exit:36 %call_ln356 = call void @reset, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_92, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_88, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_84, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_80, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_76, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_72, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_68, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_64, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_63, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_62, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_61, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_60, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_59, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_58, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_57, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_56, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_55, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_54, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_53, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_52, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_51, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_50, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_49, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_48, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_47, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_46, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_45, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_44, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_43, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_42, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_41, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_40, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_39, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_38, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_37, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_36, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_35, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_34, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_33, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_32, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_31, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_30, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_29, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_28, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_27, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_26, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_25, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_24, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_23, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_22, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_21, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_20, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_19, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_18, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_17, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_16, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_15, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_14, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_13, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_12, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_11, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_10, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_9, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_8, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_7, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_6, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_5, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_4, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_3, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_2, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_1, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_95, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_94, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_93, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_91, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_90, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_89, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_87, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_86, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_85, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_83, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_82, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_81, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_79, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_78, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_77, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_75, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_74, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_73, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_71, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_70, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_69, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_67, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_66, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_65
+
+]]></Node>
+<StgValue><ssdm name="call_ln356"/></StgValue>
+</operation>
+</state>
+
+<state id="77" st_id="77">
+
+<operation id="180" st_id="77" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="187" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:31 %empty_367 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_367"/></StgValue>
+</operation>
+
+<operation id="181" st_id="77" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="192" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="2" op_3_bw="2" op_4_bw="32" op_5_bw="2" op_6_bw="2" op_7_bw="2" op_8_bw="2" op_9_bw="32" op_10_bw="2" op_11_bw="2" op_12_bw="2" op_13_bw="2" op_14_bw="32" op_15_bw="2" op_16_bw="2" op_17_bw="2" op_18_bw="2" op_19_bw="32" op_20_bw="2" op_21_bw="2" op_22_bw="2" op_23_bw="2" op_24_bw="32" op_25_bw="2" op_26_bw="2" op_27_bw="2" op_28_bw="2" op_29_bw="32" op_30_bw="2" op_31_bw="2" op_32_bw="2" op_33_bw="2" op_34_bw="32" op_35_bw="2" op_36_bw="2" op_37_bw="2" op_38_bw="2" op_39_bw="32" op_40_bw="2" op_41_bw="1" op_42_bw="2" op_43_bw="1" op_44_bw="2" op_45_bw="1" op_46_bw="2" op_47_bw="1" op_48_bw="2" op_49_bw="1" op_50_bw="2" op_51_bw="1" op_52_bw="2" op_53_bw="1" op_54_bw="2" op_55_bw="1" op_56_bw="2" op_57_bw="1" op_58_bw="2" op_59_bw="1" op_60_bw="2" op_61_bw="1" op_62_bw="2" op_63_bw="1" op_64_bw="2" op_65_bw="1" op_66_bw="2" op_67_bw="1" op_68_bw="2" op_69_bw="1" op_70_bw="2" op_71_bw="1" op_72_bw="2" op_73_bw="1" op_74_bw="2" op_75_bw="1" op_76_bw="2" op_77_bw="1" op_78_bw="2" op_79_bw="1" op_80_bw="2" op_81_bw="1" op_82_bw="2" op_83_bw="1" op_84_bw="2" op_85_bw="1" op_86_bw="2" op_87_bw="1" op_88_bw="2" op_89_bw="1" op_90_bw="2" op_91_bw="1" op_92_bw="2" op_93_bw="1" op_94_bw="2" op_95_bw="1" op_96_bw="2" op_97_bw="1" op_98_bw="2" op_99_bw="1" op_100_bw="2" op_101_bw="1" op_102_bw="2" op_103_bw="1" op_104_bw="2" op_105_bw="1" op_106_bw="2" op_107_bw="1" op_108_bw="2" op_109_bw="1" op_110_bw="2" op_111_bw="1" op_112_bw="2" op_113_bw="1" op_114_bw="2" op_115_bw="1" op_116_bw="2" op_117_bw="1" op_118_bw="2" op_119_bw="1" op_120_bw="2" op_121_bw="1" op_122_bw="2" op_123_bw="1" op_124_bw="2" op_125_bw="1" op_126_bw="2" op_127_bw="1" op_128_bw="2" op_129_bw="1" op_130_bw="2" op_131_bw="1" op_132_bw="2" op_133_bw="1" op_134_bw="2" op_135_bw="1" op_136_bw="2" op_137_bw="1" op_138_bw="2" op_139_bw="1" op_140_bw="2" op_141_bw="1" op_142_bw="2" op_143_bw="1" op_144_bw="2" op_145_bw="1" op_146_bw="2" op_147_bw="1" op_148_bw="2" op_149_bw="1" op_150_bw="2" op_151_bw="1" op_152_bw="2" op_153_bw="1" op_154_bw="2" op_155_bw="1" op_156_bw="2" op_157_bw="1" op_158_bw="2" op_159_bw="1" op_160_bw="2" op_161_bw="1" op_162_bw="2" op_163_bw="1" op_164_bw="2" op_165_bw="1" op_166_bw="2" op_167_bw="1" op_168_bw="2" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="32" op_173_bw="32" op_174_bw="32" op_175_bw="32" op_176_bw="32" op_177_bw="32" op_178_bw="32" op_179_bw="32" op_180_bw="32" op_181_bw="32" op_182_bw="32" op_183_bw="32" op_184_bw="32" op_185_bw="32" op_186_bw="32" op_187_bw="32" op_188_bw="32" op_189_bw="32" op_190_bw="32" op_191_bw="32" op_192_bw="32">
+<![CDATA[
+initialize_z_buffer.8.exit:36 %call_ln356 = call void @reset, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_92, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_88, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_84, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_80, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_76, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_72, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_68, i2 0, i2 0, i2 0, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_64, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_63, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_62, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_61, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_60, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_59, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_58, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_57, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_56, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_55, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_54, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_53, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_52, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_51, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_50, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_49, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_48, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_47, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_46, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_45, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_44, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_43, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_42, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_41, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_40, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_39, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_38, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_37, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_36, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_35, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_34, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_33, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_32, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_31, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_30, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_29, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_28, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_27, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_26, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_25, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_24, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_23, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_22, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_21, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_20, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_19, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_18, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_17, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_16, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_15, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_14, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_13, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_12, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_11, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_10, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_9, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_8, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_7, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_6, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_5, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_4, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_3, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_2, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_1, i2 0, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a, i2 0, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_95, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_94, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_93, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_91, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_90, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_89, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_87, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_86, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_85, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_83, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_82, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_81, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_79, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_78, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_77, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_75, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_74, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_73, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_71, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_70, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_69, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_67, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_66, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_65
+
+]]></Node>
+<StgValue><ssdm name="call_ln356"/></StgValue>
+</operation>
+</state>
+
+<state id="78" st_id="78">
+
+<operation id="182" st_id="78" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="188" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:32 %empty_368 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_368"/></StgValue>
+</operation>
+
+<operation id="183" st_id="78" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="193" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="2" op_3_bw="2" op_4_bw="32" op_5_bw="2" op_6_bw="2" op_7_bw="2" op_8_bw="2" op_9_bw="32" op_10_bw="2" op_11_bw="2" op_12_bw="2" op_13_bw="2" op_14_bw="32" op_15_bw="2" op_16_bw="2" op_17_bw="2" op_18_bw="2" op_19_bw="32" op_20_bw="2" op_21_bw="2" op_22_bw="2" op_23_bw="2" op_24_bw="32" op_25_bw="2" op_26_bw="2" op_27_bw="2" op_28_bw="2" op_29_bw="32" op_30_bw="2" op_31_bw="2" op_32_bw="2" op_33_bw="2" op_34_bw="32" op_35_bw="2" op_36_bw="2" op_37_bw="2" op_38_bw="2" op_39_bw="32" op_40_bw="2" op_41_bw="1" op_42_bw="2" op_43_bw="1" op_44_bw="2" op_45_bw="1" op_46_bw="2" op_47_bw="1" op_48_bw="2" op_49_bw="1" op_50_bw="2" op_51_bw="1" op_52_bw="2" op_53_bw="1" op_54_bw="2" op_55_bw="1" op_56_bw="2" op_57_bw="1" op_58_bw="2" op_59_bw="1" op_60_bw="2" op_61_bw="1" op_62_bw="2" op_63_bw="1" op_64_bw="2" op_65_bw="1" op_66_bw="2" op_67_bw="1" op_68_bw="2" op_69_bw="1" op_70_bw="2" op_71_bw="1" op_72_bw="2" op_73_bw="1" op_74_bw="2" op_75_bw="1" op_76_bw="2" op_77_bw="1" op_78_bw="2" op_79_bw="1" op_80_bw="2" op_81_bw="1" op_82_bw="2" op_83_bw="1" op_84_bw="2" op_85_bw="1" op_86_bw="2" op_87_bw="1" op_88_bw="2" op_89_bw="1" op_90_bw="2" op_91_bw="1" op_92_bw="2" op_93_bw="1" op_94_bw="2" op_95_bw="1" op_96_bw="2" op_97_bw="1" op_98_bw="2" op_99_bw="1" op_100_bw="2" op_101_bw="1" op_102_bw="2" op_103_bw="1" op_104_bw="2" op_105_bw="1" op_106_bw="2" op_107_bw="1" op_108_bw="2" op_109_bw="1" op_110_bw="2" op_111_bw="1" op_112_bw="2" op_113_bw="1" op_114_bw="2" op_115_bw="1" op_116_bw="2" op_117_bw="1" op_118_bw="2" op_119_bw="1" op_120_bw="2" op_121_bw="1" op_122_bw="2" op_123_bw="1" op_124_bw="2" op_125_bw="1" op_126_bw="2" op_127_bw="1" op_128_bw="2" op_129_bw="1" op_130_bw="2" op_131_bw="1" op_132_bw="2" op_133_bw="1" op_134_bw="2" op_135_bw="1" op_136_bw="2" op_137_bw="1" op_138_bw="2" op_139_bw="1" op_140_bw="2" op_141_bw="1" op_142_bw="2" op_143_bw="1" op_144_bw="2" op_145_bw="1" op_146_bw="2" op_147_bw="1" op_148_bw="2" op_149_bw="1" op_150_bw="2" op_151_bw="1" op_152_bw="2" op_153_bw="1" op_154_bw="2" op_155_bw="1" op_156_bw="2" op_157_bw="1" op_158_bw="2" op_159_bw="1" op_160_bw="2" op_161_bw="1" op_162_bw="2" op_163_bw="1" op_164_bw="2" op_165_bw="1" op_166_bw="2" op_167_bw="1" op_168_bw="2" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="32" op_173_bw="32" op_174_bw="32" op_175_bw="32" op_176_bw="32" op_177_bw="32" op_178_bw="32" op_179_bw="32" op_180_bw="32" op_181_bw="32" op_182_bw="32" op_183_bw="32" op_184_bw="32" op_185_bw="32" op_186_bw="32" op_187_bw="32" op_188_bw="32" op_189_bw="32" op_190_bw="32" op_191_bw="32" op_192_bw="32" op_193_bw="0" op_194_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:37 %call_ln356 = call void @reset, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_92, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_88, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_84, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_80, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_76, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_72, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_68, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_64, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_63, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_62, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_61, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_60, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_59, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_58, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_57, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_56, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_55, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_54, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_53, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_52, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_51, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_50, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_49, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_48, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_47, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_46, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_45, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_44, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_43, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_42, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_41, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_40, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_39, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_38, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_37, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_36, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_35, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_34, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_33, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_32, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_31, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_30, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_29, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_28, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_27, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_26, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_25, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_24, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_23, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_22, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_21, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_20, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_19, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_18, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_17, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_16, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_15, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_14, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_13, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_12, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_11, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_10, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_9, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_8, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_7, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_6, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_5, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_4, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_3, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_2, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_1, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_95, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_94, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_93, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_91, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_90, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_89, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_87, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_86, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_85, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_83, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_82, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_81, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_79, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_78, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_77, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_75, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_74, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_73, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_71, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_70, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_69, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_67, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_66, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_65
+
+]]></Node>
+<StgValue><ssdm name="call_ln356"/></StgValue>
+</operation>
+</state>
+
+<state id="79" st_id="79">
+
+<operation id="184" st_id="79" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="189" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:33 %empty_369 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_369"/></StgValue>
+</operation>
+
+<operation id="185" st_id="79" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="193" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="2" op_3_bw="2" op_4_bw="32" op_5_bw="2" op_6_bw="2" op_7_bw="2" op_8_bw="2" op_9_bw="32" op_10_bw="2" op_11_bw="2" op_12_bw="2" op_13_bw="2" op_14_bw="32" op_15_bw="2" op_16_bw="2" op_17_bw="2" op_18_bw="2" op_19_bw="32" op_20_bw="2" op_21_bw="2" op_22_bw="2" op_23_bw="2" op_24_bw="32" op_25_bw="2" op_26_bw="2" op_27_bw="2" op_28_bw="2" op_29_bw="32" op_30_bw="2" op_31_bw="2" op_32_bw="2" op_33_bw="2" op_34_bw="32" op_35_bw="2" op_36_bw="2" op_37_bw="2" op_38_bw="2" op_39_bw="32" op_40_bw="2" op_41_bw="1" op_42_bw="2" op_43_bw="1" op_44_bw="2" op_45_bw="1" op_46_bw="2" op_47_bw="1" op_48_bw="2" op_49_bw="1" op_50_bw="2" op_51_bw="1" op_52_bw="2" op_53_bw="1" op_54_bw="2" op_55_bw="1" op_56_bw="2" op_57_bw="1" op_58_bw="2" op_59_bw="1" op_60_bw="2" op_61_bw="1" op_62_bw="2" op_63_bw="1" op_64_bw="2" op_65_bw="1" op_66_bw="2" op_67_bw="1" op_68_bw="2" op_69_bw="1" op_70_bw="2" op_71_bw="1" op_72_bw="2" op_73_bw="1" op_74_bw="2" op_75_bw="1" op_76_bw="2" op_77_bw="1" op_78_bw="2" op_79_bw="1" op_80_bw="2" op_81_bw="1" op_82_bw="2" op_83_bw="1" op_84_bw="2" op_85_bw="1" op_86_bw="2" op_87_bw="1" op_88_bw="2" op_89_bw="1" op_90_bw="2" op_91_bw="1" op_92_bw="2" op_93_bw="1" op_94_bw="2" op_95_bw="1" op_96_bw="2" op_97_bw="1" op_98_bw="2" op_99_bw="1" op_100_bw="2" op_101_bw="1" op_102_bw="2" op_103_bw="1" op_104_bw="2" op_105_bw="1" op_106_bw="2" op_107_bw="1" op_108_bw="2" op_109_bw="1" op_110_bw="2" op_111_bw="1" op_112_bw="2" op_113_bw="1" op_114_bw="2" op_115_bw="1" op_116_bw="2" op_117_bw="1" op_118_bw="2" op_119_bw="1" op_120_bw="2" op_121_bw="1" op_122_bw="2" op_123_bw="1" op_124_bw="2" op_125_bw="1" op_126_bw="2" op_127_bw="1" op_128_bw="2" op_129_bw="1" op_130_bw="2" op_131_bw="1" op_132_bw="2" op_133_bw="1" op_134_bw="2" op_135_bw="1" op_136_bw="2" op_137_bw="1" op_138_bw="2" op_139_bw="1" op_140_bw="2" op_141_bw="1" op_142_bw="2" op_143_bw="1" op_144_bw="2" op_145_bw="1" op_146_bw="2" op_147_bw="1" op_148_bw="2" op_149_bw="1" op_150_bw="2" op_151_bw="1" op_152_bw="2" op_153_bw="1" op_154_bw="2" op_155_bw="1" op_156_bw="2" op_157_bw="1" op_158_bw="2" op_159_bw="1" op_160_bw="2" op_161_bw="1" op_162_bw="2" op_163_bw="1" op_164_bw="2" op_165_bw="1" op_166_bw="2" op_167_bw="1" op_168_bw="2" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="32" op_173_bw="32" op_174_bw="32" op_175_bw="32" op_176_bw="32" op_177_bw="32" op_178_bw="32" op_179_bw="32" op_180_bw="32" op_181_bw="32" op_182_bw="32" op_183_bw="32" op_184_bw="32" op_185_bw="32" op_186_bw="32" op_187_bw="32" op_188_bw="32" op_189_bw="32" op_190_bw="32" op_191_bw="32" op_192_bw="32" op_193_bw="0" op_194_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:37 %call_ln356 = call void @reset, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_92, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_88, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_84, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_80, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_76, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_72, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_68, i2 1, i2 1, i2 1, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_64, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_63, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_62, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_61, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_60, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_59, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_58, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_57, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_56, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_55, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_54, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_53, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_52, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_51, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_50, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_49, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_48, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_47, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_46, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_45, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_44, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_43, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_42, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_41, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_40, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_39, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_38, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_37, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_36, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_35, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_34, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_33, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_32, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_31, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_30, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_29, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_28, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_27, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_26, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_25, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_24, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_23, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_22, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_21, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_20, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_19, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_18, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_17, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_16, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_15, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_14, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_13, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_12, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_11, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_10, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_9, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_8, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_7, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_6, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_5, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_4, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_3, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_2, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_1, i2 1, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a, i2 1, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_95, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_94, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_93, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_91, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_90, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_89, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_87, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_86, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_85, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_83, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_82, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_81, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_79, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_78, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_77, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_75, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_74, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_73, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_71, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_70, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_69, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_67, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_66, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_65
+
+]]></Node>
+<StgValue><ssdm name="call_ln356"/></StgValue>
+</operation>
+</state>
+
+<state id="80" st_id="80">
+
+<operation id="186" st_id="80" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="190" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:34 %empty_370 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_370"/></StgValue>
+</operation>
+
+<operation id="187" st_id="80" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="194" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="2" op_3_bw="2" op_4_bw="32" op_5_bw="2" op_6_bw="2" op_7_bw="2" op_8_bw="2" op_9_bw="32" op_10_bw="2" op_11_bw="2" op_12_bw="2" op_13_bw="2" op_14_bw="32" op_15_bw="2" op_16_bw="2" op_17_bw="2" op_18_bw="2" op_19_bw="32" op_20_bw="2" op_21_bw="2" op_22_bw="2" op_23_bw="2" op_24_bw="32" op_25_bw="2" op_26_bw="2" op_27_bw="2" op_28_bw="2" op_29_bw="32" op_30_bw="2" op_31_bw="2" op_32_bw="2" op_33_bw="2" op_34_bw="32" op_35_bw="2" op_36_bw="2" op_37_bw="2" op_38_bw="2" op_39_bw="32" op_40_bw="2" op_41_bw="1" op_42_bw="2" op_43_bw="1" op_44_bw="2" op_45_bw="1" op_46_bw="2" op_47_bw="1" op_48_bw="2" op_49_bw="1" op_50_bw="2" op_51_bw="1" op_52_bw="2" op_53_bw="1" op_54_bw="2" op_55_bw="1" op_56_bw="2" op_57_bw="1" op_58_bw="2" op_59_bw="1" op_60_bw="2" op_61_bw="1" op_62_bw="2" op_63_bw="1" op_64_bw="2" op_65_bw="1" op_66_bw="2" op_67_bw="1" op_68_bw="2" op_69_bw="1" op_70_bw="2" op_71_bw="1" op_72_bw="2" op_73_bw="1" op_74_bw="2" op_75_bw="1" op_76_bw="2" op_77_bw="1" op_78_bw="2" op_79_bw="1" op_80_bw="2" op_81_bw="1" op_82_bw="2" op_83_bw="1" op_84_bw="2" op_85_bw="1" op_86_bw="2" op_87_bw="1" op_88_bw="2" op_89_bw="1" op_90_bw="2" op_91_bw="1" op_92_bw="2" op_93_bw="1" op_94_bw="2" op_95_bw="1" op_96_bw="2" op_97_bw="1" op_98_bw="2" op_99_bw="1" op_100_bw="2" op_101_bw="1" op_102_bw="2" op_103_bw="1" op_104_bw="2" op_105_bw="1" op_106_bw="2" op_107_bw="1" op_108_bw="2" op_109_bw="1" op_110_bw="2" op_111_bw="1" op_112_bw="2" op_113_bw="1" op_114_bw="2" op_115_bw="1" op_116_bw="2" op_117_bw="1" op_118_bw="2" op_119_bw="1" op_120_bw="2" op_121_bw="1" op_122_bw="2" op_123_bw="1" op_124_bw="2" op_125_bw="1" op_126_bw="2" op_127_bw="1" op_128_bw="2" op_129_bw="1" op_130_bw="2" op_131_bw="1" op_132_bw="2" op_133_bw="1" op_134_bw="2" op_135_bw="1" op_136_bw="2" op_137_bw="1" op_138_bw="2" op_139_bw="1" op_140_bw="2" op_141_bw="1" op_142_bw="2" op_143_bw="1" op_144_bw="2" op_145_bw="1" op_146_bw="2" op_147_bw="1" op_148_bw="2" op_149_bw="1" op_150_bw="2" op_151_bw="1" op_152_bw="2" op_153_bw="1" op_154_bw="2" op_155_bw="1" op_156_bw="2" op_157_bw="1" op_158_bw="2" op_159_bw="1" op_160_bw="2" op_161_bw="1" op_162_bw="2" op_163_bw="1" op_164_bw="2" op_165_bw="1" op_166_bw="2" op_167_bw="1" op_168_bw="2" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="32" op_173_bw="32" op_174_bw="32" op_175_bw="32" op_176_bw="32" op_177_bw="32" op_178_bw="32" op_179_bw="32" op_180_bw="32" op_181_bw="32" op_182_bw="32" op_183_bw="32" op_184_bw="32" op_185_bw="32" op_186_bw="32" op_187_bw="32" op_188_bw="32" op_189_bw="32" op_190_bw="32" op_191_bw="32" op_192_bw="32" op_193_bw="0" op_194_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:38 %call_ln356 = call void @reset, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_92, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_88, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_84, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_80, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_76, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_72, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_68, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_64, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_63, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_62, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_61, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_60, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_59, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_58, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_57, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_56, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_55, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_54, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_53, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_52, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_51, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_50, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_49, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_48, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_47, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_46, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_45, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_44, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_43, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_42, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_41, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_40, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_39, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_38, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_37, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_36, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_35, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_34, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_33, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_32, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_31, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_30, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_29, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_28, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_27, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_26, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_25, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_24, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_23, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_22, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_21, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_20, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_19, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_18, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_17, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_16, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_15, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_14, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_13, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_12, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_11, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_10, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_9, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_8, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_7, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_6, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_5, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_4, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_3, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_2, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_1, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_95, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_94, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_93, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_91, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_90, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_89, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_87, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_86, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_85, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_83, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_82, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_81, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_79, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_78, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_77, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_75, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_74, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_73, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_71, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_70, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_69, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_67, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_66, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_65
+
+]]></Node>
+<StgValue><ssdm name="call_ln356"/></StgValue>
+</operation>
+</state>
+
+<state id="81" st_id="81">
+
+<operation id="188" st_id="81" stage="1" lat="1">
+<core>m_axi</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="191" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:35 %empty_371 = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem_bias2_addr
+
+]]></Node>
+<StgValue><ssdm name="empty_371"/></StgValue>
+</operation>
+
+<operation id="189" st_id="81" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="194" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="2" op_3_bw="2" op_4_bw="32" op_5_bw="2" op_6_bw="2" op_7_bw="2" op_8_bw="2" op_9_bw="32" op_10_bw="2" op_11_bw="2" op_12_bw="2" op_13_bw="2" op_14_bw="32" op_15_bw="2" op_16_bw="2" op_17_bw="2" op_18_bw="2" op_19_bw="32" op_20_bw="2" op_21_bw="2" op_22_bw="2" op_23_bw="2" op_24_bw="32" op_25_bw="2" op_26_bw="2" op_27_bw="2" op_28_bw="2" op_29_bw="32" op_30_bw="2" op_31_bw="2" op_32_bw="2" op_33_bw="2" op_34_bw="32" op_35_bw="2" op_36_bw="2" op_37_bw="2" op_38_bw="2" op_39_bw="32" op_40_bw="2" op_41_bw="1" op_42_bw="2" op_43_bw="1" op_44_bw="2" op_45_bw="1" op_46_bw="2" op_47_bw="1" op_48_bw="2" op_49_bw="1" op_50_bw="2" op_51_bw="1" op_52_bw="2" op_53_bw="1" op_54_bw="2" op_55_bw="1" op_56_bw="2" op_57_bw="1" op_58_bw="2" op_59_bw="1" op_60_bw="2" op_61_bw="1" op_62_bw="2" op_63_bw="1" op_64_bw="2" op_65_bw="1" op_66_bw="2" op_67_bw="1" op_68_bw="2" op_69_bw="1" op_70_bw="2" op_71_bw="1" op_72_bw="2" op_73_bw="1" op_74_bw="2" op_75_bw="1" op_76_bw="2" op_77_bw="1" op_78_bw="2" op_79_bw="1" op_80_bw="2" op_81_bw="1" op_82_bw="2" op_83_bw="1" op_84_bw="2" op_85_bw="1" op_86_bw="2" op_87_bw="1" op_88_bw="2" op_89_bw="1" op_90_bw="2" op_91_bw="1" op_92_bw="2" op_93_bw="1" op_94_bw="2" op_95_bw="1" op_96_bw="2" op_97_bw="1" op_98_bw="2" op_99_bw="1" op_100_bw="2" op_101_bw="1" op_102_bw="2" op_103_bw="1" op_104_bw="2" op_105_bw="1" op_106_bw="2" op_107_bw="1" op_108_bw="2" op_109_bw="1" op_110_bw="2" op_111_bw="1" op_112_bw="2" op_113_bw="1" op_114_bw="2" op_115_bw="1" op_116_bw="2" op_117_bw="1" op_118_bw="2" op_119_bw="1" op_120_bw="2" op_121_bw="1" op_122_bw="2" op_123_bw="1" op_124_bw="2" op_125_bw="1" op_126_bw="2" op_127_bw="1" op_128_bw="2" op_129_bw="1" op_130_bw="2" op_131_bw="1" op_132_bw="2" op_133_bw="1" op_134_bw="2" op_135_bw="1" op_136_bw="2" op_137_bw="1" op_138_bw="2" op_139_bw="1" op_140_bw="2" op_141_bw="1" op_142_bw="2" op_143_bw="1" op_144_bw="2" op_145_bw="1" op_146_bw="2" op_147_bw="1" op_148_bw="2" op_149_bw="1" op_150_bw="2" op_151_bw="1" op_152_bw="2" op_153_bw="1" op_154_bw="2" op_155_bw="1" op_156_bw="2" op_157_bw="1" op_158_bw="2" op_159_bw="1" op_160_bw="2" op_161_bw="1" op_162_bw="2" op_163_bw="1" op_164_bw="2" op_165_bw="1" op_166_bw="2" op_167_bw="1" op_168_bw="2" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="32" op_173_bw="32" op_174_bw="32" op_175_bw="32" op_176_bw="32" op_177_bw="32" op_178_bw="32" op_179_bw="32" op_180_bw="32" op_181_bw="32" op_182_bw="32" op_183_bw="32" op_184_bw="32" op_185_bw="32" op_186_bw="32" op_187_bw="32" op_188_bw="32" op_189_bw="32" op_190_bw="32" op_191_bw="32" op_192_bw="32" op_193_bw="0" op_194_bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:38 %call_ln356 = call void @reset, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_92, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_88, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_84, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_80, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_76, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_72, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_68, i2 2, i2 2, i2 2, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_64, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_63, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_62, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_61, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_60, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_59, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_58, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_57, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_56, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_55, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_54, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_53, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_52, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_51, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_50, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_49, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_48, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_47, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_46, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_45, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_44, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_43, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_42, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_41, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_40, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_39, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_38, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_37, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_36, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_35, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_34, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_33, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_32, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_31, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_30, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_29, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_28, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_27, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_26, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_25, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_24, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_23, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_22, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_21, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_20, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_19, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_18, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_17, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_16, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_15, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_14, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_13, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_12, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_11, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_10, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_9, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_8, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_7, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_6, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_5, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_4, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_3, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_2, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_1, i2 2, i1 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a, i2 2, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_95, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_94, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_93, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_91, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_90, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_89, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_87, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_86, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_85, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_83, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_82, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_81, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_79, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_78, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_77, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_75, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_74, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_73, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_71, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_70, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_69, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_67, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_66, i32 %ocnn6_streaming_layer_pipeline_stream_stream_float_float_ap_uint_ap_uint_a_65
+
+]]></Node>
+<StgValue><ssdm name="call_ln356"/></StgValue>
+</operation>
+
+<operation id="190" st_id="81" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="195" bw="0">
+<![CDATA[
+initialize_z_buffer.8.exit:39 %ret_ln0 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln0"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

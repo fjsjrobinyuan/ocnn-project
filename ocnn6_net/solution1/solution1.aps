@@ -1,0 +1,24 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="solution1"/>
+    </name>
+    <project>
+        <value string="ocnn6_net"/>
+    </project>
+    <flowTarget value="vivado"/>
+    <targetInfo>
+        <TargetInfo value="xcu250:-figd2104:-2L-e"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/virtexuplus/virtexuplus" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock name="default" period="3.33" default="false"/>
+    </clockList>
+    <config>
+        <config_dataflow default_channel="fifo" fifo_depth="1024"/>
+        <config_interface m_axi_addr64="1" m_axi_max_widen_bitwidth="512"/>
+        <config_compile complex-mul-dsp="0" enable_auto_rewind="0"/>
+    </config>
+</AutoPilot:solution>
+

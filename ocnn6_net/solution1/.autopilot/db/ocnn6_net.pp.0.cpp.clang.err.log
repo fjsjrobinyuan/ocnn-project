@@ -1,0 +1,352 @@
+In file included from ocnn6_net.cpp:1:
+In file included from ./ocnn6_net_8_layer.h:4:
+In file included from ./complete_pipeline.h:3:
+In file included from ./streaming_bitmap_constructor.h:3:
+In file included from ./octree_bitmap.h:5:
+./octree_master.h:141:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=get_bit_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:148:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=set_bit_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:155:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=coord_to_idx_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:160:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=part1by2_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:171:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=morton3D_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:177:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=morton_decode_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:183:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=morton_decode_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+./octree_master.h:212:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=l2_idx_to_coords_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:219:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=l1_local_to_coords_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:226:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=l0_local_to_coords_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:261:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=extract_morton_address_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_master.h:271:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=morton_to_dram_address_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+In file included from ocnn6_net.cpp:1:
+In file included from ./ocnn6_net_8_layer.h:4:
+In file included from ./complete_pipeline.h:3:
+In file included from ./streaming_bitmap_constructor.h:3:
+./octree_bitmap.h:26:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=linear_to_3d_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_bitmap.h:33:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=coord_3d_to_linear_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_bitmap.h:39:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=get_child_block_indices_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./octree_bitmap.h:47:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=get_child_block_indices_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+In file included from ocnn6_net.cpp:1:
+In file included from ./ocnn6_net_8_layer.h:4:
+In file included from ./complete_pipeline.h:6:
+./feature_buffer.h:22:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=check_neighbor_exists_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+In file included from ocnn6_net.cpp:1:
+In file included from ./ocnn6_net_8_layer.h:4:
+In file included from ./complete_pipeline.h:7:
+./systolic_array.h:220:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=hw_multiply_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+./systolic_array.h:225:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=hw_add_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+/home/robin/Desktop/ocnn-project/run_ocnn6.tcl:54:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=name=ocnn6_net_8_layer_pipeline_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=ocnn6_net_8_layer_pipeline
+        ^
+ocnn6_net.cpp:54:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=pruned_feature_dram_read bundle=gmem_read depth=262144 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=pruned_feature_dram_read bundle=gmem_read depth=262144 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:55:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=pruned_feature_dram_write bundle=gmem_write depth=262144 max_write_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=pruned_feature_dram_write bundle=gmem_write depth=262144 max_write_burst_length=256
+        ^
+ocnn6_net.cpp:56:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=final_output_full_cubic bundle=gmem_output depth=10485760 max_write_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=final_output_full_cubic bundle=gmem_output depth=10485760 max_write_burst_length=256
+        ^
+ocnn6_net.cpp:59:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=bram port=L3_bitmap_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE bram port=L3_bitmap
+        ^
+ocnn6_net.cpp:60:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=bram port=L2_bitmap_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE bram port=L2_bitmap
+        ^
+ocnn6_net.cpp:61:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=bram port=L1_bitmap_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE bram port=L1_bitmap
+        ^
+ocnn6_net.cpp:62:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=bram port=L0_bitmap_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE bram port=L0_bitmap
+        ^
+ocnn6_net.cpp:65:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv1_weights bundle=gmem_weights1 depth=1296 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv1_weights bundle=gmem_weights1 depth=1296 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:66:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv2_weights bundle=gmem_weights2 depth=13824 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv2_weights bundle=gmem_weights2 depth=13824 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:67:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv3_weights bundle=gmem_weights3 depth=55296 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv3_weights bundle=gmem_weights3 depth=55296 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:68:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv4_weights bundle=gmem_weights4 depth=221184 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv4_weights bundle=gmem_weights4 depth=221184 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:69:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv5_weights bundle=gmem_weights5 depth=884736 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv5_weights bundle=gmem_weights5 depth=884736 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:70:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv6_weights bundle=gmem_weights6 depth=3538944 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv6_weights bundle=gmem_weights6 depth=3538944 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:71:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=fc1_weights bundle=gmem_weights7 depth=65536 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=fc1_weights bundle=gmem_weights7 depth=65536 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:72:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=fc2_weights bundle=gmem_weights8 depth=5120 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=fc2_weights bundle=gmem_weights8 depth=5120 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:75:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv1_bias bundle=gmem_bias1 depth=16 max_read_burst_length=16_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv1_bias bundle=gmem_bias1 depth=16 max_read_burst_length=16
+        ^
+ocnn6_net.cpp:76:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv2_bias bundle=gmem_bias2 depth=32 max_read_burst_length=32_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv2_bias bundle=gmem_bias2 depth=32 max_read_burst_length=32
+        ^
+ocnn6_net.cpp:77:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv3_bias bundle=gmem_bias3 depth=64 max_read_burst_length=64_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv3_bias bundle=gmem_bias3 depth=64 max_read_burst_length=64
+        ^
+ocnn6_net.cpp:78:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv4_bias bundle=gmem_bias4 depth=128 max_read_burst_length=128_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv4_bias bundle=gmem_bias4 depth=128 max_read_burst_length=128
+        ^
+ocnn6_net.cpp:79:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv5_bias bundle=gmem_bias5 depth=256 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv5_bias bundle=gmem_bias5 depth=256 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:80:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=conv6_bias bundle=gmem_bias6 depth=512 max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=conv6_bias bundle=gmem_bias6 depth=512 max_read_burst_length=256
+        ^
+ocnn6_net.cpp:81:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=fc1_bias bundle=gmem_bias7 depth=128 max_read_burst_length=128_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=fc1_bias bundle=gmem_bias7 depth=128 max_read_burst_length=128
+        ^
+ocnn6_net.cpp:82:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=m_axi port=fc2_bias bundle=gmem_bias8 depth=40 max_read_burst_length=32_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=fc2_bias bundle=gmem_bias8 depth=40 max_read_burst_length=32
+        ^
+ocnn6_net.cpp:85:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=s_axilite port=bitmap_info_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=bitmap_info
+        ^
+ocnn6_net.cpp:86:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=s_axilite port=total_processed_voxels_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=total_processed_voxels
+        ^
+ocnn6_net.cpp:87:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=s_axilite port=return_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=return
+        ^
+ocnn6_net.cpp:106:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=variable=feature_data_stream depth=1024_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS STREAM variable=feature_data_stream depth=1024
+        ^
+ocnn6_net.cpp:107:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=variable=write_addr_stream depth=1024_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS STREAM variable=write_addr_stream depth=1024
+        ^
+ocnn6_net.cpp:108:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=variable=retained_blocks_stream depth=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS STREAM variable=retained_blocks_stream depth=256
+        ^
+ocnn6_net.cpp:109:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=variable=early_trigger_stream depth=64_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS STREAM variable=early_trigger_stream depth=64
+        ^
+ocnn6_net.cpp:132:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:138:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=2
+        ^
+ocnn6_net.cpp:170:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=variable=layer_streams depth=1024_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS STREAM variable=layer_streams depth=1024
+        ^
+ocnn6_net.cpp:175:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:180:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=2
+        ^
+ocnn6_net.cpp:187:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=2
+        ^
+ocnn6_net.cpp:214:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dataflow_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS DATAFLOW
+        ^
+ocnn6_net.cpp:218:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=variable=layer_pipeline_streams depth=1024_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS STREAM variable=layer_pipeline_streams depth=1024
+        ^
+ocnn6_net.cpp:222:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=variable=initial_stream depth=1024_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS STREAM variable=initial_stream depth=1024
+        ^
+ocnn6_net.cpp:228:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_net_8_layer_pipeline_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:303:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_logical_bitmap_reconstruction_with_access_pointers_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE off
+        ^
+ocnn6_net.cpp:296:19: warning: unused parameter 'L3_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L3_bitmap,
+                  ^
+ocnn6_net.cpp:297:19: warning: unused parameter 'L2_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L2_bitmap,
+                  ^
+ocnn6_net.cpp:298:19: warning: unused parameter 'L1_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L1_bitmap,
+                  ^
+ocnn6_net.cpp:299:19: warning: unused parameter 'L0_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L0_bitmap,
+                  ^
+ocnn6_net.cpp:300:23: warning: unused parameter 'bitmap_info' [-Wunused-parameter]
+    PrunedBitmapInfo &bitmap_info,
+                      ^
+ocnn6_net.cpp:344:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_assembly_line_8_layers_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE off
+        ^
+ocnn6_net.cpp:353:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_assembly_line_8_layers_XLX_SEP_ PragmaOptions=variable=layer_streams depth=1024_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS STREAM variable=layer_streams depth=1024
+        ^
+ocnn6_net.cpp:429:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE off
+        ^
+ocnn6_net.cpp:430:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dataflow_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS DATAFLOW
+        ^
+ocnn6_net.cpp:447:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:459:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=variable=input_features complete_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=input_features complete
+        ^
+ocnn6_net.cpp:461:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=8
+        ^
+ocnn6_net.cpp:467:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=variable=output_features complete_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=output_features complete
+        ^
+ocnn6_net.cpp:469:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=8
+        ^
+ocnn6_net.cpp:477:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:478:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=factor=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=1
+        ^
+ocnn6_net.cpp:492:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=variable=neighbor_features complete_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=neighbor_features complete
+        ^
+ocnn6_net.cpp:497:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=8
+        ^
+ocnn6_net.cpp:505:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=8
+        ^
+ocnn6_net.cpp:512:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=variable=neighbor_contribution complete_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=neighbor_contribution complete
+        ^
+ocnn6_net.cpp:525:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=8
+        ^
+ocnn6_net.cpp:532:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_streaming_layer_pipeline_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=8
+        ^
+ocnn6_net.cpp:421:19: warning: unused parameter 'L3_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L3_bitmap,
+                  ^
+ocnn6_net.cpp:422:19: warning: unused parameter 'L2_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L2_bitmap,
+                  ^
+ocnn6_net.cpp:423:19: warning: unused parameter 'L1_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L1_bitmap,
+                  ^
+ocnn6_net.cpp:424:19: warning: unused parameter 'L0_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L0_bitmap,
+                  ^
+ocnn6_net.cpp:425:23: warning: unused parameter 'bitmap_info' [-Wunused-parameter]
+    PrunedBitmapInfo &bitmap_info,
+                      ^
+ocnn6_net.cpp:427:18: warning: unused parameter 'feature_dram_write' [-Wunused-parameter]
+    ap_uint<32> *feature_dram_write)
+                 ^
+ocnn6_net.cpp:555:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_access_pointer_lookup_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+ocnn6_net.cpp:548:19: warning: unused parameter 'L3_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L3_bitmap,
+                  ^
+ocnn6_net.cpp:549:19: warning: unused parameter 'L2_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L2_bitmap,
+                  ^
+ocnn6_net.cpp:550:19: warning: unused parameter 'L1_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L1_bitmap,
+                  ^
+ocnn6_net.cpp:551:19: warning: unused parameter 'L0_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L0_bitmap,
+                  ^
+ocnn6_net.cpp:575:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_should_use_cross_row_sorting_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+ocnn6_net.cpp:592:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_final_layer_output_reconstruction_streaming_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE off
+        ^
+ocnn6_net.cpp:601:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_final_layer_output_reconstruction_streaming_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:610:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_final_layer_output_reconstruction_streaming_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:625:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_final_layer_output_reconstruction_streaming_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=4
+        ^
+ocnn6_net.cpp:585:19: warning: unused parameter 'L3_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L3_bitmap,
+                  ^
+ocnn6_net.cpp:586:19: warning: unused parameter 'L2_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L2_bitmap,
+                  ^
+ocnn6_net.cpp:587:19: warning: unused parameter 'L1_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L1_bitmap,
+                  ^
+ocnn6_net.cpp:588:19: warning: unused parameter 'L0_bitmap' [-Wunused-parameter]
+    ap_uint<512> *L0_bitmap,
+                  ^
+ocnn6_net.cpp:589:23: warning: unused parameter 'bitmap_info' [-Wunused-parameter]
+    PrunedBitmapInfo &bitmap_info,
+                      ^
+ocnn6_net.cpp:644:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_slide_layer_buffer_window_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+ocnn6_net.cpp:648:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_slide_layer_buffer_window_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:649:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_slide_layer_buffer_window_XLX_SEP_ PragmaOptions=min=1 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS LOOP_TRIPCOUNT min=1 max=4096
+        ^
+ocnn6_net.cpp:655:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_slide_layer_buffer_window_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:656:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_slide_layer_buffer_window_XLX_SEP_ PragmaOptions=min=1 max=4096_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS LOOP_TRIPCOUNT min=1 max=4096
+        ^
+ocnn6_net.cpp:685:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_find_neighbor_in_layer_buffer_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+ocnn6_net.cpp:700:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_find_neighbor_in_layer_buffer_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+ocnn6_net.cpp:701:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ocnn6_find_neighbor_in_layer_buffer_XLX_SEP_ PragmaOptions=min=100 max=10000 avg=1000_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS LOOP_TRIPCOUNT min=100 max=10000 avg=1000
+        ^
+112 warnings generated.

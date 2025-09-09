@@ -1,0 +1,311 @@
+
+
+================================================================
+== Vitis HLS Report for 'ocnn6_streaming_layer_pipeline_Block_entry_proc_32'
+================================================================
+* Date:           Sat Sep  6 21:21:54 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        ocnn6_net
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.354 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|     1848|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        -|        -|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|      243|     -|
+|Register             |        -|      -|        2|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|        2|     2091|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |p_out10_din      |         +|   0|  0|  71|          64|          16|
+    |p_out11_din      |         +|   0|  0|  71|          64|          16|
+    |p_out12_din      |         +|   0|  0|  71|          64|          16|
+    |p_out13_din      |         +|   0|  0|  71|          64|          16|
+    |p_out14_din      |         +|   0|  0|  71|          64|          16|
+    |p_out15_din      |         +|   0|  0|  71|          64|          17|
+    |p_out16_din      |         +|   0|  0|  71|          64|          17|
+    |p_out17_din      |         +|   0|  0|  71|          64|          17|
+    |p_out18_din      |         +|   0|  0|  71|          64|          17|
+    |p_out19_din      |         +|   0|  0|  71|          64|          17|
+    |p_out1_din       |         +|   0|  0|  71|          64|          14|
+    |p_out20_din      |         +|   0|  0|  71|          64|          17|
+    |p_out21_din      |         +|   0|  0|  71|          64|          17|
+    |p_out22_din      |         +|   0|  0|  71|          64|          17|
+    |p_out23_din      |         +|   0|  0|  71|          64|          17|
+    |p_out24_din      |         +|   0|  0|  71|          64|          17|
+    |p_out25_din      |         +|   0|  0|  71|          64|          17|
+    |p_out2_din       |         +|   0|  0|  71|          64|          14|
+    |p_out3_din       |         +|   0|  0|  71|          64|          15|
+    |p_out4_din       |         +|   0|  0|  71|          64|          15|
+    |p_out5_din       |         +|   0|  0|  71|          64|          15|
+    |p_out6_din       |         +|   0|  0|  71|          64|          15|
+    |p_out7_din       |         +|   0|  0|  71|          64|          16|
+    |p_out8_din       |         +|   0|  0|  71|          64|          16|
+    |p_out9_din       |         +|   0|  0|  71|          64|          16|
+    |p_out_din        |         +|   0|  0|  71|          64|          13|
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|1848|        1665|         417|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------+----+-----------+-----+-----------+
+    |      Name     | LUT| Input Size| Bits| Total Bits|
+    +---------------+----+-----------+-----+-----------+
+    |ap_done        |   9|          2|    1|          2|
+    |p_out10_blk_n  |   9|          2|    1|          2|
+    |p_out11_blk_n  |   9|          2|    1|          2|
+    |p_out12_blk_n  |   9|          2|    1|          2|
+    |p_out13_blk_n  |   9|          2|    1|          2|
+    |p_out14_blk_n  |   9|          2|    1|          2|
+    |p_out15_blk_n  |   9|          2|    1|          2|
+    |p_out16_blk_n  |   9|          2|    1|          2|
+    |p_out17_blk_n  |   9|          2|    1|          2|
+    |p_out18_blk_n  |   9|          2|    1|          2|
+    |p_out19_blk_n  |   9|          2|    1|          2|
+    |p_out1_blk_n   |   9|          2|    1|          2|
+    |p_out20_blk_n  |   9|          2|    1|          2|
+    |p_out21_blk_n  |   9|          2|    1|          2|
+    |p_out22_blk_n  |   9|          2|    1|          2|
+    |p_out23_blk_n  |   9|          2|    1|          2|
+    |p_out24_blk_n  |   9|          2|    1|          2|
+    |p_out25_blk_n  |   9|          2|    1|          2|
+    |p_out2_blk_n   |   9|          2|    1|          2|
+    |p_out3_blk_n   |   9|          2|    1|          2|
+    |p_out4_blk_n   |   9|          2|    1|          2|
+    |p_out5_blk_n   |   9|          2|    1|          2|
+    |p_out6_blk_n   |   9|          2|    1|          2|
+    |p_out7_blk_n   |   9|          2|    1|          2|
+    |p_out8_blk_n   |   9|          2|    1|          2|
+    |p_out9_blk_n   |   9|          2|    1|          2|
+    |p_out_blk_n    |   9|          2|    1|          2|
+    +---------------+----+-----------+-----+-----------+
+    |Total          | 243|         54|   27|         54|
+    +---------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+---+----+-----+-----------+
+    |     Name    | FF| LUT| Bits| Const Bits|
+    +-------------+---+----+-----+-----------+
+    |ap_CS_fsm    |  1|   0|    1|          0|
+    |ap_done_reg  |  1|   0|    1|          0|
+    +-------------+---+----+-----+-----------+
+    |Total        |  2|   0|    2|          0|
+    +-------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+----------------------------------------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |                    Source Object                   |    C Type    |
++------------------------+-----+-----+------------+----------------------------------------------------+--------------+
+|ap_clk                  |   in|    1|  ap_ctrl_hs|  ocnn6_streaming_layer_pipeline_Block_entry_proc.32|  return value|
+|ap_rst                  |   in|    1|  ap_ctrl_hs|  ocnn6_streaming_layer_pipeline_Block_entry_proc.32|  return value|
+|ap_start                |   in|    1|  ap_ctrl_hs|  ocnn6_streaming_layer_pipeline_Block_entry_proc.32|  return value|
+|ap_done                 |  out|    1|  ap_ctrl_hs|  ocnn6_streaming_layer_pipeline_Block_entry_proc.32|  return value|
+|ap_continue             |   in|    1|  ap_ctrl_hs|  ocnn6_streaming_layer_pipeline_Block_entry_proc.32|  return value|
+|ap_idle                 |  out|    1|  ap_ctrl_hs|  ocnn6_streaming_layer_pipeline_Block_entry_proc.32|  return value|
+|ap_ready                |  out|    1|  ap_ctrl_hs|  ocnn6_streaming_layer_pipeline_Block_entry_proc.32|  return value|
+|layer_weights           |   in|   64|     ap_none|                                       layer_weights|        scalar|
+|p_out_din               |  out|   64|     ap_fifo|                                               p_out|       pointer|
+|p_out_full_n            |   in|    1|     ap_fifo|                                               p_out|       pointer|
+|p_out_write             |  out|    1|     ap_fifo|                                               p_out|       pointer|
+|p_out_num_data_valid    |   in|   11|     ap_fifo|                                               p_out|       pointer|
+|p_out_fifo_cap          |   in|   11|     ap_fifo|                                               p_out|       pointer|
+|p_out1_din              |  out|   64|     ap_fifo|                                              p_out1|       pointer|
+|p_out1_full_n           |   in|    1|     ap_fifo|                                              p_out1|       pointer|
+|p_out1_write            |  out|    1|     ap_fifo|                                              p_out1|       pointer|
+|p_out1_num_data_valid   |   in|   11|     ap_fifo|                                              p_out1|       pointer|
+|p_out1_fifo_cap         |   in|   11|     ap_fifo|                                              p_out1|       pointer|
+|p_out2_din              |  out|   64|     ap_fifo|                                              p_out2|       pointer|
+|p_out2_full_n           |   in|    1|     ap_fifo|                                              p_out2|       pointer|
+|p_out2_write            |  out|    1|     ap_fifo|                                              p_out2|       pointer|
+|p_out2_num_data_valid   |   in|   11|     ap_fifo|                                              p_out2|       pointer|
+|p_out2_fifo_cap         |   in|   11|     ap_fifo|                                              p_out2|       pointer|
+|p_out3_din              |  out|   64|     ap_fifo|                                              p_out3|       pointer|
+|p_out3_full_n           |   in|    1|     ap_fifo|                                              p_out3|       pointer|
+|p_out3_write            |  out|    1|     ap_fifo|                                              p_out3|       pointer|
+|p_out3_num_data_valid   |   in|   11|     ap_fifo|                                              p_out3|       pointer|
+|p_out3_fifo_cap         |   in|   11|     ap_fifo|                                              p_out3|       pointer|
+|p_out4_din              |  out|   64|     ap_fifo|                                              p_out4|       pointer|
+|p_out4_full_n           |   in|    1|     ap_fifo|                                              p_out4|       pointer|
+|p_out4_write            |  out|    1|     ap_fifo|                                              p_out4|       pointer|
+|p_out4_num_data_valid   |   in|   11|     ap_fifo|                                              p_out4|       pointer|
+|p_out4_fifo_cap         |   in|   11|     ap_fifo|                                              p_out4|       pointer|
+|p_out5_din              |  out|   64|     ap_fifo|                                              p_out5|       pointer|
+|p_out5_full_n           |   in|    1|     ap_fifo|                                              p_out5|       pointer|
+|p_out5_write            |  out|    1|     ap_fifo|                                              p_out5|       pointer|
+|p_out5_num_data_valid   |   in|   11|     ap_fifo|                                              p_out5|       pointer|
+|p_out5_fifo_cap         |   in|   11|     ap_fifo|                                              p_out5|       pointer|
+|p_out6_din              |  out|   64|     ap_fifo|                                              p_out6|       pointer|
+|p_out6_full_n           |   in|    1|     ap_fifo|                                              p_out6|       pointer|
+|p_out6_write            |  out|    1|     ap_fifo|                                              p_out6|       pointer|
+|p_out6_num_data_valid   |   in|   11|     ap_fifo|                                              p_out6|       pointer|
+|p_out6_fifo_cap         |   in|   11|     ap_fifo|                                              p_out6|       pointer|
+|p_out7_din              |  out|   64|     ap_fifo|                                              p_out7|       pointer|
+|p_out7_full_n           |   in|    1|     ap_fifo|                                              p_out7|       pointer|
+|p_out7_write            |  out|    1|     ap_fifo|                                              p_out7|       pointer|
+|p_out7_num_data_valid   |   in|   11|     ap_fifo|                                              p_out7|       pointer|
+|p_out7_fifo_cap         |   in|   11|     ap_fifo|                                              p_out7|       pointer|
+|p_out8_din              |  out|   64|     ap_fifo|                                              p_out8|       pointer|
+|p_out8_full_n           |   in|    1|     ap_fifo|                                              p_out8|       pointer|
+|p_out8_write            |  out|    1|     ap_fifo|                                              p_out8|       pointer|
+|p_out8_num_data_valid   |   in|   11|     ap_fifo|                                              p_out8|       pointer|
+|p_out8_fifo_cap         |   in|   11|     ap_fifo|                                              p_out8|       pointer|
+|p_out9_din              |  out|   64|     ap_fifo|                                              p_out9|       pointer|
+|p_out9_full_n           |   in|    1|     ap_fifo|                                              p_out9|       pointer|
+|p_out9_write            |  out|    1|     ap_fifo|                                              p_out9|       pointer|
+|p_out9_num_data_valid   |   in|   11|     ap_fifo|                                              p_out9|       pointer|
+|p_out9_fifo_cap         |   in|   11|     ap_fifo|                                              p_out9|       pointer|
+|p_out10_din             |  out|   64|     ap_fifo|                                             p_out10|       pointer|
+|p_out10_full_n          |   in|    1|     ap_fifo|                                             p_out10|       pointer|
+|p_out10_write           |  out|    1|     ap_fifo|                                             p_out10|       pointer|
+|p_out10_num_data_valid  |   in|   11|     ap_fifo|                                             p_out10|       pointer|
+|p_out10_fifo_cap        |   in|   11|     ap_fifo|                                             p_out10|       pointer|
+|p_out11_din             |  out|   64|     ap_fifo|                                             p_out11|       pointer|
+|p_out11_full_n          |   in|    1|     ap_fifo|                                             p_out11|       pointer|
+|p_out11_write           |  out|    1|     ap_fifo|                                             p_out11|       pointer|
+|p_out11_num_data_valid  |   in|   11|     ap_fifo|                                             p_out11|       pointer|
+|p_out11_fifo_cap        |   in|   11|     ap_fifo|                                             p_out11|       pointer|
+|p_out12_din             |  out|   64|     ap_fifo|                                             p_out12|       pointer|
+|p_out12_full_n          |   in|    1|     ap_fifo|                                             p_out12|       pointer|
+|p_out12_write           |  out|    1|     ap_fifo|                                             p_out12|       pointer|
+|p_out12_num_data_valid  |   in|   11|     ap_fifo|                                             p_out12|       pointer|
+|p_out12_fifo_cap        |   in|   11|     ap_fifo|                                             p_out12|       pointer|
+|p_out13_din             |  out|   64|     ap_fifo|                                             p_out13|       pointer|
+|p_out13_full_n          |   in|    1|     ap_fifo|                                             p_out13|       pointer|
+|p_out13_write           |  out|    1|     ap_fifo|                                             p_out13|       pointer|
+|p_out13_num_data_valid  |   in|   11|     ap_fifo|                                             p_out13|       pointer|
+|p_out13_fifo_cap        |   in|   11|     ap_fifo|                                             p_out13|       pointer|
+|p_out14_din             |  out|   64|     ap_fifo|                                             p_out14|       pointer|
+|p_out14_full_n          |   in|    1|     ap_fifo|                                             p_out14|       pointer|
+|p_out14_write           |  out|    1|     ap_fifo|                                             p_out14|       pointer|
+|p_out14_num_data_valid  |   in|   11|     ap_fifo|                                             p_out14|       pointer|
+|p_out14_fifo_cap        |   in|   11|     ap_fifo|                                             p_out14|       pointer|
+|p_out15_din             |  out|   64|     ap_fifo|                                             p_out15|       pointer|
+|p_out15_full_n          |   in|    1|     ap_fifo|                                             p_out15|       pointer|
+|p_out15_write           |  out|    1|     ap_fifo|                                             p_out15|       pointer|
+|p_out15_num_data_valid  |   in|   11|     ap_fifo|                                             p_out15|       pointer|
+|p_out15_fifo_cap        |   in|   11|     ap_fifo|                                             p_out15|       pointer|
+|p_out16_din             |  out|   64|     ap_fifo|                                             p_out16|       pointer|
+|p_out16_full_n          |   in|    1|     ap_fifo|                                             p_out16|       pointer|
+|p_out16_write           |  out|    1|     ap_fifo|                                             p_out16|       pointer|
+|p_out16_num_data_valid  |   in|   11|     ap_fifo|                                             p_out16|       pointer|
+|p_out16_fifo_cap        |   in|   11|     ap_fifo|                                             p_out16|       pointer|
+|p_out17_din             |  out|   64|     ap_fifo|                                             p_out17|       pointer|
+|p_out17_full_n          |   in|    1|     ap_fifo|                                             p_out17|       pointer|
+|p_out17_write           |  out|    1|     ap_fifo|                                             p_out17|       pointer|
+|p_out17_num_data_valid  |   in|   11|     ap_fifo|                                             p_out17|       pointer|
+|p_out17_fifo_cap        |   in|   11|     ap_fifo|                                             p_out17|       pointer|
+|p_out18_din             |  out|   64|     ap_fifo|                                             p_out18|       pointer|
+|p_out18_full_n          |   in|    1|     ap_fifo|                                             p_out18|       pointer|
+|p_out18_write           |  out|    1|     ap_fifo|                                             p_out18|       pointer|
+|p_out18_num_data_valid  |   in|   11|     ap_fifo|                                             p_out18|       pointer|
+|p_out18_fifo_cap        |   in|   11|     ap_fifo|                                             p_out18|       pointer|
+|p_out19_din             |  out|   64|     ap_fifo|                                             p_out19|       pointer|
+|p_out19_full_n          |   in|    1|     ap_fifo|                                             p_out19|       pointer|
+|p_out19_write           |  out|    1|     ap_fifo|                                             p_out19|       pointer|
+|p_out19_num_data_valid  |   in|   11|     ap_fifo|                                             p_out19|       pointer|
+|p_out19_fifo_cap        |   in|   11|     ap_fifo|                                             p_out19|       pointer|
+|p_out20_din             |  out|   64|     ap_fifo|                                             p_out20|       pointer|
+|p_out20_full_n          |   in|    1|     ap_fifo|                                             p_out20|       pointer|
+|p_out20_write           |  out|    1|     ap_fifo|                                             p_out20|       pointer|
+|p_out20_num_data_valid  |   in|   11|     ap_fifo|                                             p_out20|       pointer|
+|p_out20_fifo_cap        |   in|   11|     ap_fifo|                                             p_out20|       pointer|
+|p_out21_din             |  out|   64|     ap_fifo|                                             p_out21|       pointer|
+|p_out21_full_n          |   in|    1|     ap_fifo|                                             p_out21|       pointer|
+|p_out21_write           |  out|    1|     ap_fifo|                                             p_out21|       pointer|
+|p_out21_num_data_valid  |   in|   11|     ap_fifo|                                             p_out21|       pointer|
+|p_out21_fifo_cap        |   in|   11|     ap_fifo|                                             p_out21|       pointer|
+|p_out22_din             |  out|   64|     ap_fifo|                                             p_out22|       pointer|
+|p_out22_full_n          |   in|    1|     ap_fifo|                                             p_out22|       pointer|
+|p_out22_write           |  out|    1|     ap_fifo|                                             p_out22|       pointer|
+|p_out22_num_data_valid  |   in|   11|     ap_fifo|                                             p_out22|       pointer|
+|p_out22_fifo_cap        |   in|   11|     ap_fifo|                                             p_out22|       pointer|
+|p_out23_din             |  out|   64|     ap_fifo|                                             p_out23|       pointer|
+|p_out23_full_n          |   in|    1|     ap_fifo|                                             p_out23|       pointer|
+|p_out23_write           |  out|    1|     ap_fifo|                                             p_out23|       pointer|
+|p_out23_num_data_valid  |   in|   11|     ap_fifo|                                             p_out23|       pointer|
+|p_out23_fifo_cap        |   in|   11|     ap_fifo|                                             p_out23|       pointer|
+|p_out24_din             |  out|   64|     ap_fifo|                                             p_out24|       pointer|
+|p_out24_full_n          |   in|    1|     ap_fifo|                                             p_out24|       pointer|
+|p_out24_write           |  out|    1|     ap_fifo|                                             p_out24|       pointer|
+|p_out24_num_data_valid  |   in|   11|     ap_fifo|                                             p_out24|       pointer|
+|p_out24_fifo_cap        |   in|   11|     ap_fifo|                                             p_out24|       pointer|
+|p_out25_din             |  out|   64|     ap_fifo|                                             p_out25|       pointer|
+|p_out25_full_n          |   in|    1|     ap_fifo|                                             p_out25|       pointer|
+|p_out25_write           |  out|    1|     ap_fifo|                                             p_out25|       pointer|
+|p_out25_num_data_valid  |   in|   11|     ap_fifo|                                             p_out25|       pointer|
+|p_out25_fifo_cap        |   in|   11|     ap_fifo|                                             p_out25|       pointer|
++------------------------+-----+-----+------------+----------------------------------------------------+--------------+
+

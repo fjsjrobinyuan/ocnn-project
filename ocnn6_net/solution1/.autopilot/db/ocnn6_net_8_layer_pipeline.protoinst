@@ -1,0 +1,631 @@
+{
+	"version": "1.0",
+	"modules": {
+		"ocnn6_net_8_layer_pipeline": {
+			"proto_instances": {
+				"/AESL_inst_ocnn6_net_8_layer_pipeline_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst_n"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_24_U0/Block_entry_proc_24_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/Block_entry_proc_25_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_assembly_line_8_layers_fu_611_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_1_fu_746/grp_ocnn6_streaming_layer_pipeline_1_fu_746_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_1_fu_746/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights2_rd_engine_initialized_f_U0/grp_compute_single_voxel_parallel_9_fu_969/grp_compute_single_voxel_parallel_9_fu_969_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_1_fu_746/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights2_rd_engine_initialized_f_U0/grp_initialize_z_buffer_8_fu_765/grp_initialize_z_buffer_8_fu_765_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_1_fu_746/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights2_rd_engine_initialized_f_U0/grp_initialize_z_buffer_8_fu_765/grp_reset_fu_306/grp_reset_fu_306_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_1_fu_746/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights2_rd_engine_initialized_f_U0/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights2_rd_engine_initialized_f_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_1_fu_746/ocnn6_streaming_layer_pipeline_Block_entry_proc_27_U0/ocnn6_streaming_layer_pipeline_Block_entry_proc_27_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_2_fu_955/grp_ocnn6_streaming_layer_pipeline_2_fu_955_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_2_fu_955/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights3_rd_engine_initialized_f_U0/grp_compute_single_voxel_parallel_11_fu_969/grp_compute_single_voxel_parallel_11_fu_969_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_2_fu_955/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights3_rd_engine_initialized_f_U0/grp_initialize_z_buffer_10_fu_765/grp_initialize_z_buffer_10_fu_765_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_2_fu_955/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights3_rd_engine_initialized_f_U0/grp_initialize_z_buffer_10_fu_765/grp_reset_fu_306/grp_reset_fu_306_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_2_fu_955/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights3_rd_engine_initialized_f_U0/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights3_rd_engine_initialized_f_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_2_fu_955/ocnn6_streaming_layer_pipeline_Block_entry_proc_28_U0/ocnn6_streaming_layer_pipeline_Block_entry_proc_28_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_3_fu_1164/grp_ocnn6_streaming_layer_pipeline_3_fu_1164_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_3_fu_1164/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights4_rd_engine_initialized_f_U0/grp_compute_single_voxel_parallel_13_fu_969/grp_compute_single_voxel_parallel_13_fu_969_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_3_fu_1164/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights4_rd_engine_initialized_f_U0/grp_initialize_z_buffer_12_fu_765/grp_initialize_z_buffer_12_fu_765_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_3_fu_1164/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights4_rd_engine_initialized_f_U0/grp_initialize_z_buffer_12_fu_765/grp_reset_fu_306/grp_reset_fu_306_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_3_fu_1164/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights4_rd_engine_initialized_f_U0/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights4_rd_engine_initialized_f_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_3_fu_1164/ocnn6_streaming_layer_pipeline_Block_entry_proc_29_U0/ocnn6_streaming_layer_pipeline_Block_entry_proc_29_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_4_fu_1373/grp_ocnn6_streaming_layer_pipeline_4_fu_1373_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_4_fu_1373/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights5_rd_engine_initialized_f_U0/grp_compute_single_voxel_parallel_15_fu_967/grp_compute_single_voxel_parallel_15_fu_967_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_4_fu_1373/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights5_rd_engine_initialized_f_U0/grp_initialize_z_buffer_14_fu_763/grp_initialize_z_buffer_14_fu_763_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_4_fu_1373/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights5_rd_engine_initialized_f_U0/grp_initialize_z_buffer_14_fu_763/grp_reset_fu_304/grp_reset_fu_304_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_4_fu_1373/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights5_rd_engine_initialized_f_U0/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights5_rd_engine_initialized_f_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_4_fu_1373/ocnn6_streaming_layer_pipeline_Block_entry_proc_30_U0/ocnn6_streaming_layer_pipeline_Block_entry_proc_30_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_5_fu_1582/grp_ocnn6_streaming_layer_pipeline_5_fu_1582_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_5_fu_1582/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights6_rd_engine_initialized_f_U0/grp_compute_single_voxel_parallel_17_fu_969/grp_compute_single_voxel_parallel_17_fu_969_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_5_fu_1582/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights6_rd_engine_initialized_f_U0/grp_initialize_z_buffer_16_fu_765/grp_initialize_z_buffer_16_fu_765_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_5_fu_1582/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights6_rd_engine_initialized_f_U0/grp_initialize_z_buffer_16_fu_765/grp_reset_fu_306/grp_reset_fu_306_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_5_fu_1582/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights6_rd_engine_initialized_f_U0/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights6_rd_engine_initialized_f_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_5_fu_1582/ocnn6_streaming_layer_pipeline_Block_entry_proc_31_U0/ocnn6_streaming_layer_pipeline_Block_entry_proc_31_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_6_fu_1791/grp_ocnn6_streaming_layer_pipeline_6_fu_1791_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_6_fu_1791/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights7_rd_engine_initialized_f_U0/grp_compute_single_voxel_parallel_13_fu_969/grp_compute_single_voxel_parallel_13_fu_969_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_6_fu_1791/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights7_rd_engine_initialized_f_U0/grp_initialize_z_buffer_12_fu_765/grp_initialize_z_buffer_12_fu_765_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_6_fu_1791/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights7_rd_engine_initialized_f_U0/grp_initialize_z_buffer_12_fu_765/grp_reset_fu_306/grp_reset_fu_306_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_6_fu_1791/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights7_rd_engine_initialized_f_U0/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights7_rd_engine_initialized_f_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_6_fu_1791/ocnn6_streaming_layer_pipeline_Block_entry_proc_32_U0/ocnn6_streaming_layer_pipeline_Block_entry_proc_32_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_7_fu_2000/grp_ocnn6_streaming_layer_pipeline_7_fu_2000_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_7_fu_2000/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights8_rd_engine_initialized_f_U0/grp_compute_single_voxel_parallel_19_fu_971/grp_compute_single_voxel_parallel_19_fu_971_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_7_fu_2000/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights8_rd_engine_initialized_f_U0/grp_initialize_z_buffer_18_fu_767/grp_initialize_z_buffer_18_fu_767_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_7_fu_2000/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights8_rd_engine_initialized_f_U0/grp_initialize_z_buffer_18_fu_767/grp_reset_fu_308/grp_reset_fu_308_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_7_fu_2000/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights8_rd_engine_initialized_f_U0/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights8_rd_engine_initialized_f_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_7_fu_2000/ocnn6_streaming_layer_pipeline_Block_entry_proc_33_U0/ocnn6_streaming_layer_pipeline_Block_entry_proc_33_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_fu_536/grp_ocnn6_streaming_layer_pipeline_fu_536_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_fu_536/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights1_rd_engine_initialized_f_U0/grp_compute_single_voxel_parallel_fu_967/grp_compute_single_voxel_parallel_fu_967_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_fu_536/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights1_rd_engine_initialized_f_U0/grp_initialize_z_buffer_fu_763/grp_initialize_z_buffer_fu_763_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_fu_536/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights1_rd_engine_initialized_f_U0/grp_initialize_z_buffer_fu_763/grp_reset_fu_304/grp_reset_fu_304_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_fu_536/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights1_rd_engine_initialized_f_U0/ocnn6_streaming_layer_pipeline_Block_entry_gmem_weights1_rd_engine_initialized_f_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_25_U0/grp_ocnn6_assembly_line_8_layers_fu_611/grp_ocnn6_streaming_layer_pipeline_fu_536/ocnn6_streaming_layer_pipeline_Block_entry_proc_U0/ocnn6_streaming_layer_pipeline_Block_entry_proc_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Block_entry_proc_U0/Block_entry_proc_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Loop_VITIS_LOOP_131_1_proc_U0/Loop_VITIS_LOOP_131_1_proc_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"Loop_VITIS_LOOP_209_5_proc_U0/Loop_VITIS_LOOP_209_5_proc_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"entry_proc_U0/entry_proc_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"ocnn6_final_layer_output_reconstruction_streaming_U0/ocnn6_final_layer_output_reconstruction_streaming_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"pipeline_bitmap_stage_U0/grp_streaming_bitmap_constructor_fu_106/grp_streaming_bitmap_constructor_fu_106_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"pipeline_bitmap_stage_U0/pipeline_bitmap_stage_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				}
+			}
+		}
+	}
+}

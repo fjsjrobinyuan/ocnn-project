@@ -1,0 +1,248 @@
+
+
+================================================================
+== Vitis HLS Report for 'Loop_VITIS_LOOP_131_1_proc'
+================================================================
+* Date:           Sat Sep  6 20:58:30 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        ocnn6_net
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.431 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_131_1  |        ?|        ?|        10|          3|          1|     ?|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 3, depth = 10
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 12
+* Pipeline : 1
+  Pipeline-0 : II = 3, D = 10, States = { 2 3 4 5 6 7 8 9 10 11 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 12 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 2 
+12 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.20>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%pruned_voxel_count = alloca i32 1" [ocnn6_net.cpp:130]   --->   Operation 13 'alloca' 'pruned_voxel_count' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %pruned_voxel_count_0_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %pruned_feature_dram_read, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] ( I:1.20ns O:1.20ns )   --->   "%pruned_feature_dram_read_read = read i64 @_ssdm_op_Read.ap_fifo.i64P0A, i64 %pruned_feature_dram_read"   --->   Operation 16 'read' 'pruned_feature_dram_read_read' <Predicate = true> <Delay = 1.20> <CoreInst = "FIFO">   --->   Core 77 'FIFO' <Latency = 0> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 1024> <FIFO>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i60 %write_addr_stream, void @empty_29, i32 0, i32 0, void @empty_57, i32 0, i32 0, void @empty_57, void @empty_57, void @empty_57, i32 0, i32 0, i32 0, i32 0, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1085 %feature_data_stream, void @empty_29, i32 0, i32 0, void @empty_57, i32 0, i32 0, void @empty_57, void @empty_57, void @empty_57, i32 0, i32 0, i32 0, i32 0, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_read, void @empty_9, i32 0, i32 0, void @empty_57, i32 0, i32 262144, void @empty_15, void @empty, void @empty_57, i32 16, i32 16, i32 256, i32 16, void @empty_57, void @empty_57, i32 4294967295, i32 0, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.38ns)   --->   "%store_ln130 = store i32 0, i32 %pruned_voxel_count" [ocnn6_net.cpp:130]   --->   Operation 20 'store' 'store_ln130' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln130 = br void %while.cond" [ocnn6_net.cpp:130]   --->   Operation 21 'br' 'br_ln130' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.02>
+ST_2 : Operation 22 [1/1] ( I:0.00ns O:0.00ns )   --->   "%tmp = nbreadreq i1 @_ssdm_op_NbReadReq.ap_fifo.i1085P0A, i1085 %feature_data_stream, i32 1" [ocnn6_net.cpp:131]   --->   Operation 22 'nbreadreq' 'tmp' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO">   --->   Core 77 'FIFO' <Latency = 0> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1085> <Depth = 1024> <FIFO>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln131 = br i1 %tmp, void %while.end.aft.exitStub, void %land.rhs" [ocnn6_net.cpp:131]   --->   Operation 23 'br' 'br_ln131' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%pruned_voxel_count_load = load i32 %pruned_voxel_count" [ocnn6_net.cpp:131]   --->   Operation 24 'load' 'pruned_voxel_count_load' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.88ns)   --->   "%pruned_voxel_count_1 = add i32 %pruned_voxel_count_load, i32 1" [ocnn6_net.cpp:143]   --->   Operation 25 'add' 'pruned_voxel_count_1' <Predicate = (tmp)> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (0.00ns) (grouped into LUT with out node sub_ln131)   --->   "%shl_ln131 = shl i32 %pruned_voxel_count_load, i32 2" [ocnn6_net.cpp:131]   --->   Operation 26 'shl' 'shl_ln131' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.88ns) (out node of the LUT)   --->   "%sub_ln131 = sub i32 %shl_ln131, i32 %pruned_voxel_count_load" [ocnn6_net.cpp:131]   --->   Operation 27 'sub' 'sub_ln131' <Predicate = (tmp)> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i34 @_ssdm_op_BitConcatenate.i34.i32.i2, i32 %sub_ln131, i2 0" [ocnn6_net.cpp:131]   --->   Operation 28 'bitconcatenate' 'shl_ln' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%zext_ln131 = zext i34 %shl_ln" [ocnn6_net.cpp:131]   --->   Operation 29 'zext' 'zext_ln131' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (1.14ns)   --->   "%add_ln131 = add i64 %pruned_feature_dram_read_read, i64 %zext_ln131" [ocnn6_net.cpp:131]   --->   Operation 30 'add' 'add_ln131' <Predicate = (tmp)> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%specpipeline_ln132 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_57" [ocnn6_net.cpp:132]   --->   Operation 31 'specpipeline' 'specpipeline_ln132' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%specloopname_ln131 = specloopname void @_ssdm_op_SpecLoopName, void @empty_52" [ocnn6_net.cpp:131]   --->   Operation 32 'specloopname' 'specloopname_ln131' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] ( I:0.00ns O:0.00ns )   --->   "%tmp_s = nbreadreq i1 @_ssdm_op_NbReadReq.ap_fifo.i60P0A, i60 %write_addr_stream, i32 1" [ocnn6_net.cpp:131]   --->   Operation 33 'nbreadreq' 'tmp_s' <Predicate = (tmp)> <Delay = 0.00> <CoreInst = "FIFO">   --->   Core 77 'FIFO' <Latency = 0> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 60> <Depth = 1024> <FIFO>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%br_ln131 = br i1 %tmp_s, void %while.end.aft.exitStub, void %VITIS_LOOP_137_2" [ocnn6_net.cpp:131]   --->   Operation 34 'br' 'br_ln131' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln131, i32 2, i32 63" [ocnn6_net.cpp:143]   --->   Operation 35 'partselect' 'trunc_ln' <Predicate = (tmp & tmp_s)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%sext_ln143 = sext i62 %trunc_ln" [ocnn6_net.cpp:143]   --->   Operation 36 'sext' 'sext_ln143' <Predicate = (tmp & tmp_s)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%gmem_read_addr = getelementptr i32 %gmem_read, i64 %sext_ln143" [ocnn6_net.cpp:143]   --->   Operation 37 'getelementptr' 'gmem_read_addr' <Predicate = (tmp & tmp_s)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.38ns)   --->   "%store_ln130 = store i32 %pruned_voxel_count_1, i32 %pruned_voxel_count" [ocnn6_net.cpp:130]   --->   Operation 38 'store' 'store_ln130' <Predicate = (tmp & tmp_s)> <Delay = 0.38>
+
+State 3 <SV = 2> <Delay = 2.43>
+ST_3 : Operation 39 [1/1] ( I:1.21ns O:1.21ns )   --->   "%feature_data_stream_read = read i1085 @_ssdm_op_Read.ap_fifo.volatile.i1085P0A, i1085 %feature_data_stream" [ocnn6_net.cpp:133]   --->   Operation 39 'read' 'feature_data_stream_read' <Predicate = (tmp & tmp_s)> <Delay = 1.21> <CoreInst = "FIFO">   --->   Core 77 'FIFO' <Latency = 0> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1085> <Depth = 1024> <FIFO>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%voxel_features = partselect i32 @_ssdm_op_PartSelect.i32.i1085.i32.i32, i1085 %feature_data_stream_read, i32 1, i32 32" [ocnn6_net.cpp:133]   --->   Operation 40 'partselect' 'voxel_features' <Predicate = (tmp & tmp_s)> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%voxel_features_1 = partselect i32 @_ssdm_op_PartSelect.i32.i1085.i32.i32, i1085 %feature_data_stream_read, i32 33, i32 64" [ocnn6_net.cpp:133]   --->   Operation 41 'partselect' 'voxel_features_1' <Predicate = (tmp & tmp_s)> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%trunc_ln133_3 = partselect i32 @_ssdm_op_PartSelect.i32.i1085.i32.i32, i1085 %feature_data_stream_read, i32 65, i32 96" [ocnn6_net.cpp:133]   --->   Operation 42 'partselect' 'trunc_ln133_3' <Predicate = (tmp & tmp_s)> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] ( I:1.20ns O:1.20ns )   --->   "%p_01 = read i60 @_ssdm_op_Read.ap_fifo.volatile.i60P0A, i60 %write_addr_stream" [ocnn6_net.cpp:134]   --->   Operation 43 'read' 'p_01' <Predicate = (tmp & tmp_s)> <Delay = 1.20> <CoreInst = "FIFO">   --->   Core 77 'FIFO' <Latency = 0> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 60> <Depth = 1024> <FIFO>
+ST_3 : Operation 44 [1/1] (2.43ns)   --->   "%empty = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i32, i32 %gmem_read_addr, i64 3" [ocnn6_net.cpp:143]   --->   Operation 44 'writereq' 'empty' <Predicate = (tmp & tmp_s)> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 9> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 2.43>
+ST_4 : Operation 45 [1/1] (2.43ns)   --->   "%write_ln143 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_read_addr, i32 %voxel_features, i4 15" [ocnn6_net.cpp:143]   --->   Operation 45 'write' 'write_ln143' <Predicate = (tmp & tmp_s)> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 2.43>
+ST_5 : Operation 46 [1/1] (2.43ns)   --->   "%write_ln143 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_read_addr, i32 %voxel_features_1, i4 15" [ocnn6_net.cpp:143]   --->   Operation 46 'write' 'write_ln143' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 2.43>
+ST_6 : Operation 47 [1/1] (2.43ns)   --->   "%write_ln143 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_read_addr, i32 %trunc_ln133_3, i4 15" [ocnn6_net.cpp:143]   --->   Operation 47 'write' 'write_ln143' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 2.43>
+ST_7 : Operation 48 [5/5] (2.43ns)   --->   "%empty_8308 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_read_addr" [ocnn6_net.cpp:143]   --->   Operation 48 'writeresp' 'empty_8308' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 2.43>
+ST_8 : Operation 49 [4/5] (2.43ns)   --->   "%empty_8308 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_read_addr" [ocnn6_net.cpp:143]   --->   Operation 49 'writeresp' 'empty_8308' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 2.43>
+ST_9 : Operation 50 [3/5] (2.43ns)   --->   "%empty_8308 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_read_addr" [ocnn6_net.cpp:143]   --->   Operation 50 'writeresp' 'empty_8308' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 2.43>
+ST_10 : Operation 51 [2/5] (2.43ns)   --->   "%empty_8308 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_read_addr" [ocnn6_net.cpp:143]   --->   Operation 51 'writeresp' 'empty_8308' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 2.43>
+ST_11 : Operation 52 [1/5] (2.43ns)   --->   "%empty_8308 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_read_addr" [ocnn6_net.cpp:143]   --->   Operation 52 'writeresp' 'empty_8308' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 53 [1/1] (0.00ns)   --->   "%br_ln131 = br void %while.cond" [ocnn6_net.cpp:131]   --->   Operation 53 'br' 'br_ln131' <Predicate = true> <Delay = 0.00>
+
+State 12 <SV = 2> <Delay = 1.19>
+ST_12 : Operation 54 [1/1] (0.00ns)   --->   "%pruned_voxel_count_load_1 = load i32 %pruned_voxel_count"   --->   Operation 54 'load' 'pruned_voxel_count_load_1' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 55 [1/1] ( I:1.19ns O:1.19ns )   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %pruned_voxel_count_0_out, i32 %pruned_voxel_count_load_1"   --->   Operation 55 'write' 'write_ln0' <Predicate = true> <Delay = 1.19> <CoreInst = "FIFO">   --->   Core 77 'FIFO' <Latency = 0> <II = 1> <Delay = 1.19> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 1024> <FIFO>
+ST_12 : Operation 56 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 56 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.330ns, clock uncertainty: 0.899ns.
+
+ <State 1>: 1.207ns
+The critical path consists of the following:
+	fifo read operation ('pruned_feature_dram_read_read') on port 'pruned_feature_dram_read' [9]  (1.207 ns)
+
+ <State 2>: 2.027ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pruned_voxel_count_load', ocnn6_net.cpp:131) on local variable 'pruned_voxel_count', ocnn6_net.cpp:130 [19]  (0.000 ns)
+	'sub' operation 32 bit ('sub_ln131', ocnn6_net.cpp:131) [22]  (0.880 ns)
+	'add' operation 64 bit ('add_ln131', ocnn6_net.cpp:131) [25]  (1.147 ns)
+
+ <State 3>: 2.431ns
+The critical path consists of the following:
+	bus request operation ('empty', ocnn6_net.cpp:143) on port 'gmem_read' (ocnn6_net.cpp:143) [39]  (2.431 ns)
+
+ <State 4>: 2.431ns
+The critical path consists of the following:
+	bus write operation ('write_ln143', ocnn6_net.cpp:143) on port 'gmem_read' (ocnn6_net.cpp:143) [40]  (2.431 ns)
+
+ <State 5>: 2.431ns
+The critical path consists of the following:
+	bus write operation ('write_ln143', ocnn6_net.cpp:143) on port 'gmem_read' (ocnn6_net.cpp:143) [41]  (2.431 ns)
+
+ <State 6>: 2.431ns
+The critical path consists of the following:
+	bus write operation ('write_ln143', ocnn6_net.cpp:143) on port 'gmem_read' (ocnn6_net.cpp:143) [42]  (2.431 ns)
+
+ <State 7>: 2.431ns
+The critical path consists of the following:
+	bus response operation ('empty_8308', ocnn6_net.cpp:143) on port 'gmem_read' (ocnn6_net.cpp:143) [43]  (2.431 ns)
+
+ <State 8>: 2.431ns
+The critical path consists of the following:
+	bus response operation ('empty_8308', ocnn6_net.cpp:143) on port 'gmem_read' (ocnn6_net.cpp:143) [43]  (2.431 ns)
+
+ <State 9>: 2.431ns
+The critical path consists of the following:
+	bus response operation ('empty_8308', ocnn6_net.cpp:143) on port 'gmem_read' (ocnn6_net.cpp:143) [43]  (2.431 ns)
+
+ <State 10>: 2.431ns
+The critical path consists of the following:
+	bus response operation ('empty_8308', ocnn6_net.cpp:143) on port 'gmem_read' (ocnn6_net.cpp:143) [43]  (2.431 ns)
+
+ <State 11>: 2.431ns
+The critical path consists of the following:
+	bus response operation ('empty_8308', ocnn6_net.cpp:143) on port 'gmem_read' (ocnn6_net.cpp:143) [43]  (2.431 ns)
+
+ <State 12>: 1.193ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pruned_voxel_count_load_1') on local variable 'pruned_voxel_count', ocnn6_net.cpp:130 [47]  (0.000 ns)
+	fifo write operation ('write_ln0') on port 'pruned_voxel_count_0_out' [48]  (1.193 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,25 @@
+8-Layer OCNN6 Results (CORRECTED ARCHITECTURE)
+=============================================
+Input: 64³ voxels, 3 channels (13105 occupied, 4.99916% sparse)
+Output: 64³ voxels, 40 classes (with zeros restored)
+Architecture: Persistent BRAM + Pruned DRAM + Access Pointers
+Total processed pruned voxels: 0
+Non-zero outputs: 320
+Output range: [0, 0.01]
+Best prediction: Class 0 (score=0.01)
+Pipeline status: COMPLETED SUCCESSFULLY
+
+Network Architecture:
+- 6 Convolutional layers (3D convolutions with stride=2)
+- 2 Fully connected layers (512->128->40)
+- Cross-row sorting for layers with spatial dim <= 8
+- ReLU activation (except final layer)
+
+Key Innovations Used:
+- ONE-TIME bitmap construction before Layer 1
+- Persistent BRAM octree across all 8 layers
+- Access pointer mechanism for all layers
+- 2-level memory hierarchy (3-Z buffer + pruned DRAM)
+- Cross-row sorting for small dimensions
+- Logical bitmap reconstruction (BRAM reads only)
+- Final output reconstruction with zeros restored
